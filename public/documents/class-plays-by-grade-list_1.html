@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class Plays by Grade — A Reference of the Most Common Waldorf Plays</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f5ede0;
+    --paper-warm: #efe3cf;
+    --paper-deep: #e8d8bd;
+    --ink: #3b2a1a;
+    --ink-soft: #6b5840;
+    --ink-faint: #8a7558;
+    --rust: #a8492a;
+    --moss: #5a6b3f;
+    --wool: #b8a583;
+    --thread: #c8865f;
+    --shadow: rgba(59, 42, 26, 0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 19px;
+    background-image:
+      radial-gradient(circle at 10% 20%, rgba(168, 73, 42, 0.04) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(90, 107, 63, 0.04) 0%, transparent 40%);
+    min-height: 100vh;
+  }
+  body::before {
+    content: ''; position: fixed; inset: 0;
+    pointer-events: none; opacity: 0.4; z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.23 0 0 0 0 0.16 0 0 0 0 0.1 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .container {
+    max-width: 820px; margin: 0 auto;
+    padding: 60px 32px 100px;
+    position: relative; z-index: 1;
+  }
+  header {
+    text-align: center; margin-bottom: 56px;
+    padding-bottom: 36px; border-bottom: 1px solid var(--paper-deep);
+    position: relative;
+  }
+  header::after {
+    content: '✦'; position: absolute; bottom: -12px; left: 50%;
+    transform: translateX(-50%); background: var(--paper);
+    color: var(--wool); padding: 0 16px; font-size: 16px;
+  }
+  .eyebrow {
+    font-family: 'Caveat', cursive; font-size: 24px;
+    color: var(--rust); margin-bottom: 8px;
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 500;
+    font-size: clamp(38px, 6vw, 54px); line-height: 1.1;
+    color: var(--ink); margin-bottom: 16px;
+  }
+  .subtitle {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 21px; color: var(--ink-soft);
+    max-width: 620px; margin: 0 auto;
+  }
+  .intro {
+    background: var(--paper-warm);
+    border: 1px solid var(--paper-deep);
+    border-radius: 4px;
+    padding: 26px 30px;
+    margin-bottom: 56px;
+    box-shadow: 0 2px 6px var(--shadow);
+  }
+  .intro p {
+    font-size: 17px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+  .intro p:last-child { margin-bottom: 0; }
+  .intro strong { color: var(--ink); }
+
+  /* Grade card */
+  .grade-card {
+    margin-bottom: 48px;
+    scroll-margin-top: 30px;
+  }
+  .grade-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 32px;
+    color: var(--rust);
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+  .grade-card .grade-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--wool);
+    margin-right: 12px;
+    font-size: 26px;
+  }
+  .grade-card .theme {
+    font-family: 'Caveat', cursive;
+    font-size: 21px;
+    color: var(--moss);
+    margin-bottom: 16px;
+  }
+  .grade-card .curriculum-tie {
+    font-size: 16.5px;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin-bottom: 22px;
+    line-height: 1.5;
+    padding-left: 14px;
+    border-left: 2px solid var(--wool);
+  }
+  .plays-list {
+    list-style: none;
+    margin: 0;
+  }
+  .plays-list li {
+    background: var(--paper-warm);
+    border: 1px solid var(--paper-deep);
+    border-radius: 4px;
+    padding: 16px 22px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 3px var(--shadow);
+  }
+  .plays-list .title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 19px;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .plays-list .source {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 15.5px;
+    color: var(--ink-faint);
+    display: block;
+    margin-bottom: 6px;
+  }
+  .plays-list .note {
+    font-size: 15.5px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  /* TOC */
+  .toc {
+    background: var(--paper-warm);
+    border: 1px solid var(--paper-deep);
+    border-radius: 4px;
+    padding: 22px 28px;
+    margin-bottom: 56px;
+    box-shadow: 0 1px 4px var(--shadow);
+  }
+  .toc-title {
+    font-family: 'Caveat', cursive;
+    font-size: 21px;
+    color: var(--rust);
+    margin-bottom: 8px;
+  }
+  .toc ol {
+    list-style: none;
+    margin: 0;
+    columns: 2;
+    column-gap: 30px;
+  }
+  .toc li {
+    padding: 4px 0;
+    font-size: 16px;
+    break-inside: avoid;
+  }
+  .toc a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .toc a:hover { color: var(--rust); }
+  @media (max-width: 600px) {
+    .toc ol { columns: 1; }
+  }
+
+  /* Closing notes */
+  .closing-note {
+    background: rgba(90, 107, 63, 0.06);
+    border: 1px dashed var(--moss);
+    border-radius: 3px;
+    padding: 20px 26px;
+    margin: 24px 0;
+    font-size: 16.5px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .closing-note strong {
+    color: var(--moss);
+    font-family: 'Caveat', cursive;
+    font-size: 19px;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--moss);
+    margin-top: 28px;
+    margin-bottom: 10px;
+  }
+
+  ul.gentle { list-style: none; margin: 14px 0; }
+  ul.gentle li {
+    position: relative; padding-left: 24px;
+    margin-bottom: 8px; font-size: 16.5px; line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  ul.gentle li::before {
+    content: '✦'; position: absolute; left: 4px;
+    color: var(--thread); top: 3px; font-size: 13px;
+  }
+  ul.gentle strong { color: var(--ink); }
+
+  footer {
+    text-align: center; padding-top: 36px; margin-top: 64px;
+    border-top: 1px solid var(--paper-deep);
+    color: var(--ink-faint); font-style: italic; font-size: 17px;
+  }
+  footer .ornament { color: var(--wool); margin: 0 12px; }
+
+  @media (max-width: 600px) {
+    body { font-size: 18px; }
+    .container { padding: 40px 22px 80px; }
+    h1 { font-size: 34px; }
+    .grade-card h2 { font-size: 26px; }
+  }
+
+  section, header, .intro, .toc, .grade-card {
+    animation: fadeUp 0.7s ease-out backwards;
+  }
+  header { animation-delay: 0s; }
+  .intro { animation-delay: 0.1s; }
+  .toc { animation-delay: 0.15s; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <div class="eyebrow">~ a section of the Waldorf Path Directory ~</div>
+    <h1>Class Plays by Grade</h1>
+    <p class="subtitle">A reference of the most commonly performed Waldorf class plays, organised by grade, with the curricular reasoning behind each</p>
+  </header>
+
+  <div class="intro">
+    <p><strong>How to use this guide.</strong> Every Waldorf class, from Class 1 through Class 8, traditionally puts on a class play each year — often two or three. The play is not chosen arbitrarily: it grows out of the main lesson the class is studying, and so the repertoire follows a recognisable pattern across Waldorf schools worldwide. This page lists the plays that come up again and again across schools, with a brief note on why each suits its grade.</p>
+    <p>The plays listed here are <strong>the most frequently performed</strong>, drawn from the published curricula of Waldorf schools across North America, Europe, Australia, and South Africa. Schools and class teachers vary in their choices — a creative teacher may write their own adaptation, choose a play in keeping with the spirit of the curriculum, or work with a tale from the children's own cultural background. This list is a starting point, not a prescription.</p>
+    <p>For the philosophy behind why Waldorf class plays are so substantial — and how the rehearsal process itself shapes the children — see the separate <em>Class Plays in Waldorf Education</em> guide.</p>
+  </div>
+
+  <nav class="toc" aria-label="Table of contents">
+    <div class="toc-title">Jump to a grade</div>
+    <ol>
+      <li><a href="#kindergarten">Kindergarten — Seasonal Plays</a></li>
+      <li><a href="#class1">Class 1 — Fairy Tales</a></li>
+      <li><a href="#class2">Class 2 — Fables &amp; Saints</a></li>
+      <li><a href="#class3">Class 3 — Hebrew Stories &amp; Practical Life</a></li>
+      <li><a href="#class4">Class 4 — Norse Mythology</a></li>
+      <li><a href="#class5">Class 5 — Ancient Civilisations</a></li>
+      <li><a href="#class6">Class 6 — Greek &amp; Roman, Medieval</a></li>
+      <li><a href="#class7">Class 7 — Renaissance &amp; Age of Exploration</a></li>
+      <li><a href="#class8">Class 8 — Shakespeare &amp; the Major Production</a></li>
+      <li><a href="#highschool">High School — The Senior Play</a></li>
+    </ol>
+  </nav>
+
+  <section id="kindergarten" class="grade-card">
+    <h2><span class="grade-num">~</span>Kindergarten</h2>
+    <div class="theme">Seasonal Plays</div>
+    <div class="curriculum-tie">
+      In kindergarten there are no formal "class plays" in the upper-grade sense — but small seasonal plays performed by the teacher (often with puppets) are woven through the year. The children watch, absorb, and sometimes gently join in.
+    </div>
+    <ul class="plays-list">
+      <li>
+        <span class="title">The Story of the Acorn / Autumn Story</span>
+        <span class="source">~ traditional Waldorf early-childhood, often Suzanne Down or Christel Dhom adaptations ~</span>
+        <span class="note">A small puppet play about a little acorn falling, planting, sleeping through winter, and growing in spring. Performed at Michaelmas or autumn equinox.</span>
+      </li>
+      <li>
+        <span class="title">The Lantern Story / Saint Martin</span>
+        <span class="source">~ traditional Martinmas play ~</span>
+        <span class="note">The story of Saint Martin sharing his cloak with the beggar, told as a small play around the lantern walk. Sometimes performed by older grades for the kindergarten.</span>
+      </li>
+      <li>
+        <span class="title">The Star Money / The Christmas Story</span>
+        <span class="source">~ Grimm's tale and traditional Nativity ~</span>
+        <span class="note">A small Nativity play is performed in many Waldorf kindergartens before the winter break, often using simple wooden figures or silk puppets.</span>
+      </li>
+      <li>
+        <span class="title">The Easter Story / Spring Awakening</span>
+        <span class="source">~ traditional ~</span>
+        <span class="note">A gentle spring play about new life — sometimes the story of the Easter hare, sometimes a small seasonal tale of flowers waking from sleep.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="class1" class="grade-card">
+    <h2><span class="grade-num">I.</span>Class 1 <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--wool);">(age 6–7)</span></h2>
+    <div class="theme">Fairy Tales</div>
+    <div class="curriculum-tie">
+      Class 1 lives in the world of the Grimm fairy tale. The first-grade child still inhabits the dreamy consciousness of early childhood, and the simple, archetypal characters of fairy tales meet them perfectly. The class play is usually short — 15 to 25 minutes — with every child having a small role, often as one of many flowers, animals, or villagers.
+    </div>
+    <ul class="plays-list">
+      <li>
+        <span class="title">The Frog Prince</span>
+        <span class="source">~ Brothers Grimm ~</span>
+        <span class="note">A favourite first-grade play. Many speaking parts, a princess, a frog, a king, ladies-in-waiting, courtiers. Simple staging, gentle moral.</span>
+      </li>
+      <li>
+        <span class="title">Snow White and the Seven Dwarfs</span>
+        <span class="source">~ Brothers Grimm ~</span>
+        <span class="note">Generous in roles — seven dwarfs, a queen, a huntsman, a prince, woodland creatures, mirror. Adapted carefully (children often play the dwarfs as small forest beings).</span>
+      </li>
+      <li>
+        <span class="title">Snow White and Rose Red</span>
+        <span class="source">~ Brothers Grimm ~</span>
+        <span class="note">Two sisters, a bear, a grumpy dwarf, woodland creatures. Often preferred over Snow White and the Seven Dwarfs for its gentler tone.</span>
+      </li>
+      <li>
+        <span class="title">The Star Money (The Star Talers)</span>
+        <span class="source">~ Brothers Grimm ~</span>
+        <span class="note">A short, beautiful tale of a poor girl who gives away everything she has and is rewarded by stars falling from heaven. Good for very small first-grade classes.</span>
+      </li>
+      <li>
+        <span class="title">Sleeping Beauty (Briar Rose)</span>
+        <span class="source">~ Brothers Grimm / Perrault ~</span>
+        <span class="note">A king, a queen, fairies, a prince, a sleeping court. Many roles as the court "sleeps" on stage for portions of the play.</span>
+      </li>
+      <li>
+        <span class="title">The Bremen Town Musicians</span>
+        <span class="source">~ Brothers Grimm ~</span>
+        <span class="note">Donkey, dog, cat, rooster, robbers. Animal roles in particular suit the first-grade child's love of moving and sounding like animals.</span>
+      </li>
+      <li>
+        <span class="title">Mother Holle</span>
+        <span class="source">~ Brothers Grimm ~</span>
+        <span class="note">A tale of two sisters, hard work, and reward. Mother Holle shakes her feather bed and snow falls on earth — a beautiful image often performed in winter.</span>
+      </li>
+      <li>
+        <span class="title">The Goose Girl</span>
+        <span class="source">~ Brothers Grimm ~</span>
+        <span class="note">A princess, a false maid, geese, a king, the wind. Memorable for the talking head of Falada the horse.</span>
+      </li>
+      <li>
+        <span class="title">King Thrushbeard</span>
+        <span class="source">~ Brothers Grimm ~</span>
+        <span class="note">A proud princess learns kindness through humble work. A first-grade favourite where many of the proud princess's suitors can be played as small character parts.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="class2" class="grade-card">
+    <h2><span class="grade-num">II.</span>Class 2 <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--wool);">(age 7–8)</span></h2>
+    <div class="theme">Fables &amp; Stories of Saints</div>
+    <div class="curriculum-tie">
+      Class 2 meets the two great moral poles: the animal fables (showing the lower, instinctive nature) and the lives of saints (showing the higher, aspirational nature). The class plays of this year usually draw from one of these two streams — sometimes both, woven together into one short play.
+    </div>
+    <ul class="plays-list">
+      <li>
+        <span class="title">A Selection of Aesop's Fables</span>
+        <span class="source">~ Aesop ~</span>
+        <span class="note">The most common Class 2 play form: three or four fables strung together — The Fox and the Crow, The Lion and the Mouse, The Tortoise and the Hare, The Boy Who Cried Wolf. Each child takes an animal role; many fables fit in a short performance.</span>
+      </li>
+      <li>
+        <span class="title">The Lion and the Mouse</span>
+        <span class="source">~ Aesop ~</span>
+        <span class="note">A small lion is freed from a hunter's net by the small mouse he once spared. Compassion across difference — a Class 2 favourite.</span>
+      </li>
+      <li>
+        <span class="title">Saint Francis and the Wolf of Gubbio</span>
+        <span class="source">~ traditional saint legend ~</span>
+        <span class="note">Saint Francis tames a fierce wolf with words of kindness. A canonical Class 2 play, combining the saint and animal-fable threads into one. Often performed in autumn near St Francis's feast day (4 October).</span>
+      </li>
+      <li>
+        <span class="title">Saint Francis and the Birds</span>
+        <span class="source">~ traditional saint legend ~</span>
+        <span class="note">Saint Francis preaches to the birds and they listen. Many small bird roles; gentle and lovely.</span>
+      </li>
+      <li>
+        <span class="title">Saint Bridget &amp; the King's Wolf</span>
+        <span class="source">~ Irish saint legend ~</span>
+        <span class="note">An Irish saint legend with similar themes to the Saint Francis stories. Brigid (or Bridget) tames a king's wolf and earns the king's mercy.</span>
+      </li>
+      <li>
+        <span class="title">Saint George and the Dragon</span>
+        <span class="source">~ traditional saint legend ~</span>
+        <span class="note">Sometimes performed in Class 2, sometimes held back to Class 4 for the Michaelmas season. A play of courage; the dragon is tamed rather than slain in most Waldorf adaptations.</span>
+      </li>
+      <li>
+        <span class="title">Stone Soup</span>
+        <span class="source">~ European folk tale (sometimes attributed to France or Russia) ~</span>
+        <span class="note">A clever traveller teaches a stingy village the joy of sharing. Excellent Class 2 play — every child plays a villager bringing something for the pot.</span>
+      </li>
+      <li>
+        <span class="title">The Country Mouse and the City Mouse</span>
+        <span class="source">~ Aesop ~</span>
+        <span class="note">A short fable that scales to many roles when the country and city are populated with all the various creatures that live there.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="class3" class="grade-card">
+    <h2><span class="grade-num">III.</span>Class 3 <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--wool);">(age 8–9)</span></h2>
+    <div class="theme">Hebrew Stories &amp; Practical-Life Themes</div>
+    <div class="curriculum-tie">
+      Class 3 — the year of the nine-year change — meets the Old Testament stories of the Hebrew tradition: creation, the patriarchs, Moses, the exodus. The class also studies practical life, farming, building, and measurement. Plays may come from either stream.
+    </div>
+    <ul class="plays-list">
+      <li>
+        <span class="title">Noah's Ark</span>
+        <span class="source">~ Old Testament ~</span>
+        <span class="note">A Class 3 favourite. Noah, his family, every animal in pairs — the play accommodates a large class easily. The rainbow at the end is a moment of beauty.</span>
+      </li>
+      <li>
+        <span class="title">Joseph and His Brothers</span>
+        <span class="source">~ Old Testament ~</span>
+        <span class="note">A substantial story with strong roles: Joseph, his brothers, the merchants, Potiphar, Pharaoh, the dreams. Often the most ambitious Class 3 play.</span>
+      </li>
+      <li>
+        <span class="title">Moses in the Bulrushes / The Exodus</span>
+        <span class="source">~ Old Testament ~</span>
+        <span class="note">From the basket on the Nile through the burning bush and the parting of the sea. Strong, memorable images for the children to embody.</span>
+      </li>
+      <li>
+        <span class="title">David and Goliath</span>
+        <span class="source">~ Old Testament ~</span>
+        <span class="note">The young shepherd defeating the giant — a beloved Class 3 image of courage met with simple faithfulness.</span>
+      </li>
+      <li>
+        <span class="title">The Tower of Babel</span>
+        <span class="source">~ Old Testament ~</span>
+        <span class="note">Particularly suited to Class 3's practical-building studies. The class can build the tower together onstage.</span>
+      </li>
+      <li>
+        <span class="title">Ruth and Naomi</span>
+        <span class="source">~ Old Testament ~</span>
+        <span class="note">A gentler Class 3 play centred on faithfulness, the harvest, and Ruth's loyalty to Naomi. Ties beautifully to the practical-life and farming threads of the year.</span>
+      </li>
+      <li>
+        <span class="title">A Farming Play</span>
+        <span class="source">~ teacher-written, drawing on the Class 3 curriculum ~</span>
+        <span class="note">Some teachers write their own play built around the year's farming, building, and crafts main lessons — children plant, harvest, mill, bake, and build a small house onstage.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="class4" class="grade-card">
+    <h2><span class="grade-num">IV.</span>Class 4 <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--wool);">(age 9–10)</span></h2>
+    <div class="theme">Norse Mythology</div>
+    <div class="curriculum-tie">
+      Class 4 dives into the Norse myths — Odin, Thor, Loki, the world of the gods and giants. The play this year is drawn directly from the Norse pantheon and matches the children's developing sense of polarity, conflict, and the more turbulent dynamics of approaching adolescence.
+    </div>
+    <ul class="plays-list">
+      <li>
+        <span class="title">The Theft of Thor's Hammer</span>
+        <span class="source">~ Norse mythology (the Lay of Thrym) ~</span>
+        <span class="note">A favourite. Loki, Thor in drag as the bride, Thrym the giant, all the gods. Comic and dramatic at once; Class 4 children love it.</span>
+      </li>
+      <li>
+        <span class="title">The Binding of Fenrir</span>
+        <span class="source">~ Norse mythology ~</span>
+        <span class="note">The gods bind the great wolf Fenrir. Tyr loses his hand. A sterner Norse tale suited to Class 4's growing capacity for serious drama.</span>
+      </li>
+      <li>
+        <span class="title">The Death of Baldur</span>
+        <span class="source">~ Norse mythology ~</span>
+        <span class="note">The tragic death of beautiful Baldur, killed by Loki's trick with mistletoe. A more sombre play — chosen by teachers who want the class to meet a real tragedy.</span>
+      </li>
+      <li>
+        <span class="title">Sigurd and the Dragon Fafnir</span>
+        <span class="source">~ Norse mythology (Volsunga Saga) ~</span>
+        <span class="note">Sigurd's quest to slay the dragon Fafnir; the magical sword, the talking birds, the cursed gold. A larger, more substantial Class 4 play.</span>
+      </li>
+      <li>
+        <span class="title">The Mead of Poetry</span>
+        <span class="source">~ Norse mythology ~</span>
+        <span class="note">Odin steals the mead of poetry from the giants. Suited to teachers who want to draw out the theme of inspiration and the gift of language.</span>
+      </li>
+      <li>
+        <span class="title">A Norse Anthology Play</span>
+        <span class="source">~ teacher-arranged ~</span>
+        <span class="note">Many Class 4 teachers stitch together several short Norse tales into a single longer play, allowing more children to take central roles and covering more of the year's curriculum.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="class5" class="grade-card">
+    <h2><span class="grade-num">V.</span>Class 5 <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--wool);">(age 10–11)</span></h2>
+    <div class="theme">Ancient Civilisations</div>
+    <div class="curriculum-tie">
+      Class 5 — the "golden age of childhood" — studies the ancient civilisations: India, Persia, Mesopotamia, Egypt, and ancient Greece. The class play traditionally draws from one of these cultures, often Greek mythology, which the children encounter through the year and which culminates in the Class 5 Greek Olympics held at many Waldorf schools.
+    </div>
+    <ul class="plays-list">
+      <li>
+        <span class="title">Demeter and Persephone</span>
+        <span class="source">~ Greek mythology ~</span>
+        <span class="note">The myth of the seasons — Persephone taken to the underworld, Demeter's grief, the bargain that gives us spring. A beautiful, deeply structured myth and a Class 5 favourite.</span>
+      </li>
+      <li>
+        <span class="title">Theseus and the Minotaur</span>
+        <span class="source">~ Greek mythology ~</span>
+        <span class="note">The hero, the labyrinth, the king's daughter, the monster. Excellent ensemble play with many speaking parts.</span>
+      </li>
+      <li>
+        <span class="title">Perseus and Medusa</span>
+        <span class="source">~ Greek mythology ~</span>
+        <span class="note">Perseus's quest to slay Medusa, with the magical gifts of the gods. Strong roles for the gods, the Gorgon sisters, and Andromeda.</span>
+      </li>
+      <li>
+        <span class="title">Pandora's Box</span>
+        <span class="source">~ Greek mythology ~</span>
+        <span class="note">A shorter play suited to smaller classes. The gods give Pandora her gifts; curiosity opens the box; hope remains.</span>
+      </li>
+      <li>
+        <span class="title">Echo and Narcissus</span>
+        <span class="source">~ Greek mythology ~</span>
+        <span class="note">A gentler Class 5 play, beautiful in its imagery — the nymph who can only repeat, the youth who falls in love with his own reflection.</span>
+      </li>
+      <li>
+        <span class="title">King Midas and the Golden Touch</span>
+        <span class="source">~ Greek mythology ~</span>
+        <span class="note">A simpler play with strong moral content — the king who learns that gold is not everything. Often performed by smaller Class 5 groups.</span>
+      </li>
+      <li>
+        <span class="title">Scenes from the Ramayana</span>
+        <span class="source">~ Indian epic ~</span>
+        <span class="note">Some Waldorf schools, particularly those with diverse student populations, draw their Class 5 play from the ancient Indian epic. Rama, Sita, Hanuman, Ravana — a wealth of memorable characters.</span>
+      </li>
+      <li>
+        <span class="title">An Egyptian Play (Isis &amp; Osiris)</span>
+        <span class="source">~ Egyptian mythology ~</span>
+        <span class="note">The myth of Isis searching the world for the scattered body of Osiris. A more advanced Class 5 choice; performed less often but striking when done.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="class6" class="grade-card">
+    <h2><span class="grade-num">VI.</span>Class 6 <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--wool);">(age 11–12)</span></h2>
+    <div class="theme">Greek &amp; Roman, Medieval</div>
+    <div class="curriculum-tie">
+      Class 6 studies ancient Rome and the medieval world — the rise of cities, the structures of law, the rise of feudalism, and the chivalric ideal. Plays this year may come from Greek drama, Roman legend, or medieval romance.
+    </div>
+    <ul class="plays-list">
+      <li>
+        <span class="title">The Odyssey (selected episodes)</span>
+        <span class="source">~ Homer ~</span>
+        <span class="note">A Class 6 production of selected episodes from the Odyssey — the Cyclops, Circe, the Sirens, the return to Ithaca — is one of the most ambitious lower-school plays. Some schools perform this in Class 5 instead, depending on the teacher.</span>
+      </li>
+      <li>
+        <span class="title">Romulus and Remus / The Founding of Rome</span>
+        <span class="source">~ Roman legend ~</span>
+        <span class="note">The wolf, the twin brothers, the founding of the great city. A canonical Class 6 play tying to the year's Roman main lesson.</span>
+      </li>
+      <li>
+        <span class="title">Julius Caesar (simplified)</span>
+        <span class="source">~ Roman history, sometimes Shakespeare adapted ~</span>
+        <span class="note">Some Class 6 teachers introduce Shakespeare gently with a simplified Julius Caesar — anticipating the proper Shakespeare productions of Class 7 and Class 8.</span>
+      </li>
+      <li>
+        <span class="title">Sir Gawain and the Green Knight</span>
+        <span class="source">~ medieval English romance ~</span>
+        <span class="note">A favourite for Class 6 medieval blocks. Tests of honour, courtesy, and courage — the values the chivalric tradition handed down.</span>
+      </li>
+      <li>
+        <span class="title">Parzival (simplified episodes)</span>
+        <span class="source">~ Wolfram von Eschenbach, medieval German ~</span>
+        <span class="note">The young knight's quest for the Holy Grail. A substantial play often performed by more ambitious Class 6 groups.</span>
+      </li>
+      <li>
+        <span class="title">Robin Hood</span>
+        <span class="source">~ traditional English ballad cycle ~</span>
+        <span class="note">A lighter Class 6 choice — Robin and his merry men, Maid Marian, the Sheriff, the king. Sword fights, archery, broad comedy.</span>
+      </li>
+      <li>
+        <span class="title">El Cid</span>
+        <span class="source">~ medieval Spanish epic ~</span>
+        <span class="note">The Spanish national hero, with battles, exile, and reconciliation. Used at some Waldorf schools as the Class 6 medieval play, particularly those with Spanish-language programmes.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="class7" class="grade-card">
+    <h2><span class="grade-num">VII.</span>Class 7 <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--wool);">(age 12–13)</span></h2>
+    <div class="theme">Renaissance &amp; the Age of Exploration</div>
+    <div class="curriculum-tie">
+      Class 7 meets the Renaissance, the age of exploration, and the great voyages and discoveries. The class is also in the midst of voice change and emerging adolescence — plays this year often involve heroes, explorers, and moral complexity.
+    </div>
+    <ul class="plays-list">
+      <li>
+        <span class="title">Christopher Columbus</span>
+        <span class="source">~ historical drama ~</span>
+        <span class="note">Often handled with the complexity the topic deserves — many modern Waldorf adaptations include the perspectives of the Indigenous peoples Columbus encountered.</span>
+      </li>
+      <li>
+        <span class="title">Joan of Arc</span>
+        <span class="source">~ historical drama; sometimes Mark Twain's <em>Personal Recollections of Joan of Arc</em> adapted ~</span>
+        <span class="note">The young French heroine — adaptations vary from Shaw's <em>Saint Joan</em> simplified to teacher-written versions. A powerful Class 7 choice for its themes of conviction, vision, and sacrifice.</span>
+      </li>
+      <li>
+        <span class="title">Galileo</span>
+        <span class="source">~ historical drama, sometimes Brecht adapted ~</span>
+        <span class="note">The scientist who saw the moons of Jupiter and was tried by the Inquisition. A Class 7 play that meets the year's astronomy block beautifully.</span>
+      </li>
+      <li>
+        <span class="title">A Midsummer Night's Dream</span>
+        <span class="source">~ Shakespeare ~</span>
+        <span class="note">Sometimes performed in Class 7 if Shakespeare is being introduced early. The fairy parts, the comedy of the mechanicals, the lovers' confusion — much loved by early adolescents.</span>
+      </li>
+      <li>
+        <span class="title">The Renaissance — A Mosaic</span>
+        <span class="source">~ teacher-written ~</span>
+        <span class="note">Some Class 7 teachers create their own play sketching figures from the Renaissance — Leonardo, Michelangelo, the Medici, Magellan, Erasmus — woven together as a series of scenes.</span>
+      </li>
+      <li>
+        <span class="title">William Tell</span>
+        <span class="source">~ Friedrich Schiller adapted ~</span>
+        <span class="note">The Swiss legend of the archer who would not bow to the tyrant's hat. Schiller's play is a Class 7 staple in many European Waldorf schools.</span>
+      </li>
+      <li>
+        <span class="title">The Hunchback of Notre Dame</span>
+        <span class="source">~ Victor Hugo adapted ~</span>
+        <span class="note">A heavier choice, sometimes performed by more advanced Class 7 groups. Themes of difference, justice, and compassion.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="class8" class="grade-card">
+    <h2><span class="grade-num">VIII.</span>Class 8 <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--wool);">(age 13–14)</span></h2>
+    <div class="theme">Shakespeare &amp; the Major Production</div>
+    <div class="curriculum-tie">
+      The Class 8 play is the culminating drama production of the lower school — the eight-year journey with the class teacher closing in a substantial performance. Many Waldorf schools perform Shakespeare; others choose a major musical or a serious modern play. Rehearsals often run for months. The play is the rite of passage that closes the lower school.
+    </div>
+    <ul class="plays-list">
+      <li>
+        <span class="title">The Tempest</span>
+        <span class="source">~ Shakespeare ~</span>
+        <span class="note">One of the most-loved Class 8 Shakespeare choices. Themes of forgiveness, transformation, and letting go map onto the class's own transition to high school. Prospero, Miranda, Ariel, Caliban, the shipwrecked court.</span>
+      </li>
+      <li>
+        <span class="title">A Midsummer Night's Dream</span>
+        <span class="source">~ Shakespeare ~</span>
+        <span class="note">The most-performed Shakespeare play across Waldorf eighth grades. Generous in roles, mixes comedy and magic, and lets every child shine in some way.</span>
+      </li>
+      <li>
+        <span class="title">Twelfth Night</span>
+        <span class="source">~ Shakespeare ~</span>
+        <span class="note">Cross-dressing twins, shipwrecks, mistaken identity, music — particularly suited to Class 8s with strong musical traditions.</span>
+      </li>
+      <li>
+        <span class="title">Much Ado About Nothing</span>
+        <span class="source">~ Shakespeare ~</span>
+        <span class="note">Sharp comedy, the famous Beatrice and Benedick verbal sparring. Excellent for verbally bright eighth grades.</span>
+      </li>
+      <li>
+        <span class="title">As You Like It</span>
+        <span class="source">~ Shakespeare ~</span>
+        <span class="note">The Forest of Arden, Rosalind in disguise, music throughout, a gentle wisdom. A Shakespeare comedy with strong female roles.</span>
+      </li>
+      <li>
+        <span class="title">Romeo and Juliet (selected)</span>
+        <span class="source">~ Shakespeare ~</span>
+        <span class="note">Some Class 8s perform this — Shakespeare's most accessible tragedy. Usually with the most violent scenes carefully adapted; not chosen by every school.</span>
+      </li>
+      <li>
+        <span class="title">Henry V (selected scenes)</span>
+        <span class="source">~ Shakespeare ~</span>
+        <span class="note">For Class 8s drawn to history rather than comedy. The St Crispin's Day speech and the wooing of Katherine are commonly performed.</span>
+      </li>
+      <li>
+        <span class="title">Fiddler on the Roof</span>
+        <span class="source">~ Bock, Harnick, Stein ~</span>
+        <span class="note">A popular Class 8 musical choice — substantial roles, a beloved score, and themes of tradition, change, and family that match the eighth-grade moment.</span>
+      </li>
+      <li>
+        <span class="title">The Sound of Music</span>
+        <span class="source">~ Rodgers and Hammerstein ~</span>
+        <span class="note">Another widely-performed Class 8 musical. Strong ensemble roles, beautiful songs, and historical setting.</span>
+      </li>
+      <li>
+        <span class="title">Our Town</span>
+        <span class="source">~ Thornton Wilder ~</span>
+        <span class="note">A serious modern play occasionally performed by Class 8s ready for something more contemplative. Simple staging, profound themes.</span>
+      </li>
+      <li>
+        <span class="title">The Diary of Anne Frank</span>
+        <span class="source">~ adapted from Anne Frank's diary by Goodrich and Hackett ~</span>
+        <span class="note">A serious Class 8 choice taken on by some classes. Demanding but transformative.</span>
+      </li>
+    </ul>
+
+    <div class="closing-note">
+      <strong>Why Class 8 is different</strong>
+      The Class 8 play is unlike any earlier class play. It typically runs an hour or more, rehearses for months, and is presented as a major school event with full costumes, sets, lighting, and a programme. Many Class 8 teachers spend significant time in Class 7 already considering what the right play for their particular class will be. The choice is made with care: the right play meets <em>this</em> class at <em>this</em> moment, and the rehearsal process becomes part of their formation as a group preparing to scatter into the wider world of high school.
+    </div>
+  </section>
+
+  <section id="highschool" class="grade-card">
+    <h2><span class="grade-num">~</span>High School (Classes 9–12)</h2>
+    <div class="theme">The Senior Play &amp; Modern Drama</div>
+    <div class="curriculum-tie">
+      In the Waldorf high school, plays are no longer one-per-year class productions. Drama becomes elective; students choose to participate in school productions; and many Waldorf high schools mount one or two substantial productions per year drawing from across the grades. The repertoire opens dramatically — Greek tragedy, modern drama, contemporary plays, original student work.
+    </div>
+    <ul class="plays-list">
+      <li>
+        <span class="title">Greek Tragedy (Oedipus, Antigone, the Oresteia)</span>
+        <span class="source">~ Sophocles, Aeschylus, Euripides ~</span>
+        <span class="note">Often performed by Class 10 or 11 students engaged with the Greek main lesson of the upper school. Sophocles's <em>Antigone</em> in particular is widely performed.</span>
+      </li>
+      <li>
+        <span class="title">Shakespeare's Tragedies (Hamlet, Macbeth, King Lear)</span>
+        <span class="source">~ Shakespeare ~</span>
+        <span class="note">By high school, students are ready for the great tragedies. Macbeth in particular is a frequent senior production.</span>
+      </li>
+      <li>
+        <span class="title">A Streetcar Named Desire / The Glass Menagerie</span>
+        <span class="source">~ Tennessee Williams ~</span>
+        <span class="note">Modern American drama performed by upper-school students in many Waldorf schools.</span>
+      </li>
+      <li>
+        <span class="title">The Crucible</span>
+        <span class="source">~ Arthur Miller ~</span>
+        <span class="note">A Waldorf high-school favourite. The Salem witch trials, the moral courage of John Proctor — themes that meet adolescents directly.</span>
+      </li>
+      <li>
+        <span class="title">Pygmalion / My Fair Lady</span>
+        <span class="source">~ Shaw, Lerner and Loewe ~</span>
+        <span class="note">A popular musical for the Waldorf high school stage.</span>
+      </li>
+      <li>
+        <span class="title">Les Misérables (school edition)</span>
+        <span class="source">~ Boublil, Schönberg, adapted from Hugo ~</span>
+        <span class="note">Many Waldorf high schools mount this as a major school musical, often involving students from multiple grades.</span>
+      </li>
+      <li>
+        <span class="title">Original Student Work</span>
+        <span class="source">~ student-written ~</span>
+        <span class="note">By the upper school, some students write and produce their own one-act plays — often as part of a Class 12 project or senior thesis.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="grade-card">
+    <h2><span class="grade-num">~</span>Notes for Teachers, Parents &amp; Homeschoolers</h2>
+
+    <h3>For class teachers</h3>
+    <p style="font-size:16.5px;color:var(--ink-soft);line-height:1.65;">The list above is a starting point. Many of the best Waldorf class plays are written or adapted by the class teacher themselves to suit the particular children in their class. A class of fifteen children needs a different play than a class of thirty. A class with several strong actors and several shy children needs a play structured to give each one a real role. A play that worked beautifully for last year's Class 4 may not be right for this year's. Read widely; trust your sense of the class; adapt freely.</p>
+
+    <h3>For homeschoolers</h3>
+    <p style="font-size:16.5px;color:var(--ink-soft);line-height:1.65;">A homeschool family does not need to mount a full-cast play each year — a small family performance for grandparents or other homeschool families is enough. Even a single child speaking three or four roles, with simple costumes from the dressing-up basket, captures much of what the class play tradition offers: the encounter with the year's main lesson story through one's own voice and body.</p>
+
+    <h3>For parents helping with a school play</h3>
+    <p style="font-size:16.5px;color:var(--ink-soft);line-height:1.65;">Class plays are typically supported by parent volunteers — costume sewing, set painting, props, prompting, programme printing. This is one of the most meaningful ways to be present in your child's Waldorf school life. The hours spent at the long sewing table or the late-night set-painting evening become some of the most-remembered parts of a parent's Waldorf years.</p>
+
+    <h3>Where to find published Waldorf plays</h3>
+    <ul class="gentle">
+      <li><strong>Waldorf Publications</strong> (<em>waldorfpublications.org</em>) — many published class plays; the largest single source in North America</li>
+      <li><strong>Mercury Press</strong> — Waldorf-tradition plays, often out of print but findable</li>
+      <li><strong>Waldorf Teacher Resources</strong> (<em>waldorfteacherresources.com</em>) — class-by-class play resources contributed by teachers</li>
+      <li><strong>A Waldorf Journey</strong> (<em>awaldorfjourney.com</em>) — Meredith Floyd-Preston's grade-by-grade resources include play suggestions</li>
+      <li><strong>Hawthorn Press</strong> — UK Waldorf publisher; selected published plays</li>
+      <li><strong>Vivian Jones-Schmidt — <em>Three Plays for Small Classes</em></strong>; <strong>Arthur Pittis — <em>Pedagogical Theater</em></strong>; <strong>Roswitha Spence — <em>Clothing the Play</em></strong> — books from the broader Waldorf drama tradition</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span class="ornament">✦</span>
+    A section of <em>The Waldorf Path Directory</em>
+    <span class="ornament">✦</span>
+  </footer>
+
+</div>
+
+</body>
+</html>

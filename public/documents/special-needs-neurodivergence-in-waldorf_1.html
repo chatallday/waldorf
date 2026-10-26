@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Special Needs &amp; Neurodivergence in Waldorf Education — An Honest Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f5ede0;
+    --paper-warm: #efe3cf;
+    --paper-deep: #e8d8bd;
+    --ink: #3b2a1a;
+    --ink-soft: #6b5840;
+    --ink-faint: #8a7558;
+    --rust: #a8492a;
+    --moss: #5a6b3f;
+    --wool: #b8a583;
+    --thread: #c8865f;
+    --shadow: rgba(59, 42, 26, 0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 19px;
+    background-image:
+      radial-gradient(circle at 10% 20%, rgba(168, 73, 42, 0.04) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(90, 107, 63, 0.04) 0%, transparent 40%);
+    min-height: 100vh;
+  }
+  body::before {
+    content: ''; position: fixed; inset: 0;
+    pointer-events: none; opacity: 0.4; z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.23 0 0 0 0 0.16 0 0 0 0 0.1 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .container {
+    max-width: 820px; margin: 0 auto;
+    padding: 60px 32px 100px;
+    position: relative; z-index: 1;
+  }
+  header {
+    text-align: center; margin-bottom: 64px;
+    padding-bottom: 40px; border-bottom: 1px solid var(--paper-deep);
+    position: relative;
+  }
+  header::after {
+    content: '✦'; position: absolute; bottom: -12px; left: 50%;
+    transform: translateX(-50%); background: var(--paper);
+    color: var(--wool); padding: 0 16px; font-size: 16px;
+  }
+  .eyebrow {
+    font-family: 'Caveat', cursive; font-size: 24px;
+    color: var(--rust); margin-bottom: 8px;
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 500;
+    font-size: clamp(36px, 5.5vw, 50px); line-height: 1.15;
+    color: var(--ink); margin-bottom: 16px;
+  }
+  .subtitle {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 22px; color: var(--ink-soft);
+    max-width: 640px; margin: 0 auto;
+  }
+  .toc {
+    background: var(--paper-warm); border: 1px solid var(--paper-deep);
+    border-radius: 4px; padding: 28px 36px;
+    margin-bottom: 64px; box-shadow: 0 2px 8px var(--shadow);
+  }
+  .toc-title {
+    font-family: 'Caveat', cursive; font-size: 22px;
+    color: var(--rust); margin-bottom: 12px;
+  }
+  .toc ol { list-style: none; counter-reset: toc-counter; }
+  .toc li {
+    counter-increment: toc-counter;
+    padding: 6px 0; border-bottom: 1px dotted var(--paper-deep);
+    display: flex; align-items: baseline;
+  }
+  .toc li:last-child { border-bottom: none; }
+  .toc li::before {
+    content: counter(toc-counter, upper-roman) ".";
+    color: var(--rust); font-weight: 600;
+    margin-right: 12px; min-width: 32px;
+    font-family: 'Cormorant Garamond', serif; font-size: 18px;
+  }
+  .toc a { color: var(--ink); text-decoration: none; flex: 1; font-size: 18px; }
+  .toc a:hover { color: var(--rust); }
+  section { margin-bottom: 72px; scroll-margin-top: 40px; }
+  h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: 32px; color: var(--rust);
+    margin-bottom: 20px; line-height: 1.2;
+  }
+  h2 .roman {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-weight: 400; color: var(--wool);
+    margin-right: 14px; font-size: 26px;
+  }
+  h3 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-style: italic; font-size: 23px;
+    color: var(--moss); margin-top: 32px; margin-bottom: 12px;
+  }
+  p { margin-bottom: 16px; color: var(--ink); }
+  p.lead {
+    font-size: 21px; font-style: italic;
+    color: var(--ink-soft); line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  em { color: var(--ink-soft); }
+  strong { color: var(--ink); font-weight: 600; }
+
+  /* Two-column comparison */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 26px 0;
+  }
+  .compare .col {
+    background: var(--paper-warm);
+    border: 1px solid var(--paper-deep);
+    border-radius: 4px;
+    padding: 22px 24px;
+  }
+  .compare .col h4 {
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+  .compare .col.fit h4 { color: var(--moss); }
+  .compare .col.notfit h4 { color: var(--rust); }
+  .compare .col ul { list-style: none; margin: 0; }
+  .compare .col li {
+    position: relative; padding-left: 20px;
+    margin-bottom: 10px; font-size: 16px; line-height: 1.5;
+    color: var(--ink-soft);
+  }
+  .compare .col li::before {
+    content: '✦'; position: absolute; left: 0; top: 2px;
+    color: var(--thread); font-size: 13px;
+  }
+  @media (max-width: 640px) {
+    .compare { grid-template-columns: 1fr; }
+  }
+
+  /* Condition block */
+  .condition {
+    background: var(--paper-warm);
+    border: 1px solid var(--paper-deep);
+    border-radius: 4px;
+    padding: 24px 28px;
+    margin: 18px 0 24px;
+    box-shadow: 0 1px 4px var(--shadow);
+  }
+  .condition h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--rust);
+    margin-bottom: 12px;
+  }
+  .condition p {
+    font-size: 16.5px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+  .condition .label {
+    font-family: 'Caveat', cursive;
+    font-size: 18px;
+    color: var(--moss);
+    margin-top: 14px;
+    margin-bottom: 4px;
+    display: block;
+  }
+  .condition ul {
+    list-style: none;
+    margin: 6px 0 10px;
+  }
+  .condition ul li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .condition ul li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--thread);
+    top: 2px;
+    font-size: 13px;
+  }
+
+  /* Question block */
+  .question-block {
+    background: rgba(168, 73, 42, 0.05);
+    border-left: 3px solid var(--rust);
+    border-radius: 0 4px 4px 0;
+    padding: 22px 28px;
+    margin: 26px 0;
+  }
+  .question-block h4 {
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    color: var(--rust);
+    margin-bottom: 12px;
+  }
+  .question-block ul { list-style: none; margin: 0; }
+  .question-block li {
+    padding: 8px 0;
+    font-size: 16.5px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    border-bottom: 1px dotted var(--paper-deep);
+  }
+  .question-block li:last-child { border-bottom: none; }
+
+  /* Tender callout */
+  .tender {
+    background: rgba(90, 107, 63, 0.06);
+    border: 1px dashed var(--moss);
+    border-radius: 3px;
+    padding: 18px 24px;
+    margin: 22px 0;
+    font-size: 16.5px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .tender strong {
+    color: var(--moss);
+    font-family: 'Caveat', cursive;
+    font-size: 19px;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* Honest acknowledgement — slightly different */
+  .honest {
+    background: rgba(168, 73, 42, 0.04);
+    border-left: 3px solid var(--thread);
+    border-radius: 0 4px 4px 0;
+    padding: 18px 24px;
+    margin: 22px 0;
+    font-size: 16.5px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .honest strong {
+    color: var(--rust);
+    font-family: 'Caveat', cursive;
+    font-size: 19px;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  ul.gentle { list-style: none; margin: 16px 0 24px; }
+  ul.gentle li {
+    position: relative; padding-left: 28px;
+    margin-bottom: 12px; font-size: 17px; line-height: 1.6;
+  }
+  ul.gentle li::before {
+    content: '✦'; position: absolute; left: 6px;
+    color: var(--thread); top: 4px; font-size: 14px;
+  }
+
+  .pull-quote {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 24px; line-height: 1.4; color: var(--moss);
+    text-align: center; padding: 32px 24px; margin: 40px 0;
+    position: relative;
+    border-top: 1px solid var(--paper-deep);
+    border-bottom: 1px solid var(--paper-deep);
+  }
+  .pull-quote::before {
+    content: '"'; font-size: 80px; color: var(--wool);
+    position: absolute; top: -8px; left: 24px; opacity: 0.4;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  footer {
+    text-align: center; padding-top: 40px; margin-top: 80px;
+    border-top: 1px solid var(--paper-deep);
+    color: var(--ink-faint); font-style: italic; font-size: 17px;
+  }
+  footer .ornament { color: var(--wool); margin: 0 12px; }
+
+  @media (max-width: 600px) {
+    body { font-size: 18px; }
+    .container { padding: 40px 22px 80px; }
+    .toc { padding: 22px 24px; }
+    h1 { font-size: 32px; }
+    h2 { font-size: 26px; }
+    h3 { font-size: 21px; }
+    .pull-quote { font-size: 20px; padding: 24px 16px; }
+  }
+
+  section, header, .toc {
+    animation: fadeUp 0.8s ease-out backwards;
+  }
+  header { animation-delay: 0s; }
+  .toc { animation-delay: 0.15s; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <div class="eyebrow">~ a section of the Waldorf Path Directory ~</div>
+    <h1>Special Needs &amp; Neurodivergence in Waldorf Education</h1>
+    <p class="subtitle">An honest guide for families navigating Waldorf education with a child who learns or experiences the world differently</p>
+  </header>
+
+  <nav class="toc" aria-label="Table of contents">
+    <div class="toc-title">In this section</div>
+    <ol>
+      <li><a href="#opening">An Opening Word — and a Note on Language</a></li>
+      <li><a href="#what">What This Guide Covers, and What It Doesn't</a></li>
+      <li><a href="#curative">The Curative Education Tradition</a></li>
+      <li><a href="#camphill">Camphill Communities</a></li>
+      <li><a href="#mainstream">Mainstream Waldorf Schools — What They Offer and What They Don't</a></li>
+      <li><a href="#conditions">Specific Conditions — Where Waldorf Tends to Help and Where It May Not</a></li>
+      <li><a href="#extralesson">The Extra Lesson &amp; Other Waldorf Therapeutic Approaches</a></li>
+      <li><a href="#concerns">Honest Concerns Worth Knowing About</a></li>
+      <li><a href="#questions">Questions to Ask a Prospective School</a></li>
+      <li><a href="#homeschool">Waldorf Homeschooling with a Neurodivergent Child</a></li>
+      <li><a href="#resources">Books, Organisations &amp; Where to Find More</a></li>
+    </ol>
+  </nav>
+
+  <section id="opening">
+    <h2><span class="roman">I.</span>An Opening Word — and a Note on Language</h2>
+
+    <p class="lead">This guide is written for parents who are considering Waldorf education for a child with special educational needs, a disability, or a neurodivergent way of being in the world. The question that brings you here matters enormously, and you deserve an honest answer rather than a sales pitch in either direction.</p>
+
+    <h3>What we have tried to do</h3>
+    <p>We have tried to write a guide that does three things at once:</p>
+    <ul class="gentle">
+      <li><strong>Honour what Waldorf education does genuinely well</strong> in this area — and there is much</li>
+      <li><strong>Name honestly where Waldorf education has limits</strong> — because some children are better served elsewhere or in addition</li>
+      <li><strong>Give you the information you need</strong> to ask the right questions of your particular school, doctor, and family situation</li>
+    </ul>
+
+    <h3>A note on language</h3>
+    <p>The language around these topics is contested and changing. We use a mixture of terms in this guide:</p>
+    <ul class="gentle">
+      <li><strong>"Special needs"</strong> — still the most common umbrella term in Waldorf and mainstream educational settings, and the term most readers will search for; we use it where it captures the breadth of what is meant</li>
+      <li><strong>"Neurodivergent"</strong> — increasingly the preferred term for many people, particularly those who are autistic, ADHD, or dyslexic; we use it where it fits and where the people described would generally choose it</li>
+      <li><strong>"Disability"</strong> and <strong>"disabled"</strong> — used directly where they apply, in keeping with the preferences of much of the disability rights community</li>
+      <li><strong>Specific diagnostic terms</strong> — used when discussing specific conditions: autism, ADHD, dyslexia, Down syndrome, and so on</li>
+    </ul>
+    <p>We have done our best to use respectful current language while remaining searchable and clear. Different families and individuals prefer different terms; please read with charity if your preferred term is not the one used in any given paragraph.</p>
+  </section>
+
+  <section id="what">
+    <h2><span class="roman">II.</span>What This Guide Covers, and What It Doesn't</h2>
+
+    <p class="lead">Before going further, a brief map of what is in this guide and what isn't.</p>
+
+    <h3>What this guide covers</h3>
+    <ul class="gentle">
+      <li>The history and tradition of <strong>curative education</strong> within the Waldorf and anthroposophical movement</li>
+      <li>The <strong>Camphill communities</strong> — the specialised Waldorf-rooted communities for people with significant disabilities</li>
+      <li>What <strong>mainstream Waldorf schools</strong> typically offer (and don't offer) in the way of learning support and accommodation</li>
+      <li>Common conditions — autism, ADHD, dyslexia, dyspraxia, sensory processing differences, Down syndrome — and what Waldorf tends to do well or less well for each</li>
+      <li>The <strong>Extra Lesson</strong> and other Waldorf therapeutic interventions</li>
+      <li>Honest concerns worth knowing about, including the vaccination question</li>
+      <li>Practical questions to ask before enrolling</li>
+      <li>Adapting Waldorf homeschooling for a neurodivergent child</li>
+      <li>Books, organisations, and where to find further help</li>
+    </ul>
+
+    <h3>What this guide is not</h3>
+    <ul class="gentle">
+      <li><strong>Not medical or therapeutic advice</strong> — only your child's doctor, therapist, or educational psychologist can advise on your particular situation</li>
+      <li><strong>Not a substitute for talking to actual Waldorf schools</strong> — schools vary enormously; visit and ask</li>
+      <li><strong>Not a comprehensive review of curative-education research</strong> — the academic literature is substantial and we point readers to it where relevant</li>
+      <li><strong>Not advocacy in either direction</strong> — we are trying to help you think clearly, not to recruit or dissuade you</li>
+    </ul>
+  </section>
+
+  <section id="curative">
+    <h2><span class="roman">III.</span>The Curative Education Tradition</h2>
+
+    <p class="lead">Few people outside the anthroposophical world know that Waldorf education has, from its earliest decades, included a substantial sister tradition specifically devoted to children with disabilities and learning differences. This tradition is called <strong>curative education</strong> (in German, <em>Heilpädagogik</em>), and it is one of the most distinctive and well-developed branches of the broader Waldorf movement.</p>
+
+    <h3>The origins</h3>
+
+    <p>Curative education was developed within the anthroposophical movement beginning in the 1920s, with Rudolf Steiner giving his Curative Education Course in 1924 — twelve lectures to a small group of educators and doctors working with children with significant disabilities. From this beginning, a worldwide movement grew. Today there are dozens of Waldorf-rooted specialist schools, day programmes, and residential communities serving children and adults with learning disabilities, autism, Down syndrome, complex medical needs, and a wide range of other conditions.</p>
+
+    <h3>The foundational idea</h3>
+
+    <p>The core principle of Waldorf curative education is, in Karl König's phrase, to <em>focus on the abilities of each person, not their disabilities</em>. The disability is not denied or minimised — it is taken seriously — but it is not allowed to become the whole story of the person. Each child is approached as a being with a unique destiny, with gifts to develop and capacities to bring out, however different from the typical their path may be.</p>
+
+    <p>This is not just a sentimental framing. It shapes everything about how curative education is practised: the use of art, music, eurythmy, and craft alongside academic work; the small intentional communities in which much of the work happens; the long-term relationships between teachers, therapists, and children; and the belief that meaningful work and contribution are essential to human dignity at every level of ability.</p>
+
+    <h3>Karl König and the Camphill movement</h3>
+
+    <p>The single most consequential figure in Waldorf curative education was <strong>Dr. Karl König</strong> (1902–1966), an Austrian paediatrician who, after fleeing Nazi-annexed Austria, founded the first Camphill community near Aberdeen, Scotland in 1939. König promised early in his career to <em>"dedicate my life to the care and education of these children"</em> — and he did. The Camphill movement he founded now includes more than 100 communities in over 20 countries.</p>
+
+    <p>König was also a prolific writer; his book <em>The Child with Special Needs</em> remains a foundational text. His insight that children with disabilities had been "cast out of society in a similar way" to refugees of war was both the philosophical and practical basis of the Camphill model: a community where everyone, of every ability, has a place and contributes.</p>
+  </section>
+
+  <section id="camphill">
+    <h2><span class="roman">IV.</span>Camphill Communities</h2>
+
+    <p class="lead">The Camphill movement is the most distinctive and substantial offering Waldorf education makes to families with significant special needs. It is not a school in the conventional sense — it is a <em>community</em>, a way of living, working, and learning together.</p>
+
+    <h3>What a Camphill community is</h3>
+
+    <p>A typical Camphill community is a residential village or campus where people with developmental and intellectual disabilities live alongside long-term coworkers, short-term volunteers, and staff. They share homes, meals, work, and daily life. Older Camphill communities for children include schools; communities for adults provide meaningful work in farming, gardening, crafts, food production, the arts, and community service. Some communities focus on children, others on young adults in transition, others on adult community living, others on elder care.</p>
+
+    <p>Daily life in a Camphill community is shaped by rhythm — meals together, work together, festivals through the year, eurythmy, art, music. The atmosphere is unhurried; the relationships are long-term; the work is real and meaningful for everyone, including residents with significant disabilities. A Camphill village is genuinely different from a typical institution — visiting one is the only way to fully grasp it.</p>
+
+    <h3>Who Camphill is designed for</h3>
+
+    <p>Camphill communities have historically served people with:</p>
+    <ul class="gentle">
+      <li>Intellectual and developmental disabilities of varying degrees</li>
+      <li>Autism, including those with significant support needs</li>
+      <li>Down syndrome</li>
+      <li>Complex multiple disabilities</li>
+      <li>Mental health conditions, particularly in some adult communities</li>
+      <li>Brain injury or other acquired neurological conditions</li>
+    </ul>
+
+    <p>Camphill is not generally designed for children with milder needs that can be met in a mainstream school. Its focus is on individuals for whom typical schooling does not work — children and adults who benefit from the immersive community life, the gentle rhythm, the meaningful work, and the deep long-term relationships Camphill offers.</p>
+
+    <h3>The model around the world</h3>
+
+    <p>Camphill communities exist in many countries:</p>
+    <ul class="gentle">
+      <li><strong>United Kingdom and Ireland</strong> — the original Camphill movement; numerous communities under the umbrella of <em>Camphill Communities UK and Ireland</em> and <em>Camphill Village Trust</em></li>
+      <li><strong>North America</strong> — communities under <em>Camphill Association of North America</em>; includes children's schools and adult communities</li>
+      <li><strong>Continental Europe</strong> — Germany, Austria, Switzerland, the Netherlands, Norway, and others, each with their own communities and associations</li>
+      <li><strong>Southern Africa</strong> — Camphill communities in South Africa, including some serving children and adults near Johannesburg and the Western Cape</li>
+      <li><strong>Other countries</strong> — Australia, India, Brazil, and many more</li>
+    </ul>
+
+    <p>The Karl König Institute and the Camphill foundations maintain directories of communities by country. Anyone seriously considering Camphill should visit several communities before making decisions; the differences between them are substantial.</p>
+
+    <div class="tender">
+      <strong>Camphill is not for every family</strong>
+      Camphill is a substantial commitment, often involving residential placement, distance from family, and a particular communal way of life that does not suit everyone. For families whose child can be supported in a less immersive setting, mainstream Waldorf schools, Waldorf-aligned homeschooling, or specialist mainstream provision may all be better paths. Camphill's genuine gift is for the families and individuals for whom no conventional path fits — and for whom an intentional community committed to dignity, meaningful work, and lifelong belonging is the right answer.
+    </div>
+  </section>
+
+  <section id="mainstream">
+    <h2><span class="roman">V.</span>Mainstream Waldorf Schools — What They Offer and What They Don't</h2>
+
+    <p class="lead">Most families considering Waldorf education for a child with special needs are not considering Camphill — they are considering a mainstream Waldorf school. Here the picture is more mixed, and honesty matters.</p>
+
+    <h3>What mainstream Waldorf schools tend to do well</h3>
+
+    <p>Many features of standard Waldorf education are genuinely well-suited to neurodivergent children:</p>
+
+    <ul class="gentle">
+      <li><strong>Multi-sensory, embodied learning.</strong> A child who struggles with abstract symbols on a page may flourish when arithmetic is taught through movement, story, painting, and the building of figures from beeswax. This approach helps many children with dyslexia, dyscalculia, and other learning differences</li>
+      <li><strong>Small class sizes.</strong> Most Waldorf classrooms are 15–25 children. Teachers know children deeply over years. A struggling child is less likely to be overlooked</li>
+      <li><strong>Long-term teacher relationships.</strong> The same class teacher for several years (in some schools, all eight grades) means the child does not have to start over each September with a teacher who doesn't know them</li>
+      <li><strong>Late academic pressure.</strong> Formal reading is not pushed before age six or seven, which means children who would have been labelled "behind" in mainstream kindergarten are simply still in the developmental window where Waldorf expects reading to emerge</li>
+      <li><strong>Strong sensory regulation through rhythm.</strong> The predictable daily and weekly rhythm of a Waldorf classroom genuinely supports children who struggle with transitions and unpredictability — many autistic children in particular benefit from this</li>
+      <li><strong>Substantial movement and outdoor time.</strong> Eurythmy, recess, walking, handwork, woodwork — Waldorf children are rarely sedentary for long. This supports children with ADHD and many sensory profiles</li>
+      <li><strong>No screens at school.</strong> The freedom from constant digital input is genuinely calming for many neurodivergent children</li>
+      <li><strong>Acceptance of slower pacing.</strong> A Waldorf classroom moves more slowly than a typical mainstream classroom; children who need more time often have it</li>
+      <li><strong>Specific therapeutic resources within the tradition.</strong> Eurythmy therapy, the Extra Lesson, anthroposophical medicine, and curative-educational approaches can be available where qualified practitioners exist</li>
+    </ul>
+
+    <h3>What mainstream Waldorf schools may not do well</h3>
+
+    <p>Equally honestly, there are real limits:</p>
+
+    <ul class="gentle">
+      <li><strong>Variable formal SEND or learning-support provision.</strong> Some Waldorf schools (particularly larger ones, and many in the UK and Europe) have dedicated learning-support staff with formal qualifications. Others have far less. Small Waldorf schools in particular may have no dedicated specialist on staff</li>
+      <li><strong>Less use of evidence-based interventions.</strong> The most rigorous evidence-based interventions for specific conditions — structured Orton-Gillingham literacy programmes for dyslexia, Applied Behaviour Analysis-derived interventions for autism (which are themselves controversial), specific ADHD medication management — are less likely to be offered within the Waldorf approach itself. Some Waldorf schools accommodate families seeking these alongside the Waldorf curriculum; others are uncomfortable with them</li>
+      <li><strong>Cultural ambivalence about diagnosis.</strong> The Waldorf approach tends to be wary of pathologising children through diagnostic labels. This is sometimes a gift — the child is not reduced to their diagnosis — and sometimes a problem, when a family needs the diagnosis to access services, accommodations, or interventions</li>
+      <li><strong>Less robust accommodations for medical needs.</strong> Children with significant medical needs (severe allergies, type 1 diabetes, complex medication regimens, mobility devices) may find Waldorf schools less equipped than larger institutions; this varies enormously</li>
+      <li><strong>Limited speech, occupational, and physical therapy access.</strong> Most Waldorf schools do not have these therapists on staff; families typically arrange them separately</li>
+      <li><strong>Limited capacity for severe behavioural needs.</strong> Children whose behaviour requires substantial specialised support (one-to-one aides, specialised behavioural intervention) may find that smaller Waldorf schools cannot accommodate this</li>
+    </ul>
+
+    <div class="honest">
+      <strong>The school you visit may be very different from the school down the road</strong>
+      Waldorf schools vary enormously in their special-needs capacity. Some have excellent dedicated learning support with qualified SENDCOs (Special Educational Needs and Disability Coordinators); some have none. Some Waldorf schools are genuinely well-equipped to support children with significant needs; others are not, and the children will not thrive there. The only way to know is to visit, ask very direct questions, and ideally speak to families whose children have similar profiles.
+    </div>
+  </section>
+
+  <section id="conditions">
+    <h2><span class="roman">VI.</span>Specific Conditions — Where Waldorf Tends to Help and Where It May Not</h2>
+
+    <p class="lead">A condition-by-condition look at how Waldorf education tends to suit (or not suit) some common situations. These are generalisations and your particular child's experience will depend on the specific school, teacher, and the child's particular profile.</p>
+
+    <div class="condition">
+      <h4>Autism (Autism Spectrum Disorder)</h4>
+      <p>Many autistic children do well in Waldorf classrooms, particularly those whose autism includes a preference for predictability, sensitivity to overstimulation, and an inner-directed quality that the Waldorf classroom tends to nurture rather than disrupt.</p>
+      <span class="label">What tends to help</span>
+      <ul>
+        <li>Strong predictable rhythm to the day, week, and year</li>
+        <li>Calm, low-stimulus classroom environment (natural materials, no fluorescent lights, no screens)</li>
+        <li>Long-term teacher relationships providing stability</li>
+        <li>Embodied, multi-sensory learning that suits many autistic learning profiles</li>
+        <li>Real interest in the child as an individual rather than as a diagnostic category</li>
+      </ul>
+      <span class="label">What may be more difficult</span>
+      <ul>
+        <li>Social-emotional curriculum heavy in storytelling and imagination may be challenging for some autistic students</li>
+        <li>Eurythmy and group movement work can be uncomfortable for some autistic children</li>
+        <li>Camphill is genuinely strong for autistic individuals with higher support needs; for autistic children with co-occurring intellectual disability, Camphill children's schools are often an excellent fit</li>
+        <li>For children needing structured behavioural intervention or intensive speech therapy, mainstream Waldorf schools usually do not provide this in-house</li>
+      </ul>
+    </div>
+
+    <div class="condition">
+      <h4>ADHD (Attention Deficit Hyperactivity Disorder)</h4>
+      <p>Many ADHD children flourish in Waldorf settings because of the high movement content of the day, the multi-sensory learning, the absence of screens, and the absence of pressure toward early sustained desk work.</p>
+      <span class="label">What tends to help</span>
+      <ul>
+        <li>Substantial daily movement — eurythmy, recess, handwork, walking, gardening</li>
+        <li>Multi-sensory learning that does not require long stretches of seated attention</li>
+        <li>Predictable rhythm reducing the anxious overhead of constant transitions</li>
+        <li>Hands-on craft, woodwork, and outdoor time</li>
+        <li>No screens means no constant dopamine-fragmenting digital stimulation during the school day</li>
+      </ul>
+      <span class="label">What may be more difficult</span>
+      <ul>
+        <li>Some Waldorf classrooms still ask for substantial seated attention during main lesson, which can be hard for some ADHD children</li>
+        <li>Cultural ambivalence about ADHD medication in some Waldorf communities — families using medication may feel unsupported in some settings; other Waldorf schools are entirely accepting</li>
+        <li>The long arc of main lesson blocks (3–4 weeks on one topic) suits some ADHD children beautifully and frustrates others</li>
+      </ul>
+    </div>
+
+    <div class="condition">
+      <h4>Dyslexia, Dysgraphia, Dyscalculia</h4>
+      <p>Specific learning differences in reading, writing, and arithmetic are well-served by some aspects of Waldorf education and less well-served by others. The picture is genuinely mixed.</p>
+      <span class="label">What tends to help</span>
+      <ul>
+        <li>Late introduction of formal reading means children whose reading emerges naturally at age 8 or 9 are not labelled "behind" in the early years</li>
+        <li>Form drawing, eurythmy, and the multi-sensory approach to letters and numbers genuinely support some children with dyslexia by building underlying movement and spatial foundations</li>
+        <li>Small classes mean teachers notice and respond to individual struggles</li>
+        <li>Strong oral and storytelling culture means children with reading difficulties can still engage richly with the curriculum's content</li>
+      </ul>
+      <span class="label">What may be more difficult</span>
+      <ul>
+        <li>The most evidence-based interventions for dyslexia — structured Orton-Gillingham, Wilson Reading, and similar programmes — are typically not part of the Waldorf approach. Families often arrange these privately alongside Waldorf school</li>
+        <li>By Class 5 or 6, the academic demands rise; a child whose dyslexia has not been addressed may struggle visibly here</li>
+        <li>Some Waldorf schools have learning-support staff trained specifically in dyslexia interventions; others do not — this is a critical question to ask of any prospective school</li>
+      </ul>
+    </div>
+
+    <div class="condition">
+      <h4>Sensory Processing Differences</h4>
+      <p>Children with sensory processing differences — whether under-responsive or over-responsive to sensory input — often do well in the natural, calm, low-stimulus environment of a Waldorf classroom.</p>
+      <span class="label">What tends to help</span>
+      <ul>
+        <li>Natural-material classrooms (wood, wool, silk, cotton, beeswax) feel different to a sensory-sensitive child than plastic-and-fluorescent mainstream classrooms</li>
+        <li>No screens means no flicker, no harsh sounds, no overwhelming digital stimulation</li>
+        <li>Substantial outdoor time and movement provides the regulating sensory input many children need</li>
+        <li>The calm tone of a Waldorf classroom is genuinely calmer than most mainstream classrooms — many sensory-sensitive children visibly relax in it</li>
+      </ul>
+      <span class="label">What may be more difficult</span>
+      <ul>
+        <li>Formal occupational therapy for sensory processing is rarely available in-house at a Waldorf school — families typically arrange this separately</li>
+        <li>Some sensory-rich Waldorf activities (handwork with wool, beeswax modelling, wet-on-wet painting) can be challenging for children with certain tactile sensitivities</li>
+        <li>Eurythmy and group circle work may be more or less suitable depending on the child's specific sensory profile</li>
+      </ul>
+    </div>
+
+    <div class="condition">
+      <h4>Down Syndrome and Intellectual Disabilities</h4>
+      <p>For children with significant intellectual disabilities — particularly Down syndrome and similar developmental conditions — the Camphill tradition and Waldorf curative education are genuinely substantial offerings. Mainstream Waldorf schools vary in their capacity to accommodate these children.</p>
+      <span class="label">Where to look</span>
+      <ul>
+        <li><strong>Camphill children's schools and communities</strong> are specifically designed for this population and have been since 1939. Where available regionally, they are often genuinely excellent</li>
+        <li><strong>Specialist Waldorf schools</strong> like the Tobiasschule in Bremen, Germany, serve children with intellectual and physical disabilities from first through twelfth grade with full anthroposophical curative education</li>
+        <li><strong>Some mainstream Waldorf schools</strong> have successfully included children with Down syndrome in their classrooms with appropriate one-to-one support; this depends entirely on the particular school, the available support, and the child's profile</li>
+      </ul>
+    </div>
+
+    <div class="condition">
+      <h4>Speech, Language &amp; Motor Differences</h4>
+      <p>Children with speech delays, language disorders, dyspraxia, or motor coordination difficulties often benefit from the Waldorf emphasis on movement, handwork, and embodied learning. The need for specific speech and occupational therapy services almost always means working with practitioners outside the school.</p>
+      <span class="label">What tends to help</span>
+      <ul>
+        <li>Eurythmy strengthens motor planning, midline crossing, and spatial awareness in ways genuinely helpful for many children with dyspraxia</li>
+        <li>Daily handwork builds fine motor skills patiently and beautifully</li>
+        <li>The oral storytelling and verse tradition provides rich language input</li>
+        <li>Form drawing supports many of the underlying motor capacities needed for writing</li>
+      </ul>
+    </div>
+
+    <div class="condition">
+      <h4>Mental Health, Anxiety, and Trauma-Affected Children</h4>
+      <p>Many parents bring children to Waldorf education specifically because their child has struggled with anxiety, school refusal, or has had a difficult time in mainstream school. The calm, slow, low-pressure Waldorf environment can be genuinely healing — but it is not therapy.</p>
+      <span class="label">What tends to help</span>
+      <ul>
+        <li>Calm, predictable, low-pressure school environment</li>
+        <li>Real teacher relationships rather than churning through impersonal classes</li>
+        <li>Substantial outdoor time and creative work — known to support wellbeing</li>
+        <li>No screen-based stress and social-media exposure during the school day</li>
+        <li>An ethos that treats the child as a whole person, not as a problem to be solved</li>
+      </ul>
+      <span class="label">What is not provided</span>
+      <ul>
+        <li>School-based mental health care, counselling, or psychiatric services — families arrange these separately</li>
+        <li>Trauma-informed therapy by trained therapists — same</li>
+        <li>Medication management — same</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="extralesson">
+    <h2><span class="roman">VII.</span>The Extra Lesson &amp; Other Waldorf Therapeutic Approaches</h2>
+
+    <p class="lead">Within the Waldorf tradition, several specific therapeutic interventions have developed for children who need support beyond what the standard classroom offers.</p>
+
+    <h3>The Extra Lesson</h3>
+
+    <p>The <strong>Extra Lesson</strong> is a Waldorf remedial approach developed by <strong>Audrey McAllen</strong> (1916–2008), an English teacher who worked extensively with children who struggled with learning. McAllen's book <em>The Extra Lesson</em> (1974, with subsequent editions) is the foundational text and is still widely used.</p>
+
+    <p>The approach works through specific exercises in movement, drawing, painting, and form work — designed to support the underlying developmental capacities that ease later academic learning. Practitioners assess a child for missing or incomplete developmental capacities (in balance, rhythm, midline crossing, spatial orientation, dominance, eye-tracking) and prescribe specific exercises to strengthen them.</p>
+
+    <p>Extra Lesson practitioners receive specialised training and are certified internationally. In the UK and parts of Europe and the US, Extra Lesson teachers work both within Waldorf schools and privately with homeschool families. The approach is used remedially for dyslexia, dyspraxia, dysgraphia, attention difficulties, and a range of other learning challenges.</p>
+
+    <h3>Eurythmy Therapy</h3>
+
+    <p>Eurythmy therapy — sometimes called curative eurythmy — is a therapeutic application of the Waldorf movement art, prescribed by an anthroposophical physician and given by a specially-trained eurythmy therapist. It uses specific gestures, repeated in particular ways, to address physical, emotional, and developmental conditions.</p>
+
+    <p>Used for a wide range of conditions including circulatory and rhythmic-system imbalances, sleep difficulties, anxiety, developmental challenges in children, and post-illness rehabilitation. Some peer-reviewed research has shown measurable effects on heart rate variability and other physiological markers, particularly through the University of Witten/Herdecke in Germany — though the broader scientific evidence base remains limited compared to mainstream therapies.</p>
+
+    <p>See our dedicated <em>Eurythmy in Waldorf Education</em> guide for fuller treatment.</p>
+
+    <h3>Anthroposophical Medicine</h3>
+
+    <p>Anthroposophical medicine is a tradition of complementary medicine developed alongside Waldorf education, combining conventional medical training with additional study of Steiner's medical lectures and anthroposophical approaches to health. Anthroposophical physicians are fully qualified medical doctors who have added this further specialisation.</p>
+
+    <p>Anthroposophical medicine offers approaches to chronic conditions, developmental concerns, and integrative care that some families find helpful alongside conventional medicine. As with any complementary approach, families should approach it thoughtfully and not abandon evidence-based medical care.</p>
+
+    <h3>Other approaches sometimes encountered in Waldorf settings</h3>
+    <ul class="gentle">
+      <li><strong>Bothmer Gymnastics</strong> — a movement-based therapeutic approach developed by Fritz von Bothmer for Waldorf schools</li>
+      <li><strong>Rhythmical Massage Therapy</strong> — a hands-on therapy developed by Ita Wegman</li>
+      <li><strong>Art Therapy</strong> — both anthroposophical and mainstream variants, often available through Waldorf-aligned practitioners</li>
+      <li><strong>Spacial Dynamics</strong> — movement-based therapeutic and educational work developed by Jaimen McMillan</li>
+    </ul>
+  </section>
+
+  <section id="concerns">
+    <h2><span class="roman">VIII.</span>Honest Concerns Worth Knowing About</h2>
+
+    <p class="lead">In keeping with our commitment to writing a guide that helps you think clearly rather than one that sells you a worldview, here are several concerns worth knowing about before enrolling a child with special needs in a Waldorf school or community.</p>
+
+    <h3>1. Vaccination rates in some Waldorf communities</h3>
+
+    <p>It is well-documented that some Waldorf communities have lower-than-average vaccination rates. This varies enormously by region and by school. For families with <strong>immunocompromised children</strong> — children on chemotherapy, with certain genetic conditions, organ transplant recipients, or those who cannot themselves be vaccinated for medical reasons — this is genuinely important information.</p>
+
+    <div class="honest">
+      <strong>What to do about this</strong>
+      Ask your prospective school directly about their vaccination policies, their actual vaccination rates if known, and their procedures during disease outbreaks. Some Waldorf schools have explicit vaccination requirements; others do not. Schools today often have policies that have shifted in recent years; do not assume the historical pattern still applies to the specific school you are considering. If your child is medically vulnerable, this question deserves clear answers before you enrol.
+    </div>
+
+    <h3>2. Cultural ambivalence about diagnosis and medication</h3>
+
+    <p>The Waldorf tradition tends to view conditions like ADHD through a developmental and constitutional lens rather than primarily as medical conditions. This is sometimes a gift; sometimes it creates real friction for families using diagnosis and medication. If your family is using ADHD medication, autism diagnosis for service access, or similar mainstream supports, ask the prospective school directly how they hold this. Some Waldorf schools are entirely supportive of medical management alongside Waldorf education; others are uncomfortable with it. You deserve to know which kind of school you are joining before you join.</p>
+
+    <h3>3. Inconsistent learning-support provision</h3>
+
+    <p>Some Waldorf schools have qualified SENDCOs (Special Educational Needs and Disability Coordinators), learning-support specialists, and formal inclusion programmes. Others have very little. <em>Do not assume</em> a Waldorf school has substantial learning-support provision just because Waldorf education has a curative education tradition. Ask specifically about staff qualifications, available accommodations, and the school's track record with children whose profile resembles your child's.</p>
+
+    <h3>4. The pressure to accept the Waldorf framing of your child</h3>
+
+    <p>In some Waldorf settings, particularly more traditional ones, a child's struggles may be framed in anthroposophical terms (constitutional pictures, the development of the etheric or astral body, particular planetary or temperamental tendencies). For many families this is welcome; for others — particularly those whose framework is medical, psychological, or simply pragmatic — it can feel like a worldview is being imposed alongside the education. Watch for whether your child's school holds their framing lightly alongside yours, or expects you to adopt theirs.</p>
+
+    <h3>5. Limits of evidence base for specific interventions</h3>
+
+    <p>The most evidence-based interventions for specific learning differences — structured literacy programmes for dyslexia, applied behavioural intervention for autism, executive-function coaching for ADHD — generally come from outside the Waldorf tradition. Eurythmy therapy and the Extra Lesson have some research support but a more limited evidence base than mainstream interventions. This does not mean these approaches don't work; it means a family should know what kind of evidence backs what they are choosing and may want to combine Waldorf approaches with evidence-based mainstream ones.</p>
+
+    <h3>6. Geographic limits</h3>
+
+    <p>The most substantial Waldorf special-needs provision — Camphill communities, specialist curative-education schools, qualified Extra Lesson practitioners, anthroposophical physicians — is unevenly distributed worldwide. Some regions have excellent provision; others have very little. A family in central Europe has options that a family in many parts of Africa, Asia, or the Americas simply does not. This is a real limit and worth knowing before you set your hopes on a specific path.</p>
+  </section>
+
+  <section id="questions">
+    <h2><span class="roman">IX.</span>Questions to Ask a Prospective School</h2>
+
+    <p class="lead">If you are seriously considering a particular Waldorf school for a child with special needs, the following questions are worth asking directly. A school's willingness to answer these clearly is itself important information.</p>
+
+    <div class="question-block">
+      <h4>Questions about formal provision</h4>
+      <ul>
+        <li>Do you have a dedicated learning-support specialist or SENDCO on staff? What are their qualifications?</li>
+        <li>How many children with [my child's profile] do you currently support, and how is that working?</li>
+        <li>Can we speak with families whose children have similar needs to ours?</li>
+        <li>What is your individual learning plan or accommodation process? Can we see an anonymised example?</li>
+        <li>Do you have an Extra Lesson teacher on staff or available? A eurythmy therapist? An occupational therapist?</li>
+        <li>What is your formal procedure if a child needs more support than the classroom can provide?</li>
+      </ul>
+    </div>
+
+    <div class="question-block">
+      <h4>Questions about culture and approach</h4>
+      <ul>
+        <li>How does the school approach diagnostic labels — autism, ADHD, dyslexia? Are these respected and used, or downplayed?</li>
+        <li>How do you support families who use medication, applied behavioural intervention, structured literacy programmes, or other mainstream interventions alongside Waldorf education?</li>
+        <li>What is the school's policy on vaccinations? What are the current rates? How are outbreaks handled?</li>
+        <li>How does the school handle bullying? What is the experience of children who are visibly different from their peers?</li>
+        <li>If our child needs to leave the school, what is your transition support like?</li>
+      </ul>
+    </div>
+
+    <div class="question-block">
+      <h4>Questions about your specific child</h4>
+      <ul>
+        <li>Having met our child, do you genuinely think this school can serve them well?</li>
+        <li>What concerns do you have about whether this would be a good fit?</li>
+        <li>If we proceed and it does not work, what would the signs be and what would happen next?</li>
+        <li>Will our child have access to specific accommodations they need (e.g. sensory breaks, scribe support, alternative seating, dietary considerations)?</li>
+      </ul>
+    </div>
+
+    <div class="tender">
+      <strong>How the school answers matters</strong>
+      A school that welcomes these questions with calm honesty — including acknowledgement of where it can't fully meet a child's needs — is probably a healthy school for your child. A school that becomes defensive, vague, or implies you are being a difficult parent for asking, is showing you something important about how it would treat your child. Trust your instincts here.
+    </div>
+  </section>
+
+  <section id="homeschool">
+    <h2><span class="roman">X.</span>Waldorf Homeschooling with a Neurodivergent Child</h2>
+
+    <p class="lead">For many families with neurodivergent children, Waldorf homeschooling — adapting the Waldorf approach for home use — is the most flexible and sustainable path. Here are some practical considerations.</p>
+
+    <h3>What works particularly well</h3>
+
+    <ul class="gentle">
+      <li><strong>Individualised pacing.</strong> The Waldorf homeschool can move at exactly the pace your child needs — slower in difficult areas, faster in areas of strength. This is genuinely freeing for neurodivergent children whose pace varies from the typical</li>
+      <li><strong>Sensory control.</strong> You control the home environment — the lights, the sounds, the textures, the smells. This is enormous for sensory-sensitive children</li>
+      <li><strong>Movement integration.</strong> A homeschool day can include far more movement than a classroom can — outdoor walks between subjects, handwork while listening, eurythmy in the living room. This serves ADHD and many movement-seeking children beautifully</li>
+      <li><strong>Combining approaches.</strong> Many homeschool families combine Waldorf-inspired main lessons with evidence-based literacy programmes (Orton-Gillingham, All About Reading), specialist occupational and speech therapy, ADHD medication management, and whatever else their child needs. This combination is often easier in a homeschool than in a school</li>
+      <li><strong>Reduced social demands.</strong> For children who struggle with the social load of classroom life, homeschool removes that pressure while still providing structured social experiences through co-ops, clubs, and chosen friendships</li>
+    </ul>
+
+    <h3>What requires extra thought</h3>
+
+    <ul class="gentle">
+      <li><strong>Specialist services.</strong> You will need to arrange any speech therapy, occupational therapy, behavioural intervention, or psychological assessment privately — these are not part of a homeschool</li>
+      <li><strong>Social opportunities.</strong> A neurodivergent child benefits from structured social experiences. Waldorf homeschool co-ops, parent-child classes, music ensembles, and chosen friendships matter</li>
+      <li><strong>Parental burnout.</strong> Homeschooling a neurodivergent child is genuinely demanding. The parent who does this needs their own support system — friendships, breaks, time off, recognition that this is hard work</li>
+      <li><strong>The form drawing, eurythmy, and movement components of Waldorf homeschool can be adapted for sensory profiles</strong> — but you may need help from an Extra Lesson teacher, eurythmy therapist, or occupational therapist to do this well</li>
+    </ul>
+
+    <h3>Useful resources for Waldorf homeschoolers</h3>
+    <ul class="gentle">
+      <li><strong>Oak Meadow</strong> — Waldorf-inspired homeschool curriculum that explicitly accommodates neurodivergent learners</li>
+      <li><strong>Christopherus Homeschool Resources</strong> — fuller Waldorf homeschool curriculum; some families adapt for neurodivergent children</li>
+      <li><strong>The Parenting Passageway (Carrie Dendtler)</strong> — substantial honest writing about Waldorf homeschooling with dyslexia, dyscalculia, and other learning differences</li>
+      <li><strong>Take Time</strong> by Mary Nash-Wortham &amp; Jean Hunt — exercises for children with learning difficulties, widely used in Waldorf homeschools</li>
+      <li><strong>Trained Extra Lesson practitioners</strong> in your region — many offer parent training so you can do exercises with your child at home</li>
+    </ul>
+  </section>
+
+  <section id="resources">
+    <h2><span class="roman">XI.</span>Books, Organisations &amp; Where to Find More</h2>
+
+    <p class="lead">A short, curated list of resources for families wanting to go deeper.</p>
+
+    <h3>Foundational books on Waldorf curative education</h3>
+    <ul class="gentle">
+      <li><strong>Karl König — <em>The Child with Special Needs: Letters and Essays on Curative Education</em></strong>. The foundational text of Waldorf curative education. Beautiful, philosophical, sometimes dense — but essential for understanding the tradition's view of disability</li>
+      <li><strong>Karl König — <em>Curative Education and Social Therapy</em></strong>. Companion volume; covers the social-therapy work with adults that grows out of curative education</li>
+      <li><strong>Thomas Weihs — <em>Children in Need of Special Care</em></strong>. Another founding Camphill figure; substantial treatment of the curative-education approach</li>
+      <li><strong>Rudolf Steiner — <em>Education for Special Needs: The Curative Education Course</em></strong>. The 1924 lectures that founded the tradition. Steiner's own words; dense but foundational</li>
+    </ul>
+
+    <h3>Books on specific approaches</h3>
+    <ul class="gentle">
+      <li><strong>Audrey McAllen — <em>The Extra Lesson</em></strong>. The foundational text on Waldorf remedial work; widely used by teachers, homeschool parents, and Extra Lesson practitioners worldwide</li>
+      <li><strong>Mary Nash-Wortham &amp; Jean Hunt — <em>Take Time</em></strong>. Practical movement exercises for children with learning difficulties</li>
+      <li><strong>Henning Köhler — <em>Working with Anxious, Nervous &amp; Depressed Children</em></strong>. A Waldorf perspective on children with significant emotional difficulties</li>
+      <li><strong>Henning Köhler — <em>Difficult Children: There Is No Such Thing</em></strong>. A passionate Waldorf rethinking of the "difficult child"</li>
+      <li><strong>Christof-Andreas Lindenberg — <em>Beethoven, Music and Curative Education</em></strong>. The role of music in the curative-education tradition</li>
+    </ul>
+
+    <h3>Books on Waldorf-friendly approaches to specific conditions</h3>
+    <ul class="gentle">
+      <li><strong>Nancy Mellon — <em>Storytelling with Children</em></strong>. Helpful for working with anxious or trauma-affected children through story</li>
+      <li><strong>Janene Ping &amp; many others — Waldorf early-childhood resources</strong>. The Waldorf early-childhood literature is rich in approaches that suit many neurodivergent young children</li>
+      <li><strong>Various — modern blog and book resources from the Waldorf homeschool community on dyslexia, ADHD, autism, and other conditions</strong></li>
+    </ul>
+
+    <h3>Organisations</h3>
+    <ul class="gentle">
+      <li><strong>Camphill Association of North America</strong> — <em>camphill.org</em>. Directory of Camphill communities in the US and Canada</li>
+      <li><strong>Camphill Communities UK and Ireland</strong> — directory and information for the British Isles</li>
+      <li><strong>Camphill Foundation</strong> — international supporting body</li>
+      <li><strong>Council for Inclusive Social Development (formerly Council for Anthroposophical Curative Education and Social Therapy)</strong> — international umbrella organisation; member organisations in 50+ countries</li>
+      <li><strong>Karl König Institute</strong> — <em>karlkoeniginstitute.org</em>. Research and publication on curative education</li>
+      <li><strong>The Extra Lesson Practitioners Association</strong> — international directory of certified practitioners</li>
+      <li><strong>Anthroposophic Medicine</strong> — physicians worldwide; directories through the International Federation of Anthroposophic Medical Associations</li>
+    </ul>
+
+    <h3>Where to find Camphill and curative-education provision</h3>
+    <ul class="gentle">
+      <li><strong>For Camphill in the UK and Ireland:</strong> camphill.org.uk, the Camphill Village Trust at cvt.org.uk</li>
+      <li><strong>For Camphill in North America:</strong> camphill.org</li>
+      <li><strong>For specialist Waldorf schools (curative-education schools):</strong> the Council for Inclusive Social Development directory; the European Waldorf umbrella organisations (ECSWE, individual national federations) often list specialist member schools</li>
+      <li><strong>For Southern Africa:</strong> the Federation of Camphill Communities South Africa has provision near Johannesburg and the Western Cape</li>
+      <li><strong>For Australia and New Zealand:</strong> Camphill Australia, Hohepa in New Zealand</li>
+    </ul>
+
+    <div class="pull-quote">
+      Every child has a place in the wider human community. The work of finding the right educational path is the work of finding the place that allows that child to flourish on their own terms — not on terms set by what other children are doing.
+    </div>
+
+    <p style="text-align:center; font-style:italic; color: var(--ink-faint); margin-top:32px;">May your search for the right path for your child be a clear and well-supported one.</p>
+  </section>
+
+  <footer>
+    <span class="ornament">✦</span>
+    A section of <em>The Waldorf Path Directory</em>
+    <span class="ornament">✦</span>
+  </footer>
+
+</div>
+
+</body>
+</html>

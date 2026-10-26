@@ -1,0 +1,44 @@
+name: Nightly Directory Rebuild
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild-directory:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch mentors from Teable and generate directory-mentors.json
+        env:
+          TEABLE_API_KEY: ${{ secrets.TEABLE_API_KEY }}
+        run: node scripts/generate-directory-mentors.js
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet public/directory-mentors.json; then
+            git add public/directory-mentors.json
+            git commit -m "chore: nightly rebuild of directory-mentors.json [skip ci]"
+            git push
+          else
+            echo "No changes to directory-mentors.json"
+          fi

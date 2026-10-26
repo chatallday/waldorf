@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 8 Main Lessons — The Waldorf Path Directory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f5ede0;
+    --paper-warm: #efe3cf;
+    --paper-deep: #e8d8bd;
+    --ink: #3b2a1a;
+    --ink-soft: #6b5840;
+    --ink-faint: #8a7558;
+    --rust: #a8492a;
+    --moss: #5a6b3f;
+    --wool: #b8a583;
+    --thread: #c8865f;
+    --shadow: rgba(59, 42, 26, 0.08);
+    --shadow-deep: rgba(59, 42, 26, 0.15);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 19px;
+    background-image:
+      radial-gradient(circle at 10% 20%, rgba(168, 73, 42, 0.04) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(90, 107, 63, 0.04) 0%, transparent 40%);
+    min-height: 100vh;
+  }
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    pointer-events: none; opacity: 0.4; z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.23 0 0 0 0 0.16 0 0 0 0 0.1 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .container {
+    max-width: 820px; margin: 0 auto;
+    padding: 60px 32px 100px;
+    position: relative; z-index: 1;
+  }
+  header {
+    text-align: center; margin-bottom: 56px;
+    padding-bottom: 36px; border-bottom: 1px solid var(--paper-deep);
+    position: relative;
+  }
+  header::after {
+    content: '✦'; position: absolute; bottom: -12px; left: 50%;
+    transform: translateX(-50%); background: var(--paper);
+    color: var(--wool); padding: 0 16px; font-size: 16px;
+  }
+  .eyebrow {
+    font-family: 'Caveat', cursive; font-size: 24px;
+    color: var(--rust); margin-bottom: 8px;
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 500;
+    font-size: clamp(40px, 6vw, 60px); line-height: 1.1;
+    color: var(--ink); margin-bottom: 16px;
+  }
+  .subtitle {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 22px; color: var(--ink-soft);
+    max-width: 580px; margin: 0 auto;
+  }
+  .breadcrumb {
+    text-align: center; margin-bottom: 24px;
+    font-family: 'Caveat', cursive; font-size: 18px;
+    color: var(--ink-faint);
+  }
+  .breadcrumb a { color: var(--rust); text-decoration: none; border-bottom: 1px dotted var(--wool); }
+  .breadcrumb a:hover { color: var(--ink); }
+  .toc {
+    background: var(--paper-warm); border: 1px solid var(--paper-deep);
+    border-radius: 4px; padding: 28px 36px;
+    margin-bottom: 56px; box-shadow: 0 2px 8px var(--shadow);
+  }
+  .toc-title {
+    font-family: 'Caveat', cursive; font-size: 22px;
+    color: var(--rust); margin-bottom: 12px;
+  }
+  .toc ol { list-style: none; counter-reset: toc-counter; }
+  .toc li {
+    counter-increment: toc-counter;
+    padding: 6px 0; border-bottom: 1px dotted var(--paper-deep);
+    display: flex; align-items: baseline;
+  }
+  .toc li:last-child { border-bottom: none; }
+  .toc li::before {
+    content: counter(toc-counter, upper-roman) ".";
+    color: var(--rust); font-weight: 600;
+    margin-right: 12px; min-width: 32px;
+    font-family: 'Cormorant Garamond', serif; font-size: 18px;
+  }
+  .toc a { color: var(--ink); text-decoration: none; flex: 1; font-size: 18px; }
+  .toc a:hover { color: var(--rust); }
+  section { margin-bottom: 64px; scroll-margin-top: 40px; }
+  h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: 34px; color: var(--rust);
+    margin-bottom: 18px; line-height: 1.2;
+  }
+  h2 .roman {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-weight: 400; color: var(--wool);
+    margin-right: 14px; font-size: 26px;
+  }
+  h3 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-style: italic; font-size: 23px;
+    color: var(--moss); margin-top: 30px; margin-bottom: 12px;
+  }
+  h4 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: 20px; color: var(--ink);
+    margin-top: 22px; margin-bottom: 10px;
+  }
+  p { margin-bottom: 16px; color: var(--ink); }
+  p.lead {
+    font-size: 21px; font-style: italic;
+    color: var(--ink-soft); line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  em { color: var(--ink-soft); }
+  strong { color: var(--ink); font-weight: 600; }
+  ul.gentle { list-style: none; margin: 14px 0 22px; }
+  ul.gentle li {
+    position: relative; padding-left: 26px;
+    margin-bottom: 10px; font-size: 17px; line-height: 1.6;
+  }
+  ul.gentle li::before {
+    content: '✦'; position: absolute; left: 4px;
+    color: var(--thread); top: 4px; font-size: 14px;
+  }
+  .block-card {
+    background: var(--paper-warm); border-left: 3px solid var(--thread);
+    border-radius: 0 4px 4px 0; padding: 22px 26px;
+    margin-bottom: 16px; box-shadow: 0 1px 4px var(--shadow);
+  }
+  .block-card h4 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: 21px; color: var(--rust); margin-top: 0; margin-bottom: 8px;
+  }
+  .block-card .meta {
+    font-family: 'Caveat', cursive; font-size: 18px;
+    color: var(--moss); margin-bottom: 10px;
+  }
+  .block-card p { font-size: 16.5px; color: var(--ink-soft); margin-bottom: 8px; }
+  .block-card p:last-child { margin-bottom: 0; }
+  .verse {
+    background: rgba(168, 73, 42, 0.05); border-left: 3px solid var(--rust);
+    padding: 22px 28px; margin: 24px 0;
+    border-radius: 0 4px 4px 0;
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 20px; line-height: 1.5; color: var(--ink);
+  }
+  .verse .attribution {
+    display: block; font-family: 'Caveat', cursive; font-style: normal;
+    font-size: 16px; color: var(--rust); margin-top: 10px;
+  }
+  .week-rhythm {
+    background: var(--paper-warm); border: 1px solid var(--paper-deep);
+    border-radius: 4px; padding: 22px 26px; margin: 22px 0;
+  }
+  .week-rhythm h4 {
+    font-family: 'Caveat', cursive; font-size: 22px;
+    color: var(--rust); margin-bottom: 12px; margin-top: 0;
+  }
+  .week-rhythm ul { list-style: none; }
+  .week-rhythm li {
+    padding: 6px 0; border-bottom: 1px dotted var(--paper-deep);
+    font-size: 16.5px;
+  }
+  .week-rhythm li:last-child { border-bottom: none; }
+  .week-rhythm li strong {
+    font-family: 'Cormorant Garamond', serif; color: var(--moss);
+    display: inline-block; min-width: 110px;
+  }
+  .mlb-example {
+    background: rgba(90, 107, 63, 0.05); border: 1px dashed var(--moss);
+    border-radius: 4px; padding: 20px 24px; margin: 20px 0;
+  }
+  .mlb-example h4 {
+    font-family: 'Caveat', cursive; font-size: 21px;
+    color: var(--moss); margin-top: 0; margin-bottom: 10px;
+  }
+  .mlb-example p { font-size: 16.5px; color: var(--ink-soft); margin-bottom: 8px; }
+  .pull-quote {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 23px; line-height: 1.4; color: var(--moss);
+    text-align: center; padding: 30px 24px; margin: 36px 0;
+    position: relative;
+    border-top: 1px solid var(--paper-deep); border-bottom: 1px solid var(--paper-deep);
+  }
+  .pull-quote::before {
+    content: '"'; font-size: 70px; color: var(--wool);
+    position: absolute; top: -8px; left: 24px; opacity: 0.4;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  /* Navigation footer between grade pages */
+  .grade-nav {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 50px; padding: 24px 0;
+    border-top: 2px solid var(--paper-deep);
+    font-family: 'Caveat', cursive; font-size: 20px;
+  }
+  .grade-nav a {
+    color: var(--rust); text-decoration: none;
+    display: flex; align-items: center; gap: 8px;
+    transition: color 0.2s;
+  }
+  .grade-nav a:hover { color: var(--ink); }
+  .grade-nav .spacer { color: var(--wool); }
+  footer {
+    text-align: center; padding-top: 40px; margin-top: 60px;
+    border-top: 1px solid var(--paper-deep);
+    color: var(--ink-faint); font-style: italic; font-size: 17px;
+  }
+  footer .ornament { color: var(--wool); margin: 0 12px; }
+  @media (max-width: 600px) {
+    body { font-size: 18px; }
+    .container { padding: 40px 22px 80px; }
+    h1 { font-size: 36px; }
+    h2 { font-size: 28px; }
+    h3 { font-size: 21px; }
+    .grade-nav { font-size: 17px; flex-wrap: wrap; gap: 12px; }
+  }
+  /* Landing-page-specific: grade tile grid */
+  .grade-tile-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px; margin: 28px 0;
+  }
+  .grade-tile {
+    background: var(--paper-warm); border: 1px solid var(--paper-deep);
+    border-radius: 4px; padding: 22px 24px;
+    text-decoration: none; color: var(--ink);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: block;
+  }
+  .grade-tile:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px var(--shadow-deep);
+    border-color: var(--rust);
+  }
+  .grade-tile .gt-label {
+    font-family: 'Caveat', cursive; font-size: 20px;
+    color: var(--rust); margin-bottom: 4px;
+  }
+  .grade-tile .gt-title {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: 22px; color: var(--ink); margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  .grade-tile .gt-feel {
+    font-style: italic; color: var(--moss);
+    font-size: 16px; line-height: 1.45;
+  }
+
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="breadcrumb"><a href="main-lesson-overview.html">~ The Main Lesson ~</a></div>
+    <div class="eyebrow">~ Class 8 · age 13–14 ~</div>
+    <h1>Class 8 — The Threshold of Adulthood</h1>
+    <p class="subtitle">The eighth-grader stands at the door of high school — thinking has matured enough for genuine depth</p>
+  </header>
+
+  <nav class="toc" aria-label="Table of contents">
+    <div class="toc-title">On this page</div>
+    <ol>
+      <li><a href="#overview">The Year at a Glance</a></li>
+      <li><a href="#blocks">The Main Lesson Blocks</a></li>
+      <li><a href="#rhythm">A Sample Weekly Rhythm</a></li>
+      <li><a href="#mlb">Main Lesson Book — Example Pages</a></li>
+      <li><a href="#verse">The Year's Morning Verse</a></li>
+      <li><a href="#books">Recommended Books</a></li>
+    </ol>
+  </nav>
+
+  <section id="overview">
+    <h2><span class="roman">I.</span>The Year at a Glance</h2>
+    <p class="lead">Inner gesture: <em>I am becoming an adult. I can take on real work, follow it through, and present it to the world.</em></p>
+    <p>Class 8 is the great closing chapter of the Waldorf grade-school journey. The student has nearly finished their time with the class teacher who has walked alongside them for eight years. They stand at the door of high school — and of adulthood. The curriculum honours this moment with serious, substantial work: modern history (the Industrial Revolution through the twentieth century), organic chemistry (the chemistry of life), physiology and anatomy, advanced algebra and geometry, the famous Class 8 play (usually a full Shakespeare), and the Class 8 Project — a substantial independent research project the student designs, researches, executes, and presents publicly. By the end of Class 8, the child of Class 1 has become a young person ready to take on the demands of high school.</p>
+  </section>
+
+  <section id="blocks">
+    <h2><span class="roman">II.</span>The Main Lesson Blocks</h2>
+    <p class="lead">These are the traditional Class 8 main lesson blocks. Schools vary in exactly which they teach and when, but the underlying pattern is consistent worldwide.</p>
+
+    <div class="block-card">
+      <h4>Modern History</h4>
+      <div class="meta">2 blocks · 3–4 weeks each</div>
+      <p>From the Industrial Revolution to the twentieth century — the rise of the modern world. Biographies of decisive figures: Watt and the steam engine, the abolitionists, Lincoln, Gandhi, the rise of democracy, the world wars, the civil rights movement. The block is rich, demanding, and meets the eighth-grader's growing sense of justice and historical awareness.</p>
+    </div>
+    <div class="block-card">
+      <h4>Organic Chemistry</h4>
+      <div class="meta">1 block · 3–4 weeks</div>
+      <p>The chemistry of life — sugars, starches, proteins, fats and oils, alcohols. Practical experiments: fermentation, the testing of sugars, the production of soap. Connected closely to the physiology of human nutrition. A culminating chemistry block.</p>
+    </div>
+    <div class="block-card">
+      <h4>Physics — Hydraulics, Aerodynamics, Electromagnetism</h4>
+      <div class="meta">1 block · 3–4 weeks</div>
+      <p>Forces and machines that shape the modern world — hydraulic systems, aerodynamics (flight), meteorology, and the deep meeting of electricity and magnetism (Faraday, Maxwell, the motor and generator). The block prepares the foundation for high school physics.</p>
+    </div>
+    <div class="block-card">
+      <h4>Anatomy</h4>
+      <div class="meta">1 block · 3–4 weeks</div>
+      <p>The bones, muscles, joints, and senses of the human body, in real anatomical depth. Skeletal drawings, the workings of the eye and ear, the lever-systems of the joints. A serious, substantial study that complements the Class 7 physiology block.</p>
+    </div>
+    <div class="block-card">
+      <h4>Advanced Algebra and Geometry</h4>
+      <div class="meta">runs through the year</div>
+      <p>Algebra deepened — quadratics, factoring, systems of equations. Geometry: the Pythagorean theorem proved and used, the platonic solids constructed and studied, the beginnings of trigonometry. Mathematics is now seriously academic, and the children are ready.</p>
+    </div>
+    <div class="block-card">
+      <h4>World Geography</h4>
+      <div class="meta">1 block</div>
+      <p>The whole earth now. Climate zones, ocean currents, the cultures of the world, global economics, environmental questions. The geography block closes the grade-school journey through the earth that began with the local map in Class 4.</p>
+    </div>
+    <div class="block-card">
+      <h4>The Class 8 Play</h4>
+      <div class="meta">rehearsed across several weeks, performed publicly</div>
+      <p>Usually a full Shakespeare production — A Midsummer Night's Dream, The Tempest, Twelfth Night. Performed over several evenings on a proper stage with full costumes, lights, and live music. The crown of the entire grade-school drama programme. (See the Class Play guide in the directory for more.)</p>
+    </div>
+    <div class="block-card">
+      <h4>The Class 8 Project</h4>
+      <div class="meta">individual; runs across many months · presented publicly</div>
+      <p>Each student designs and executes a substantial independent research project, usually presented publicly to the school at the end of the year. Projects range widely — building a kayak, learning to make traditional bread, mastering a musical instrument, studying a historical figure, learning to sew a whole garment. The Class 8 Project is the student's first piece of truly self-directed adult-style work, and it is one of the great rites of passage of Waldorf education.</p>
+    </div>
+  </section>
+
+  <section id="rhythm">
+    <h2><span class="roman">III.</span>A Sample Weekly Rhythm</h2>
+    <p class="lead">Within each block, the days of the week each have their own gentle character. Here is a sample rhythm a Class 8 teacher might keep.</p>
+
+    <div class="week-rhythm">
+      <h4>A typical week inside a Class 8 block</h4>
+      <ul>
+      <li><strong>Monday</strong> New material in the current block — substantial, demanding</li>
+      <li><strong>Tuesday</strong> Recall, in-depth writing, mathematical work</li>
+      <li><strong>Wednesday</strong> Practical observation or experiment; main lesson book deepens</li>
+      <li><strong>Thursday</strong> Algebra or geometry — formal mathematical work</li>
+      <li><strong>Friday</strong> Composition, presentation practice, project work; closing</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="mlb">
+    <h2><span class="roman">IV.</span>Main Lesson Book — Example Pages</h2>
+    <p class="lead">Each block produces its own hand-made book. Here are examples of what Class 8 children might draw and write into their main lesson books across the year.</p>
+
+    <ul class="gentle">
+      <li>A page on the steam engine — Watt's design carefully drawn, the principle of pressure and condensation explained.</li>
+      <li>A skeletal drawing of the human hand, each bone labelled in Latin, the small joints of the fingers shown clearly.</li>
+      <li>An organic chemistry page on fermentation — the chemical equation, a diagram of the apparatus, observations from the demonstration.</li>
+      <li>A Pythagorean theorem proof, drawn geometrically, with squares constructed on each side of the right triangle and shown to be equal.</li>
+      <li>A timeline of the twentieth century, with the major events placed against a horizontal axis and biographical portraits of key figures.</li>
+    </ul>
+  </section>
+
+  <section id="verse">
+    <h2><span class="roman">V.</span>The Year's Morning Verse</h2>
+    <p class="lead">Each Waldorf main lesson opens with a verse. In Classes 1–4 the children speak the verse for the younger grades, written by Rudolf Steiner; from Class 5 onward they speak the upper-grades verse.</p>
+
+    <div class="verse">
+      I look into the world<br>In which the sun is shining,<br>In which the stars are sparkling,<br>In which the stones repose;<br>Where living plants are growing,<br>Where sentient beasts are living,<br>Where man within his soul<br>Gives dwelling to the spirit;<br>I look into the soul<br>Which dwells within myself...
+      <span class="attribution">— The upper-grades morning verse, in its final year before high school</span>
+    </div>
+  </section>
+
+  <section id="books">
+    <h2><span class="roman">VI.</span>Recommended Books</h2>
+    <p class="lead">A small library of resources for teachers, homeschoolers, and curious parents.</p>
+
+    <ul class="gentle">
+      <li><strong>Charles Kovacs — <em>The Age of Revolution</em></strong> — Useful for the modern history block</li>
+      <li><strong>Eric Fairman — <em>A Path of Discovery, Vol. 8</em></strong> — Waldorf curriculum guide for Class 8</li>
+      <li><strong>Manfred von Mackensen — <em>A Phenomena-Based Physics, Vol. 3</em></strong> — For Class 8 physics — hydraulics, aerodynamics, electromagnetism</li>
+      <li><strong>Henning Köhler — <em>Working with Anxious, Nervous and Depressed Children</em></strong> — Useful background for working with the inner life of the adolescent</li>
+      <li><strong>Jamie York — <em>Making Math Meaningful: Grade 8 Sourcebook</em></strong> — For Class 8 mathematics</li>
+      <li><strong>A good Shakespeare edition — Folger or Arden series</strong> — For the Class 8 play</li>
+      <li><strong>Roy Wilkinson — <em>The Human Being and the Living Earth</em></strong> — Useful guide for the anatomy and physiology blocks</li>
+    </ul>
+  </section>
+
+  <nav class="grade-nav" aria-label="Grade navigation">
+    <a href="main-lesson-class-7.html">← Class 7</a>
+    <a href="main-lesson-overview.html">↑ Category index</a>
+    <span class="spacer">·</span>
+  </nav>
+
+<footer>
+  <span class="ornament">✦</span>
+  A section of <em>The Waldorf Path Directory</em>
+  <span class="ornament">✦</span>
+</footer>
+</div>
+</body>
+</html>

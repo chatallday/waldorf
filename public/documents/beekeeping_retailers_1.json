@@ -1,0 +1,222 @@
+{
+  "_meta": {
+    "description": "Online beekeeping equipment retailers, grouped for an international audience.",
+    "lastReviewed": "2026-06",
+    "disclaimer": "Shipping destinations, stock, and pricing change. Confirm current details on each retailer's site before relying on them.",
+    "fields": {
+      "shippingReach": "worldwide = ships globally | regional = ships within its continent/country group | domestic = mainly its home country | marketplace = global platform, varies by storefront/seller",
+      "shipsAcrossBorders": "convenience boolean for filtering to retailers that deliver outside their home country",
+      "sellsLiveBees": "whether the retailer sells live bees/queens; note these usually cannot be shipped across borders for biosecurity reasons",
+      "priceTier": "rough positioning: budget | mid | premium | varies"
+    }
+  },
+  "retailers": [
+    {
+      "id": "beebuilt",
+      "name": "BeeBuilt",
+      "url": "https://beebuilt.com/",
+      "region": "North America",
+      "homeCountry": "US",
+      "shippingReach": "worldwide",
+      "shipsAcrossBorders": true,
+      "sellsLiveBees": false,
+      "priceTier": "premium",
+      "specialties": ["Cedar Langstroth hives", "Natural beekeeping", "Worldwide shipping"]
+    },
+    {
+      "id": "mann-lake",
+      "name": "Mann Lake",
+      "url": "https://www.mannlakeltd.com/",
+      "region": "North America",
+      "homeCountry": "US",
+      "shippingReach": "domestic",
+      "shipsAcrossBorders": false,
+      "sellsLiveBees": true,
+      "priceTier": "mid",
+      "specialties": ["Largest US catalog", "Woodenware", "Tools", "Protective gear", "Live bees"]
+    },
+    {
+      "id": "dadant",
+      "name": "Dadant & Sons",
+      "url": "https://www.dadant.com/",
+      "region": "North America",
+      "homeCountry": "US",
+      "shippingReach": "domestic",
+      "shipsAcrossBorders": false,
+      "sellsLiveBees": true,
+      "priceTier": "mid",
+      "specialties": ["Full equipment range", "Education", "Extraction equipment", "Live bees"]
+    },
+    {
+      "id": "betterbee",
+      "name": "Betterbee",
+      "url": "https://www.betterbee.com/",
+      "region": "North America",
+      "homeCountry": "US",
+      "shippingReach": "domestic",
+      "shipsAcrossBorders": false,
+      "sellsLiveBees": true,
+      "priceTier": "mid",
+      "specialties": ["Beginner starter kits", "How-to guides", "Education"]
+    },
+    {
+      "id": "beekeepers-com",
+      "name": "Beekeepers.com",
+      "url": "https://beekeepers.com/",
+      "region": "North America",
+      "homeCountry": "US",
+      "shippingReach": "domestic",
+      "shipsAcrossBorders": false,
+      "sellsLiveBees": true,
+      "priceTier": "mid",
+      "specialties": ["Hives", "Package bees and nucs", "Extraction equipment", "Honey bottling"]
+    },
+    {
+      "id": "thorne",
+      "name": "E.H. Thorne",
+      "url": "https://www.thorne.co.uk/",
+      "region": "Europe",
+      "homeCountry": "GB",
+      "shippingReach": "regional",
+      "shipsAcrossBorders": true,
+      "sellsLiveBees": true,
+      "priceTier": "premium",
+      "specialties": ["Leading UK manufacturer", "Timber hives", "Tools", "Wax", "Over 100 years"]
+    },
+    {
+      "id": "maisemore",
+      "name": "Maisemore Apiaries (Bees Online)",
+      "url": "https://bees-online.co.uk/",
+      "region": "Europe",
+      "homeCountry": "GB",
+      "shippingReach": "regional",
+      "shipsAcrossBorders": true,
+      "sellsLiveBees": true,
+      "priceTier": "mid",
+      "specialties": ["Western red cedar hives", "Budget hive range", "Poly hives", "Jars and packaging"]
+    },
+    {
+      "id": "abelo",
+      "name": "Abelo",
+      "url": "https://www.abelo.co.uk/",
+      "region": "Europe",
+      "homeCountry": "GB",
+      "shippingReach": "regional",
+      "shipsAcrossBorders": true,
+      "sellsLiveBees": false,
+      "priceTier": "mid",
+      "specialties": ["Polystyrene Langstroth and National hives", "Equipment", "Lyson agent"]
+    },
+    {
+      "id": "bee-equipment-eu",
+      "name": "Bee Equipment",
+      "url": "https://www.beeequipment.eu/",
+      "region": "Europe",
+      "homeCountry": "CZ",
+      "shippingReach": "regional",
+      "shipsAcrossBorders": true,
+      "sellsLiveBees": false,
+      "priceTier": "varies",
+      "specialties": ["Hives", "Distributes German, French, Polish, Italian, Swiss brands", "Wholesale"]
+    },
+    {
+      "id": "ecrotek",
+      "name": "Ecrotek",
+      "url": "https://ecrotek.com.au/",
+      "region": "Oceania",
+      "homeCountry": "AU",
+      "alsoServes": ["NZ"],
+      "shippingReach": "regional",
+      "shipsAcrossBorders": false,
+      "sellsLiveBees": false,
+      "priceTier": "mid",
+      "specialties": ["Leading AU/NZ supplier", "Ready-to-go hives", "Tools", "Hive health", "Over 100 years"]
+    },
+    {
+      "id": "bee-ware",
+      "name": "Bee Ware",
+      "url": "https://beeware.co.za/",
+      "region": "Africa",
+      "homeCountry": "ZA",
+      "shippingReach": "domestic",
+      "shipsAcrossBorders": false,
+      "sellsLiveBees": false,
+      "priceTier": "mid",
+      "specialties": ["Langstroth and BeePak hives", "Bee suits", "Extractors", "Courses", "Centurion retail store"]
+    },
+    {
+      "id": "beequipmentsa",
+      "name": "BeeQuipmentSA",
+      "url": "https://www.beequip.co.za/",
+      "region": "Africa",
+      "homeCountry": "ZA",
+      "alsoServes": ["SADC"],
+      "shippingReach": "regional",
+      "shipsAcrossBorders": true,
+      "sellsLiveBees": false,
+      "priceTier": "mid",
+      "specialties": ["SA-made Langstroth hives", "Extraction equipment", "Tools designed for African conditions", "SADC shipping via agents"]
+    },
+    {
+      "id": "apiken",
+      "name": "Apiken",
+      "url": "https://apiken.co.ke/",
+      "region": "Africa",
+      "homeCountry": "KE",
+      "shippingReach": "domestic",
+      "shipsAcrossBorders": false,
+      "sellsLiveBees": false,
+      "priceTier": "budget",
+      "specialties": ["Bee suits", "Hives", "Honey harvesting and processing", "East Africa"]
+    },
+    {
+      "id": "african-beekeepers",
+      "name": "African Beekeepers Ltd",
+      "url": "https://www.africanbeekeepers.co.ke/",
+      "region": "Africa",
+      "homeCountry": "KE",
+      "alsoServes": ["East Africa"],
+      "shippingReach": "regional",
+      "shipsAcrossBorders": true,
+      "sellsLiveBees": false,
+      "priceTier": "mid",
+      "specialties": ["Modern beekeeping pioneer", "Langstroth hives", "Full kits", "Training", "Adapted to African bee"]
+    },
+    {
+      "id": "savannah-honey",
+      "name": "Savannah Honey Africa",
+      "url": "https://savannahhoneyafrica.com/",
+      "region": "Africa",
+      "homeCountry": "KE",
+      "shippingReach": "domestic",
+      "shipsAcrossBorders": false,
+      "sellsLiveBees": false,
+      "priceTier": "mid",
+      "specialties": ["Langstroth and Flow hives", "Full kits", "Queen rearing", "Training", "Nationwide delivery"]
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "url": "https://www.amazon.com/",
+      "region": "Global",
+      "homeCountry": null,
+      "shippingReach": "marketplace",
+      "shipsAcrossBorders": true,
+      "sellsLiveBees": false,
+      "priceTier": "varies",
+      "specialties": ["Broad range", "Starter kits", "Regional storefronts", "Fast delivery"]
+    },
+    {
+      "id": "ebay",
+      "name": "eBay",
+      "url": "https://www.ebay.com/",
+      "region": "Global",
+      "homeCountry": null,
+      "shippingReach": "marketplace",
+      "shipsAcrossBorders": true,
+      "sellsLiveBees": false,
+      "priceTier": "varies",
+      "specialties": ["New and used tools", "Hard-to-find items", "Regional storefronts"]
+    }
+  ]
+}

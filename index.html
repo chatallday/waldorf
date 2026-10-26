@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Waldorf Path — A Curated Directory for Waldorf Living</title>
+    <meta name="description" content="A curated directory for Waldorf living — find Waldorf schools, mentors, verses, curative education, handwork, crafts, and trusted makers, all in one place." />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="The Waldorf Path" />
+    <meta name="keywords" content="Waldorf, Waldorf education, Waldorf directory, Steiner education, Waldorf schools, Waldorf homeschool, Waldorf curriculum, Waldorf handwork, Waldorf verses, anthroposophy" />
+    <link rel="icon" type="image/png" href="/waldorf-favicon sq cutout.png" />
+    <link rel="apple-touch-icon" href="/waldorf-favicon sq cutout.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#FBF6EC" />
+    <link rel="canonical" href="https://thewaldorfpath.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="The Waldorf Path" />
+    <meta property="og:title" content="The Waldorf Path — A Curated Directory for Waldorf Living" />
+    <meta property="og:description" content="A curated directory for Waldorf living — find Waldorf schools, mentors, verses, curative education, handwork, crafts, and trusted makers, all in one place." />
+    <meta property="og:url" content="https://thewaldorfpath.com/" />
+    <meta property="og:image" content="/documents/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Waldorf Path — A Curated Directory for Waldorf Living" />
+    <meta name="twitter:description" content="A curated directory for Waldorf living — find Waldorf schools, mentors, verses, curative education, handwork, crafts, and trusted makers, all in one place." />
+    <meta name="twitter:image" content="/documents/og-image.jpg" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://thewaldorfpath.com/#org",
+          "name": "The Waldorf Path",
+          "url": "https://thewaldorfpath.com/",
+          "email": "thewaldorfpath@gmail.com",
+          "description": "A curated directory for Waldorf living — find Waldorf schools, mentors, verses, curative education, handwork, crafts, and trusted makers, all in one place.",
+          "logo": { "@type": "ImageObject", "url": "https://thewaldorfpath.com/assets/img/logo-circle.png" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://thewaldorfpath.com/#website",
+          "url": "https://thewaldorfpath.com/",
+          "name": "The Waldorf Path",
+          "description": "A curated directory for Waldorf living — find Waldorf schools, mentors, verses, curative education, handwork, crafts, and trusted makers, all in one place.",
+          "inLanguage": "en",
+          "publisher": { "@id": "https://thewaldorfpath.com/#org" }
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('ServiceWorker registration successful with scope: ', reg.scope))
+            .catch(err => console.warn('ServiceWorker registration failed: ', err));
+        });
+      }
+    </script>
+  </body>
+</html>

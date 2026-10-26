@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Waldorf Directory — English</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: #faf9f6; color: #2c2c2a; }
+.dir { max-width: 980px; margin: 0 auto; padding: 2rem 1.5rem; }
+.dir-header { text-align: center; padding: 2.5rem 1rem 2rem; border-bottom: 1px solid #d3d1c7; margin-bottom: 1.5rem; }
+.dir-header h1 { font-size: 30px; font-weight: normal; letter-spacing: 0.12em; color: #2c2c2a; }
+.dir-header p { font-size: 13px; color: #888780; margin-top: 8px; letter-spacing: 0.06em; }
+.nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2rem; justify-content: center; }
+.nav button { font-size: 13px; padding: 7px 16px; border-radius: 99px; border: 1px solid #b4b2a9; background: transparent; color: #5f5e5a; cursor: pointer; font-family: Georgia, serif; transition: all 0.15s; }
+.nav button:hover, .nav button.active { background: #2c2c2a; color: #faf9f6; border-color: #2c2c2a; }
+.section { display: none; }
+.section.active { display: block; }
+.sec-title { font-size: 22px; font-weight: normal; color: #2c2c2a; padding-bottom: 0.75rem; border-bottom: 1px solid #d3d1c7; letter-spacing: 0.03em; }
+.sec-sub { font-size: 13px; color: #888780; margin: 0.5rem 0 1.75rem; line-height: 1.6; }
+.divider { font-size: 11px; font-weight: bold; color: #b4b2a9; letter-spacing: 0.1em; text-transform: uppercase; margin: 2rem 0 1rem; padding-bottom: 5px; border-bottom: 1px solid #d3d1c7; }
+.season-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 16px; margin-bottom: 1.5rem; }
+.season-block { border-radius: 10px; border: 1px solid #d3d1c7; overflow: hidden; }
+.season-head { padding: 10px 16px; font-size: 13px; font-weight: bold; letter-spacing: 0.04em; }
+.s-spring .season-head { background: #c0dd97; color: #27500a; }
+.s-summer .season-head { background: #fac775; color: #633806; }
+.s-autumn .season-head { background: #f5c4b3; color: #712b13; }
+.s-winter .season-head { background: #b5d4f4; color: #0c447c; }
+.s-daily .season-head { background: #cecbf6; color: #3c3489; }
+.s-folk .season-head { background: #9fe1cb; color: #085041; }
+.season-body { padding: 10px 16px; background: #fff; }
+.song-item { font-size: 12.5px; color: #5f5e5a; line-height: 1.85; display: flex; align-items: baseline; gap: 8px; border-bottom: 1px solid #f1efe8; }
+.song-item:last-child { border-bottom: none; }
+.song-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; margin-top: 8px; }
+.s-spring .song-dot { background: #639922; }
+.s-summer .song-dot { background: #ba7517; }
+.s-autumn .song-dot { background: #d85a30; }
+.s-winter .song-dot { background: #185fa5; }
+.s-daily .song-dot { background: #7f77dd; }
+.s-folk .song-dot { background: #1d9e75; }
+.tip { background: #f1efe8; border-radius: 8px; padding: 1rem 1.25rem; font-size: 13px; color: #5f5e5a; line-height: 1.7; margin-bottom: 2rem; font-style: italic; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; margin-bottom: 2rem; }
+.card { background: #fff; border: 1px solid #d3d1c7; border-radius: 10px; padding: 1.1rem 1.25rem; }
+.card-tag { font-size: 11px; padding: 3px 9px; border-radius: 99px; display: inline-block; margin-bottom: 8px; font-weight: bold; letter-spacing: 0.04em; }
+.tag-green { background: #c0dd97; color: #27500a; }
+.tag-purple { background: #cecbf6; color: #3c3489; }
+.tag-amber { background: #fac775; color: #633806; }
+.tag-coral { background: #f5c4b3; color: #712b13; }
+.tag-blue { background: #b5d4f4; color: #0c447c; }
+.tag-teal { background: #9fe1cb; color: #085041; }
+.card h3 { font-size: 16px; font-weight: normal; color: #2c2c2a; margin-bottom: 3px; }
+.card .author { font-size: 12px; color: #888780; margin-bottom: 8px; font-style: italic; }
+.card p { font-size: 13px; color: #5f5e5a; line-height: 1.6; }
+.card ul { margin-top: 8px; }
+.card ul li { font-size: 12px; color: #5f5e5a; line-height: 1.9; list-style: none; padding-left: 14px; position: relative; }
+.card ul li::before { content: '—'; position: absolute; left: 0; color: #b4b2a9; }
+.book-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 2rem; }
+.book-item { background: #fff; border: 1px solid #d3d1c7; border-radius: 8px; padding: 1rem 1.25rem; display: flex; gap: 14px; align-items: flex-start; }
+.book-icon { font-size: 15px; flex-shrink: 0; width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+.bi-g { background: #c0dd97; color: #27500a; }
+.bi-a { background: #fac775; color: #633806; }
+.bi-s { background: #9fe1cb; color: #085041; }
+.bi-p { background: #cecbf6; color: #3c3489; }
+.book-info h4 { font-size: 14px; font-weight: bold; color: #2c2c2a; }
+.book-info .meta { font-size: 12px; color: #888780; margin-top: 4px; line-height: 1.55; }
+.link-list a { font-size: 13px; color: #185fa5; display: block; line-height: 2.2; text-decoration: none; border-bottom: 1px solid #f1efe8; padding-left: 8px; }
+.link-list a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="dir">
+<div class="dir-header">
+<h1>THE WALDORF DIRECTORY</h1>
+<p>Circle Songs  ·  Songbooks  ·  Authors  ·  Children's Books  ·  Adult Reading  ·  Resources</p>
+<p style="margin-top:6px; font-size:12px; color:#b4b2a9;">English-language Waldorf community — UK  ·  North America  ·  Australia  ·  New Zealand</p>
+</div>
+<div class="nav">
+<button class="active" onclick="show('circle',event)">Circle Songs</button>
+<button onclick="show('songbooks',event)">Songbooks</button>
+<button onclick="show('authors',event)">Authors</button>
+<button onclick="show('children',event)">Children's Books</button>
+<button onclick="show('adults',event)">For Adults</button>
+<button onclick="show('resources',event)">Resources</button>
+</div>
+<!-- ══════════════════════════ CIRCLE SONGS ══════════════════════════ -->
+<div class="section active" id="circle">
+<div class="sec-title">Waldorf Circle Songs &amp; Verses</div>
+<p class="sec-sub">Over 130 pentatonic songs, circle games, finger plays and movement verses used in English-speaking Waldorf kindergartens — organised by season, time of day and festival. Up to 30 titles per section.</p>
+<div class="season-grid">
+<div class="season-block s-spring">
+<div class="season-head">🌸 Spring</div>
+<div class="season-body">
+<div class="song-item"><span class="song-dot"></span>In the springtime, little bunnies go hop hop</div>
+<div class="song-item"><span class="song-dot"></span>In the spring the farmer planted seeds</div>
+<div class="song-item"><span class="song-dot"></span>The farmer awoke at the break of day</div>
+<div class="song-item"><span class="song-dot"></span>Little seed, little seed, sleeping in the ground</div>
+<div class="song-item"><span class="song-dot"></span>A little sun, a little shower, a little wait… a flower!</div>
+<div class="song-item"><span class="song-dot"></span>Brother, come and dance with me</div>
+<div class="song-item"><span class="song-dot"></span>Robin Redbreast (fingerplay)</div>
+<div class="song-item"><span class="song-dot"></span>The cuckoo calls across the hill</div>
+<div class="song-item"><span class="song-dot"></span>Slowly, slowly, very slowly creeps the little snail</div>
+<div class="song-item"><span class="song-dot"></span>Quickly, quickly, very quickly runs the little mouse</div>
+<div class="song-item"><span class="song-dot"></span>Little Jackie climbs a tree</div>
+<div class="song-item"><span class="song-dot"></span>In the spring the bluebirds come</div>
+<div class="song-item"><span class="song-dot"></span>Bee, little bee, fly to the flower</div>
+<div class="song-item"><span class="song-dot"></span>The daffodil stands in the morning light</div>
+<div class="song-item"><span class="song-dot"></span>Ladybird, ladybird, fly away home</div>
+<div class="song-item"><span class="song-dot"></span>Easter bunny, where are you hiding?</div>
+<div class="song-item"><span class="song-dot"></span>Little frog upon the pond</div>
+<div class="song-item"><span class="song-dot"></span>Rain, rain, come today</div>
+<div class="song-item"><span class="song-dot"></span>The rainbow's colours, one by one</div>
+<div class="song-item"><span class="song-dot"></span>Oh what a beautiful morning (opening circle)</div>
+<div class="song-item"><span class="song-dot"></span>This is the way we plant our seeds</div>
+<div class="song-item"><span class="song-dot"></span>Mud, mud, glorious mud</div>
+<div class="song-item"><span class="song-dot"></span>Butterfly, butterfly, where will you go?</div>
+<div class="song-item"><span class="song-dot"></span>Little robin in the tree</div>
+<div class="song-item"><span class="song-dot"></span>Washing day (finger play)</div>
+<div class="song-item"><span class="song-dot"></span>Ring around the rosy</div>
+<div class="song-item"><span class="song-dot"></span>The garden is waking (movement song)</div>
+<div class="song-item"><span class="song-dot"></span>This little pig went to market</div>
+<div class="song-item"><span class="song-dot"></span>Here we go gathering nuts in May</div>
+<div class="song-item"><span class="song-dot"></span>I had a little nut tree</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<div class="season-block s-summer">
+<div class="season-head">☀️ Summer / Midsummer / St John's</div>
+<div class="season-body">
+<div class="song-item"><span class="song-dot"></span>In our summer garden where we singing go</div>
+<div class="song-item"><span class="song-dot"></span>The sun is shining, the sky is blue</div>
+<div class="song-item"><span class="song-dot"></span>I'm Bounda, I'm Bounda the kangaroo</div>
+<div class="song-item"><span class="song-dot"></span>The farmer harvests, one two three</div>
+<div class="song-item"><span class="song-dot"></span>Midsummer fire is burning bright</div>
+<div class="song-item"><span class="song-dot"></span>The miller grinds the golden corn</div>
+<div class="song-item"><span class="song-dot"></span>Row, row, row your boat</div>
+<div class="song-item"><span class="song-dot"></span>The bee hums in the summer flowers</div>
+<div class="song-item"><span class="song-dot"></span>What shall we do on a summer's day?</div>
+<div class="song-item"><span class="song-dot"></span>The dragonfly shimmers over the pond</div>
+<div class="song-item"><span class="song-dot"></span>Stars above me in the night</div>
+<div class="song-item"><span class="song-dot"></span>Barefoot in the morning dew</div>
+<div class="song-item"><span class="song-dot"></span>Strawberry red and blueberry blue</div>
+<div class="song-item"><span class="song-dot"></span>The sunflower stands so tall</div>
+<div class="song-item"><span class="song-dot"></span>All around the mulberry bush</div>
+<div class="song-item"><span class="song-dot"></span>She'll be coming round the mountain</div>
+<div class="song-item"><span class="song-dot"></span>The woodcutter chops his tree</div>
+<div class="song-item"><span class="song-dot"></span>Bread and butter, bread and butter (baking song)</div>
+<div class="song-item"><span class="song-dot"></span>The shepherd watches on the hill</div>
+<div class="song-item"><span class="song-dot"></span>Firefly, firefly, light my way</div>
+<div class="song-item"><span class="song-dot"></span>Little waves upon the sea</div>
+<div class="song-item"><span class="song-dot"></span>Peas, beans and barley grow</div>
+<div class="song-item"><span class="song-dot"></span>Summer's golden, warm and bright</div>
+<div class="song-item"><span class="song-dot"></span>The rainbow fairy flies above</div>
+<div class="song-item"><span class="song-dot"></span>Haying time is here again</div>
+<div class="song-item"><span class="song-dot"></span>We plough the fields and scatter (harvest intro)</div>
+<div class="song-item"><span class="song-dot"></span>The butterfly dances from flower to flower</div>
+<div class="song-item"><span class="song-dot"></span>Sailing, sailing over the waves</div>
+<div class="song-item"><span class="song-dot"></span>This is the way the horses ride</div>
+<div class="song-item"><span class="song-dot"></span>The tide comes in, the tide goes out</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<div class="season-block s-autumn">
+<div class="season-head">🍂 Autumn / Michaelmas / Martinmas</div>
+<div class="season-body">
+<div class="song-item"><span class="song-dot"></span>Autumn leaves are falling down, welcome autumn</div>
+<div class="song-item"><span class="song-dot"></span>Come little leaves, said the wind one day</div>
+<div class="song-item"><span class="song-dot"></span>Yellow the bracken, golden the sheaves</div>
+<div class="song-item"><span class="song-dot"></span>Autumn is here and the world goes round</div>
+<div class="song-item"><span class="song-dot"></span>Goodbye autumn, goodbye autumn!</div>
+<div class="song-item"><span class="song-dot"></span>Here stands the apple tree, strong and green</div>
+<div class="song-item"><span class="song-dot"></span>Way up high in the apple tree (harvest)</div>
+<div class="song-item"><span class="song-dot"></span>The woodchopper's song</div>
+<div class="song-item"><span class="song-dot"></span>March of the gnomes (Ho ho ho)</div>
+<div class="song-item"><span class="song-dot"></span>The gnome is hammering stone and rock</div>
+<div class="song-item"><span class="song-dot"></span>The squirrel gathers nuts for winter</div>
+<div class="song-item"><span class="song-dot"></span>Wind, wind, blowing through the trees</div>
+<div class="song-item"><span class="song-dot"></span>The harvest is gathered, the barns are full</div>
+<div class="song-item"><span class="song-dot"></span>Five little leaves so bright and gay (fingerplay)</div>
+<div class="song-item"><span class="song-dot"></span>All the leaves are falling down</div>
+<div class="song-item"><span class="song-dot"></span>Let's go walking through the woods this windy autumn day</div>
+<div class="song-item"><span class="song-dot"></span>Mists begin to rule the day</div>
+<div class="song-item"><span class="song-dot"></span>Glimmer, lantern, glimmer (Martinmas)</div>
+<div class="song-item"><span class="song-dot"></span>I go with my bright little lantern</div>
+<div class="song-item"><span class="song-dot"></span>The lantern song (Waldorf Martinmas)</div>
+<div class="song-item"><span class="song-dot"></span>Round and round the lantern goes</div>
+<div class="song-item"><span class="song-dot"></span>Saint Martin rides through snow and wind</div>
+<div class="song-item"><span class="song-dot"></span>Jack-o-lantern, Jack-o-lantern, funny sight</div>
+<div class="song-item"><span class="song-dot"></span>Rise up O flame (Martinmas candle)</div>
+<div class="song-item"><span class="song-dot"></span>The scarecrow stands in the autumn field</div>
+<div class="song-item"><span class="song-dot"></span>Pumpkin, pumpkin, round and fat</div>
+<div class="song-item"><span class="song-dot"></span>The hedgehog curls into a ball</div>
+<div class="song-item"><span class="song-dot"></span>Michael and the dragon (Michaelmas)</div>
+<div class="song-item"><span class="song-dot"></span>The warrior brave with his shining sword</div>
+<div class="song-item"><span class="song-dot"></span>Autumn winds are sighing</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<div class="season-block s-winter">
+<div class="season-head">❄️ Winter / Advent / Christmas / Epiphany</div>
+<div class="season-body">
+<div class="song-item"><span class="song-dot"></span>Five tall candles stand in a row (Advent fingerplay)</div>
+<div class="song-item"><span class="song-dot"></span>Chickadee! Chickadee! Chick-a-dee-dee-dee!</div>
+<div class="song-item"><span class="song-dot"></span>Advent, Advent, one candle glows</div>
+<div class="song-item"><span class="song-dot"></span>The gnomes are hammering underground</div>
+<div class="song-item"><span class="song-dot"></span>Silent night, holy night</div>
+<div class="song-item"><span class="song-dot"></span>O Christmas tree, O Christmas tree</div>
+<div class="song-item"><span class="song-dot"></span>In the bleak midwinter</div>
+<div class="song-item"><span class="song-dot"></span>Away in a manger</div>
+<div class="song-item"><span class="song-dot"></span>We three kings of Orient are</div>
+<div class="song-item"><span class="song-dot"></span>The holly and the ivy</div>
+<div class="song-item"><span class="song-dot"></span>Deck the halls with boughs of holly</div>
+<div class="song-item"><span class="song-dot"></span>Snow is falling, soft and white</div>
+<div class="song-item"><span class="song-dot"></span>The snowflake song</div>
+<div class="song-item"><span class="song-dot"></span>Come to the stable, the ox and the ass</div>
+<div class="song-item"><span class="song-dot"></span>The star shines bright on Christmas night</div>
+<div class="song-item"><span class="song-dot"></span>Jingle bells (movement song)</div>
+<div class="song-item"><span class="song-dot"></span>Here comes the winter gnome</div>
+<div class="song-item"><span class="song-dot"></span>The little donkey (Advent)</div>
+<div class="song-item"><span class="song-dot"></span>Mary had a little lamb (winter)</div>
+<div class="song-item"><span class="song-dot"></span>The shepherd watches on the hillside</div>
+<div class="song-item"><span class="song-dot"></span>Hark, the herald angels sing</div>
+<div class="song-item"><span class="song-dot"></span>Good King Wenceslas (Epiphany)</div>
+<div class="song-item"><span class="song-dot"></span>The robin in the winter snow</div>
+<div class="song-item"><span class="song-dot"></span>Twelve days of Christmas (circle game)</div>
+<div class="song-item"><span class="song-dot"></span>The icicle hangs from the eave</div>
+<div class="song-item"><span class="song-dot"></span>Winter is here, the world sleeps below</div>
+<div class="song-item"><span class="song-dot"></span>We wish you a merry Christmas</div>
+<div class="song-item"><span class="song-dot"></span>The fox went out on a winter night</div>
+<div class="song-item"><span class="song-dot"></span>Little star of Bethlehem</div>
+<div class="song-item"><span class="song-dot"></span>Stir-up Sunday (baking song)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<div class="season-block s-daily">
+<div class="season-head">🌅 Morning, Evening &amp; Daily</div>
+<div class="season-body">
+<div class="song-item"><span class="song-dot"></span>Good morning dear earth, good morning dear sun</div>
+<div class="song-item"><span class="song-dot"></span>Morning has broken (Cat Stevens / traditional)</div>
+<div class="song-item"><span class="song-dot"></span>Here's my hand, give yours to me</div>
+<div class="song-item"><span class="song-dot"></span>Come to the circle where dreams are found</div>
+<div class="song-item"><span class="song-dot"></span>Earth who gives us all this food (mealtime blessing)</div>
+<div class="song-item"><span class="song-dot"></span>The golden sun is shining bright</div>
+<div class="song-item"><span class="song-dot"></span>Twinkle twinkle little star</div>
+<div class="song-item"><span class="song-dot"></span>Now the day is done (evening)</div>
+<div class="song-item"><span class="song-dot"></span>The moon is my sister, the sun is my brother</div>
+<div class="song-item"><span class="song-dot"></span>Our hearts open wide, light streams inside</div>
+<div class="song-item"><span class="song-dot"></span>Goodnight song (circle close)</div>
+<div class="song-item"><span class="song-dot"></span>Tidy up, tidy up, all our toys away</div>
+<div class="song-item"><span class="song-dot"></span>Washing hands before we eat</div>
+<div class="song-item"><span class="song-dot"></span>Bread and butter, eat it up</div>
+<div class="song-item"><span class="song-dot"></span>Hush little baby, don't say a word</div>
+<div class="song-item"><span class="song-dot"></span>Father Sun, will you lend me a lantern?</div>
+<div class="song-item"><span class="song-dot"></span>Sleep sound in the night (lullaby)</div>
+<div class="song-item"><span class="song-dot"></span>To the bridge and through the gate (walk song)</div>
+<div class="song-item"><span class="song-dot"></span>Birthday child, we sing for you</div>
+<div class="song-item"><span class="song-dot"></span>Goodbye song (end of day)</div>
+</div>
+</div>
+<div class="season-block s-folk">
+<div class="season-head">🎵 Folk Songs &amp; Year-Round Circles</div>
+<div class="season-body">
+<div class="song-item"><span class="song-dot"></span>The farmer takes a wife (circle game)</div>
+<div class="song-item"><span class="song-dot"></span>Here we go Looby Loo</div>
+<div class="song-item"><span class="song-dot"></span>The hokey cokey / hokey pokey</div>
+<div class="song-item"><span class="song-dot"></span>Oats, peas, beans and barley grow</div>
+<div class="song-item"><span class="song-dot"></span>London Bridge is falling down</div>
+<div class="song-item"><span class="song-dot"></span>The mulberry bush (circle)</div>
+<div class="song-item"><span class="song-dot"></span>Here we go round the prickly pear</div>
+<div class="song-item"><span class="song-dot"></span>This is the way we wash our clothes</div>
+<div class="song-item"><span class="song-dot"></span>Old King Cole (traditional)</div>
+<div class="song-item"><span class="song-dot"></span>Baa baa black sheep</div>
+<div class="song-item"><span class="song-dot"></span>Humpty Dumpty sat on a wall</div>
+<div class="song-item"><span class="song-dot"></span>Jack and Jill went up the hill</div>
+<div class="song-item"><span class="song-dot"></span>Incy wincy spider</div>
+<div class="song-item"><span class="song-dot"></span>Five little ducks</div>
+<div class="song-item"><span class="song-dot"></span>The wheels on the bus (movement)</div>
+<div class="song-item"><span class="song-dot"></span>What shall we do with a drunken sailor</div>
+<div class="song-item"><span class="song-dot"></span>I know an old woman who swallowed a fly</div>
+<div class="song-item"><span class="song-dot"></span>Scarborough Fair (rounds, Grade 4+)</div>
+<div class="song-item"><span class="song-dot"></span>Sumer is icumen in (medieval round)</div>
+<div class="song-item"><span class="song-dot"></span>Dona nobis pacem (canon)</div>
+<div class="song-item"><span class="song-dot"></span>Rose, rose (Waldorf round)</div>
+<div class="song-item"><span class="song-dot"></span>Music alone shall live (round)</div>
+<div class="song-item"><span class="song-dot"></span>Frère Jacques (bilingual round)</div>
+<div class="song-item"><span class="song-dot"></span>Shalom chaverin (farewell round)</div>
+<div class="song-item"><span class="song-dot"></span>Auld lang syne (New Year)</div>
+</div>
+</div>
+</div>
+<div class="tip">All songs in the Waldorf kindergarten are pentatonic, sung in the "mood of the fifth." Rudolf Steiner recommended the pentatonic scale for the first seven years, as it gives the young child an open, boundless musical space — free from the tonal gravity of major and minor keys. The seasonal nature table accompanies each song cycle through the year.</div>
+</div>
+<!-- ══════════════════════════ SONGBOOKS ══════════════════════════ -->
+<div class="section" id="songbooks">
+<div class="sec-title">Songbooks &amp; Musical Resources</div>
+<p class="sec-sub">The most important English-language songbooks, collections and circle time resources for Waldorf kindergartens and home education</p>
+<div class="divider">Essential Circle Time Collections</div>
+<div class="book-list">
+<div class="book-item"><div class="book-icon bi-s">♪</div><div class="book-info"><h4>A Child's Seasonal Treasury</h4><div class="meta">Betty Jones · widely regarded as the #1 go-to resource for Waldorf circle time · songs, movement games, fingerplays, crafts and recipes organised by season · morning songs, goodbye songs and mealtime blessings</div></div></div>
+<div class="book-item"><div class="book-icon bi-s">♪</div><div class="book-info"><h4>Let Us Form a Ring (Acorn Hill Anthology)</h4><div class="meta">Nancy Foster · WECAN Books · complete circle times including the orchard circle · also includes Dancing As We Sing (spring and summer circles)</div></div></div>
+<div class="book-item"><div class="book-icon bi-s">♪</div><div class="book-info"><h4>Dancing As We Sing — Seasonal Circle Plays &amp; Traditional Singing Games</h4><div class="meta">Nancy Foster · WECAN Books · spring and summer circle plays · for young children in Waldorf early childhood</div></div></div>
+<div class="book-item"><div class="book-icon bi-s">♪</div><div class="book-info"><h4>A Lifetime of Joy — Circle Games, Finger Games, Songs &amp; Puppet Plays</h4><div class="meta">Bronja Zahlingen · WECAN Books · collected, created, adapted and translated over a lifetime of kindergarten teaching · rare and beloved classic</div></div></div>
+<div class="book-item"><div class="book-icon bi-s">♪</div><div class="book-info"><h4>Movement Journeys and Circle Adventures, Vol. 1 &amp; 2</h4><div class="meta">Nancy Blanning &amp; Laurie Clark · WECAN Books · circle games and movement songs addressing spatial integration and sensory development · seasonal movement journeys for Autumn, Winter, Spring, Summer and Anytime · nursery rhyme movements, bean bag games · described as "a book of genius and a gift to young children"</div></div></div>
+</div>
+<div class="divider">Wynstones Press Seasonal Series (UK)</div>
+<div class="book-list">
+<div class="book-item"><div class="book-icon bi-g">W</div><div class="book-info"><h4>Spring — Poems, Songs and Stories · Summer · Autumn · Winter</h4><div class="meta">Wynstones Press · 4 volumes · wide variety of seasonal poems, songs and stories from British Waldorf kindergartens · D-pentatonic edition · intro by Jennifer Aulie on music in the mood of the fifth · illustrated by David Newbatt</div></div></div>
+<div class="book-item"><div class="book-icon bi-g">W</div><div class="book-info"><h4>Spindrift — Poems, Songs and Stories (year-round)</h4><div class="meta">Wynstones Press · year-round material including stories from cultures around the world · sections on morning, evening, birthdays and fairy tales</div></div></div>
+<div class="book-item"><div class="book-icon bi-g">W</div><div class="book-info"><h4>Gateways — Morning, Evening, Birthdays, Fairy Tales</h4><div class="meta">Jennifer Aulie &amp; Margret Meyerkort · Wynstones Press · poems, songs and stories · essential companion to the seasonal volumes</div></div></div>
+</div>
+<div class="divider">Pentatonic Songbooks</div>
+<div class="book-list">
+<div class="book-item"><div class="book-icon bi-s">♫</div><div class="book-info"><h4>Sing a Song of Seasons</h4><div class="meta">Mary Thienes Schunemann · with CD · pentatonic seasonal songs for kindergarten and early grades · every song recorded</div></div></div>
+<div class="book-item"><div class="book-icon bi-s">♫</div><div class="book-info"><h4>Lavender's Blue Dilly Dilly</h4><div class="meta">Mary Thienes Schunemann · with CD · nursery rhymes and traditional circle games, lullabies</div></div></div>
+<div class="book-item"><div class="book-icon bi-s">♫</div><div class="book-info"><h4>The Singing Year</h4><div class="meta">Candy Verney · seasonal songs and poems, many original · all recorded on included CD</div></div></div>
+<div class="book-item"><div class="book-icon bi-s">♫</div><div class="book-info"><h4>Pentatonic Songs for Nursery, Kindergarten and Grades 1 &amp; 2</h4><div class="meta">Elisabeth Lebret · Shepherd Songbook series · trusted source of monthly pentatonic songs</div></div></div>
+<div class="book-item"><div class="book-icon bi-s">♫</div><div class="book-info"><h4>I Love to Be Me — Songs in the Mood of the Fifth</h4><div class="meta">Channa A. Seidenberg · Wynstones Press · original pentatonic songs</div></div></div>
+<div class="book-item"><div class="book-icon bi-s">♫</div><div class="book-info"><h4>Merrily We Sing — Original Songs in the Mood of the Fifth</h4><div class="meta">Ilian Willwerth · WECAN Books · composed and original pentatonic songs for young children</div></div></div>
+<div class="book-item"><div class="book-icon bi-s">♫</div><div class="book-info"><h4>One for the Golden Sun — Pentatonic Songs</h4><div class="meta">Peter Oram · Starborn Books, Wales · also: A Change in the Year (pentatonic songs)</div></div></div>
+</div>
+<div class="divider">Theory &amp; Musical Development</div>
+<div class="book-list">
+<div class="book-item"><div class="book-icon bi-a">M</div><div class="book-info"><h4>The Mood of the Fifth: A Musical Approach to Early Childhood</h4><div class="meta">Edited by Nancy Foster · WECAN / Floris Books · classic articles by Jennifer Aulie, Wilma Ellersiek, Rita Jacobs · contributions from Michael Deason-Barrow, Renate Long-Breipohl, Sally Schweizer and many others · key reference for teachers</div></div></div>
+<div class="book-item"><div class="book-icon bi-a">M</div><div class="book-info"><h4>Music for Young Children — Quintenlieder</h4><div class="meta">Rita Jacobs · translated by Roland Everett · Hawthorn Press · also published as "Quintenlieder – Music for Young Children in the Mood of the Fifth" (Julius Knierim, Rudolf Steiner College Press)</div></div></div>
+<div class="book-item"><div class="book-icon bi-a">M</div><div class="book-info"><h4>The Waldorf Song Book</h4><div class="meta">Brien Masters · Floris Books · over 100 songs for Grades 3–8, grouped by festival and season · rounds, four-part songs, recorder notation</div></div></div>
+</div>
+</div>
+<!-- ══════════════════════════ AUTHORS ══════════════════════════ -->
+<div class="section" id="authors">
+<div class="sec-title">Authors of English Waldorf Circle Songs &amp; Resources</div>
+<p class="sec-sub">Key figures who have created, collected and published circle songs, songbooks and movement resources for English-speaking Waldorf kindergartens</p>
+<div class="divider">Circle Song Authors &amp; Educators</div>
+<div class="cards">
+<div class="card">
+<span class="card-tag tag-blue">Circle Time Leader</span>
+<h3>Nancy Foster</h3>
+<div class="author">Acorn Hill Waldorf Kindergarten, Silver Spring, MD · WECAN</div>
+<p>Long-time teacher at Acorn Hill Waldorf Kindergarten and leading figure in WECAN teacher education. Her circle time collections are among the most widely used in English-speaking Waldorf kindergartens worldwide.</p>
+<ul>
+<li>Let Us Form a Ring (Acorn Hill Anthology)</li>
+<li>Dancing As We Sing</li>
+<li>The Mood of the Fifth (editor)</li>
+</ul>
+</div>
+<div class="card">
+<span class="card-tag tag-blue">Circle Time Author</span>
+<h3>Laurie Clark</h3>
+<div class="author">Denver Waldorf School · Colorado, USA · WECAN</div>
+<p>Lead kindergarten teacher at The Denver Waldorf School with 27 years of Waldorf kindergarten experience. Mentors Waldorf teachers across North America and presents internationally. Her books with Nancy Blanning are essential circle time resources in the English-speaking Waldorf world — described as "a book of genius and a gift to young children."</p>
+<ul>
+<li>Movement Journeys and Circle Adventures, Vol. 1 (with Nancy Blanning, WECAN, 2006)</li>
+<li>Movement Journeys and Circle Adventures, Vol. 2 (with Nancy Blanning, WECAN, 2016)</li>
+</ul>
+</div>
+<div class="card">
+<span class="card-tag tag-blue">Songbook Author</span>
+<h3>Betty Jones</h3>
+<div class="author">Waldorf educator · USA</div>
+<p>Author of the most beloved all-in-one Waldorf circle resource for families and teachers. Her seasonal treasury is the first book recommended to parents entering the Waldorf world.</p>
+<ul>
+<li>A Child's Seasonal Treasury</li>
+</ul>
+</div>
+<div class="card">
+<span class="card-tag tag-blue">Songbook Author</span>
+<h3>Mary Thienes Schunemann</h3>
+<div class="author">Waldorf musician &amp; educator · USA</div>
+<p>Completed a full series of pentatonic songbooks with CDs before her death. Her work brought pentatonic singing into many Waldorf-inspired homes that had no prior musical training.</p>
+<ul>
+<li>Sing a Song of Seasons (with CD)</li>
+<li>Lavender's Blue Dilly Dilly (with CD)</li>
+<li>This is the Way We Wash-a-Day</li>
+</ul>
+</div>
+<div class="card">
+<span class="card-tag tag-blue">Composer</span>
+<h3>Bronja Zahlingen</h3>
+<div class="author">1912–2000 · Austrian-born Waldorf kindergarten teacher</div>
+<p>Dedicated her life to creating and collecting circle games, finger games, songs, puppet plays and verses for Waldorf kindergartens. Her collected work is a rare and lasting gift to early childhood education.</p>
+<ul>
+<li>A Lifetime of Joy (WECAN Books)</li>
+</ul>
+</div>
+<div class="card">
+<span class="card-tag tag-blue">Music Theory</span>
+<h3>Jennifer Aulie</h3>
+<div class="author">Waldorf music educator · Wynstones Press / WECAN</div>
+<p>Author of the introductory essays on "music in the mood of the fifth" found in the Wynstones seasonal series (Spring, Summer, Autumn, Winter, Spindrift, Gateways). Key voice in explaining pentatonic music for Waldorf teachers.</p>
+<ul>
+<li>Introductions to Wynstones seasonal series</li>
+<li>Gateways (co-editor with Margret Meyerkort)</li>
+</ul>
+</div>
+<div class="card">
+<span class="card-tag tag-blue">Composer</span>
+<h3>Ilian Willwerth</h3>
+<div class="author">Waldorf musician · WECAN Books</div>
+<p>Composed original songs in the mood of the fifth for young children.</p>
+<ul>
+<li>Merrily We Sing</li>
+<li>Let's Dance &amp; Sing (arr. Kundry Willwerth)</li>
+</ul>
+</div>
+</div>
+<div class="divider">Further Authors &amp; Contributors</div>
+<div class="cards">
+<div class="card">
+<span class="card-tag tag-amber">Pentatonic Composer</span>
+<h3>Elisabeth Lebret</h3>
+<div class="author">Waldorf music teacher</div>
+<p>Author of the respected Shepherd Songbook series of pentatonic songs for nursery, kindergarten and Grades 1 and 2.</p>
+<ul><li>Pentatonic Songs (Shepherd Songbook)</li></ul>
+</div>
+<div class="card">
+<span class="card-tag tag-amber">Songwriter</span>
+<h3>Candy Verney</h3>
+<div class="author">Waldorf songwriter · UK</div>
+<p>Author of The Singing Year, seasonal songs and poems — many original, all recorded on included CD.</p>
+<ul><li>The Singing Year (with CD)</li></ul>
+</div>
+<div class="card">
+<span class="card-tag tag-amber">Composer</span>
+<h3>Peter Oram</h3>
+<div class="author">Starborn Books, Wales · UK</div>
+<ul>
+<li>One for the Golden Sun</li>
+<li>A Change in the Year</li>
+</ul>
+</div>
+<div class="card">
+<span class="card-tag tag-amber">Songwriter</span>
+<h3>Channa A. Seidenberg</h3>
+<div class="author">Wynstones Press · UK</div>
+<ul><li>I Love to Be Me — Songs in the Mood of the Fifth</li></ul>
+</div>
+<div class="card">
+<span class="card-tag tag-amber">Editor</span>
+<h3>Margret Meyerkort</h3>
+<div class="author">British Waldorf kindergarten teacher · Switzerland-born</div>
+<p>Long-time British Waldorf teacher and trainer, co-editor of the Gateways anthology.</p>
+<ul><li>Gateways (with Jennifer Aulie)</li></ul>
+</div>
+</div>
+</div>
+<!-- ══════════════════════════ CHILDREN'S BOOKS ══════════════════════════ -->
+<div class="section" id="children">
+<div class="sec-title">Children's Books in Waldorf Education</div>
+<p class="sec-sub">Books used and recommended in Waldorf kindergartens and schools — by age group</p>
+<div class="divider">Picture Books &amp; Read-Alouds (Ages 0–6)</div>
+<div class="cards">
+<div class="card">
+<span class="card-tag tag-purple">Illustrator</span>
+<h3>Elsa Beskow</h3>
+<div class="author">1874–1953 · Swedish · Floris Books (English)</div>
+<p>The most beloved picture book author in the Waldorf world. Her nature-filled, warmly illustrated books are used in kindergartens across the English-speaking world.</p>
+<ul>
+<li>Children of the Forest</li>
+<li>Ollie's Ski Trip</li>
+<li>Aunt Green, Aunt Brown and Aunt Lavender</li>
+<li>Peter in Blueberry Land</li>
+<li>The Flowers' Festival</li>
+</ul>
+</div>
+<div class="card">
+<span class="card-tag tag-purple">Illustrator</span>
+<h3>Sibylle von Olfers</h3>
+<div class="author">1881–1916 · German · Floris Books (English)</div>
+<ul>
+<li>The Story of the Root Children</li>
+<li>The Story of the Snow Children</li>
+<li>The Story of the Butterfly Children</li>
+</ul>
+</div>
+<div class="card">
+<span class="card-tag tag-purple">Illustrator</span>
+<h3>Daniela Drescher</h3>
+<div class="author">b. 1966 · German · Floris Books (English)</div>
+<p>Her elf and gnome illustrations are widely beloved in Waldorf homes. Many books available in English through Floris Books.</p>
+<ul>
+<li>In the Land of Fairies</li>
+<li>A Treasury of Gnomes</li>
+<li>Pippa and Pelle (series)</li>
+</ul>
+</div>
+<div class="card">
+<span class="card-tag tag-purple">Classic Tales</span>
+<h3>Brothers Grimm</h3>
+<div class="author">unabridged original tales · many editions</div>
+<p>Grimm's fairy tales are the foundation of storytelling in every Waldorf kindergarten. The original, unedited versions are strongly preferred.</p>
+<ul>
+<li>Snow White</li>
+<li>Sleeping Beauty</li>
+<li>Hansel and Gretel</li>
+<li>Little Red Cap</li>
+<li>The Brave Little Tailor</li>
+</ul>
+</div>
+</div>
+<div class="divider">For Older Children (Ages 6–12)</div>
+<div class="cards">
+<div class="card">
+<span class="card-tag tag-purple">Swedish Classic</span>
+<h3>Astrid Lindgren</h3>
+<div class="author">1907–2002</div>
+<ul>
+<li>Pippi Longstocking</li>
+<li>The Children of Noisy Village</li>
+<li>Ronja the Robber's Daughter</li>
+<li>The Tomten</li>
+<li>Emil of Lönneberga</li>
+</ul>
+</div>
+<div class="card">
+<span class="card-tag tag-purple">German Classic</span>
+<h3>Otfried Preußler</h3>
+<div class="author">1923–2013</div>
+<ul>
+<li>The Little Water Sprite</li>
+<li>The Little Ghost</li>
+<li>The Little Witch</li>
+<li>The Robber Hotzenplotz</li>
+</ul>
+</div>
+<div class="card">
+<span class="card-tag tag-purple">By Grade</span>
+<h3>Waldorf Grade Reading</h3>
+<div class="author">traditional curriculum sequence</div>
+<ul>
+<li>Norse Myths (Grade 4)</li>
+<li>Greek Myths — Robert Graves (Grade 5)</li>
+<li>The Odyssey / Iliad (Grade 5)</li>
+<li>Arthurian legends (Grade 6)</li>
+<li>Parzival / Grail legends (Grade 6)</li>
+<li>Just So Stories — Kipling (Grade 3)</li>
+</ul>
+</div>
+<div class="card">
+<span class="card-tag tag-purple">Further Classics</span>
+<h3>Recommended Titles</h3>
+<ul>
+<li>Momo — Michael Ende</li>
+<li>The Neverending Story — Michael Ende</li>
+<li>Wind in the Willows — Kenneth Grahame</li>
+<li>The Tomten — Astrid Lindgren</li>
+<li>Heidi — Johanna Spyri</li>
+<li>Swiss Family Robinson — Wyss</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ══════════════════════════ FOR ADULTS ══════════════════════════ -->
+<div class="section" id="adults">
+<div class="sec-title">Books for Adults — Parents, Teachers &amp; Interested Readers</div>
+<p class="sec-sub">The most recommended English-language books on Waldorf education, parenting and child development</p>
+<div class="divider">By Rudolf Steiner</div>
+<div class="book-list">
+<div class="book-item"><div class="book-icon bi-a">S</div><div class="book-info"><h4>The Education of the Child in the Light of Anthroposophy</h4><div class="meta">Rudolf Steiner · short foundational essay · the starting point for Waldorf education</div></div></div>
+<div class="book-item"><div class="book-icon bi-a">S</div><div class="book-info"><h4>Rhythms of Learning — Key Lectures on Children and Education</h4><div class="meta">Rudolf Steiner, edited by Roberto Trostli · approachable selection of Steiner's key lectures with classroom context · excellent for parents and teachers</div></div></div>
+<div class="book-item"><div class="book-icon bi-a">S</div><div class="book-info"><h4>The Foundations of Human Experience (Study of Man)</h4><div class="meta">Rudolf Steiner · 14 foundational lectures for Waldorf teachers, Stuttgart 1919</div></div></div>
+</div>
+<div class="divider">Essential Reading for Parents</div>
+<div class="book-list">
+<div class="book-item"><div class="book-icon bi-a">D</div><div class="book-info"><h4>You Are Your Child's First Teacher</h4><div class="meta">Rahima Baldwin Dancy · the #1 recommended introduction for Waldorf parents · child development, parenting ideas, descriptions of Waldorf education · over 1,800 ratings on Goodreads</div></div></div>
+<div class="book-item"><div class="book-icon bi-a">P</div><div class="book-info"><h4>Beyond the Rainbow Bridge — Nurturing Our Children from Birth to Seven</h4><div class="meta">Barbara J. Patterson &amp; Pamela Bradley · rhythm, simple toys, respectful discipline · gentle Waldorf parenting approach</div></div></div>
+<div class="book-item"><div class="book-icon bi-a">O</div><div class="book-info"><h4>Heaven on Earth — A Handbook for Parents of Young Children</h4><div class="meta">Sharifa Oppenheimer · how to create a slow, meaningful childhood at home · rhythm, festival celebrations, creative play</div></div></div>
+<div class="book-item"><div class="book-icon bi-a">P</div><div class="book-info"><h4>Simplicity Parenting</h4><div class="meta">Kim John Payne · not explicitly Waldorf but shares its spirit · reducing overwhelm, restoring rhythm and childhood</div></div></div>
+</div>
+<div class="divider">For Early Childhood Educators</div>
+<div class="book-list">
+<div class="book-item"><div class="book-icon bi-a">F</div><div class="book-info"><h4>Free to Learn — Introducing Steiner Waldorf Early Childhood Education</h4><div class="meta">Lynne Oldfield · guide to principles and methods of Waldorf early childhood education · stories, observations and pictures from kindergartens around the world</div></div></div>
+<div class="book-item"><div class="book-icon bi-a">O</div><div class="book-info"><h4>What Is a Waldorf Kindergarten?</h4><div class="meta">Joan Almon · describes Waldorf kindergarten methods and the practical ways they are applied · accessible introduction</div></div></div>
+<div class="book-item"><div class="book-icon bi-a">W</div><div class="book-info"><h4>Waldorf Education — A Family Guide</h4><div class="meta">Pamela J. Fenner · comprehensive guide to the Waldorf curriculum and philosophy for families</div></div></div>
+<div class="book-item"><div class="book-icon bi-a">E</div><div class="book-info"><h4>Earthways — Simple Environmental Activities for Young Children</h4><div class="meta">Carol Petrash · seasonal nature crafts and activities aligned with Waldorf rhythms</div></div></div>
+</div>
+</div>
+<!-- ══════════════════════════ RESOURCES ══════════════════════════ -->
+<div class="section" id="resources">
+<div class="sec-title">Resources &amp; Where to Find Them</div>
+<p class="sec-sub">Publishers, bookshops, organisations and online communities for English-language Waldorf education</p>
+<div class="cards">
+<div class="card"><span class="card-tag tag-green">Publisher</span><h3>Floris Books</h3><p>Main English-language publisher of Waldorf books, Elsa Beskow, Sibylle von Olfers, Daniela Drescher and early childhood resources. florisbooks.co.uk</p></div>
+<div class="card"><span class="card-tag tag-green">Publisher</span><h3>Wynstones Press</h3><p>Publisher of the seasonal series (Spring, Summer, Autumn, Winter, Spindrift, Gateways) and other Waldorf circle time resources. Based in the UK.</p></div>
+<div class="card"><span class="card-tag tag-green">Books &amp; Curriculum</span><h3>WECAN Books</h3><p>Waldorf Early Childhood Association of North America. Publishes Bronja Zahlingen, Nancy Foster, and key early childhood resources. waldorfearlychildhood.org</p></div>
+<div class="card"><span class="card-tag tag-green">Books &amp; Curriculum</span><h3>Waldorf Publications</h3><p>Research Institute for Waldorf Education. Extensive range of teacher resources, songs and verses. waldorfpublications.org</p></div>
+<div class="card"><span class="card-tag tag-coral">Online Shop</span><h3>Earthschooling / WaldorfBooks.com</h3><p>Large online selection of Waldorf books, curricula and music resources. earthschooling.info</p></div>
+<div class="card"><span class="card-tag tag-coral">Online Shop</span><h3>Paper Scissors Stone</h3><p>Waldorf supplies and books including Wynstones seasonal series. waldorfsupplies.com</p></div>
+<div class="card"><span class="card-tag tag-amber">Organisation</span><h3>WECAN — Waldorf Early Childhood Assoc. North America</h3><p>Teacher training, recommended reading lists, publications and community. waldorfearlychildhood.org</p></div>
+<div class="card"><span class="card-tag tag-amber">Organisation</span><h3>AWME — Association for Waldorf Music Education</h3><p>Recommended songbook list, resources for Waldorf music teachers. waldorfmusic.org</p></div>
+</div>
+<div class="divider">Online Communities &amp; Spotify</div>
+<div class="link-list">
+<a href="https://open.spotify.com/playlist/45AS48IgNhdo23EMxWTGEx" target="_blank">Spotify: Waldorf Inspired Circle Time Songs — 238 songs · Within the Sacred Gardens</a>
+<a href="https://open.spotify.com/playlist/5dDwocm5RCLOkBzVhrZZg3" target="_blank">Spotify: Waldorf Inspired Spring Circle Songs — 74 songs</a>
+<a href="https://www.waldorfearlychildhood.org/educator-resources/recommended-reading/" target="_blank">WECAN Recommended Reading List (free online)</a>
+<a href="https://waldorfmusic.org/resources/recommended-songbooks/" target="_blank">AWME Recommended Songbooks List (free online)</a>
+<a href="https://www.cedarwoodschool.org/buttercup/song-verse" target="_blank">Cedarwood Waldorf School — Songs &amp; Verses (free online)</a>
+<a href="https://homestead-honey.com/late-winter-waldorf-circle-songs/" target="_blank">Homestead Honey — Seasonal Circle Songs (free blog)</a>
+</div>
+</div>
+</div>
+<script>
+function show(id, e) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  e.target.classList.add('active');
+}
+</script>
+</body>
+</html>

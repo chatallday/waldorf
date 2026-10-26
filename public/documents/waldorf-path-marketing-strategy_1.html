@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Waldorf Path — Marketing Strategy</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F3EC;
+    --warm-white: #FDFAF5;
+    --forest: #2C4A3E;
+    --moss: #4A7C59;
+    --sage: #8FAF8A;
+    --sand: #C9A96E;
+    --terracotta: #B85C38;
+    --bark: #6B4C35;
+    --ink: #1C2B27;
+    --muted: #7A8C7E;
+    --border: #D8CFC0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .page { max-width: 900px; margin: 0 auto; padding: 60px 48px; }
+
+  /* Cover */
+  .cover {
+    min-height: 340px;
+    background: var(--forest);
+    border-radius: 4px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .cover-eyebrow { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage); font-weight: 500; margin-bottom: 20px; }
+  .cover-title { font-family: 'Playfair Display', serif; font-size: 48px; color: #fff; line-height: 1.15; margin-bottom: 12px; }
+  .cover-title em { color: var(--sand); font-style: italic; }
+  .cover-sub { font-size: 15px; color: rgba(255,255,255,0.55); font-weight: 300; max-width: 480px; }
+  .cover-meta { display: flex; gap: 32px; }
+  .cover-meta-item { }
+  .cover-meta-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
+  .cover-meta-val { font-size: 14px; color: rgba(255,255,255,0.75); }
+
+  /* Section */
+  .section { margin-bottom: 56px; }
+  .section-label {
+    font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); font-weight: 500;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 28px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::before { content: ''; width: 20px; height: 1px; background: var(--sand); }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 16px; color: var(--forest); }
+  .section-intro { color: var(--muted); max-width: 600px; margin-bottom: 28px; font-weight: 300; }
+
+  /* Strategy overview */
+  .overview-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 36px; }
+  .overview-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+  }
+  .overview-num { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--forest); }
+  .overview-lbl { font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+  /* Phases */
+  .phase { margin-bottom: 24px; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; background: var(--warm-white); }
+  .phase-head { padding: 18px 24px; display: flex; align-items: center; gap: 14px; border-bottom: 1px solid var(--border); background: var(--cream); }
+  .phase-badge { font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; white-space: nowrap; }
+  .badge-green { background: #E1F0E5; color: var(--forest); }
+  .badge-sand { background: #F5EDD8; color: var(--bark); }
+  .badge-terra { background: #F5E4DC; color: var(--terracotta); }
+  .phase-head-title { font-weight: 500; font-size: 15px; }
+  .phase-head-sub { font-size: 13px; color: var(--muted); }
+  .phase-body { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; }
+  .tactic { padding: 18px 24px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .tactic:nth-child(2n) { border-right: none; }
+  .tactic:nth-last-child(-n+2) { border-bottom: none; }
+  .tactic-lbl { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sand); font-weight: 500; margin-bottom: 6px; }
+  .tactic-text { font-size: 13px; color: var(--ink); line-height: 1.6; font-weight: 300; }
+
+  /* Positioning */
+  .pos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .pos-card { background: var(--warm-white); border: 1px solid var(--border); border-radius: 4px; padding: 20px 24px; }
+  .pos-lbl { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin-bottom: 8px; }
+  .pos-text { font-size: 13px; line-height: 1.6; font-weight: 300; }
+
+  /* Content pillars */
+  .pillar-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 32px; }
+  .pillar { border-radius: 4px; padding: 16px; }
+  .pillar-name { font-size: 12px; font-weight: 500; margin-bottom: 4px; }
+  .pillar-desc { font-size: 11px; line-height: 1.5; }
+
+  /* Weekly calendar */
+  .week { margin-bottom: 20px; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; background: var(--warm-white); }
+  .week-head { padding: 12px 20px; background: var(--forest); display: flex; justify-content: space-between; align-items: center; }
+  .week-title-text { font-size: 13px; font-weight: 500; color: #fff; }
+  .week-theme-text { font-size: 12px; color: var(--sage); }
+  .week-col-head { display: grid; grid-template-columns: 80px 1fr 1fr 1fr; border-bottom: 1px solid var(--border); }
+  .col-h { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding: 10px 14px; border-right: 1px solid var(--border); font-weight: 500; }
+  .col-h:last-child { border-right: none; }
+  .day-row { display: grid; grid-template-columns: 80px 1fr 1fr 1fr; border-bottom: 1px solid var(--border); }
+  .day-row:last-child { border-bottom: none; }
+  .day-c { padding: 12px 14px; font-size: 12px; line-height: 1.5; border-right: 1px solid var(--border); color: var(--ink); font-weight: 300; }
+  .day-c:last-child { border-right: none; }
+  .day-name { font-weight: 500; font-size: 12px; color: var(--forest); }
+  .tag { display: inline-block; font-size: 9px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 7px; border-radius: 10px; margin-bottom: 4px; }
+  .dash { color: var(--muted); font-size: 12px; }
+
+  /* SEO */
+  .seo-group { margin-bottom: 28px; }
+  .seo-group-head { font-size: 13px; font-weight: 500; color: var(--forest); padding-bottom: 10px; border-bottom: 1px solid var(--border); margin-bottom: 4px; }
+  .kw-row { display: grid; grid-template-columns: 1fr 90px 80px; padding: 9px 0; border-bottom: 1px solid var(--border); align-items: center; }
+  .kw-row:last-child { border-bottom: none; }
+  .kw-text { font-size: 13px; font-weight: 300; }
+  .kw-vol { font-size: 12px; color: var(--muted); text-align: center; }
+  .kw-diff { font-size: 10px; font-weight: 500; padding: 3px 10px; border-radius: 10px; text-align: center; letter-spacing: 0.04em; }
+  .diff-low { background: #E1F0E5; color: var(--forest); }
+  .diff-med { background: #F5EDD8; color: var(--bark); }
+  .diff-high { background: #F5E4DC; color: var(--terracotta); }
+
+  /* Email */
+  .email-card { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; background: var(--warm-white); margin-bottom: 16px; }
+  .email-head-bar { padding: 14px 24px; border-bottom: 1px solid var(--border); background: var(--cream); display: flex; justify-content: space-between; align-items: baseline; }
+  .email-num-lbl { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+  .email-goal-lbl { font-size: 12px; color: var(--muted); font-weight: 300; }
+  .email-fields { padding: 18px 24px; display: grid; gap: 14px; }
+  .ef-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sand); font-weight: 500; margin-bottom: 4px; }
+  .ef-val { font-size: 13px; line-height: 1.6; font-weight: 300; }
+
+  /* Footer */
+  .footer { border-top: 1px solid var(--border); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; margin-top: 56px; }
+  .footer-brand { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--forest); }
+  .footer-note { font-size: 12px; color: var(--muted); }
+
+  @media print {
+    body { background: white; }
+    .page { padding: 32px; }
+    .phase, .week, .email-card { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Cover -->
+  <div class="cover">
+    <div>
+      <div class="cover-eyebrow">Marketing strategy document</div>
+      <div class="cover-title">The Waldorf <em>Path</em></div>
+      <div class="cover-sub">A complete go-to-market plan for the world's first global Waldorf search directory — covering strategy, content, SEO and launch emails.</div>
+    </div>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><div class="cover-meta-label">Stage</div><div class="cover-meta-val">Building now</div></div>
+      <div class="cover-meta-item"><div class="cover-meta-label">Market</div><div class="cover-meta-val">Global / English-speaking</div></div>
+      <div class="cover-meta-item"><div class="cover-meta-label">Model</div><div class="cover-meta-val">Two-sided directory</div></div>
+      <div class="cover-meta-item"><div class="cover-meta-label">Prepared</div><div class="cover-meta-val">June 2026</div></div>
+    </div>
+  </div>
+
+  <!-- Overview -->
+  <div class="section">
+    <div class="section-label">Overview</div>
+    <div class="section-title">Strategy at a glance</div>
+    <div class="section-intro">Three phases, five channels, six months to first meaningful traction. The Waldorf Path is positioned as the only platform that aggregates every dimension of Waldorf life into a single searchable directory.</div>
+    <div class="overview-grid">
+      <div class="overview-card"><div class="overview-num">3</div><div class="overview-lbl">launch phases</div></div>
+      <div class="overview-card"><div class="overview-num">5</div><div class="overview-lbl">core channels</div></div>
+      <div class="overview-card"><div class="overview-num">6mo</div><div class="overview-lbl">to first traction</div></div>
+      <div class="overview-card"><div class="overview-num">2-sided</div><div class="overview-lbl">marketplace model</div></div>
+    </div>
+
+    <!-- Positioning -->
+    <div class="pos-grid">
+      <div class="pos-card"><div class="pos-lbl">Core message</div><div class="pos-text">"Everything Waldorf, in one place" — the trusted global directory for the Waldorf community.</div></div>
+      <div class="pos-card"><div class="pos-lbl">Tone</div><div class="pos-text">Warm, intentional, community-first. Never corporate. Reflect Waldorf values in every touchpoint.</div></div>
+      <div class="pos-card"><div class="pos-lbl">Differentiator</div><div class="pos-text">No other platform covers schools, toys, clothing, doctors, mentors, and furniture under one search.</div></div>
+      <div class="pos-card"><div class="pos-lbl">Trust signal</div><div class="pos-text">Curated, vetted listings. Community reviews. Transparent about what gets listed and why.</div></div>
+    </div>
+  </div>
+
+  <!-- Phases -->
+  <div class="section">
+    <div class="section-label">Go-to-market phases</div>
+    <div class="section-title">Three-phase launch plan</div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <span class="phase-badge badge-green">Phase 1 — Months 1–2</span>
+        <div><div class="phase-head-title">Foundation: build credibility before launch</div><div class="phase-head-sub">Grow an audience while the platform is still being built</div></div>
+      </div>
+      <div class="phase-body">
+        <div class="tactic"><div class="tactic-lbl">Content</div><div class="tactic-text">Start an Instagram + Pinterest page sharing Waldorf lifestyle content — crafts, rhythms, book recommendations.</div></div>
+        <div class="tactic"><div class="tactic-lbl">Community</div><div class="tactic-text">Join Waldorf Facebook groups, Reddit (r/Waldorf), and forums as a genuine contributor, not a promoter.</div></div>
+        <div class="tactic"><div class="tactic-lbl">Directory seed</div><div class="tactic-text">Manually list 50–100 quality schools, shops, and practitioners to have real content on day one.</div></div>
+        <div class="tactic"><div class="tactic-lbl">Waitlist</div><div class="tactic-text">Landing page with email sign-up. Offer early users a "founding member" badge or free listing.</div></div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <span class="phase-badge badge-sand">Phase 2 — Months 3–4</span>
+        <div><div class="phase-head-title">Launch: go live and drive first traffic</div><div class="phase-head-sub">Activate both sides of the marketplace simultaneously</div></div>
+      </div>
+      <div class="phase-body">
+        <div class="tactic"><div class="tactic-lbl">SEO</div><div class="tactic-text">Target long-tail keywords: "Waldorf toys near me", "Waldorf school UK", "Waldorf homeschool curriculum". Category pages rank fast.</div></div>
+        <div class="tactic"><div class="tactic-lbl">PR</div><div class="tactic-text">Pitch to Waldorf school newsletters, homeschool blogs, and natural parenting magazines as the first global Waldorf directory.</div></div>
+        <div class="tactic"><div class="tactic-lbl">Influencers</div><div class="tactic-text">Partner with Waldorf-aligned creators on YouTube and Instagram for honest reviews and directory walkthroughs.</div></div>
+        <div class="tactic"><div class="tactic-lbl">Listings outreach</div><div class="tactic-text">Email Waldorf schools, Etsy shops, and practitioners directly — offer free listings to build the supply side.</div></div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <span class="phase-badge badge-terra">Phase 3 — Months 5–12</span>
+        <div><div class="phase-head-title">Growth: scale what works, build retention</div><div class="phase-head-sub">Turn visitors into repeat users and listers into paying customers</div></div>
+      </div>
+      <div class="phase-body">
+        <div class="tactic"><div class="tactic-lbl">Email list</div><div class="tactic-text">Weekly or monthly newsletter: new listings, featured schools, seasonal Waldorf content.</div></div>
+        <div class="tactic"><div class="tactic-lbl">Paid ads</div><div class="tactic-text">Google Search ads for high-intent queries ("Waldorf school near me"). Small budget, high precision.</div></div>
+        <div class="tactic"><div class="tactic-lbl">Partnerships</div><div class="tactic-text">Partner with AWSNA, Steiner schools, and Waldorf teacher training institutes for official referral links.</div></div>
+        <div class="tactic"><div class="tactic-lbl">Monetisation</div><div class="tactic-text">Introduce premium listings, featured placements, or a small affiliate model for books and toys.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content Calendar -->
+  <div class="section">
+    <div class="section-label">Content calendar</div>
+    <div class="section-title">Monthly content framework</div>
+    <div class="section-intro">Five content pillars rotated weekly to keep the feed varied and purposeful. Post Monday, Wednesday, Friday as a minimum cadence.</div>
+
+    <div class="pillar-row">
+      <div class="pillar" style="background:#E1F0E5;"><div class="pillar-name" style="color:#2C4A3E;">Discover</div><div class="pillar-desc" style="color:#4A7C59;">Spotlight a listing — school, shop, doctor, toy brand</div></div>
+      <div class="pillar" style="background:#EEF2FB;"><div class="pillar-name" style="color:#3A4F8A;">Educate</div><div class="pillar-desc" style="color:#5060A0;">Waldorf principles, child development, rhythm tips</div></div>
+      <div class="pillar" style="background:#F5EDD8;"><div class="pillar-name" style="color:#6B4C35;">Seasonal</div><div class="pillar-desc" style="color:#8C6645;">Festivals, nature tables, crafts by season</div></div>
+      <div class="pillar" style="background:#F5E4DC;"><div class="pillar-name" style="color:#B85C38;">Community</div><div class="pillar-desc" style="color:#C47055;">UGC, parent stories, Q&A, polls</div></div>
+      <div class="pillar" style="background:#EAF0E8;"><div class="pillar-name" style="color:#3A5C45;">Behind scenes</div><div class="pillar-desc" style="color:#5A7A60;">Building the platform, founder journey, new features</div></div>
+    </div>
+
+    <!-- Week 1 -->
+    <div class="week">
+      <div class="week-head"><span class="week-title-text">Week 1</span><span class="week-theme-text">Theme: "What is Waldorf?" — awareness</span></div>
+      <div class="week-col-head">
+        <div class="col-h">Day</div><div class="col-h">Instagram / Pinterest</div><div class="col-h">Facebook group</div><div class="col-h">Blog / long-form</div>
+      </div>
+      <div class="day-row">
+        <div class="day-c"><span class="day-name">Monday</span></div>
+        <div class="day-c"><span class="tag" style="background:#E1F0E5;color:#2C4A3E;">Discover</span><br>Carousel: 5 things you can find on The Waldorf Path</div>
+        <div class="day-c">Intro post: "We're building something for the Waldorf world" + ask for community input</div>
+        <div class="day-c"><span class="dash">—</span></div>
+      </div>
+      <div class="day-row">
+        <div class="day-c"><span class="day-name">Wednesday</span></div>
+        <div class="day-c"><span class="tag" style="background:#EEF2FB;color:#3A4F8A;">Educate</span><br>Reel: "Why Waldorf waits to teach reading" — hook stat</div>
+        <div class="day-c">Share reel + invite discussion: "When did your child learn to read?"</div>
+        <div class="day-c"><span class="tag" style="background:#EEF2FB;color:#3A4F8A;">Educate</span><br>Blog: "A beginner's guide to Waldorf education" (SEO target)</div>
+      </div>
+      <div class="day-row">
+        <div class="day-c"><span class="day-name">Friday</span></div>
+        <div class="day-c"><span class="tag" style="background:#F5EDD8;color:#6B4C35;">Seasonal</span><br>Graphic: seasonal nature table inspiration for current month</div>
+        <div class="day-c">Friday share: favourite Waldorf resource this week (link to listing)</div>
+        <div class="day-c"><span class="dash">—</span></div>
+      </div>
+    </div>
+
+    <!-- Week 2 -->
+    <div class="week">
+      <div class="week-head"><span class="week-title-text">Week 2</span><span class="week-theme-text">Theme: "Find what you need" — utility</span></div>
+      <div class="week-col-head">
+        <div class="col-h">Day</div><div class="col-h">Instagram / Pinterest</div><div class="col-h">Facebook group</div><div class="col-h">Blog / long-form</div>
+      </div>
+      <div class="day-row">
+        <div class="day-c"><span class="day-name">Monday</span></div>
+        <div class="day-c"><span class="tag" style="background:#E1F0E5;color:#2C4A3E;">Discover</span><br>Spotlight: featured Waldorf toy brand or book</div>
+        <div class="day-c">Poll: "What's hardest to find in the Waldorf world?" (school / doctor / toys / clothing)</div>
+        <div class="day-c"><span class="dash">—</span></div>
+      </div>
+      <div class="day-row">
+        <div class="day-c"><span class="day-name">Wednesday</span></div>
+        <div class="day-c"><span class="tag" style="background:#EEF2FB;color:#3A4F8A;">Educate</span><br>Carousel: "What to look for in a Waldorf school"</div>
+        <div class="day-c">Share carousel + ask: "What made you choose your school?"</div>
+        <div class="day-c"><span class="tag" style="background:#E1F0E5;color:#2C4A3E;">Discover</span><br>Blog: "Best Waldorf toy brands in 2025" (SEO roundup)</div>
+      </div>
+      <div class="day-row">
+        <div class="day-c"><span class="day-name">Friday</span></div>
+        <div class="day-c"><span class="tag" style="background:#F5E4DC;color:#B85C38;">Community</span><br>Re-share a parent photo or story (with permission)</div>
+        <div class="day-c">Weekend rhythm tip — simple Waldorf-inspired Saturday idea</div>
+        <div class="day-c"><span class="dash">—</span></div>
+      </div>
+    </div>
+
+    <!-- Week 3 -->
+    <div class="week">
+      <div class="week-head"><span class="week-title-text">Week 3</span><span class="week-theme-text">Theme: "Behind the path" — trust building</span></div>
+      <div class="week-col-head">
+        <div class="col-h">Day</div><div class="col-h">Instagram / Pinterest</div><div class="col-h">Facebook group</div><div class="col-h">Blog / long-form</div>
+      </div>
+      <div class="day-row">
+        <div class="day-c"><span class="day-name">Monday</span></div>
+        <div class="day-c"><span class="tag" style="background:#EAF0E8;color:#3A5C45;">Behind scenes</span><br>Founder story: why you're building The Waldorf Path</div>
+        <div class="day-c">Share founder story + ask community: "What would you add to the directory?"</div>
+        <div class="day-c"><span class="dash">—</span></div>
+      </div>
+      <div class="day-row">
+        <div class="day-c"><span class="day-name">Wednesday</span></div>
+        <div class="day-c"><span class="tag" style="background:#EEF2FB;color:#3A4F8A;">Educate</span><br>Infographic: "The 3 stages of Waldorf childhood"</div>
+        <div class="day-c">Discussion: "Which stage are your children in now?"</div>
+        <div class="day-c"><span class="tag" style="background:#F5EDD8;color:#6B4C35;">Seasonal</span><br>Blog: "Waldorf seasonal festivals — a complete guide"</div>
+      </div>
+      <div class="day-row">
+        <div class="day-c"><span class="day-name">Friday</span></div>
+        <div class="day-c"><span class="tag" style="background:#F5E4DC;color:#B85C38;">Community</span><br>Q&A story box: "Ask us anything about Waldorf"</div>
+        <div class="day-c">Compile best questions and answer in the group</div>
+        <div class="day-c"><span class="dash">—</span></div>
+      </div>
+    </div>
+
+    <!-- Week 4 -->
+    <div class="week">
+      <div class="week-head"><span class="week-title-text">Week 4</span><span class="week-theme-text">Theme: "Join us" — conversion</span></div>
+      <div class="week-col-head">
+        <div class="col-h">Day</div><div class="col-h">Instagram / Pinterest</div><div class="col-h">Facebook group</div><div class="col-h">Blog / long-form</div>
+      </div>
+      <div class="day-row">
+        <div class="day-c"><span class="day-name">Monday</span></div>
+        <div class="day-c"><span class="tag" style="background:#E1F0E5;color:#2C4A3E;">Discover</span><br>Announce new listings added this month</div>
+        <div class="day-c">Invite businesses: "Know a Waldorf provider? Nominate them for a free listing"</div>
+        <div class="day-c"><span class="dash">—</span></div>
+      </div>
+      <div class="day-row">
+        <div class="day-c"><span class="day-name">Wednesday</span></div>
+        <div class="day-c"><span class="tag" style="background:#EAF0E8;color:#3A5C45;">Behind scenes</span><br>Platform preview / screenshot of new feature</div>
+        <div class="day-c">Share update: "Here's what we've been building" + waitlist link</div>
+        <div class="day-c"><span class="tag" style="background:#F5E4DC;color:#B85C38;">Community</span><br>Blog: "5 Waldorf families share their top resources"</div>
+      </div>
+      <div class="day-row">
+        <div class="day-c"><span class="day-name">Friday</span></div>
+        <div class="day-c"><span class="tag" style="background:#F5EDD8;color:#6B4C35;">Seasonal</span><br>Month-end recap: best content + seasonal highlight</div>
+        <div class="day-c">Thank community + celebrate milestones (followers, listings, sign-ups)</div>
+        <div class="day-c"><span class="dash">—</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEO -->
+  <div class="section">
+    <div class="section-label">SEO keyword strategy</div>
+    <div class="section-title">Target keyword clusters</div>
+    <div class="section-intro">Build dedicated landing pages and blog posts for each cluster. Volume = estimated monthly global searches. Start with low-difficulty keywords for quick wins.</div>
+
+    <div class="seo-group">
+      <div class="seo-group-head">Cluster 1 — Schools &amp; education (highest intent)</div>
+      <div class="kw-row"><div class="kw-text">waldorf school near me</div><div class="kw-vol">22,000/mo</div><div class="kw-diff diff-low">Low</div></div>
+      <div class="kw-row"><div class="kw-text">waldorf school [country / city]</div><div class="kw-vol">8,000+/mo</div><div class="kw-diff diff-low">Low</div></div>
+      <div class="kw-row"><div class="kw-text">steiner school near me</div><div class="kw-vol">12,000/mo</div><div class="kw-diff diff-low">Low</div></div>
+      <div class="kw-row"><div class="kw-text">waldorf homeschool curriculum</div><div class="kw-vol">5,400/mo</div><div class="kw-diff diff-med">Med</div></div>
+      <div class="kw-row"><div class="kw-text">what is waldorf education</div><div class="kw-vol">9,900/mo</div><div class="kw-diff diff-med">Med</div></div>
+    </div>
+
+    <div class="seo-group">
+      <div class="seo-group-head">Cluster 2 — Toys &amp; books (purchase intent)</div>
+      <div class="kw-row"><div class="kw-text">waldorf toys</div><div class="kw-vol">18,000/mo</div><div class="kw-diff diff-med">Med</div></div>
+      <div class="kw-row"><div class="kw-text">best waldorf toys for toddlers</div><div class="kw-vol">3,600/mo</div><div class="kw-diff diff-low">Low</div></div>
+      <div class="kw-row"><div class="kw-text">waldorf books for children</div><div class="kw-vol">2,900/mo</div><div class="kw-diff diff-low">Low</div></div>
+      <div class="kw-row"><div class="kw-text">waldorf toy brands</div><div class="kw-vol">1,600/mo</div><div class="kw-diff diff-low">Low</div></div>
+      <div class="kw-row"><div class="kw-text">waldorf wooden toys</div><div class="kw-vol">6,600/mo</div><div class="kw-diff diff-med">Med</div></div>
+    </div>
+
+    <div class="seo-group">
+      <div class="seo-group-head">Cluster 3 — Lifestyle &amp; health (unique to your platform)</div>
+      <div class="kw-row"><div class="kw-text">waldorf-friendly doctor</div><div class="kw-vol">720/mo</div><div class="kw-diff diff-low">Low</div></div>
+      <div class="kw-row"><div class="kw-text">waldorf clothing brands</div><div class="kw-vol">1,300/mo</div><div class="kw-diff diff-low">Low</div></div>
+      <div class="kw-row"><div class="kw-text">anthroposophic doctor near me</div><div class="kw-vol">880/mo</div><div class="kw-diff diff-low">Low</div></div>
+      <div class="kw-row"><div class="kw-text">waldorf mentor online</div><div class="kw-vol">590/mo</div><div class="kw-diff diff-low">Low</div></div>
+      <div class="kw-row"><div class="kw-text">waldorf furniture inspiration</div><div class="kw-vol">1,100/mo</div><div class="kw-diff diff-low">Low</div></div>
+    </div>
+
+    <div class="seo-group">
+      <div class="seo-group-head">Cluster 4 — Directory &amp; comparison (your killer pages)</div>
+      <div class="kw-row"><div class="kw-text">waldorf resources directory</div><div class="kw-vol">480/mo</div><div class="kw-diff diff-low">Low</div></div>
+      <div class="kw-row"><div class="kw-text">waldorf vs montessori</div><div class="kw-vol">14,800/mo</div><div class="kw-diff diff-high">High</div></div>
+      <div class="kw-row"><div class="kw-text">waldorf education pros and cons</div><div class="kw-vol">4,400/mo</div><div class="kw-diff diff-med">Med</div></div>
+      <div class="kw-row"><div class="kw-text">find waldorf school online</div><div class="kw-vol">890/mo</div><div class="kw-diff diff-low">Low</div></div>
+    </div>
+  </div>
+
+  <!-- Email Sequence -->
+  <div class="section">
+    <div class="section-label">Launch email sequence</div>
+    <div class="section-title">5-email pre-launch sequence</div>
+    <div class="section-intro">Send one email every 3–4 days to your waitlist. Goal: warm leads → excited founding users. Always personalise the sender name — this should feel like it comes from the founder, not a brand.</div>
+
+    <div class="email-card">
+      <div class="email-head-bar"><span class="email-num-lbl">Email 1 — Day 0</span><span class="email-goal-lbl">Goal: welcome + set expectations</span></div>
+      <div class="email-fields">
+        <div><div class="ef-label">Subject line</div><div class="ef-val">You found it. Welcome to The Waldorf Path.</div></div>
+        <div><div class="ef-label">Opening hook</div><div class="ef-val">If you've ever Googled "Waldorf doctor near me" and come up empty, or spent hours finding a Waldorf-aligned toy shop — this was built for you.</div></div>
+        <div><div class="ef-label">Body</div><div class="ef-val">Introduce the platform: one search to find Waldorf schools, books, toys, clothing, mentors, furniture, doctors and more — anywhere in the world. Explain you're building it now and they're among the first to know.</div></div>
+        <div><div class="ef-label">CTA</div><div class="ef-val">Reply and tell us: what's the hardest Waldorf resource to find in your area? (Replies go straight to the founder.)</div></div>
+      </div>
+    </div>
+
+    <div class="email-card">
+      <div class="email-head-bar"><span class="email-num-lbl">Email 2 — Day 4</span><span class="email-goal-lbl">Goal: build excitement + social proof</span></div>
+      <div class="email-fields">
+        <div><div class="ef-label">Subject line</div><div class="ef-val">Here's what's already inside The Waldorf Path</div></div>
+        <div><div class="ef-label">Opening hook</div><div class="ef-val">In the past two weeks, we've added [X] schools, [X] toy brands, and [X] Waldorf practitioners to the directory. Here's a sneak peek.</div></div>
+        <div><div class="ef-label">Body</div><div class="ef-val">Walk through 2–3 example listings with short descriptions. Show breadth of categories. Share a screenshot or mockup of the search interface. Mention the founding member benefit.</div></div>
+        <div><div class="ef-label">CTA</div><div class="ef-val">Know a Waldorf business, school, or practitioner who should be listed? Nominate them here — we'll reach out.</div></div>
+      </div>
+    </div>
+
+    <div class="email-card">
+      <div class="email-head-bar"><span class="email-num-lbl">Email 3 — Day 8</span><span class="email-goal-lbl">Goal: educate + deliver value</span></div>
+      <div class="email-fields">
+        <div><div class="ef-label">Subject line</div><div class="ef-val">The one thing most Waldorf parents don't know about (but should)</div></div>
+        <div><div class="ef-label">Opening hook</div><div class="ef-val">Most people discover Waldorf through the school. But the philosophy goes far deeper — into how your child eats, plays, heals, and even how your home is furnished.</div></div>
+        <div><div class="ef-label">Body</div><div class="ef-val">Short, engaging piece on the holistic Waldorf lifestyle covering all the categories your platform serves. Naturally weave in examples from your directory. This is pure value, not a pitch.</div></div>
+        <div><div class="ef-label">CTA</div><div class="ef-val">We're curating a free guide: "The complete Waldorf resource list." Confirm your spot to get it first.</div></div>
+      </div>
+    </div>
+
+    <div class="email-card">
+      <div class="email-head-bar"><span class="email-num-lbl">Email 4 — Day 12</span><span class="email-goal-lbl">Goal: urgency + founding member offer</span></div>
+      <div class="email-fields">
+        <div><div class="ef-label">Subject line</div><div class="ef-val">We launch in [X] days — and founding members get this</div></div>
+        <div><div class="ef-label">Opening hook</div><div class="ef-val">The Waldorf Path opens to everyone on [date]. But the people on this list get something the public won't.</div></div>
+        <div><div class="ef-label">Body</div><div class="ef-val">Spell out the founding member benefit clearly (early access, free premium listing for businesses, founding badge, direct line to the team). Create genuine scarcity — e.g. first 200 members only, or offer ends at launch.</div></div>
+        <div><div class="ef-label">CTA</div><div class="ef-val">Claim your founding member spot → [button: Join as a founding member]</div></div>
+      </div>
+    </div>
+
+    <div class="email-card">
+      <div class="email-head-bar"><span class="email-num-lbl">Email 5 — Launch day</span><span class="email-goal-lbl">Goal: convert waitlist → active users</span></div>
+      <div class="email-fields">
+        <div><div class="ef-label">Subject line</div><div class="ef-val">The Waldorf Path is live. Your search starts here.</div></div>
+        <div><div class="ef-label">Opening hook</div><div class="ef-val">Today is the day. Everything Waldorf — schools, toys, books, clothing, doctors, mentors, furniture — is now searchable in one place.</div></div>
+        <div><div class="ef-label">Body</div><div class="ef-val">Short and punchy. Celebrate the moment. Thank them for being part of it from the start. Show 3 things they can do right now: search for a school, browse toy brands, nominate a listing.</div></div>
+        <div><div class="ef-label">CTA</div><div class="ef-val">Start exploring → [button: Open The Waldorf Path]</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-brand">The Waldorf Path</div>
+    <div class="footer-note">Marketing strategy · June 2026 · Confidential</div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Baar Fonts — Anthroposophical Typefaces by Lutz Baar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Spectral:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #2b2417;
+    --ink-soft: #4a4031;
+    --parchment: #f4ecdc;
+    --parchment-deep: #ece0c8;
+    --gold: #9c6b3f;
+    --gold-deep: #7a4f2a;
+    --rust: #8a3d28;
+    --sage: #6b7355;
+    --rule: #c9b896;
+    --shadow: rgba(74, 60, 30, 0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    background: radial-gradient(ellipse at top, #f8f1e3 0%, var(--parchment) 55%, var(--parchment-deep) 100%);
+    line-height: 1.72;
+    font-size: 19px;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 32px 120px;
+  }
+
+  /* ---- Masthead ---- */
+  header {
+    text-align: center;
+    padding: 92px 0 54px;
+  }
+
+  .eyebrow {
+    font-family: 'Spectral', serif;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    color: var(--gold-deep);
+    margin-bottom: 26px;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(2.6rem, 6.8vw, 4.2rem);
+    line-height: 1.04;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  h1 .sub {
+    display: block;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.42em;
+    color: var(--gold-deep);
+    margin-top: 0.55em;
+    letter-spacing: 0.01em;
+  }
+
+  .ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin: 40px auto 0;
+    color: var(--gold);
+  }
+  .ornament .line {
+    height: 1px;
+    width: 70px;
+    background: linear-gradient(90deg, transparent, var(--rule));
+  }
+  .ornament .line.r { background: linear-gradient(90deg, var(--rule), transparent); }
+  .ornament .star { font-size: 1.1rem; }
+
+  .lede {
+    font-family: 'Spectral', serif;
+    font-weight: 300;
+    font-size: 1.28rem;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    text-align: center;
+    max-width: 620px;
+    margin: 46px auto 0;
+    font-style: italic;
+  }
+
+  /* ---- Intro section ---- */
+  section.intro { margin-top: 76px; }
+
+  .sec-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(1.85rem, 4vw, 2.5rem);
+    line-height: 1.12;
+    color: var(--ink);
+    margin-bottom: 26px;
+    letter-spacing: -0.005em;
+  }
+
+  h2::after {
+    content: "";
+    display: block;
+    width: 54px;
+    height: 2px;
+    background: var(--gold);
+    margin-top: 18px;
+    opacity: 0.55;
+  }
+
+  p { margin-bottom: 22px; }
+
+  .dropcap::first-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.6rem;
+    font-weight: 600;
+    float: left;
+    line-height: 0.78;
+    padding: 8px 12px 0 0;
+    color: var(--rust);
+  }
+
+  em, i { color: var(--ink-soft); }
+  strong { font-weight: 600; color: var(--gold-deep); }
+
+  /* ---- Font cards ---- */
+  .font-grid {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .font-card {
+    background: rgba(255, 251, 240, 0.55);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 40px 44px;
+    box-shadow: 0 2px 24px var(--shadow);
+    position: relative;
+  }
+
+  .font-card .corner {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 36px;
+    height: 36px;
+    border-top: 2px solid var(--gold);
+    border-left: 2px solid var(--gold);
+    border-radius: 4px 0 0 0;
+  }
+
+  .font-card .corner.tr {
+    left: auto; right: -1px;
+    border-left: none;
+    border-right: 2px solid var(--gold);
+    border-radius: 0 4px 0 0;
+  }
+
+  .font-num {
+    font-family: 'Spectral', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .font-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 2.1rem;
+    color: var(--ink);
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .font-meaning {
+    font-family: 'Spectral', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--sage);
+    font-size: 0.98rem;
+    margin-bottom: 24px;
+    letter-spacing: 0.02em;
+  }
+
+  .specimen {
+    background: #fbf6e8;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 28px 32px;
+    margin: 20px 0 24px;
+    text-align: center;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), 0 1px 3px var(--shadow);
+  }
+
+  .specimen .big {
+    font-size: 3rem;
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 10px;
+    letter-spacing: 0.02em;
+  }
+
+  .specimen .line {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+
+  .specimen .abc {
+    font-size: 1.1rem;
+    color: var(--gold-deep);
+    letter-spacing: 0.04em;
+  }
+
+  .specimen-note {
+    font-family: 'Spectral', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 0.82rem;
+    color: var(--sage);
+    margin-bottom: 22px;
+    text-align: center;
+  }
+
+  .font-desc {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+
+  .font-desc p { margin-bottom: 16px; }
+  .font-desc p:last-child { margin-bottom: 0; }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 24px;
+    margin-top: 22px;
+    padding-top: 22px;
+    border-top: 1px dotted var(--rule);
+    font-family: 'Spectral', serif;
+    font-weight: 300;
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+  }
+  .meta-row span strong {
+    font-weight: 400;
+    color: var(--gold-deep);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.78rem;
+    margin-right: 6px;
+  }
+
+  /* ---- Font-specific specimens ----
+     Since the actual Baar TTFs cannot be bundled inline reliably, the
+     specimens use carefully chosen web-safe fallback fonts that share
+     a similar feeling (humanist sans, geometric, or rounded) to give
+     a visual hint of each face's character. The card description tells
+     the reader what the real face is like.
+  ---- */
+  .spec-metanoia .big,
+  .spec-metanoia .line,
+  .spec-metanoia .abc {
+    font-family: 'Baar Metanoia', 'Metanoia', 'Optima', 'Avenir', sans-serif;
+    font-weight: 400;
+  }
+
+  .spec-anthropos .big,
+  .spec-anthropos .line,
+  .spec-anthropos .abc {
+    font-family: 'Baar Anthropos', 'Anthropos', 'Baar Antropos', 'Optima', 'Palatino', serif;
+    font-weight: 500;
+  }
+
+  .spec-sophia .big,
+  .spec-sophia .line,
+  .spec-sophia .abc {
+    font-family: 'Baar Sophia', 'Sophia', 'Optima', 'Avenir', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  .spec-philos .big,
+  .spec-philos .line,
+  .spec-philos .abc {
+    font-family: 'Baar Philos', 'Philos', 'Gill Sans', 'Futura', sans-serif;
+    font-weight: 400;
+  }
+
+  .spec-zeitgeist .big,
+  .spec-zeitgeist .line,
+  .spec-zeitgeist .abc {
+    font-family: 'Baar Zeitgeist', 'Zeitgeist', 'Futura', 'Century Gothic', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+
+  .spec-goetheanis .big,
+  .spec-goetheanis .line,
+  .spec-goetheanis .abc {
+    font-family: 'Baar Goetheanis', 'Goetheanis', 'Cormorant Garamond', 'Palatino', serif;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .spec-lemuria .big,
+  .spec-lemuria .line,
+  .spec-lemuria .abc {
+    font-family: 'Baar Lemuria', 'Lemuria', 'Papyrus', 'Trajan', 'Cormorant Garamond', serif;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+  }
+
+  /* ---- Note + sources + footer (shared) ---- */
+  .note {
+    margin-top: 64px;
+    padding: 28px 32px;
+    background: rgba(138, 61, 40, 0.05);
+    border: 1px dashed var(--rust);
+    border-radius: 3px;
+    font-family: 'Spectral', serif;
+    font-weight: 300;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+  .note strong { color: var(--rust); }
+
+  .sources {
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+  }
+  .sources h3 {
+    font-family: 'Spectral', serif;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    color: var(--gold-deep);
+    margin-bottom: 18px;
+  }
+  .sources li {
+    list-style: none;
+    font-size: 0.96rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+  }
+  .sources li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
+  .sources cite { font-style: italic; color: var(--ink); }
+  .sources a { color: var(--gold-deep); text-decoration: none; border-bottom: 1px dotted var(--rule); }
+  .sources a:hover { color: var(--rust); }
+
+  footer {
+    text-align: center;
+    margin-top: 80px;
+    padding-top: 36px;
+  }
+  footer .ornament { margin-top: 0; margin-bottom: 22px; }
+  footer p {
+    font-family: 'Spectral', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 0.92rem;
+    color: var(--sage);
+    margin-bottom: 6px;
+  }
+
+  /* reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  }
+  @keyframes rise {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  header .eyebrow { animation-delay: 0.05s; }
+  header h1 { animation-delay: 0.2s; }
+  header .ornament { animation-delay: 0.45s; }
+  header .lede { animation-delay: 0.6s; }
+
+  @media (max-width: 600px) {
+    body { font-size: 18px; }
+    .page { padding: 0 22px 80px; }
+    header { padding: 64px 0 40px; }
+    .font-card { padding: 30px 24px; }
+    .specimen { padding: 22px 18px; }
+    .specimen .big { font-size: 2.2rem; }
+    .specimen .line { font-size: 1.15rem; }
+    .font-name { font-size: 1.7rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="eyebrow reveal">A typographic field guide</div>
+    <h1 class="reveal">The Baar Fonts
+      <span class="sub">Anthroposophical &amp; Waldorf typefaces by Lutz Baar</span>
+    </h1>
+    <div class="ornament reveal">
+      <span class="line"></span>
+      <span class="star">✦</span>
+      <span class="line r"></span>
+    </div>
+    <p class="lede reveal">Seven free typefaces created from 2002 onward by the Swedish designer Lutz Baar — quietly become the most widely used font family in Waldorf and anthroposophical publishing.</p>
+  </header>
+
+  <section class="intro">
+    <span class="sec-num">An introduction</span>
+    <h2>Letters That Carry a Worldview</h2>
+    <p class="dropcap">Type, in the anthroposophical view, is not a neutral container for words. The shape of each letter is itself a small living gesture — open or closed, warm or rigid, rounded or hard-edged — and a page set in the wrong typeface can dampen the very meaning it tries to carry. Steiner spoke of letters as having an inner character of their own, and Waldorf schools have long looked for typefaces whose forms breathe rather than march.</p>
+    <p>The Swedish designer <strong>Lutz Baar</strong> began releasing his Waldorf-aligned typefaces in 2002, and over the following years built up a family of seven free fonts that are now used across anthroposophical books, school programmes, festival booklets, and websites worldwide. All carry the "Baar" prefix and most are named after spiritual or philosophical ideas: Anthropos (the human being), Sophia (wisdom), Philos (love, friend), Metanoia (a turning of the soul), Lemuria, Goetheanis (after the Goetheanum), and Zeitgeist (spirit of the age).</p>
+    <p>What follows is a brief field guide to all seven — what each one looks like, where it tends to be used, and the character it brings to the page.</p>
+  </section>
+
+  <div class="font-grid">
+
+    <!-- 1. METANOIA -->
+    <div class="font-card">
+      <div class="corner"></div><div class="corner tr"></div>
+      <div class="font-num">Font I · 2002</div>
+      <div class="font-name">Baar Metanoia</div>
+      <div class="font-meaning">μετάνοια — a turning of mind, a change of heart</div>
+
+      <div class="specimen spec-metanoia">
+        <div class="big">Metanoia</div>
+        <div class="line">A turning of the soul toward the light</div>
+        <div class="abc">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz · 0123456789</div>
+      </div>
+      <div class="specimen-note">↑ Shown in Baar Metanoia if installed on your computer; otherwise a similar fallback face.</div>
+
+      <div class="font-desc">
+        <p>The first of the Baar fonts and still one of the most widely used. <em>Metanoia</em> is a calm humanist sans-serif with gently flared stroke ends and slightly opened counters that give it a warmth most sans-serifs lack. It reads beautifully at body-text sizes and is often the default choice for anthroposophical books and Waldorf school documents.</p>
+        <p>Available in Regular, Italic, Bold, and Bold Italic, it is the workhorse of the family.</p>
+      </div>
+
+      <div class="meta-row">
+        <span><strong>Year</strong> 2002</span>
+        <span><strong>Styles</strong> Regular · Italic · Bold · Bold Italic</span>
+        <span><strong>Use</strong> Body text, books, long-form</span>
+      </div>
+    </div>
+
+    <!-- 2. ANTHROPOS -->
+    <div class="font-card">
+      <div class="corner"></div><div class="corner tr"></div>
+      <div class="font-num">Font II · 2002</div>
+      <div class="font-name">Baar Antropos</div>
+      <div class="font-meaning">ἄνθρωπος — the human being</div>
+
+      <div class="specimen spec-anthropos">
+        <div class="big">Antropos</div>
+        <div class="line">The whole human being — body, soul, and spirit</div>
+        <div class="abc">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz · 0123456789</div>
+      </div>
+      <div class="specimen-note">↑ Shown in the real Baar font if installed on your computer; otherwise a similar fallback face.</div>
+
+      <div class="font-desc">
+        <p>Named for the human being at the centre of Steiner's worldview, <em>Antropos</em> (the original spelling Baar used) has a noticeably more upright, classical feeling than Metanoia — almost an inscriptional quality, with subtle modulation in the strokes. The result is a typeface that feels suited to titles, headings, and the more formal pages of a book.</p>
+        <p>Often paired with Metanoia: Antropos for the chapter heading, Metanoia for the running text below it.</p>
+      </div>
+
+      <div class="meta-row">
+        <span><strong>Year</strong> 2002</span>
+        <span><strong>Use</strong> Headings, titles, chapter openings</span>
+      </div>
+    </div>
+
+    <!-- 3. SOPHIA -->
+    <div class="font-card">
+      <div class="corner"></div><div class="corner tr"></div>
+      <div class="font-num">Font III</div>
+      <div class="font-name">Baar Sophia</div>
+      <div class="font-meaning">σοφία — wisdom</div>
+
+      <div class="specimen spec-sophia">
+        <div class="big">Sophia</div>
+        <div class="line">Wisdom flows where the heart listens</div>
+        <div class="abc">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz · 0123456789</div>
+      </div>
+      <div class="specimen-note">↑ Shown in the real Baar font if installed on your computer; otherwise a similar fallback face.</div>
+
+      <div class="font-desc">
+        <p>Where Metanoia is upright and steady, <em>Sophia</em> is its more flowing, slightly italicised counterpart — softer in the joins, gentler in the curve of the bowls. It carries a feminine, dignified quality that has made it a favourite for poetry pages, dedications, and quotations.</p>
+        <p>Available in Regular, Italic, Bold, and Bold Italic. Pairs especially well with Antropos for a classical book layout.</p>
+      </div>
+
+      <div class="meta-row">
+        <span><strong>Styles</strong> Regular · Italic · Bold · Bold Italic</span>
+        <span><strong>Use</strong> Poetry, quotations, gentler body text</span>
+      </div>
+    </div>
+
+    <!-- 4. PHILOS -->
+    <div class="font-card">
+      <div class="corner"></div><div class="corner tr"></div>
+      <div class="font-num">Font IV · 2002</div>
+      <div class="font-name">Baar Philos</div>
+      <div class="font-meaning">φίλος — friend, beloved; root of philosophy</div>
+
+      <div class="specimen spec-philos">
+        <div class="big">Philos</div>
+        <div class="line">A friend in love with wisdom</div>
+        <div class="abc">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz · 0123456789</div>
+      </div>
+      <div class="specimen-note">↑ Shown in the real Baar font if installed on your computer; otherwise a similar fallback face.</div>
+
+      <div class="font-desc">
+        <p><em>Philos</em> is the most contemporary-feeling member of the family — a clean, friendly humanist sans-serif with a slightly more open and modern aspect than Metanoia. It works very well at smaller sizes on screen, which is why it has been adopted for many Waldorf-aligned websites, newsletters, and study materials.</p>
+        <p>Like Metanoia, it comes in four styles, making it suitable for sustained reading.</p>
+      </div>
+
+      <div class="meta-row">
+        <span><strong>Year</strong> 2002</span>
+        <span><strong>Styles</strong> Regular · Italic · Bold · Bold Italic</span>
+        <span><strong>Use</strong> Web, newsletters, study materials</span>
+      </div>
+    </div>
+
+    <!-- 5. ZEITGEIST -->
+    <div class="font-card">
+      <div class="corner"></div><div class="corner tr"></div>
+      <div class="font-num">Font V · 2011</div>
+      <div class="font-name">Baar Zeitgeist</div>
+      <div class="font-meaning">Zeitgeist — the spirit of the age</div>
+
+      <div class="specimen spec-zeitgeist">
+        <div class="big">ZEITGEIST</div>
+        <div class="line">The spirit moving through our time</div>
+        <div class="abc">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz · 0123456789</div>
+      </div>
+      <div class="specimen-note">↑ Shown in the real Baar font if installed on your computer; otherwise a similar fallback face.</div>
+
+      <div class="font-desc">
+        <p><em>Zeitgeist</em> is the most geometric and architectural of the Baar fonts — strong, even strokes and confident, almost monumental letterforms. It is a display face rather than a reading face, designed for posters, banners, festival programmes, and headlines that need to carry across a room or a public square.</p>
+        <p>Set in capitals at large sizes it has a quality almost like architectural lettering, fitting for a typeface named after the very spirit of an age.</p>
+      </div>
+
+      <div class="meta-row">
+        <span><strong>Year</strong> 2011</span>
+        <span><strong>Use</strong> Display, posters, festival programmes, banners</span>
+      </div>
+    </div>
+
+    <!-- 6. GOETHEANIS -->
+    <div class="font-card">
+      <div class="corner"></div><div class="corner tr"></div>
+      <div class="font-num">Font VI · 2011</div>
+      <div class="font-name">Baar Goetheanis</div>
+      <div class="font-meaning">after the Goetheanum — Steiner's centre in Dornach</div>
+
+      <div class="specimen spec-goetheanis">
+        <div class="big">Goetheanis</div>
+        <div class="line">The flowing forms of the Goetheanum</div>
+        <div class="abc">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz · 0123456789</div>
+      </div>
+      <div class="specimen-note">↑ Shown in the real Baar font if installed on your computer; otherwise a similar fallback face.</div>
+
+      <div class="font-desc">
+        <p>Named after the Goetheanum — the great organic building designed by Steiner in Dornach, Switzerland — <em>Goetheanis</em> takes its character from that architecture: flowing, slightly sculpted, with curves that feel hand-shaped rather than ruler-drawn. It has a distinctly artistic, almost calligraphic feel.</p>
+        <p>This is the typeface to reach for when a piece needs to feel rooted in the visual language of Goetheanum art — eurythmy programmes, art exhibitions, anthroposophical journals.</p>
+      </div>
+
+      <div class="meta-row">
+        <span><strong>Year</strong> 2011</span>
+        <span><strong>Use</strong> Art catalogues, eurythmy, anthroposophical journals</span>
+      </div>
+    </div>
+
+    <!-- 7. LEMURIA -->
+    <div class="font-card">
+      <div class="corner"></div><div class="corner tr"></div>
+      <div class="font-num">Font VII · 2011</div>
+      <div class="font-name">Baar Lemuria</div>
+      <div class="font-meaning">Lemuria — the ancient epoch in Steiner's cosmology</div>
+
+      <div class="specimen spec-lemuria">
+        <div class="big">Lemuria</div>
+        <div class="line">An older language, before our writing</div>
+        <div class="abc">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz · 0123456789</div>
+      </div>
+      <div class="specimen-note">↑ Shown in the real Baar font if installed on your computer; otherwise a similar fallback face.</div>
+
+      <div class="font-desc">
+        <p>The most distinctive and atmospheric of the seven. Named after Lemuria — the ancient earth epoch Steiner described as preceding Atlantis — this typeface evokes something archaic, almost rune-like, with letterforms that recall early inscriptional writing.</p>
+        <p>It is a specialist display face, used where the subject reaches into mystery wisdom, archetypal themes, or the deep past — book covers on mythology, festival names, ceremonial titles.</p>
+      </div>
+
+      <div class="meta-row">
+        <span><strong>Year</strong> 2011</span>
+        <span><strong>Use</strong> Book covers, mythological titles, ceremonial display</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="note">
+    <strong>About the specimens.</strong> This guide is set up to display each specimen in its real Baar font if you have the font installed on your computer. If a font is not installed, a similar fallback face is shown instead, so the page never breaks. You can download all seven free from the sources below and drop them into your system's Fonts folder to see the true typefaces.
+  </div>
+
+  <div class="sources">
+    <h3>Where to download &amp; further reading</h3>
+    <ul>
+      <li>Lutz Baar's font portfolio on FontSpace — <cite><a href="https://www.fontspace.com/lutz-baar">fontspace.com/lutz-baar</a></cite> — all seven typefaces, free for personal and commercial use</li>
+      <li>FontSpace category — <cite><a href="https://www.fontspace.com/category/anthroposophical">Anthroposophical fonts</a></cite></li>
+      <li>Luc Devroye, <cite>Anthroposophy and type design</cite> — a scholarly index of typefaces in the anthroposophical tradition</li>
+      <li>Search "Baar [name]" on dafont.com, fontspace.com, or fontsaddict.com for direct downloads of individual styles</li>
+    </ul>
+  </div>
+
+  <footer>
+    <div class="ornament">
+      <span class="line"></span>
+      <span class="star">✦</span>
+      <span class="line r"></span>
+    </div>
+    <p>A section of <em>The Waldorf Path Directory</em></p>
+    <p>on the typography of Steiner-Waldorf and anthroposophical print</p>
+  </footer>
+
+</div>
+</body>
+</html>

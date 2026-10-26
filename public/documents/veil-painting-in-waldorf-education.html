@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veil Painting in Waldorf Education</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f5ede0;
+    --paper-warm: #efe3cf;
+    --paper-deep: #e8d8bd;
+    --ink: #3b2a1a;
+    --ink-soft: #6b5840;
+    --ink-faint: #8a7558;
+    --rust: #a8492a;
+    --moss: #5a6b3f;
+    --wool: #b8a583;
+    --thread: #c8865f;
+    --shadow: rgba(59, 42, 26, 0.08);
+    --shadow-deep: rgba(59, 42, 26, 0.15);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 19px;
+    background-image:
+      radial-gradient(circle at 10% 20%, rgba(168, 73, 42, 0.04) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(90, 107, 63, 0.04) 0%, transparent 40%);
+    min-height: 100vh;
+  }
+  body::before {
+    content: ''; position: fixed; inset: 0;
+    pointer-events: none; opacity: 0.4; z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.23 0 0 0 0 0.16 0 0 0 0 0.1 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .container {
+    max-width: 820px; margin: 0 auto;
+    padding: 60px 32px 100px;
+    position: relative; z-index: 1;
+  }
+  header {
+    text-align: center; margin-bottom: 64px;
+    padding-bottom: 40px; border-bottom: 1px solid var(--paper-deep);
+    position: relative;
+  }
+  header::after {
+    content: '✦'; position: absolute; bottom: -12px; left: 50%;
+    transform: translateX(-50%); background: var(--paper);
+    color: var(--wool); padding: 0 16px; font-size: 16px;
+  }
+  .eyebrow {
+    font-family: 'Caveat', cursive; font-size: 24px;
+    color: var(--rust); margin-bottom: 8px;
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 500;
+    font-size: clamp(40px, 6vw, 60px); line-height: 1.1;
+    color: var(--ink); margin-bottom: 16px;
+  }
+  .subtitle {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 22px; color: var(--ink-soft);
+    max-width: 580px; margin: 0 auto;
+  }
+  .toc {
+    background: var(--paper-warm); border: 1px solid var(--paper-deep);
+    border-radius: 4px; padding: 28px 36px;
+    margin-bottom: 64px; box-shadow: 0 2px 8px var(--shadow);
+  }
+  .toc-title {
+    font-family: 'Caveat', cursive; font-size: 22px;
+    color: var(--rust); margin-bottom: 12px;
+  }
+  .toc ol { list-style: none; counter-reset: toc-counter; }
+  .toc li {
+    counter-increment: toc-counter;
+    padding: 6px 0; border-bottom: 1px dotted var(--paper-deep);
+    display: flex; align-items: baseline;
+  }
+  .toc li:last-child { border-bottom: none; }
+  .toc li::before {
+    content: counter(toc-counter, upper-roman) ".";
+    color: var(--rust); font-weight: 600;
+    margin-right: 12px; min-width: 32px;
+    font-family: 'Cormorant Garamond', serif; font-size: 18px;
+  }
+  .toc a { color: var(--ink); text-decoration: none; flex: 1; font-size: 18px; }
+  .toc a:hover { color: var(--rust); }
+  section { margin-bottom: 72px; scroll-margin-top: 40px; }
+  h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: 36px; color: var(--rust);
+    margin-bottom: 20px; line-height: 1.2;
+  }
+  h2 .roman {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-weight: 400; color: var(--wool);
+    margin-right: 14px; font-size: 28px;
+  }
+  h3 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-style: italic; font-size: 24px;
+    color: var(--moss); margin-top: 32px; margin-bottom: 12px;
+  }
+  p { margin-bottom: 16px; color: var(--ink); }
+  p.lead {
+    font-size: 21px; font-style: italic;
+    color: var(--ink-soft); line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  em { color: var(--ink-soft); }
+  strong { color: var(--ink); font-weight: 600; }
+
+  /* Quick reference box */
+  .quick-ref {
+    background: rgba(168, 73, 42, 0.05);
+    border-left: 3px solid var(--rust);
+    border-radius: 0 4px 4px 0;
+    padding: 22px 28px;
+    margin: 26px 0;
+  }
+  .quick-ref h4 {
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    color: var(--rust);
+    margin-bottom: 10px;
+  }
+  .quick-ref ul {
+    list-style: none;
+    margin: 0;
+  }
+  .quick-ref li {
+    padding: 5px 0;
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    border-bottom: 1px dotted var(--paper-deep);
+  }
+  .quick-ref li:last-child { border-bottom: none; }
+  .quick-ref strong {
+    color: var(--moss);
+    font-weight: 600;
+    display: inline-block;
+    min-width: 110px;
+  }
+
+  /* Per-grade blocks */
+  .grade-block {
+    background: var(--paper-warm);
+    border: 1px solid var(--paper-deep);
+    border-radius: 4px;
+    padding: 22px 28px;
+    margin: 18px 0 28px;
+    box-shadow: 0 1px 4px var(--shadow);
+  }
+  .grade-block h4 {
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    color: var(--rust);
+    margin: 14px 0 6px;
+    font-weight: 600;
+  }
+  .grade-block h4:first-child { margin-top: 0; }
+  .grade-block p {
+    font-size: 16.5px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+  .grade-block ul.gentle {
+    list-style: none;
+    margin: 8px 0 14px;
+  }
+  .grade-block ul.gentle li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 6px;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .grade-block ul.gentle li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--thread);
+    top: 2px;
+    font-size: 13px;
+  }
+
+  /* Three-step process card */
+  .threestep {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 28px 0;
+  }
+  .step {
+    background: var(--paper-warm);
+    border: 1px solid var(--paper-deep);
+    border-radius: 4px;
+    padding: 22px 24px;
+  }
+  .step .num {
+    font-family: 'Caveat', cursive;
+    font-size: 26px;
+    color: var(--rust);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .step h5 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--moss);
+    margin-bottom: 10px;
+  }
+  .step p {
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-bottom: 0;
+  }
+
+  /* Gentle list */
+  ul.gentle { list-style: none; margin: 16px 0 24px; }
+  ul.gentle li {
+    position: relative; padding-left: 28px;
+    margin-bottom: 12px; font-size: 17px; line-height: 1.6;
+  }
+  ul.gentle li::before {
+    content: '✦'; position: absolute; left: 6px;
+    color: var(--thread); top: 4px; font-size: 14px;
+  }
+
+  /* Pull quote */
+  .pull-quote {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 24px; line-height: 1.4; color: var(--moss);
+    text-align: center; padding: 32px 24px; margin: 40px 0;
+    position: relative;
+    border-top: 1px solid var(--paper-deep); border-bottom: 1px solid var(--paper-deep);
+  }
+  .pull-quote::before {
+    content: '"'; font-size: 80px; color: var(--wool);
+    position: absolute; top: -8px; left: 24px; opacity: 0.4;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  /* Honest note */
+  .note {
+    margin: 28px 0;
+    padding: 22px 26px;
+    background: rgba(90, 107, 63, 0.06);
+    border: 1px dashed var(--moss);
+    border-radius: 3px;
+    font-size: 16.5px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+  }
+  .note strong {
+    color: var(--moss);
+    font-family: 'Caveat', cursive;
+    font-size: 19px;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  footer {
+    text-align: center; padding-top: 40px; margin-top: 80px;
+    border-top: 1px solid var(--paper-deep);
+    color: var(--ink-faint); font-style: italic; font-size: 17px;
+  }
+  footer .ornament { color: var(--wool); margin: 0 12px; }
+
+  @media (max-width: 600px) {
+    body { font-size: 18px; }
+    .container { padding: 40px 22px 80px; }
+    .toc { padding: 22px 24px; }
+    h1 { font-size: 38px; }
+    h2 { font-size: 30px; }
+    h3 { font-size: 22px; }
+    .pull-quote { font-size: 20px; padding: 24px 16px; }
+  }
+
+  section, header, .toc {
+    animation: fadeUp 0.8s ease-out backwards;
+  }
+  header { animation-delay: 0s; }
+  .toc { animation-delay: 0.15s; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <div class="eyebrow">~ a section of the Waldorf Path Directory ~</div>
+    <h1>Veil Painting</h1>
+    <p class="subtitle">The patient art of building images one transparent layer at a time</p>
+  </header>
+
+  <nav class="toc" aria-label="Table of contents">
+    <div class="toc-title">In this section</div>
+    <ol>
+      <li><a href="#what">What Veil Painting Is</a></li>
+      <li><a href="#why">Why It Belongs in the Curriculum</a></li>
+      <li><a href="#school">Veil Painting in the Waldorf Classroom</a></li>
+      <li><a href="#technique">How It Is Actually Done</a></li>
+      <li><a href="#tradition">The Wider Tradition — Collot d'Herbois and the Goetheanum</a></li>
+      <li><a href="#lazure">A Cousin Craft — Lazure on Walls</a></li>
+      <li><a href="#buying-guide">Materials &amp; Where to Find Them</a></li>
+      <li><a href="#books">Books &amp; Further Reading</a></li>
+    </ol>
+  </nav>
+
+  <section id="what">
+    <h2><span class="roman">I.</span>What Veil Painting Is</h2>
+
+    <p class="lead">Veil painting is the gentle art of building an image not by drawing it, but by laying down one transparent layer of colour after another — each layer almost invisible on its own — until, slowly, a picture appears as though from within the paper itself.</p>
+
+    <p>The word <em>veil</em> is exact. Each application of colour is a thin, almost-transparent wash — a veil of red, a veil of blue, a veil of yellow — laid one over the other across a sheet of dry, stretched watercolour paper. Each layer must dry completely before the next is laid, so that the colour beneath shows through and the new colour does not dissolve what came before. A finished veil painting may carry ten, twenty, thirty layers — and in the work of master veil painters, sometimes up to eighty.</p>
+
+    <p>What emerges is unlike any other watercolour. There are no hard pencil lines, no painted edges, no drawn outlines. The forms in a veil painting <em>appear</em> from the meeting of the colours themselves. A figure, a landscape, a flower — each takes shape gradually as warmer and cooler veils strike against one another and a third quality, not quite a colour and not quite a form, emerges between them.</p>
+
+    <p>This is in deliberate contrast to the wet-on-wet watercolour the children meet in the lower grades, where colours bloom and run freely across damp paper. In veil painting the paper is <em>dry</em>; every veil is laid with care; the work proceeds slowly, with long pauses between layers, sometimes across several weeks. It is one of the quietest, most patient practices in the entire Waldorf curriculum.</p>
+  </section>
+
+  <section id="why">
+    <h2><span class="roman">II.</span>Why It Belongs in the Curriculum</h2>
+
+    <p class="lead">Veil painting enters the Waldorf curriculum at a particular moment for particular reasons. It is not simply a different technique — it meets a different inner question in the student.</p>
+
+    <h3>From dreaming colour to thinking colour</h3>
+
+    <p>In Classes 1 through 6, Waldorf children paint almost entirely wet-on-wet. The colours flow and meet and dance; the child is inside the painting, dreaming. There are no plans, no measured outcomes; the painter and the painting are one. This is exactly right for the dreamy, image-saturated consciousness of the early grades.</p>
+
+    <p>But somewhere around Class 7 or 8, the young person begins to wake up to themselves as a separate being. They want to <em>decide</em>, to <em>shape</em>, to bring an inner intention out into the world deliberately. The dreamy unity of wet-on-wet no longer entirely fits. Veil painting meets the adolescent with a new gesture: <em>here is a technique where you must plan, observe, wait, and choose</em>. The painting will not bloom on its own; it must be patiently built.</p>
+
+    <h3>Patience as a curriculum</h3>
+
+    <p>In a world that rewards speed and immediate gratification, veil painting teaches the opposite. The student lays down a wash so pale it is barely visible, and then waits. Waits for the paper to dry. Waits to see what the layer wants. Waits to know what comes next. This is one of the quiet pedagogical gifts of the technique — the lesson is in the rhythm itself.</p>
+
+    <h3>Light and darkness as living forces</h3>
+
+    <p>Veil painting also carries a particular understanding of colour, drawn from Goethe and developed by Steiner. Colour is not simply a property of pigment; it is the visible result of light and darkness meeting. A blue is light moving away into darkness; a yellow is darkness illuminated from beyond. By laying transparent veils one over another, the painter works directly with these dynamics — letting light shine through, allowing darkness to deepen — so that the final image is not so much painted <em>onto</em> the paper as drawn <em>out of</em> the relationship between light, darkness, and the white of the page.</p>
+  </section>
+
+  <section id="school">
+    <h2><span class="roman">III.</span>Veil Painting in the Waldorf Classroom</h2>
+
+    <p class="lead">Schools vary, but a fairly typical Waldorf painting curriculum builds toward veil painting gradually, beginning to introduce it around Class 7 and culminating in dedicated veil painting blocks in the upper school.</p>
+
+    <div class="quick-ref">
+      <h4>The painting curriculum at a glance</h4>
+      <ul>
+        <li><strong>Classes 1–6:</strong> wet-on-wet watercolour — the colours and their moods</li>
+        <li><strong>Classes 7–8:</strong> introduction to veil (layered) technique, alongside continuing wet-on-wet</li>
+        <li><strong>Class 9:</strong> black-and-white drawing block — the deliberate absence of colour</li>
+        <li><strong>Class 10:</strong> colour returns as veil painting, often as an introductory block</li>
+        <li><strong>Class 11:</strong> a dedicated veil painting block — usually the deepest engagement of the high-school years</li>
+        <li><strong>Class 12:</strong> further veil painting, often connected to a personal or thematic project</li>
+      </ul>
+    </div>
+
+    <h3>Classes 7 and 8 — the first veils</h3>
+    <div class="grade-block">
+      <h4>The transition begins</h4>
+      <p>In Classes 7 and 8, the Waldorf curriculum begins to layer colour washes on top of each other for the first time. The work still uses the same paper, paints, and brushes the children have used since Class 1 — but the paper is now stretched and dried first, the colours are mixed in palettes rather than dropped onto wet paper, and each layer is allowed to dry before the next is laid. Pictures begin to be planned rather than dreamed.</p>
+      <h4>What the students paint</h4>
+      <p>Often nature subjects — a tree, a single flower, a stone, a piece of fruit — chosen partly so the student can observe a real object and partly so the technique can be tested against what the eye actually sees. The teacher leads the class through the exercise of transforming a wet-on-wet image into a veil image, and vice versa, so that the students feel the difference in the gesture.</p>
+    </div>
+
+    <h3>Class 10 — colour returns</h3>
+    <div class="grade-block">
+      <h4>The block as a whole</h4>
+      <p>After a year of black-and-white drawing in Class 9 — a deliberate fast from colour, focused on form, shading, and the play of light — the tenth-grade student returns to colour through veil painting. The experience is striking. After months of pencil and charcoal, even a single pale wash of yellow on white paper feels like a small revelation. Many schools introduce veil painting properly here, as the first real colour the students have met in over a year.</p>
+      <h4>Typical themes</h4>
+      <p>Often landscapes — mountains in early morning light, a forest seen through fog, the sea at sunset. Subjects in which atmospheric layering naturally lends itself to the technique.</p>
+    </div>
+
+    <h3>Class 11 — the dedicated block</h3>
+    <div class="grade-block">
+      <h4>The heart of the curriculum</h4>
+      <p>The eleventh-grade veil painting block is, in many Waldorf high schools, one of the most beloved experiences of the upper school years. The students paint for many weeks, sometimes daily, building up substantial works — often 30 by 40 cm or larger, sometimes much larger — with twenty, thirty, or forty veils of colour. Pieces are worked on across many sessions; a single painting may take three to four weeks.</p>
+      <h4>What students often discover</h4>
+      <p>Students frequently describe the block as transformative. They learn to wait. They learn to observe. They learn that what they thought would happen at the start is not what actually emerges — and that the painting, in its own way, begins to teach them. It is a quiet rite of passage.</p>
+    </div>
+
+    <h3>Class 12 — toward a personal language</h3>
+    <div class="grade-block">
+      <h4>Mature work</h4>
+      <p>By Class 12, veil painting becomes increasingly personal. Students may take on substantial projects — a series of paintings on a theme, a self-portrait worked through colour rather than line, a meditation on a place that matters to them. The technical demands of the medium are now familiar; what emerges is the student's own voice.</p>
+    </div>
+  </section>
+
+  <section id="technique">
+    <h2><span class="roman">IV.</span>How It Is Actually Done</h2>
+
+    <p class="lead">The technique itself is simple to describe and difficult to master. The simplicity is part of the point. Almost everything depends on the patience of the painter and the care of the eye.</p>
+
+    <h3>The three essential gestures</h3>
+
+    <div class="threestep">
+      <div class="step">
+        <div class="num">one</div>
+        <h5>Prepare the paper</h5>
+        <p>Stretch a sheet of good watercolour paper onto a board (soaked, taped down at the edges, allowed to dry tight). The paper must be flat and firm — any buckling will pool the colours unevenly.</p>
+      </div>
+      <div class="step">
+        <div class="num">two</div>
+        <h5>Mix the wash</h5>
+        <p>Take a small quantity of pure watercolour paint and dilute it with a great deal of water — until the colour, on a test sheet, is barely visible. This is the essential gesture. A veil is not a stain; it is a breath.</p>
+      </div>
+      <div class="step">
+        <div class="num">three</div>
+        <h5>Lay the veil and wait</h5>
+        <p>With a large soft brush, lay the wash across the paper in long, even strokes. Cover the whole area you intend to colour. Then stop. Let it dry completely — minutes, sometimes longer — before the next veil.</p>
+      </div>
+    </div>
+
+    <h3>A few quiet principles</h3>
+
+    <ul class="gentle">
+      <li><strong>The brush must be loaded, not dry.</strong> A dry brush makes streaks; a loaded brush flows. Hold enough wash in the bristles to cover the full area without lifting.</li>
+      <li><strong>Move with the whole arm, not the wrist.</strong> Long strokes across the paper rather than small dabs.</li>
+      <li><strong>Resist mixing on the paper.</strong> Each veil is one colour. The blending happens visually, as the eye sees one colour through another — not physically.</li>
+      <li><strong>Wait for the paper to be completely dry</strong> before the next layer. A damp surface will lift the colour beneath and turn the painting muddy.</li>
+      <li><strong>Resist the urge to "finish."</strong> The image will not appear in the first three layers, or the first ten. Many veils will pass before the form begins to show. Trust the process.</li>
+      <li><strong>Stop while there is still some white in the painting.</strong> The shine of the paper through the layers is much of what gives a veil painting its luminosity. A painting covered entirely in colour loses this inner light.</li>
+    </ul>
+
+    <h3>The colours speak first</h3>
+
+    <p>One of the most beautiful things about veil painting is that the painter often does not know, when beginning, exactly what the picture will be. The first few layers are laid almost like an invitation — a wash of warm yellow across the upper half, a wash of cool blue across the lower, a wash of soft red rising from one corner. The painter looks at what has emerged, and asks: <em>what does this picture want next?</em> The answer comes from the colours themselves, not from a plan.</p>
+
+    <div class="pull-quote">
+      Each transparent veil of colour must be carefully applied to dry paper so that the lower layers are not dissolved. Layer after layer is added and, slowly, the painter discovers emerging forms.
+    </div>
+  </section>
+
+  <section id="tradition">
+    <h2><span class="roman">V.</span>The Wider Tradition — Collot d'Herbois and the Goetheanum</h2>
+
+    <p class="lead">Veil painting in the Waldorf classroom is one branch of a much older anthroposophical tradition — a tradition that lives in adult painting schools, therapeutic practice, and the studio art of working painters across the world.</p>
+
+    <h3>The roots — Rudolf Steiner and Goethe</h3>
+
+    <p>The theoretical foundation of veil painting goes back to Goethe's <em>Theory of Colours</em> (1810) and Rudolf Steiner's lectures on painting, given in the 1920s. Both saw colour as something living — the visible meeting of light and darkness — rather than as a mere property of pigments. Steiner indicated in his lectures that painters could work with colour itself as a creative force, laying it down in transparent layers so that its inner movement could become visible. Several of his own sketches and the famous painted dome of the first Goetheanum in Dornach, Switzerland, used this approach.</p>
+
+    <h3>Liane Collot d'Herbois</h3>
+
+    <p>The figure who developed veil painting most fully in the twentieth century was Liane Collot d'Herbois (1907–1999), a British painter who studied Steiner's indications and worked closely with the anthroposophical doctors Ita Wegman and Hilma Walter at the Arlesheim clinic in Switzerland. Over decades of practice, Collot developed a refined approach to layered watercolour — sometimes building paintings of <em>up to eighty veils</em> — based on her detailed study of light, darkness, and the dynamic emergence of colour. She set out this work in her two-volume textbook, <em>Colour I</em> and <em>Colour II</em>.</p>
+
+    <p>Collot's approach was not only artistic but therapeutic. From the 1970s onward she trained painting therapists in her method, working with patients in anthroposophical clinics across Europe. Her paintings — meditative, luminous, often spiritually charged — hang today in clinics, anthroposophical centres, and private collections around the world.</p>
+
+    <h3>The training schools</h3>
+
+    <p>After Collot's death in 1999, her work continues through a network of schools and training programmes. The Emerald Foundation in The Hague, founded by her close students Josine and Paul Hutchison, offers the formal painting therapy training in her tradition. Other schools and individual teachers carry the work forward in Switzerland, Germany, France, Italy, the Netherlands, the United States, and elsewhere. The certification programme is recognised by the Medical Section at the Goetheanum.</p>
+
+    <h3>The Goetheanum painting school</h3>
+
+    <p>A parallel and equally important lineage runs through the Goetheanum's own painting school in Dornach, Switzerland — founded under Steiner's guidance and continued by his student Gerard Wagner and his wife Elisabeth Wagner-Koch. The Goetheanum school has trained generations of Waldorf painting teachers, many of whom now teach veil painting in upper schools around the world. Their approach overlaps with Collot's but emphasises somewhat different aspects of Steiner's colour indications.</p>
+  </section>
+
+  <section id="lazure">
+    <h2><span class="roman">VI.</span>A Cousin Craft — Lazure on Walls</h2>
+
+    <p class="lead">If you have ever walked into a Waldorf classroom and felt that the walls themselves seemed to breathe with colour, you have met lazure painting — a close cousin of veil painting, applied to walls.</p>
+
+    <p>Lazure (from the German <em>Lasur</em>, a transparent wash) is the same principle scaled up. The painter mixes a small amount of pure pigment with a clear water-based glaze and applies it to white-primed walls in long, soft, layered washes. Each room in a Waldorf school is typically painted in a specific colour suited to the age of the children who will work in it — soft warm peach and apricot for the kindergarten, gentle yellow-green for the early grades, deepening into blues and violets for the upper school. The walls glow rather than shout; the light in the room is altered subtly; the colour breathes.</p>
+
+    <p>Lazure walls are something of a Waldorf signature. Many practising lazure painters today learned veil painting first, in their school years, and only later moved up to the wall scale. The two techniques are deeply related — the same principle, the same trust in transparent layers, the same patient willingness to let the colour build slowly toward its final mood.</p>
+
+    <div class="note">
+      <strong>A note for families considering lazure at home</strong>
+      Lazure can be done at home on interior walls, and many Waldorf families have a softly-lazured wall somewhere in the house. The technique is forgiving — but the materials matter. Use a good white primer base, a quality clear water-based glaze (Benjamin Moore Aura is widely used), and pure pigments suited to the glaze. Charles Andrade's <em>lazure.com</em> sells a complete DIY kit and instructional video that is the most widely recommended starting point.
+    </div>
+  </section>
+
+  <section id="buying-guide">
+    <h2><span class="roman">VII.</span>Materials &amp; Where to Find Them</h2>
+
+    <p class="lead">For homeschooling parents, adult students taking up the practice, or anyone wishing to try a few veils at home, here are the specific materials and the suppliers who carry them.</p>
+
+    <div class="quick-ref">
+      <h4>A basic veil painting setup</h4>
+      <ul>
+        <li><strong>Paper:</strong> 200–300 gsm cold-pressed watercolour paper</li>
+        <li><strong>Board:</strong> a flat painting board larger than the paper</li>
+        <li><strong>Tape:</strong> brown gummed paper tape (kraft tape) for stretching</li>
+        <li><strong>Paints:</strong> Stockmar Watercolour Paints — primary colours (lemon yellow, vermilion, ultramarine blue)</li>
+        <li><strong>Palette:</strong> a glass or ceramic palette with several wells</li>
+        <li><strong>Brushes:</strong> large soft natural-hair brushes (size 14–20)</li>
+        <li><strong>Water:</strong> two jars — one to clean the brush, one to mix with</li>
+        <li><strong>Cloth:</strong> a soft natural cloth for drying the brush</li>
+      </ul>
+    </div>
+
+    <h3>Paints — Stockmar above all</h3>
+    <div class="grade-block">
+      <h4>The canonical paints</h4>
+      <p><strong>Stockmar Watercolour Paints</strong> are used in virtually every Waldorf school and veil painting studio in the world. The paints come in 20ml or 50ml bottles of liquid pigment which is diluted with water to make veils. They are made from high-quality, lightfast pigments without harsh fillers — the colour is pure, the dilutions are clean, and the paints layer beautifully.</p>
+      <h4>The starting set</h4>
+      <p>Traditional Waldorf practice uses only the three primary colours — <em>lemon yellow</em>, <em>vermilion (red)</em>, and <em>ultramarine blue</em> — from which all other colours are mixed. A larger set of 12 colours is also available for more advanced work.</p>
+      <h4>Approximate cost</h4>
+      <p>A starter set of three 20ml bottles: $25–35. A 12-colour set: $80–120.</p>
+    </div>
+
+    <h3>Paper</h3>
+    <div class="grade-block">
+      <h4>What to use</h4>
+      <ul class="gentle">
+        <li><strong>Weight:</strong> 200 gsm (140 lb) cold-pressed watercolour paper is the most common school choice. Heavier paper (300 gsm / 200 lb) is even better for veil work because it holds up to many layers without buckling</li>
+        <li><strong>Surface:</strong> cold-pressed (medium texture) — neither too smooth (hot-pressed) nor too rough</li>
+        <li><strong>Brands:</strong> <em>Fabriano Artistico</em>, <em>Arches</em>, <em>Saunders Waterford</em> (Hahnemühle and Canson also work). For school use, Stockmar and Mercurius sell paper specifically made for Waldorf painting</li>
+        <li><strong>Size:</strong> A3 (30 × 42 cm) is the most common school size; for serious veil work, larger sheets are often used</li>
+      </ul>
+    </div>
+
+    <h3>Brushes</h3>
+    <div class="grade-block">
+      <h4>What to use</h4>
+      <ul class="gentle">
+        <li><strong>Size:</strong> a large soft brush, typically size 14 to 20, sometimes larger for big sheets</li>
+        <li><strong>Hair:</strong> natural hair — squirrel, goat, or mixed natural — holds water better than synthetic and lays a smoother veil. Synthetic alternatives exist for vegan/cruelty-free preferences</li>
+        <li><strong>Brands:</strong> <em>Da Vinci Casaneo</em> (squirrel-hair), <em>Escoda</em>, <em>Raphael</em>, and Stockmar's own brush range</li>
+        <li><strong>Quantity:</strong> two or three brushes is plenty for a beginner — one large for veils, one medium for detail, one small for fine work in later layers</li>
+      </ul>
+    </div>
+
+    <h3>Other essentials</h3>
+    <ul class="gentle">
+      <li><strong>Painting board:</strong> a flat, water-resistant board (MDF, plywood, or marine-grade ply) at least 5 cm larger than the paper on each side</li>
+      <li><strong>Brown gummed paper tape:</strong> for stretching the paper. This is essential — masking tape or duct tape will not work. Available from any art supplier</li>
+      <li><strong>Two water jars:</strong> one for rinsing, one for mixing</li>
+      <li><strong>Mixing palette:</strong> a white ceramic or glass palette with several wells; or a flat white plate</li>
+      <li><strong>Soft natural cloth:</strong> for blotting the brush between strokes</li>
+    </ul>
+
+    <h3>Where to source materials</h3>
+
+    <h4>Waldorf-specific suppliers (preferred)</h4>
+    <ul class="gentle">
+      <li><strong>Stockmar direct</strong> (<em>stockmar.de</em>) — Germany. The manufacturer. International shipping</li>
+      <li><strong>Mercurius</strong> (<em>mercurius-international.com</em>) — international. Carries the full Stockmar range plus papers, brushes, and Waldorf-specific palettes</li>
+      <li><strong>A Child's Dream</strong> (<em>achildsdream.com</em>) — US. Comprehensive Stockmar stock plus brushes and painting paper</li>
+      <li><strong>Acorns &amp; Twigs</strong> (<em>acornsandtwigs.com</em>) — US. Waldorf art supplies</li>
+      <li><strong>Bella Luna Toys</strong> (<em>bellalunatoys.com</em>) — US. Stockmar paints, brushes, paper</li>
+      <li><strong>Myriad Natural Toys</strong> (<em>myriadnaturaltoys.com</em>) — UK. The leading UK source for Stockmar</li>
+    </ul>
+
+    <h4>General art suppliers (for paper and brushes)</h4>
+    <ul class="gentle">
+      <li><strong>Jackson's Art Supplies</strong> (<em>jacksonsart.com</em>) — UK / international. Excellent for paper and quality natural-hair brushes</li>
+      <li><strong>Blick Art Materials</strong> (<em>dickblick.com</em>) — US. Wide range, often best prices on Arches and Fabriano paper</li>
+      <li><strong>Cass Art</strong> (<em>cassart.co.uk</em>) — UK. Good high-street art supplier</li>
+      <li><strong>Eckersley's Art &amp; Craft</strong> — Australia</li>
+    </ul>
+
+    <h4>Lazure-specific suppliers</h4>
+    <ul class="gentle">
+      <li><strong>Charles Andrade's Lazure</strong> (<em>lazure.com</em>) — US. DIY lazure kits, brushes, pigments, and instructional video. The most accessible introduction to lazure for home use</li>
+      <li><strong>Livos Natural Paints</strong> — Germany / international. Natural-pigment paints used in many Waldorf wall painting projects</li>
+    </ul>
+  </section>
+
+  <section id="books">
+    <h2><span class="roman">VIII.</span>Books &amp; Further Reading</h2>
+
+    <p class="lead">A small library of essential books for parents, teachers, and adult students of veil painting.</p>
+
+    <h3>For the technique itself</h3>
+    <ul class="gentle">
+      <li><strong>Liane Collot d'Herbois — <em>Colour: A Textbook</em> (Volumes I and II)</strong>. The foundational texts of the modern veil painting tradition. Dense, beautiful, deeply rewarding. Available through anthroposophical bookshops</li>
+      <li><strong>Liane Collot d'Herbois — <em>Light, Darkness and Colour in Painting Therapy</em></strong>. The therapeutic application of her work</li>
+      <li><strong>Hilary Hammond — <em>The Living Art of Veil Painting</em></strong> (Mercury Press). A more accessible introduction; an excellent first book</li>
+      <li><strong>Hilde Boos-Hamburger — <em>The Nature and Origins of New Painting</em></strong>. On Steiner's painting indications and the Goetheanum tradition</li>
+      <li><strong>Gerard Wagner — <em>The Individuality of Colour</em></strong> and the related catalogues of his work at the Goetheanum painting school</li>
+    </ul>
+
+    <h3>On colour theory underlying the practice</h3>
+    <ul class="gentle">
+      <li><strong>Johann Wolfgang von Goethe — <em>Theory of Colours</em></strong>. The foundational work behind all anthroposophical colour practice. Charles Eastlake's English translation is the standard</li>
+      <li><strong>Rudolf Steiner — <em>Colour</em> (lectures collected in English translation)</strong>. Steiner's own lectures on the nature of colour and its use in painting</li>
+      <li><strong>Brunhild Müller — <em>Painting with Children: Colour and Child Development</em></strong>. The companion piece for the lower-grade wet-on-wet work; useful background for understanding where veil painting fits in the longer arc</li>
+    </ul>
+
+    <h3>For lazure</h3>
+    <ul class="gentle">
+      <li><strong>Charles Andrade — DIY kit instructional video</strong> (available at <em>lazure.com</em>). The most practical guide for the home or school</li>
+      <li><strong>Fritz Fuchs — <em>Lazure: A Painting Technique</em></strong>. A more thorough European treatment</li>
+    </ul>
+
+    <h3>Where to study in person</h3>
+    <ul class="gentle">
+      <li><strong>The Emerald Foundation</strong> (The Hague, Netherlands) — the formal training school in the Collot d'Herbois tradition</li>
+      <li><strong>The Goetheanum Painting School</strong> (Dornach, Switzerland) — short courses and longer training programmes</li>
+      <li><strong>Scuola Terra di Siena</strong> (Italy) — continues the Collot lineage</li>
+      <li><strong>Light, Color and Darkness</strong> (<em>lightcoloranddarkness.org</em>) — US-based; offers workshops and resources in the Collot tradition</li>
+      <li><strong>Bay Area Center for Waldorf Teacher Training</strong> — summer programmes in veil painting for educators</li>
+      <li>Many Waldorf teacher training programmes include veil painting modules — worth checking with the institute nearest you</li>
+    </ul>
+
+    <div class="note">
+      <strong>A note on the slow path</strong>
+      Veil painting is not learned from a book. Every serious practitioner of this art studied with a teacher, often for years. A book or a video can give you the technique; only sitting at a board beside an experienced painter, watching the brush, asking, painting again, will give you the practice. If you find yourself drawn to this work, find a teacher.
+    </div>
+  </section>
+
+  <footer>
+    <span class="ornament">✦</span>
+    A section of <em>The Waldorf Path Directory</em>
+    <span class="ornament">✦</span>
+  </footer>
+
+</div>
+
+</body>
+</html>

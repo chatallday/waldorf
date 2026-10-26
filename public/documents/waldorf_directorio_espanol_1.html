@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Directorio Waldorf — Español</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: #faf9f6; color: #2c2c2a; }
+.dir { max-width: 980px; margin: 0 auto; padding: 2rem 1.5rem; }
+.dir-header { text-align: center; padding: 2.5rem 1rem 2rem; border-bottom: 1px solid #d3d1c7; margin-bottom: 1.5rem; }
+.dir-header h1 { font-size: 30px; font-weight: normal; letter-spacing: 0.12em; color: #2c2c2a; }
+.dir-header p { font-size: 13px; color: #888780; margin-top: 8px; letter-spacing: 0.06em; }
+.nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2rem; justify-content: center; }
+.nav button { font-size: 13px; padding: 7px 16px; border-radius: 99px; border: 1px solid #b4b2a9; background: transparent; color: #5f5e5a; cursor: pointer; font-family: Georgia, serif; transition: all 0.15s; }
+.nav button:hover, .nav button.active { background: #2c2c2a; color: #faf9f6; border-color: #2c2c2a; }
+.section { display: none; }
+.section.active { display: block; }
+.sec-title { font-size: 22px; font-weight: normal; color: #2c2c2a; padding-bottom: 0.75rem; border-bottom: 1px solid #d3d1c7; letter-spacing: 0.03em; }
+.sec-sub { font-size: 13px; color: #888780; margin: 0.5rem 0 1.75rem; line-height: 1.6; }
+.divider { font-size: 11px; font-weight: bold; color: #b4b2a9; letter-spacing: 0.1em; text-transform: uppercase; margin: 2rem 0 1rem; padding-bottom: 5px; border-bottom: 1px solid #d3d1c7; }
+.season-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 16px; margin-bottom: 1.5rem; }
+.season-block { border-radius: 10px; border: 1px solid #d3d1c7; overflow: hidden; }
+.season-head { padding: 10px 16px; font-size: 13px; font-weight: bold; letter-spacing: 0.04em; }
+.s-spring .season-head { background: #c0dd97; color: #27500a; }
+.s-summer .season-head { background: #fac775; color: #633806; }
+.s-autumn .season-head { background: #f5c4b3; color: #712b13; }
+.s-winter .season-head { background: #b5d4f4; color: #0c447c; }
+.s-daily .season-head { background: #cecbf6; color: #3c3489; }
+.s-folk .season-head { background: #9fe1cb; color: #085041; }
+.season-body { padding: 10px 16px; background: #fff; }
+.song-item { font-size: 12.5px; color: #5f5e5a; line-height: 1.85; display: flex; align-items: baseline; gap: 8px; border-bottom: 1px solid #f1efe8; }
+.song-item:last-child { border-bottom: none; }
+.song-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; margin-top: 8px; }
+.s-spring .song-dot { background: #639922; }
+.s-summer .song-dot { background: #ba7517; }
+.s-autumn .song-dot { background: #d85a30; }
+.s-winter .song-dot { background: #185fa5; }
+.s-daily .song-dot { background: #7f77dd; }
+.s-folk .song-dot { background: #1d9e75; }
+.tip { background: #f1efe8; border-radius: 8px; padding: 1rem 1.25rem; font-size: 13px; color: #5f5e5a; line-height: 1.7; margin-bottom: 2rem; font-style: italic; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; margin-bottom: 2rem; }
+.card { background: #fff; border: 1px solid #d3d1c7; border-radius: 10px; padding: 1.1rem 1.25rem; }
+.card-tag { font-size: 11px; padding: 3px 9px; border-radius: 99px; display: inline-block; margin-bottom: 8px; font-weight: bold; letter-spacing: 0.04em; }
+.tag-green { background: #c0dd97; color: #27500a; }
+.tag-purple { background: #cecbf6; color: #3c3489; }
+.tag-amber { background: #fac775; color: #633806; }
+.tag-coral { background: #f5c4b3; color: #712b13; }
+.tag-blue { background: #b5d4f4; color: #0c447c; }
+.tag-teal { background: #9fe1cb; color: #085041; }
+.card h3 { font-size: 16px; font-weight: normal; color: #2c2c2a; margin-bottom: 3px; }
+.card .author { font-size: 12px; color: #888780; margin-bottom: 8px; font-style: italic; }
+.card p { font-size: 13px; color: #5f5e5a; line-height: 1.6; }
+.card ul { margin-top: 8px; }
+.card ul li { font-size: 12px; color: #5f5e5a; line-height: 1.9; list-style: none; padding-left: 14px; position: relative; }
+.card ul li::before { content: '—'; position: absolute; left: 0; color: #b4b2a9; }
+.book-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 2rem; }
+.book-item { background: #fff; border: 1px solid #d3d1c7; border-radius: 8px; padding: 1rem 1.25rem; display: flex; gap: 14px; align-items: flex-start; }
+.book-icon { font-size: 15px; flex-shrink: 0; width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+.bi-g { background: #c0dd97; color: #27500a; }
+.bi-a { background: #fac775; color: #633806; }
+.bi-s { background: #9fe1cb; color: #085041; }
+.bi-p { background: #cecbf6; color: #3c3489; }
+.book-info h4 { font-size: 14px; font-weight: bold; color: #2c2c2a; }
+.book-info .meta { font-size: 12px; color: #888780; margin-top: 4px; line-height: 1.55; }
+.link-list a { font-size: 13px; color: #185fa5; display: block; line-height: 2.2; text-decoration: none; border-bottom: 1px solid #f1efe8; padding-left: 8px; }
+.link-list a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="dir">
+  <div class="dir-header">
+    <h1>EL DIRECTORIO WALDORF</h1>
+    <p>Canciones de Ronda &nbsp;·&nbsp; Cancioneros &nbsp;·&nbsp; Autores &nbsp;·&nbsp; Libros Infantiles &nbsp;·&nbsp; Pedagogía &nbsp;·&nbsp; Recursos</p>
+    <p style="margin-top:6px; font-size:12px; color:#b4b2a9;">España &nbsp;·&nbsp; Latinoamérica &nbsp;·&nbsp; Comunidad Waldorf en español</p>
+  </div>
+
+  <div class="nav">
+    <button class="active" onclick="show('canciones',event)">Canciones de Ronda</button>
+    <button onclick="show('cancioneros',event)">Cancioneros</button>
+    <button onclick="show('autores',event)">Autores</button>
+    <button onclick="show('infantil',event)">Libros Infantiles</button>
+    <button onclick="show('pedagogia',event)">Pedagogía</button>
+    <button onclick="show('recursos',event)">Recursos</button>
+  </div>
+
+  <!-- ═══════════════════════ CANCIONES DE RONDA ═══════════════════════ -->
+  <div id="canciones" class="section active">
+    <div class="sec-title">Canciones de Ronda y Corro</div>
+    <p class="sec-sub">Más de 120 canciones pentatónicas, rondas y juegos de dedos usados en jardines de infancia Waldorf en español — ordenados por estación, momento del día y festividad. Máximo 50 títulos por sección.</p>
+
+    <div class="season-grid">
+
+      <div class="season-block s-spring">
+        <div class="season-head">🌸 Primavera (hasta 50)</div>
+        <div class="season-body">
+          <div class="song-item"><span class="song-dot"></span>Zen zen zen, abejita ven</div>
+          <div class="song-item"><span class="song-dot"></span>En una casita duerme una liebrecita</div>
+          <div class="song-item"><span class="song-dot"></span>Soy el gallo Tipetón</div>
+          <div class="song-item"><span class="song-dot"></span>Libélula lila, libélula azul</div>
+          <div class="song-item"><span class="song-dot"></span>Mariposa revoltosa</div>
+          <div class="song-item"><span class="song-dot"></span>Tararí, tarará (pentatónica)</div>
+          <div class="song-item"><span class="song-dot"></span>Caballito de cartón</div>
+          <div class="song-item"><span class="song-dot"></span>Manzana y pera</div>
+          <div class="song-item"><span class="song-dot"></span>Monte arriba, monte abajo</div>
+          <div class="song-item"><span class="song-dot"></span>Los colores del arcoíris</div>
+          <div class="song-item"><span class="song-dot"></span>Cinco estrellitas en el cielo</div>
+          <div class="song-item"><span class="song-dot"></span>La semilla en la tierra</div>
+          <div class="song-item"><span class="song-dot"></span>El abejorro (ronda con gestos)</div>
+          <div class="song-item"><span class="song-dot"></span>Caracol, caracol, saca tus cuernos al sol</div>
+          <div class="song-item"><span class="song-dot"></span>Lluvia, lluvia, ven a jugar</div>
+          <div class="song-item"><span class="song-dot"></span>El conejito de pascua</div>
+          <div class="song-item"><span class="song-dot"></span>El pajarito (juego de manos)</div>
+          <div class="song-item"><span class="song-dot"></span>Flores de primavera (ronda)</div>
+          <div class="song-item"><span class="song-dot"></span>El cuco ya llegó</div>
+          <div class="song-item"><span class="song-dot"></span>El arroyo corre claro</div>
+          <div class="song-item"><span class="song-dot"></span>La rana canta en el charco</div>
+          <div class="song-item"><span class="song-dot"></span>Pascua florida (canción de fiesta)</div>
+          <div class="song-item"><span class="song-dot"></span>Mariposa, ¿de qué color eres?</div>
+          <div class="song-item"><span class="song-dot"></span>El gusanito de seda</div>
+          <div class="song-item"><span class="song-dot"></span>Sube, sube, pequeño brote</div>
+          <div class="song-item"><span class="song-dot"></span>El sol despierta (ronda matutina)</div>
+          <div class="song-item"><span class="song-dot"></span>El jardín florece</div>
+          <div class="song-item"><span class="song-dot"></span>Nido de pájaros (juego de dedos)</div>
+          <div class="song-item"><span class="song-dot"></span>Gira, gira la rueda</div>
+          <div class="song-item"><span class="song-dot"></span>El viento suave de marzo</div>
+          <div class="song-item"><span class="song-dot"></span>Sembrando, sembrando (ronda agrícola)</div>
+          <div class="song-item"><span class="song-dot"></span>El goteo de la lluvia (juego de dedos)</div>
+          <div class="song-item"><span class="song-dot"></span>Ranita verde (canto y salto)</div>
+          <div class="song-item"><span class="song-dot"></span>Mi pequeño caracol de jardín</div>
+          <div class="song-item"><span class="song-dot"></span>¡Qué bonita es la primavera!</div>
+          <div class="song-item"><span class="song-dot"></span>La mariquita (juego de dedos)</div>
+          <div class="song-item"><span class="song-dot"></span>Los árboles florecen</div>
+          <div class="song-item"><span class="song-dot"></span>Vuelo de golondrinas</div>
+          <div class="song-item"><span class="song-dot"></span>Brota la flor en el campo</div>
+          <div class="song-item"><span class="song-dot"></span>El arco iris (ronda con colores)</div>
+          <div class="song-item"><span class="song-dot"></span>La abeja y la flor (ronda)</div>
+          <div class="song-item"><span class="song-dot"></span>Hola, señor sol (saludo matinal)</div>
+          <div class="song-item"><span class="song-dot"></span>Tierra mía, tierra buena</div>
+          <div class="song-item"><span class="song-dot"></span>El prado verde y el cielo azul</div>
+          <div class="song-item"><span class="song-dot"></span>Canción del huerto</div>
+          <div class="song-item"><span class="song-dot"></span>La cigüeña ha llegado</div>
+          <div class="song-item"><span class="song-dot"></span>El río corre alegre</div>
+          <div class="song-item"><span class="song-dot"></span>Pequeña semilla (verso y movimiento)</div>
+          <div class="song-item"><span class="song-dot"></span>Ronda de mayo</div>
+          <div class="song-item"><span class="song-dot"></span>La luna de abril</div>
+        </div>
+      </div>
+
+      <div class="season-block s-summer">
+        <div class="season-head">☀️ Verano / San Juan (hasta 50)</div>
+        <div class="season-body">
+          <div class="song-item"><span class="song-dot"></span>Un barco navegando está (Ringurín y Ringurán)</div>
+          <div class="song-item"><span class="song-dot"></span>Un niño a un árbol subió</div>
+          <div class="song-item"><span class="song-dot"></span>El sol de verano (ronda)</div>
+          <div class="song-item"><span class="song-dot"></span>Las olas del mar (juego de movimiento)</div>
+          <div class="song-item"><span class="song-dot"></span>Fuego de San Juan</div>
+          <div class="song-item"><span class="song-dot"></span>En el bosque de verano</div>
+          <div class="song-item"><span class="song-dot"></span>El molino y el río</div>
+          <div class="song-item"><span class="song-dot"></span>Muele muele molinero</div>
+          <div class="song-item"><span class="song-dot"></span>La cigarra y el grillo</div>
+          <div class="song-item"><span class="song-dot"></span>Vamos al campo (ronda campestre)</div>
+          <div class="song-item"><span class="song-dot"></span>La cosecha llega (canción de la mies)</div>
+          <div class="song-item"><span class="song-dot"></span>El panadero amasa (ronda de oficios)</div>
+          <div class="song-item"><span class="song-dot"></span>Brilla, brilla, estrellita</div>
+          <div class="song-item"><span class="song-dot"></span>La luciérnaga en la noche</div>
+          <div class="song-item"><span class="song-dot"></span>El río baja cantando</div>
+          <div class="song-item"><span class="song-dot"></span>El pescador y sus redes</div>
+          <div class="song-item"><span class="song-dot"></span>Canción del sol de mediodía</div>
+          <div class="song-item"><span class="song-dot"></span>Las vacas en el prado</div>
+          <div class="song-item"><span class="song-dot"></span>El pastor y su rebaño</div>
+          <div class="song-item"><span class="song-dot"></span>Los frutos del verano</div>
+          <div class="song-item"><span class="song-dot"></span>Ronda del agua y el fuego</div>
+          <div class="song-item"><span class="song-dot"></span>El trigo dorado (canción)</div>
+          <div class="song-item"><span class="song-dot"></span>Vuela, vuela mariposa</div>
+          <div class="song-item"><span class="song-dot"></span>La noche estrellada</div>
+          <div class="song-item"><span class="song-dot"></span>El canto del grillo nocturno</div>
+          <div class="song-item"><span class="song-dot"></span>Danza del sol naciente</div>
+          <div class="song-item"><span class="song-dot"></span>Arriero, arriero, camina</div>
+          <div class="song-item"><span class="song-dot"></span>La fuente de la plaza</div>
+          <div class="song-item"><span class="song-dot"></span>Sandía, sandía (ronda de frutas)</div>
+          <div class="song-item"><span class="song-dot"></span>El barco de papel (ronda)</div>
+          <div class="song-item"><span class="song-dot"></span>La hormiguita laboriosa</div>
+          <div class="song-item"><span class="song-dot"></span>El verano ya llegó (canción festiva)</div>
+          <div class="song-item"><span class="song-dot"></span>Salta, salta ranita</div>
+          <div class="song-item"><span class="song-dot"></span>El carro del heno</div>
+          <div class="song-item"><span class="song-dot"></span>Al agua, patos</div>
+          <div class="song-item"><span class="song-dot"></span>Canción del pajarito en el nido</div>
+          <div class="song-item"><span class="song-dot"></span>El toro y la luna (canción popular)</div>
+          <div class="song-item"><span class="song-dot"></span>El zapatero remendón (ronda de oficios)</div>
+          <div class="song-item"><span class="song-dot"></span>La danza del verano</div>
+          <div class="song-item"><span class="song-dot"></span>El sol se va a dormir</div>
+          <div class="song-item"><span class="song-dot"></span>Ven a jugar (ronda libre)</div>
+          <div class="song-item"><span class="song-dot"></span>El maestro constructor (ronda)</div>
+          <div class="song-item"><span class="song-dot"></span>Canta el gallo en el alba</div>
+          <div class="song-item"><span class="song-dot"></span>La oveja y su lana (juego)</div>
+          <div class="song-item"><span class="song-dot"></span>Canción del campesino</div>
+          <div class="song-item"><span class="song-dot"></span>La lluvia de verano</div>
+          <div class="song-item"><span class="song-dot"></span>El gran árbol del bosque</div>
+          <div class="song-item"><span class="song-dot"></span>La torre de piedra (juego de construcción)</div>
+          <div class="song-item"><span class="song-dot"></span>Canción de despedida (fin de curso)</div>
+          <div class="song-item"><span class="song-dot"></span>Ronda de San Juan (fiesta)</div>
+        </div>
+      </div>
+
+      <div class="season-block s-autumn">
+        <div class="season-head">🍂 Otoño / San Martín / San Miguel (hasta 50)</div>
+        <div class="season-body">
+          <div class="song-item"><span class="song-dot"></span>Estaba el enanito trabajando, rompompón</div>
+          <div class="song-item"><span class="song-dot"></span>El farol de San Martín</div>
+          <div class="song-item"><span class="song-dot"></span>Faroles, faroles (canción de farol)</div>
+          <div class="song-item"><span class="song-dot"></span>Mi farol lleva luz (ronda de faroles)</div>
+          <div class="song-item"><span class="song-dot"></span>El castaño y sus frutos</div>
+          <div class="song-item"><span class="song-dot"></span>Las hojas caen del árbol</div>
+          <div class="song-item"><span class="song-dot"></span>El viento de otoño</div>
+          <div class="song-item"><span class="song-dot"></span>El erizo busca nueces</div>
+          <div class="song-item"><span class="song-dot"></span>La vendimia (canción de la uva)</div>
+          <div class="song-item"><span class="song-dot"></span>El puercoespín en el bosque</div>
+          <div class="song-item"><span class="song-dot"></span>La ardilla guarda bellotas</div>
+          <div class="song-item"><span class="song-dot"></span>El labriego ara la tierra</div>
+          <div class="song-item"><span class="song-dot"></span>Las grullas emigran (canción)</div>
+          <div class="song-item"><span class="song-dot"></span>El cometa vuela alto</div>
+          <div class="song-item"><span class="song-dot"></span>Ronda de San Miguel (otoño)</div>
+          <div class="song-item"><span class="song-dot"></span>El caballero y el dragón (Micael)</div>
+          <div class="song-item"><span class="song-dot"></span>La niebla en el valle</div>
+          <div class="song-item"><span class="song-dot"></span>El horno huele a pan</div>
+          <div class="song-item"><span class="song-dot"></span>Cae la hoja amarilla</div>
+          <div class="song-item"><span class="song-dot"></span>El oso se va a dormir (hibernación)</div>
+          <div class="song-item"><span class="song-dot"></span>Canción de la lluvia de otoño</div>
+          <div class="song-item"><span class="song-dot"></span>El pájaro que parte (migración)</div>
+          <div class="song-item"><span class="song-dot"></span>El molino de viento (ronda)</div>
+          <div class="song-item"><span class="song-dot"></span>La luna llena de otoño</div>
+          <div class="song-item"><span class="song-dot"></span>El jardinero poda sus rosas</div>
+          <div class="song-item"><span class="song-dot"></span>Ronda de la cosecha</div>
+          <div class="song-item"><span class="song-dot"></span>El hongo y la seta (juego de dedos)</div>
+          <div class="song-item"><span class="song-dot"></span>El gitano y su hoguera</div>
+          <div class="song-item"><span class="song-dot"></span>La manzana roja (ronda de frutas)</div>
+          <div class="song-item"><span class="song-dot"></span>San Martín comparte su capa</div>
+          <div class="song-item"><span class="song-dot"></span>Otoño, otoño, ya llegaste</div>
+          <div class="song-item"><span class="song-dot"></span>El grano y la espiga</div>
+          <div class="song-item"><span class="song-dot"></span>El castañero en la plaza</div>
+          <div class="song-item"><span class="song-dot"></span>El granero lleno (canción)</div>
+          <div class="song-item"><span class="song-dot"></span>La calabaza del huerto</div>
+          <div class="song-item"><span class="song-dot"></span>El tejedor y su telar (ronda)</div>
+          <div class="song-item"><span class="song-dot"></span>El fuego en la chimenea</div>
+          <div class="song-item"><span class="song-dot"></span>Las nubes se juntan</div>
+          <div class="song-item"><span class="song-dot"></span>La tormenta llega (juego)</div>
+          <div class="song-item"><span class="song-dot"></span>El cisne en el lago</div>
+          <div class="song-item"><span class="song-dot"></span>Las ciruelas y las peras</div>
+          <div class="song-item"><span class="song-dot"></span>Ronda del molino y el pan</div>
+          <div class="song-item"><span class="song-dot"></span>El farolito tembloroso</div>
+          <div class="song-item"><span class="song-dot"></span>La bruja del bosque (Halloween)</div>
+          <div class="song-item"><span class="song-dot"></span>El fantasma bailarín</div>
+          <div class="song-item"><span class="song-dot"></span>El enano del bosque trabaja</div>
+          <div class="song-item"><span class="song-dot"></span>La hoguera de San Martín</div>
+          <div class="song-item"><span class="song-dot"></span>El ciervo en el bosque</div>
+          <div class="song-item"><span class="song-dot"></span>Canción de la nuez</div>
+          <div class="song-item"><span class="song-dot"></span>El lobo y el zorro (juego)</div>
+        </div>
+      </div>
+
+      <div class="season-block s-winter">
+        <div class="season-head">❄️ Invierno / Adviento / Navidad / Reyes (hasta 50)</div>
+        <div class="season-body">
+          <div class="song-item"><span class="song-dot"></span>Fru fru fri, qué frío hace aquí</div>
+          <div class="song-item"><span class="song-dot"></span>El enano de invierno (con gestos)</div>
+          <div class="song-item"><span class="song-dot"></span>Campana de Belén</div>
+          <div class="song-item"><span class="song-dot"></span>Los pastores a Belén</div>
+          <div class="song-item"><span class="song-dot"></span>Noche de paz (Navidad)</div>
+          <div class="song-item"><span class="song-dot"></span>El niño del tambor</div>
+          <div class="song-item"><span class="song-dot"></span>Rin, rin, rín, ya llega el Adviento</div>
+          <div class="song-item"><span class="song-dot"></span>La corona de Adviento</div>
+          <div class="song-item"><span class="song-dot"></span>La primera vela del Adviento</div>
+          <div class="song-item"><span class="song-dot"></span>El villancico del portal</div>
+          <div class="song-item"><span class="song-dot"></span>La estrella de Navidad</div>
+          <div class="song-item"><span class="song-dot"></span>Los Reyes Magos (ronda)</div>
+          <div class="song-item"><span class="song-dot"></span>El muñeco de nieve</div>
+          <div class="song-item"><span class="song-dot"></span>Duérmete, niño (nana)</div>
+          <div class="song-item"><span class="song-dot"></span>La Nochebuena se acerca</div>
+          <div class="song-item"><span class="song-dot"></span>El belén de mi casita</div>
+          <div class="song-item"><span class="song-dot"></span>Hacia Belén va una burra (villancico)</div>
+          <div class="song-item"><span class="song-dot"></span>La canción de la nieve</div>
+          <div class="song-item"><span class="song-dot"></span>Ronda de Navidad</div>
+          <div class="song-item"><span class="song-dot"></span>El carpintero y su madera (Adviento)</div>
+          <div class="song-item"><span class="song-dot"></span>El tren de Navidad (juego)</div>
+          <div class="song-item"><span class="song-dot"></span>En el portal de Belén</div>
+          <div class="song-item"><span class="song-dot"></span>El niño Jesús en la cuna</div>
+          <div class="song-item"><span class="song-dot"></span>Los ángeles cantores</div>
+          <div class="song-item"><span class="song-dot"></span>Enero, enero, mes de los Reyes</div>
+          <div class="song-item"><span class="song-dot"></span>Vamos a Belén (ronda caminante)</div>
+          <div class="song-item"><span class="song-dot"></span>La luna de invierno</div>
+          <div class="song-item"><span class="song-dot"></span>El fuego de la hoguera</div>
+          <div class="song-item"><span class="song-dot"></span>Cristales de hielo (juego de dedos)</div>
+          <div class="song-item"><span class="song-dot"></span>El pastor con su rebaño (Navidad)</div>
+          <div class="song-item"><span class="song-dot"></span>La noche más larga (solsticio)</div>
+          <div class="song-item"><span class="song-dot"></span>El lobo en el frío</div>
+          <div class="song-item"><span class="song-dot"></span>El oso duerme en su cueva</div>
+          <div class="song-item"><span class="song-dot"></span>Las posadas (México/Latinoamérica)</div>
+          <div class="song-item"><span class="song-dot"></span>Copo de nieve, copo de nieve</div>
+          <div class="song-item"><span class="song-dot"></span>La fiesta de la luz (Candelaria)</div>
+          <div class="song-item"><span class="song-dot"></span>El tejedor del tiempo de invierno</div>
+          <div class="song-item"><span class="song-dot"></span>Villancico de los pastores</div>
+          <div class="song-item"><span class="song-dot"></span>El cocinero y su olla (Adviento)</div>
+          <div class="song-item"><span class="song-dot"></span>La vela y la oscuridad</div>
+          <div class="song-item"><span class="song-dot"></span>El invierno cubre la tierra</div>
+          <div class="song-item"><span class="song-dot"></span>El gnomo de la nieve</div>
+          <div class="song-item"><span class="song-dot"></span>Ronda del año nuevo</div>
+          <div class="song-item"><span class="song-dot"></span>Tres Reyes Magos de Oriente</div>
+          <div class="song-item"><span class="song-dot"></span>La piñata (México)</div>
+          <div class="song-item"><span class="song-dot"></span>El campanero y su campana</div>
+          <div class="song-item"><span class="song-dot"></span>Cierra los ojos, la noche llega</div>
+          <div class="song-item"><span class="song-dot"></span>Doce noches (Navidad)</div>
+          <div class="song-item"><span class="song-dot"></span>El niño y la estrella</div>
+          <div class="song-item"><span class="song-dot"></span>Silencio, silencio (nana de invierno)</div>
+        </div>
+      </div>
+
+      <div class="season-block s-daily">
+        <div class="season-head">🌅 Saludo, Mañana & Noche</div>
+        <div class="season-body">
+          <div class="song-item"><span class="song-dot"></span>Buenos días, padre sol / madre tierra</div>
+          <div class="song-item"><span class="song-dot"></span>Canción de bienvenida al círculo</div>
+          <div class="song-item"><span class="song-dot"></span>A la ronda de la ensalada</div>
+          <div class="song-item"><span class="song-dot"></span>Con una mano nos saludamos</div>
+          <div class="song-item"><span class="song-dot"></span>Hola, hola, ya estamos aquí</div>
+          <div class="song-item"><span class="song-dot"></span>El despertador del sol</div>
+          <div class="song-item"><span class="song-dot"></span>La tierra nos da su fruto (tischspruch)</div>
+          <div class="song-item"><span class="song-dot"></span>Gracias a la tierra, gracias al sol</div>
+          <div class="song-item"><span class="song-dot"></span>Guardemos, guardemos (canción de recoger)</div>
+          <div class="song-item"><span class="song-dot"></span>Ya es hora de lavar (higiene)</div>
+          <div class="song-item"><span class="song-dot"></span>La hora de la siesta</div>
+          <div class="song-item"><span class="song-dot"></span>Canción de despedida (adiós)</div>
+          <div class="song-item"><span class="song-dot"></span>Luna, lunita (nana)</div>
+          <div class="song-item"><span class="song-dot"></span>Duérmete, mi niño (nana)</div>
+          <div class="song-item"><span class="song-dot"></span>Estrellita, ¿dónde estás?</div>
+          <div class="song-item"><span class="song-dot"></span>El ángel guardián (verso)</div>
+          <div class="song-item"><span class="song-dot"></span>Vamos a amasar (hacer el pan)</div>
+          <div class="song-item"><span class="song-dot"></span>El momento de comer</div>
+          <div class="song-item"><span class="song-dot"></span>Canción del jardín (euritmia)</div>
+          <div class="song-item"><span class="song-dot"></span>El saludo de los cuatro elementos</div>
+        </div>
+      </div>
+
+      <div class="season-block s-folk">
+        <div class="season-head">🎵 Populares & Rondas Clásicas</div>
+        <div class="season-body">
+          <div class="song-item"><span class="song-dot"></span>Al corro de la patata</div>
+          <div class="song-item"><span class="song-dot"></span>El patio de mi casa (ronda)</div>
+          <div class="song-item"><span class="song-dot"></span>Cucú, cantaba la rana</div>
+          <div class="song-item"><span class="song-dot"></span>Tengo, tengo, tengo</div>
+          <div class="song-item"><span class="song-dot"></span>Don Melitón (juego de palmas)</div>
+          <div class="song-item"><span class="song-dot"></span>La tarara sí (folklore)</div>
+          <div class="song-item"><span class="song-dot"></span>Que llueva, que llueva</div>
+          <div class="song-item"><span class="song-dot"></span>Mambrú se fue a la guerra</div>
+          <div class="song-item"><span class="song-dot"></span>La viudita del conde Laurel</div>
+          <div class="song-item"><span class="song-dot"></span>Antón pirulero</div>
+          <div class="song-item"><span class="song-dot"></span>Debajo de un botón</div>
+          <div class="song-item"><span class="song-dot"></span>El rey de la selva (ronda)</div>
+          <div class="song-item"><span class="song-dot"></span>Pin pon es un muñeco</div>
+          <div class="song-item"><span class="song-dot"></span>La hormiguita (juego)</div>
+          <div class="song-item"><span class="song-dot"></span>El lobo, el lobo (juego de corro)</div>
+          <div class="song-item"><span class="song-dot"></span>Cinco lobitos</div>
+          <div class="song-item"><span class="song-dot"></span>Aserrín, aserrán</div>
+          <div class="song-item"><span class="song-dot"></span>Palmas palmitas</div>
+          <div class="song-item"><span class="song-dot"></span>El señor Don Gato</div>
+          <div class="song-item"><span class="song-dot"></span>Estaba la pájara pinta</div>
+          <div class="song-item"><span class="song-dot"></span>La boda de la mariposa (México)</div>
+          <div class="song-item"><span class="song-dot"></span>Arroz con leche</div>
+          <div class="song-item"><span class="song-dot"></span>A la vibora de la mar (México)</div>
+          <div class="song-item"><span class="song-dot"></span>Duérmete, mi amor (cuna latinoam.)</div>
+          <div class="song-item"><span class="song-dot"></span>La ronda de los oficios</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="tip">Las canciones de ronda en los jardines Waldorf son pentatónicas. Rudolf Steiner recomendó la escala pentatónica especialmente para el primer septenio (0–7 años), ya que ofrece al niño un espacio sonoro abierto y libre. La ronda une canto, movimiento y ritmo en una misma experiencia artística.</div>
+  </div>
+
+  <!-- ═══════════════════════ CANCIONEROS ═══════════════════════ -->
+  <div id="cancioneros" class="section">
+    <div class="sec-title">Cancioneros & Recursos Musicales</div>
+    <p class="sec-sub">Libros, DVDs, recursos online y cancioneros para jardines Waldorf en español</p>
+
+    <div class="divider">Cancioneros impresos</div>
+    <div class="book-list">
+      <div class="book-item"><div class="book-icon bi-s">♪</div><div class="book-info"><h4>Cancionero Estacional Waldorf — Otoño/Invierno</h4><div class="meta">Belén (voz) · cancionero con QR de audio · 10 canciones estacionales ilustradas · publicado por Goteo (crowdfunding Waldorf español)</div></div></div>
+      <div class="book-item"><div class="book-icon bi-s">♪</div><div class="book-info"><h4>Cancionero Estacional Waldorf — Primavera/Verano</h4><div class="meta">Belén (voz) · cancionero con QR de audio · 10 canciones estacionales ilustradas</div></div></div>
+      <div class="book-item"><div class="book-icon bi-s">♫</div><div class="book-info"><h4>Recursos Waldorf — Juegos de dedos, canciones y rondas (DVD)</h4><div class="meta">K. Rodenas Giró & C. Guijarro Vargas · Editorial Pau de Damasc · 50 recursos educativos (juegos de dedos, canciones y rondas) · ordenados por las 4 estaciones · recopilados en 3 años de viaje por escuelas Waldorf</div></div></div>
+    </div>
+
+    <div class="divider">Plataformas & Recursos Online</div>
+    <div class="book-list">
+      <div class="book-item"><div class="book-icon bi-g">I</div><div class="book-info"><h4>IdeasWaldorf.com — Cancioneros Waldorf</h4><div class="meta">ideaswaldorf.com · más de 330 canciones pentatónicas · 176 rondas · categorías: adviento, pascua, San Juan, San Martín, Micael, navidad y más · con partituras y flauta</div></div></div>
+      <div class="book-item"><div class="book-icon bi-g">M</div><div class="book-info"><h4>MúsicaWaldorfLatin</h4><div class="meta">musicawaldorflatin.webnode.mx · canciones por estaciones, festivales, ritmo diario y ronda · canciones para cada grado · rítmica de flauta · para Latinoamérica y España</div></div></div>
+      <div class="book-item"><div class="book-icon bi-g">R</div><div class="book-info"><h4>Rumbo al Cambio — Juegos y Canciones para la Ronda (YouTube)</h4><div class="meta">canal de YouTube · documentación de escuelas Waldorf en España y Latinoamérica · juegos de dedos, canciones y rondas por estación</div></div></div>
+      <div class="book-item"><div class="book-icon bi-g">W</div><div class="book-info"><h4>WaldorfInspiredSpanish.com — La Ronda</h4><div class="meta">waldorfinspiredspanish.com · canciones y cuentos Waldorf en español · rondas, rimas y narraciones para niños</div></div></div>
+    </div>
+
+    <div class="divider">CD & Grabaciones</div>
+    <div class="book-list">
+      <div class="book-item"><div class="book-icon bi-p">C</div><div class="book-info"><h4>CD Escola Waldorf Binissalem (Mallorca)</h4><div class="meta">Escoleta Waldorf de Binissalem · canciones en catalán · colección de canciones del jardín de infancia</div></div></div>
+      <div class="book-item"><div class="book-icon bi-p">A</div><div class="book-info"><h4>DVD Recursos Waldorf — De mi casa al mundo</h4><div class="meta">Raquel Rodríguez (Escuela Allegra, Madrid) · canciones pentatónicas del día a día del jardín Waldorf · para familias y educadores</div></div></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════ AUTORES ═══════════════════════ -->
+  <div id="autores" class="section">
+    <div class="sec-title">Autores, Educadores & Proyectos Waldorf en Español</div>
+    <p class="sec-sub">Personas, colectivos y proyectos que han creado o difundido recursos musicales y pedagógicos Waldorf en español</p>
+
+    <div class="divider">Educadores & Autoras de Canciones</div>
+    <div class="cards">
+      <div class="card">
+        <span class="card-tag tag-blue">Educadora Waldorf</span>
+        <h3>Raquel Rodríguez</h3>
+        <div class="author">Escuela Libre Allegra, Madrid · Jardín de infancia 0–6 años</div>
+        <p>Directora de la Escuela Waldorf Allegra (Madrid). Lleva más de 15 años como maestra Waldorf. Comparte canciones pentatónicas del día a día del jardín y ha creado recursos sonoros para familias y educadores en español.</p>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-blue">Proyecto editorial</span>
+        <h3>K. Rodenas Giró & C. Guijarro Vargas</h3>
+        <div class="author">Editorial Pau de Damasc</div>
+        <p>Autoras del DVD "Recursos Waldorf — Juegos de dedos, canciones y rondas", recopilado tras 3 años de viaje por escuelas Waldorf de España y Latinoamérica. 50 recursos ordenados por estaciones.</p>
+        <ul>
+          <li>Recursos Waldorf (DVD, Pau de Damasc)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-teal">Plataforma educativa</span>
+        <h3>IdeasWaldorf</h3>
+        <div class="author">ideaswaldorf.com · comunidad en español</div>
+        <p>Plataforma online con más de 330 canciones pentatónicas, 176 rondas y cientos de recursos para educadores Waldorf. Cubre adviento, pascua, San Juan, San Martín, Micael, navidad y el ritmo diario.</p>
+        <ul>
+          <li>Cancioneros Waldorf I y II (online)</li>
+          <li>Partituras, flauta y actividades</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-teal">Plataforma Latinoamérica</span>
+        <h3>MúsicaWaldorfLatin</h3>
+        <div class="author">México / Latinoamérica</div>
+        <p>Plataforma de recursos musicales para educadores Waldorf en Latinoamérica. Canciones por estaciones, festivales, rítmica de flauta, ronda y quehaceres del día, organizados por septenio y grado escolar.</p>
+        <ul>
+          <li>Canciones de estaciones y festivales</li>
+          <li>Rítmica de flauta pentatónica</li>
+          <li>Canciones por grado (1.º–8.º)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-teal">Documentalistas</span>
+        <h3>De Rumbo al Cambio</h3>
+        <div class="author">España & Latinoamérica · YouTube</div>
+        <p>Proyecto que visita, documenta y difunde iniciativas Waldorf y proyectos sostenibles. Su canal de YouTube incluye canciones y juegos de ronda de escuelas Waldorf, con instrucciones paso a paso.</p>
+        <ul>
+          <li>Juegos y Canciones Para la Ronda (serie YouTube)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-amber">Editorial especializada</span>
+        <h3>Editorial Rudolf Steiner (España)</h3>
+        <div class="author">editorialrudolfsteiner.com · desde 1975</div>
+        <p>Principal editorial en español de obras de Rudolf Steiner y pedagogía Waldorf. Publica libros para educadores, familias y la formación de profesores.</p>
+        <ul>
+          <li>Obras de Steiner en español</li>
+          <li>Libros pedagógicos y de desarrollo infantil</li>
+          <li>Cuentos y materiales escolares</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider">Comunidades & Escuelas de Referencia</div>
+    <div class="cards">
+      <div class="card">
+        <span class="card-tag tag-coral">Madrid</span>
+        <h3>Escuela Libre Allegra</h3>
+        <div class="author">Madrid, España · 0–6 años</div>
+        <p>Jardín Waldorf de referencia en Madrid. Sus canciones pentatónicas y el trabajo de ronda sirven de modelo para muchas familias y educadores en habla hispana.</p>
+      </div>
+      <div class="card">
+        <span class="card-tag tag-coral">Mallorca</span>
+        <h3>Escoleta Waldorf Binissalem</h3>
+        <div class="author">Mallorca, España · catalán/español</div>
+        <p>Conocida por su colección de canciones en catalán, ha publicado un CD con sus canciones del jardín. Modelo de integración lingüística y cultural en la pedagogía Waldorf.</p>
+      </div>
+      <div class="card">
+        <span class="card-tag tag-coral">Cantabria</span>
+        <h3>La Casita del Duende Waldorf</h3>
+        <div class="author">Sancibrián, Cantabria · Madre de día</div>
+        <p>Centro Waldorf de madre de día. Comparte canciones, juegos de dedos y rondas por estación en su blog, con recursos para toda la comunidad.</p>
+      </div>
+      <div class="card">
+        <span class="card-tag tag-coral">Chile</span>
+        <h3>Waldorf Corcolén</h3>
+        <div class="author">Curicó, Chile</div>
+        <p>Escuela Waldorf chilena que documenta versos, canciones y cuentos estacionales en español, incluyendo festividades del hemisferio sur adaptadas al calendario latinoamericano.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════ LIBROS INFANTILES ═══════════════════════ -->
+  <div id="infantil" class="section">
+    <div class="sec-title">Libros Infantiles en la Pedagogía Waldorf</div>
+    <p class="sec-sub">Cuentos, libros ilustrados y lecturas recomendadas en los jardines y escuelas Waldorf en español</p>
+
+    <div class="divider">Cuentos de hadas & Clásicos (0–6 años)</div>
+    <div class="cards">
+      <div class="card">
+        <span class="card-tag tag-purple">Cuentos de hadas</span>
+        <h3>Hermanos Grimm</h3>
+        <div class="author">versión original sin adaptar · en español</div>
+        <p>Los cuentos de hadas de los Hermanos Grimm son la base de la narrativa en todos los jardines Waldorf. Se recomienda la versión fiel al original, sin adaptar para niños.</p>
+        <ul>
+          <li>Blancanieves</li>
+          <li>Caperucita Roja</li>
+          <li>La Bella Durmiente</li>
+          <li>Hansel y Gretel</li>
+          <li>El sastrecillo valiente</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-purple">Cuentos del mundo</span>
+        <h3>Para los niños del mundo</h3>
+        <div class="author">IASWECE & Editorial Rudolf Steiner, 2014</div>
+        <p>24 cuentos de África, Asia, Australia, Europa, América del Norte y del Sur, con recetas. Recopilados por maestros Waldorf de todo el mundo. Ideal para el jardín multicultural.</p>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-purple">Cuentos del jardín</span>
+        <h3>Cuentos infantiles Waldorf</h3>
+        <div class="author">Jardín de infancia Micael · Ed. Rudolf Steiner</div>
+        <p>Selección de cuentos elaborados por los maestros del jardín de infancia Micael. Para los niños más pequeños, pensados para repetir durante varias semanas.</p>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-purple">Ilustradora</span>
+        <h3>Daniela Drescher</h3>
+        <div class="author">en español vía Urachhaus / librerías especializadas</div>
+        <p>Sus libros ilustrados (elfos, gnomos, naturaleza) son muy usados en jardines Waldorf de habla hispana. Disponibles en español en tiendas especializadas.</p>
+        <ul>
+          <li>Pippa y Pelle (serie)</li>
+          <li>Los 100 cuentos más bellos de los hermanos Grimm</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider">Para niños mayores (6–12 años)</div>
+    <div class="cards">
+      <div class="card">
+        <span class="card-tag tag-purple">Clásico sueco</span>
+        <h3>Astrid Lindgren</h3>
+        <div class="author">1907–2002 · en español</div>
+        <ul>
+          <li>Pippi Calzaslargas</li>
+          <li>Los hijos del bosque de Bullerbyn</li>
+          <li>Ronja, la hija del bandolero</li>
+          <li>El tomte (El duende del granero)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="card-tag tag-purple">Clásico alemán</span>
+        <h3>Michael Ende</h3>
+        <div class="author">1929–1995 · en español</div>
+        <p>Muy leído en escuelas Waldorf de habla hispana. Sus obras fomentan la imaginación y la reflexión sobre el tiempo y los valores humanos.</p>
+        <ul>
+          <li>Momo</li>
+          <li>Jim Botón y Lucas el maquinista</li>
+          <li>El dragón y la mariposa</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="card-tag tag-purple">Mitología</span>
+        <h3>Mitos y Leyendas</h3>
+        <div class="author">varios autores · lecturas Waldorf por grado</div>
+        <ul>
+          <li>Mitología nórdica (Grado 4)</li>
+          <li>Mitología griega — Robert Graves</li>
+          <li>Sigfrido y los Nibelungos (Grado 5)</li>
+          <li>El Ramayana (Grado 5–6)</li>
+          <li>Parzival (Grado 6)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="card-tag tag-purple">Literatura clásica</span>
+        <h3>Otros clásicos recomendados</h3>
+        <div class="author">lecturas Waldorf en español</div>
+        <ul>
+          <li>El libro de la selva — Rudyard Kipling</li>
+          <li>El principito — Antoine de Saint-Exupéry</li>
+          <li>Arturo, la leyenda del rey eterno</li>
+          <li>Gulliver — Jonathan Swift</li>
+          <li>Robinson Crusoe — Daniel Defoe</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════ PEDAGOGÍA ═══════════════════════ -->
+  <div id="pedagogia" class="section">
+    <div class="sec-title">Libros de Pedagogía Waldorf en Español</div>
+    <p class="sec-sub">Obras fundamentales y libros prácticos para padres, educadores e interesados, disponibles en español</p>
+
+    <div class="divider">Obras fundamentales de Rudolf Steiner</div>
+    <div class="book-list">
+      <div class="book-item"><div class="book-icon bi-a">S</div><div class="book-info"><h4>La educación del niño desde el punto de vista de la ciencia espiritual</h4><div class="meta">Rudolf Steiner · Editorial Rudolf Steiner · obra fundacional de la pedagogía Waldorf</div></div></div>
+      <div class="book-item"><div class="book-icon bi-a">S</div><div class="book-info"><h4>Estudio general del ser humano — Edición Especial</h4><div class="meta">Rudolf Steiner · Editorial Rudolf Steiner · las conferencias fundacionales para maestros Waldorf</div></div></div>
+      <div class="book-item"><div class="book-icon bi-a">S</div><div class="book-info"><h4>Conferencias sobre pedagogía Waldorf</h4><div class="meta">Rudolf Steiner · Editorial Rudolf Steiner · colección de conferencias sobre educación</div></div></div>
+    </div>
+
+    <div class="divider">Para familias y padres</div>
+    <div class="book-list">
+      <div class="book-item"><div class="book-icon bi-a">C</div><div class="book-info"><h4>Pedagogía Waldorf: Una educación hacia la libertad</h4><div class="meta">Frans Carlgren · Editorial Rudolf Steiner · introducción completa a la pedagogía Waldorf · muy recomendado para padres</div></div></div>
+      <div class="book-item"><div class="book-icon bi-a">L</div><div class="book-info"><h4>Los años de oro: Reflexiones en torno al desarrollo infantil</h4><div class="meta">Thomas J. Weihs · Ed. Rudolf Steiner · desarrollo infantil en base a la obra de Steiner</div></div></div>
+      <div class="book-item"><div class="book-icon bi-a">D</div><div class="book-info"><h4>Directrices de Pedagogía Waldorf desde el nacimiento hasta los 3 años</h4><div class="meta">Editorial Rudolf Steiner · guía para los primeros años de vida</div></div></div>
+      <div class="book-item"><div class="book-icon bi-a">C</div><div class="book-info"><h4>Creando Tradiciones: Celebraciones de invierno, Navidad, Adviento y Reyes</h4><div class="meta">Editorial Rudolf Steiner · para familias que celebran las fiestas del año al estilo Waldorf</div></div></div>
+    </div>
+
+    <div class="divider">Para educadores</div>
+    <div class="book-list">
+      <div class="book-item"><div class="book-icon bi-a">P</div><div class="book-info"><h4>La educación preescolar según las enseñanzas de Rudolf Steiner</h4><div class="meta">cantar, bailar, pintar, escuchar cuentos · análisis del trabajo manual en el jardín Waldorf</div></div></div>
+      <div class="book-item"><div class="book-icon bi-a">E</div><div class="book-info"><h4>El arte de contar cuentos</h4><div class="meta">Nancy Mellon · reflexión sobre el cuento como herramienta educativa y de desarrollo</div></div></div>
+      <div class="book-item"><div class="book-icon bi-a">B</div><div class="book-info"><h4>Las etapas evolutivas del niño</h4><div class="meta">Bernard Lievegoed · Ed. Rudolf Steiner · desarrollo en fases de 7 años (septenios)</div></div></div>
+      <div class="book-item"><div class="book-icon bi-a">P</div><div class="book-info"><h4>Profundización Meditativa de la Educación Waldorf</h4><div class="meta">Editorial Rudolf Steiner · meditaciones para maestros</div></div></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════ RECURSOS ═══════════════════════ -->
+  <div id="recursos" class="section">
+    <div class="sec-title">Recursos & Dónde Encontrarlos</div>
+    <p class="sec-sub">Editoriales, tiendas, plataformas online y comunidades Waldorf en español</p>
+
+    <div class="cards">
+      <div class="card"><span class="card-tag tag-green">Editorial principal</span><h3>editorialrudolfsteiner.com</h3><p>Principal editorial en español de obras de Steiner y pedagogía Waldorf. Libros para padres, docentes y niños. Desde 1975.</p></div>
+      <div class="card"><span class="card-tag tag-green">Editorial</span><h3>paudedamasc.com</h3><p>Editorial Pau de Damasc (España/Chile): obras inéditas en español de antroposofía, pedagogía Waldorf y recursos educativos. Incluye el DVD de rondas y canciones.</p></div>
+      <div class="card"><span class="card-tag tag-green">Tienda Waldorf</span><h3>lasara.es</h3><p>Tienda especializada en materiales y libros Waldorf en español: cuentos, materiales escolares, juguetes y pedagogía.</p></div>
+      <div class="card"><span class="card-tag tag-green">Tienda</span><h3>tribujito.com</h3><p>Selección de libros y cuentos Waldorf en español, especialmente de Editorial ING Edicions. Cuidada selección pedagógica.</p></div>
+      <div class="card"><span class="card-tag tag-coral">Canciones online</span><h3>ideaswaldorf.com</h3><p>Más de 330 canciones pentatónicas, rondas, partituras y recursos para la ronda. Categorías por festividad y estación.</p></div>
+      <div class="card"><span class="card-tag tag-coral">Latinoamérica</span><h3>musicawaldorflatin.webnode.mx</h3><p>Plataforma de canciones Waldorf para Latinoamérica: estaciones, festivales, rítmica de flauta, canciones por grado.</p></div>
+      <div class="card"><span class="card-tag tag-amber">Blog & recursos</span><h3>demicasaalmundo.com</h3><p>Blog de pedagogía Waldorf en español con canciones, recursos para familias y artículos sobre el ritmo del día.</p></div>
+      <div class="card"><span class="card-tag tag-amber">YouTube</span><h3>De Rumbo al Cambio (YouTube)</h3><p>Canal con juegos y canciones de la ronda, documentación de escuelas Waldorf en España y Latinoamérica.</p></div>
+    </div>
+    <div class="divider">Comunidades & Escuelas de referencia</div>
+    <div class="link-list">
+      <a href="https://casawaldorf.com" target="_blank">casawaldorf.com — recursos y canciones de escuelas Waldorf en España</a>
+      <a href="https://ideaswaldorf.com/cancioneros-waldorf/" target="_blank">ideaswaldorf.com — Cancioneros Waldorf (canciones pentatónicas en español)</a>
+      <a href="https://www.editorialrudolfsteiner.com" target="_blank">editorialrudolfsteiner.com — libros de pedagogía Waldorf en español</a>
+      <a href="https://www.paudedamasc.com" target="_blank">paudedamasc.com — editorial especializada y DVD de recursos Waldorf</a>
+      <a href="https://www.waldorfcorcolencurico.com/versos-canciones-cuentos" target="_blank">Waldorf Corcolén (Chile) — versos, canciones y cuentos estacionales</a>
+      <a href="https://musicawaldorflatin.webnode.mx" target="_blank">MúsicaWaldorfLatin — canciones para educadores en Latinoamérica</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function show(id, e) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  e.target.classList.add('active');
+}
+</script>
+</body>
+</html>

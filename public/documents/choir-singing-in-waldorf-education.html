@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choir &amp; Singing Through the Grades — Waldorf Education</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f5ede0;
+    --paper-warm: #efe3cf;
+    --paper-deep: #e8d8bd;
+    --ink: #3b2a1a;
+    --ink-soft: #6b5840;
+    --ink-faint: #8a7558;
+    --rust: #a8492a;
+    --moss: #5a6b3f;
+    --wool: #b8a583;
+    --thread: #c8865f;
+    --shadow: rgba(59, 42, 26, 0.08);
+    --shadow-deep: rgba(59, 42, 26, 0.15);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 19px;
+    background-image:
+      radial-gradient(circle at 10% 20%, rgba(168, 73, 42, 0.04) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(90, 107, 63, 0.04) 0%, transparent 40%);
+    min-height: 100vh;
+  }
+  body::before {
+    content: ''; position: fixed; inset: 0;
+    pointer-events: none; opacity: 0.4; z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.23 0 0 0 0 0.16 0 0 0 0 0.1 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .container {
+    max-width: 820px; margin: 0 auto;
+    padding: 60px 32px 100px;
+    position: relative; z-index: 1;
+  }
+  header {
+    text-align: center; margin-bottom: 64px;
+    padding-bottom: 40px; border-bottom: 1px solid var(--paper-deep);
+    position: relative;
+  }
+  header::after {
+    content: '✦'; position: absolute; bottom: -12px; left: 50%;
+    transform: translateX(-50%); background: var(--paper);
+    color: var(--wool); padding: 0 16px; font-size: 16px;
+  }
+  .eyebrow {
+    font-family: 'Caveat', cursive; font-size: 24px;
+    color: var(--rust); margin-bottom: 8px;
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 500;
+    font-size: clamp(40px, 6vw, 60px); line-height: 1.1;
+    color: var(--ink); margin-bottom: 16px;
+  }
+  .subtitle {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 22px; color: var(--ink-soft);
+    max-width: 580px; margin: 0 auto;
+  }
+  .toc {
+    background: var(--paper-warm); border: 1px solid var(--paper-deep);
+    border-radius: 4px; padding: 28px 36px;
+    margin-bottom: 64px; box-shadow: 0 2px 8px var(--shadow);
+  }
+  .toc-title {
+    font-family: 'Caveat', cursive; font-size: 22px;
+    color: var(--rust); margin-bottom: 12px;
+  }
+  .toc ol { list-style: none; counter-reset: toc-counter; }
+  .toc li {
+    counter-increment: toc-counter;
+    padding: 6px 0; border-bottom: 1px dotted var(--paper-deep);
+    display: flex; align-items: baseline;
+  }
+  .toc li:last-child { border-bottom: none; }
+  .toc li::before {
+    content: counter(toc-counter, upper-roman) ".";
+    color: var(--rust); font-weight: 600;
+    margin-right: 12px; min-width: 32px;
+    font-family: 'Cormorant Garamond', serif; font-size: 18px;
+  }
+  .toc a { color: var(--ink); text-decoration: none; flex: 1; font-size: 18px; }
+  .toc a:hover { color: var(--rust); }
+  section { margin-bottom: 72px; scroll-margin-top: 40px; }
+  h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: 36px; color: var(--rust);
+    margin-bottom: 20px; line-height: 1.2;
+  }
+  h2 .roman {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-weight: 400; color: var(--wool);
+    margin-right: 14px; font-size: 28px;
+  }
+  h3 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-style: italic; font-size: 24px;
+    color: var(--moss); margin-top: 32px; margin-bottom: 12px;
+  }
+  p { margin-bottom: 16px; color: var(--ink); }
+  p.lead {
+    font-size: 21px; font-style: italic;
+    color: var(--ink-soft); line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  em { color: var(--ink-soft); }
+  strong { color: var(--ink); font-weight: 600; }
+
+  /* Grade arc overview */
+  .arc {
+    background: rgba(168, 73, 42, 0.05);
+    border-left: 3px solid var(--rust);
+    border-radius: 0 4px 4px 0;
+    padding: 22px 28px;
+    margin: 26px 0;
+  }
+  .arc h4 {
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    color: var(--rust);
+    margin-bottom: 10px;
+  }
+  .arc ul { list-style: none; margin: 0; }
+  .arc li {
+    padding: 5px 0;
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    border-bottom: 1px dotted var(--paper-deep);
+  }
+  .arc li:last-child { border-bottom: none; }
+  .arc strong {
+    color: var(--moss);
+    font-weight: 600;
+    display: inline-block;
+    min-width: 130px;
+  }
+
+  /* Per-grade blocks */
+  .grade-block {
+    background: var(--paper-warm);
+    border: 1px solid var(--paper-deep);
+    border-radius: 4px;
+    padding: 26px 30px;
+    margin: 22px 0 30px;
+    box-shadow: 0 1px 4px var(--shadow);
+  }
+  .grade-block .grade-label {
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    color: var(--rust);
+    margin-bottom: 4px;
+  }
+  .grade-block h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.25;
+  }
+  .grade-block .sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--moss);
+    font-size: 17px;
+    margin: 16px 0 6px;
+  }
+  .grade-block p {
+    font-size: 16.5px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+  .grade-block ul {
+    list-style: none;
+    margin: 8px 0 14px;
+  }
+  .grade-block ul li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 6px;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .grade-block ul li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--thread);
+    top: 2px;
+    font-size: 13px;
+  }
+
+  /* Tender callout */
+  .tender {
+    background: rgba(90, 107, 63, 0.06);
+    border: 1px dashed var(--moss);
+    border-radius: 3px;
+    padding: 18px 24px;
+    margin: 22px 0;
+    font-size: 16.5px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .tender strong {
+    color: var(--moss);
+    font-family: 'Caveat', cursive;
+    font-size: 19px;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* Gentle lists */
+  ul.gentle { list-style: none; margin: 16px 0 24px; }
+  ul.gentle li {
+    position: relative; padding-left: 28px;
+    margin-bottom: 12px; font-size: 17px; line-height: 1.6;
+  }
+  ul.gentle li::before {
+    content: '✦'; position: absolute; left: 6px;
+    color: var(--thread); top: 4px; font-size: 14px;
+  }
+
+  /* Pull quote */
+  .pull-quote {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 24px; line-height: 1.4; color: var(--moss);
+    text-align: center; padding: 32px 24px; margin: 40px 0;
+    position: relative;
+    border-top: 1px solid var(--paper-deep);
+    border-bottom: 1px solid var(--paper-deep);
+  }
+  .pull-quote::before {
+    content: '"'; font-size: 80px; color: var(--wool);
+    position: absolute; top: -8px; left: 24px; opacity: 0.4;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  footer {
+    text-align: center; padding-top: 40px; margin-top: 80px;
+    border-top: 1px solid var(--paper-deep);
+    color: var(--ink-faint); font-style: italic; font-size: 17px;
+  }
+  footer .ornament { color: var(--wool); margin: 0 12px; }
+
+  @media (max-width: 600px) {
+    body { font-size: 18px; }
+    .container { padding: 40px 22px 80px; }
+    .toc { padding: 22px 24px; }
+    h1 { font-size: 38px; }
+    h2 { font-size: 30px; }
+    h3 { font-size: 22px; }
+    .pull-quote { font-size: 20px; padding: 24px 16px; }
+  }
+
+  section, header, .toc {
+    animation: fadeUp 0.8s ease-out backwards;
+  }
+  header { animation-delay: 0s; }
+  .toc { animation-delay: 0.15s; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <div class="eyebrow">~ a section of the Waldorf Path Directory ~</div>
+    <h1>Choir &amp; Singing</h1>
+    <p class="subtitle">A through-the-grades guide to the musical life of the Waldorf child, from the mood of the fifth to four-part harmony</p>
+  </header>
+
+  <nav class="toc" aria-label="Table of contents">
+    <div class="toc-title">In this section</div>
+    <ol>
+      <li><a href="#why">Why Singing Matters in Waldorf Education</a></li>
+      <li><a href="#arc">The Arc of the Musical Years</a></li>
+      <li><a href="#early">Kindergarten &amp; the Mood of the Fifth</a></li>
+      <li><a href="#lower">The Lower Grades — Pentatonic and the First Diatonic</a></li>
+      <li><a href="#middle">The Middle Grades — Two-Part Singing &amp; Harmony</a></li>
+      <li><a href="#change">The Changing Voice — Class 7 &amp; the Tender Year</a></li>
+      <li><a href="#upper">Upper School — Four-Part Choir &amp; Music History</a></li>
+      <li><a href="#home">Bringing Singing Into the Home</a></li>
+      <li><a href="#books">Songbooks &amp; Resources</a></li>
+    </ol>
+  </nav>
+
+  <section id="why">
+    <h2><span class="roman">I.</span>Why Singing Matters in Waldorf Education</h2>
+
+    <p class="lead">In Waldorf schools, singing is not an extra. It is part of the very fabric of the day, from the morning verse sung at circle in the kindergarten to the four-part harmony of the high school choir. Music is treated not as a subject but as a language — one the child speaks before they can read, and continues to speak more deeply with every year.</p>
+
+    <p>Rudolf Steiner indicated that music — and singing especially — addresses what he called the <em>feeling life</em> of the child: the great middle realm between thinking and willing, which the heart inhabits. To sing together, in a room with other children, is to do something thinking alone cannot do and doing alone cannot do. It is to harmonise, in the literal and the figurative sense.</p>
+
+    <p>There is a beautiful phrase often heard among Waldorf music teachers: in the early years, <em>"the music sings me,"</em> rather than "I sing the music." The young child is bathed in song; they receive it before they produce it; they are surrounded by it, taught it by imitation, and only gradually come to take it up as their own. This deeply influences how singing is taught in the early grades.</p>
+
+    <h3>Singing serves the whole curriculum</h3>
+
+    <p>Songs accompany almost every main lesson block. Stories are sung as much as told. Maths is rhymed. The seasons are marked by particular songs. Festivals are unimaginable without them. A child leaving Class 8 of a Waldorf school will know, by heart, hundreds of songs — folk songs, seasonal songs, hymns from many traditions, rounds, two-part and three-part harmonies, lullabies, songs in foreign languages, and the songs of their own class plays.</p>
+  </section>
+
+  <section id="arc">
+    <h2><span class="roman">II.</span>The Arc of the Musical Years</h2>
+
+    <p class="lead">The Waldorf music curriculum has a clear developmental shape. Singing is the constant; the technique, the scale, the harmony, and the inwardness all change with the age of the child.</p>
+
+    <div class="arc">
+      <h4>The full progression at a glance</h4>
+      <ul>
+        <li><strong>Kindergarten:</strong> singing surrounds the child — the mood of the fifth, no harmony, no beat</li>
+        <li><strong>Class 1:</strong> mood of the fifth continues; first pentatonic flute; the lyre appears</li>
+        <li><strong>Class 2:</strong> pentatonic melodies with definite endings; the songs of saints and fables</li>
+        <li><strong>Class 3:</strong> diatonic introduced — the nine-year change; the recorder begins</li>
+        <li><strong>Class 4:</strong> first rounds; first beginnings of harmony; basic musical notation</li>
+        <li><strong>Class 5:</strong> two-part singing; melodic minor scales; orchestral instruments begin</li>
+        <li><strong>Class 6:</strong> three-part singing; recorder ensembles in four voices</li>
+        <li><strong>Class 7:</strong> the changing voice — keep singing through it; Renaissance repertoire</li>
+        <li><strong>Class 8:</strong> four-part harmony achieved; class composition projects</li>
+        <li><strong>Class 9–12:</strong> curricular choir; a-cappella groups; music history block in Class 11</li>
+      </ul>
+    </div>
+
+    <p>What follows is a closer look at each phase of this arc.</p>
+  </section>
+
+  <section id="early">
+    <h2><span class="roman">III.</span>Kindergarten &amp; the Mood of the Fifth</h2>
+
+    <p class="lead">In the Waldorf kindergarten and the lower grades, singing takes a form unlike anything else in mainstream music education. It is gentle, floating, often without a clear ending — and it is centred on a single tone the children may not consciously notice but inwardly orbit: the central A.</p>
+
+    <h3>What is the mood of the fifth?</h3>
+
+    <p>The "mood of the fifth" is the name given to a way of singing in which melodies move freely around the central tone of A, using the open interval of the fifth — D to A, A to E — as their characteristic gesture. The songs do not always begin and end on the same note; they may hover, drift, and resolve gently rather than finishing with a strong tonic. There is no beat in the modern sense, no harmony beneath the melody, no driving rhythm.</p>
+
+    <p>The effect is the opposite of stimulating. The child is not asked to perform, to match pitch precisely, or to feel the pull of a key. They are invited into a sound-world that is, in some sense, the musical equivalent of dreaming — and this matches the consciousness of the young child, who is still very much half in the spiritual world from which they have come.</p>
+
+    <div class="tender">
+      <strong>Why A?</strong>
+      The central tone A (440 Hz) is, in anthroposophical music theory, considered to be a tone of particular resonance with the human heart and the wakefulness of the soul. Whether one accepts the spiritual reasoning or not, the practical effect is striking: a room full of small children, singing on the mood of the fifth around A, produces a sound that is unmistakably <em>calm</em> — soothing to the children and to the adults present alike.
+    </div>
+
+    <h3>What it sounds like</h3>
+    <p>Songs in the mood of the fifth are gentle and seasonal — about elves and gnomes, about the wind and the rain, about little birds and the moon. The teacher sings the song first, often many times across many days, and the children gradually join in. There is no instrumental harmony. Sometimes a lyre is gently plucked along, or a small chime is struck, to give a "colour" to the moment — but never to lead the singing or to keep the beat.</p>
+  </section>
+
+  <section id="lower">
+    <h2><span class="roman">IV.</span>The Lower Grades — Pentatonic and the First Diatonic</h2>
+
+    <p class="lead">From Class 1 through Class 3, the singing slowly comes "down to earth." The free-floating mood of the fifth gives way first to the pentatonic scale, then — at the nine-year change in Class 3 — to the diatonic major and minor scales of nearly all later Western music.</p>
+
+    <div class="grade-block">
+      <div class="grade-label">Class 1 (age 6–7)</div>
+      <h4>Singing in the mood of the fifth; the first instruments arrive</h4>
+      <p>The first-grade child is still very much in the early-childhood mode of being surrounded by music. The teacher sings; the children join in. The repertoire is folk songs, seasonal songs, songs of nature and the elementals — and the songs the class meets through their fairy-tale main lessons.</p>
+      <p class="sub">Instruments introduced</p>
+      <ul>
+        <li><strong>Choroi pentatonic flute</strong> or <strong>Choroi interval flute</strong> — wooden flutes with only the open intervals of the pentatonic scale; played one note at a time, soft and breathy</li>
+        <li><strong>Children's lyre</strong> — a small Waldorf-tradition harp-like instrument, often the kinderharfe with seven strings, gently plucked</li>
+      </ul>
+      <p>Music-making here is overwhelmingly social and imitative. The children play together, sing together, sometimes hold hands in a circle. Improvisational games and the cultivation of listening are central.</p>
+    </div>
+
+    <div class="grade-block">
+      <div class="grade-label">Class 2 (age 7–8)</div>
+      <h4>Pentatonic with a tonic — songs that resolve</h4>
+      <p>The mood of the fifth is gradually replaced by more clearly pentatonic melodies that have a definite ending — pentatonic major on G and pentatonic minor on E. The songs become a little more "earthly," with clearer beginnings, middles, and endings, even though the diatonic scale is still ahead.</p>
+      <p>The repertoire follows the second-grade main lesson — songs of saints, of animal fables, of the small heroes of the year. Movement, dance, and song games continue to weave through the music lesson.</p>
+    </div>
+
+    <div class="grade-block">
+      <div class="grade-label">Class 3 (age 8–9)</div>
+      <h4>The diatonic threshold — the recorder arrives</h4>
+      <p>Class 3 is the great turning point in Waldorf music education. Around the nine-year change, the child becomes a clearly separate being from the world around them — and the music meets this with the introduction of the <em>diatonic scale</em> (the major and minor scales of all later Western music), with its strong sense of pull toward a tonic.</p>
+      <p class="sub">What happens this year</p>
+      <ul>
+        <li>The pentatonic flute is set aside; the <strong>soprano recorder</strong> is introduced</li>
+        <li>Major and minor diatonic scales are sung and played</li>
+        <li>The children begin to read simple musical notation</li>
+        <li>Many schools begin the practice of having all children learn an <strong>orchestral instrument</strong> in Class 3 — violin, viola, or cello most often</li>
+        <li>Songs become more rhythmic, more measured, and begin to fit recognisable folk-song forms</li>
+      </ul>
+      <p>The change is profound. The child who, the year before, was singing pentatonic songs about gnomes is now learning hymns, harvest songs, and the kind of folk songs that have anchored Western music for centuries.</p>
+    </div>
+  </section>
+
+  <section id="middle">
+    <h2><span class="roman">V.</span>The Middle Grades — Two-Part Singing &amp; Harmony</h2>
+
+    <p class="lead">From Class 4 through Class 6, singing takes a new turn — children begin to sing with one another rather than simply alongside one another. Unison becomes two-part, then three-part. The social art of holding one's own voice while listening to another begins.</p>
+
+    <div class="grade-block">
+      <div class="grade-label">Class 4 (age 9–10)</div>
+      <h4>The first rounds and the first taste of harmony</h4>
+      <p>The simplest form of harmony begins in Class 4 with the introduction of <em>rounds</em> — songs in which the class divides into two or three groups, each beginning the same melody at a different moment, so that the melody overlaps with itself and creates harmony out of unison.</p>
+      <p>For the nine- or ten-year-old, the round is a beautiful threshold: it asks the child to hold their own voice, their own moment in the melody, while another voice sings something else nearby. Rounds like "Row, Row, Row Your Boat," "Frère Jacques," and many traditional Waldorf canons are sung again and again, and the children gradually develop the social-musical awareness that two-part singing depends on.</p>
+      <p>Musical notation is now a real part of the lesson. The children read and write music. Some schools introduce sight-singing exercises.</p>
+    </div>
+
+    <div class="grade-block">
+      <div class="grade-label">Class 5 (age 10–11)</div>
+      <h4>True two-part singing; melody as the theme of the year</h4>
+      <p>Class 5 is often described as the year of <em>melody</em>. The children are at what Steiner called the "golden age of childhood" — physically graceful, emotionally balanced, and capable of substantial musical work. Two-part singing — where two distinct melodic lines are sung at the same time — becomes the norm.</p>
+      <ul>
+        <li><strong>Two-part choral pieces</strong> — folk songs arranged in two voices; simple madrigals</li>
+        <li><strong>Harmonic and melodic minor scales</strong> are introduced</li>
+        <li><strong>Key signatures, scale patterns, and song forms</strong> are studied</li>
+        <li><strong>Orchestra begins</strong> in many schools — the instrument the child took up in Class 3 now joins others in a real ensemble</li>
+      </ul>
+    </div>
+
+    <div class="grade-block">
+      <div class="grade-label">Class 6 (age 11–12)</div>
+      <h4>Three-part singing and the recorder consort</h4>
+      <p>Three-part singing arrives in Class 6. By now the children can comfortably hold one voice in a texture of three, listening to the others and adjusting their own pitch and dynamics to suit the whole.</p>
+      <p>The recorder also expands. Where Class 3 began with only the soprano recorder, by Class 6 the children play in <strong>recorder ensembles with four voices</strong> — soprano, alto, tenor, and bass. The bass recorder, a long and beautiful instrument, sits on the floor in front of the player; the alto and tenor have their own deep, warm voices. The class becomes a small consort.</p>
+    </div>
+  </section>
+
+  <section id="change">
+    <h2><span class="roman">VI.</span>The Changing Voice — Class 7 &amp; the Tender Year</h2>
+
+    <p class="lead">Somewhere around the ages of 12 to 14 — in some children sooner, in some later — the voice begins to change. This is the most delicate moment in the musical life of the Waldorf student, and it is handled with great care.</p>
+
+    <h3>What actually happens</h3>
+
+    <p>Voice change happens in all children, boys and girls alike, though it is more dramatic and more noticeable in boys. For boys, the larynx grows substantially and the voice drops about an octave over a period that can last anywhere from a few months to two or three years. For girls, the change is gentler — the voice deepens slightly and gains chest resonance, taking up to four years to fully settle.</p>
+
+    <p>During the change, the voice is genuinely fragile. The notes that were easy yesterday may crack or fail today. The range shifts; the timbre breathes and rasps. Many children become self-conscious. Some boys, especially, try to stop singing altogether during this time.</p>
+
+    <div class="tender">
+      <strong>The Waldorf approach — keep singing</strong>
+      The most important Waldorf principle around the changing voice is this: <em>keep singing through it</em>. Voices that go unused during the change can lose much of their flexibility and resonance for life. Voices that continue to be exercised gently — with appropriate range, supportive material, and a teacher who understands what is happening — emerge from the change as the strong, mature, expressive voices of young adulthood. The change is to be sung through, not avoided.
+    </div>
+
+    <h3>What schools do</h3>
+    <p>In Class 7, the choir teacher chooses repertoire carefully, often shifting toward Renaissance music — which suits both the year's main lesson study (the Renaissance, world exploration, the rebirth of European culture) and the gentler vocal demands of changing voices. Parts may be assigned not by tradition but by what each individual child can comfortably sing this week.</p>
+    <p>Some students may be temporarily moved to a different vocal part — a soprano whose voice is changing may be moved down to the alto line, a tenor-in-becoming may be given the alto or melody line until his new range settles. The teacher knows that the assignments are fluid for these two or three years.</p>
+  </section>
+
+  <section id="upper">
+    <h2><span class="roman">VII.</span>Upper School — Four-Part Choir &amp; Music History</h2>
+
+    <p class="lead">By Class 8, and continuing through the high school years, Waldorf singing reaches its full form: four-part harmony, sung by a substantial choir of voices, in a repertoire that spans centuries and continents.</p>
+
+    <div class="grade-block">
+      <div class="grade-label">Class 8 (age 13–14)</div>
+      <h4>Four-part harmony; the class composition project</h4>
+      <p>By the end of Class 8, most Waldorf students are singing in <strong>four-part harmony</strong> — soprano, alto, tenor, and bass. Voice changes have settled enough that assignments by part can be more permanent. The choir of a Class 8 is often a substantial musical body, capable of singing chorales, folk-song arrangements, and pieces from the great choral tradition.</p>
+      <p>Many schools also include a <strong>class composition project</strong> in Class 8 — the students compose their own piece of music, individually or collectively, working with the music teacher. It is a graduation of sorts from receiving music to making it.</p>
+    </div>
+
+    <div class="grade-block">
+      <div class="grade-label">High School — Classes 9 through 12</div>
+      <h4>Curricular choir, a-cappella groups, music history</h4>
+      <p>In the Waldorf high school, music takes on a more elective character — students who want to continue in choir do so, often as one of two or three weekly music classes. The curricular choir typically performs at festivals, in school plays, and at the seasonal concerts that mark the school year.</p>
+      <p>Many Waldorf high schools also have small a-cappella groups outside the main choir — sometimes student-led, sometimes faculty-led — that take on more challenging repertoire. The Washington Waldorf School's <em>MetroGnomes</em> is one well-known example; many schools have similar groups under varied names.</p>
+
+      <p class="sub">The Class 11 music history block</p>
+      <p>In most Waldorf high schools, Class 11 includes a dedicated <strong>music history block</strong> — typically three or four weeks of intensive study tracing the history of Western music from medieval chant through to the present day. Students listen, sing, and study scores. They encounter Bach, Mozart, Beethoven, Wagner, Stravinsky, and the great composers of the twentieth century. By the end of the block, music is no longer just something the students <em>do</em> — it is something they <em>understand</em> in its historical and cultural context.</p>
+
+      <p class="sub">What the choir continues to teach</p>
+      <p>By the upper school, the choir is not only learning music. It is learning what one experienced Waldorf music teacher described as "the subtle interplay of passing leadership gracefully between members of a group." A challenging piece may take four months to learn. The choir must sing <em>and</em> listen at the same time — a much harder gesture than either alone. These are lessons that reach well beyond the music room.</p>
+    </div>
+  </section>
+
+  <section id="home">
+    <h2><span class="roman">VIII.</span>Bringing Singing Into the Home</h2>
+
+    <p class="lead">For homeschoolers and for any family who simply wishes to bring more singing into family life, the Waldorf approach offers practical wisdom.</p>
+
+    <h3>Start with the parent's own voice</h3>
+    <p>The single most important thing the young child needs is to hear an adult they love singing — imperfectly is fine, hesitantly is fine, even out of tune is fine. The child receives the parent's voice as warmth before they receive it as music. A parent who is afraid to sing because they think they cannot does their child a quiet disservice. Sing the lullaby. Sing the grace before meals. Sing while you stir the soup. The child will not be a music critic.</p>
+
+    <h3>Build a small repertoire of songs you love</h3>
+    <p>You do not need a hundred songs. You need ten that you sing again and again — at bedtime, in the bath, on the walk to school. The repetition is the gift. Children love hearing the same song from the same voice across years; it becomes a small thread of safety in their lives.</p>
+
+    <h3>Use the Waldorf songbooks</h3>
+    <p>Elisabeth Lebret's <em>Pentatonic Songs</em> and <em>Shepherd's Songbook</em>, Bronja Zahlingen's <em>A Lifetime of Joy</em>, or any of the Waldorf seasonal collections are wonderful starting points. The songs are simple, often four or five notes only, and well-suited to small voices and small adult voices alike.</p>
+
+    <h3>Sing the year</h3>
+    <p>Most Waldorf families have a few seasonal songs they sing only at certain times of the year — an Advent song through December, a May song in spring, a harvest song in autumn. Singing the year in this way gives the child a quiet musical calendar; the songs return like old friends, and the seasons themselves become more deeply felt.</p>
+
+    <h3>Consider a small instrument</h3>
+    <p>A pentatonic <strong>Choroi flute</strong> or a small <strong>kinderharfe</strong> (children's lyre) can sit on a shelf in the home and be picked up by parents and children alike. The Choroi flute is simple — there are no wrong notes on a pentatonic instrument — and the harp's seven open strings encourage gentle improvisation. Both are widely available from Waldorf supply shops (see resources below).</p>
+  </section>
+
+  <section id="books">
+    <h2><span class="roman">IX.</span>Songbooks &amp; Resources</h2>
+
+    <p class="lead">A small, curated library of the songbooks, recordings, and instruments most loved by Waldorf music teachers and families.</p>
+
+    <h3>The essential songbooks</h3>
+    <ul class="gentle">
+      <li><strong>Elisabeth Lebret — <em>Pentatonic Songs for Nursery, Kindergarten and Grades 1 and 2</em></strong>. A foundational Waldorf songbook, full of songs in the mood of the fifth and pentatonic melodies. The single most-recommended starting point</li>
+      <li><strong>Elisabeth Lebret — <em>Shepherd's Songbook for Grades 1, 2, and 3</em></strong>. A continuation; carries the family through the pentatonic-to-diatonic transition</li>
+      <li><strong>Elisabeth Lebret — <em>Songs of Heaven and Earth</em></strong>. A third Lebret collection, especially good for festivals and seasons</li>
+      <li><strong>Diane Ingraham Barnes — <em>Music Through the Grades, Grades One Through Three</em></strong> (Waldorf Publications). Songs and singing material with three accompanying CDs to help teachers and parents learn the melodies by heart. Includes notation for recorder, flute, or piano</li>
+      <li><strong>Bronja Zahlingen — <em>A Lifetime of Joy: A Collection of Circle Games, Finger Games, Songs, Verses and Plays</em></strong>. A beloved early-childhood resource, perfect for home use</li>
+      <li><strong>Peter Oram — <em>One for the Golden Sun: Pentatonic Songs</em></strong> (Starborn Books, UK). A lovely small collection</li>
+      <li><strong>Peter Oram — <em>A Change in the Year</em></strong>. Seasonal pentatonic songs through the year</li>
+      <li><strong>Merwin Lewis — <em>Something Rich and Strange</em>, <em>With a Voice of Joy</em>, <em>Songs from a Waldorf Classroom</em>, <em>When the Greenwoods Laugh!</em></strong> Several collections by a seasoned Waldorf class teacher; beautiful melodies, optional harmonies the teacher can use or not</li>
+      <li><strong>John C. Miles — <em>Songs for Young Children</em></strong> and <em>Folksongs for the Pentatonic Flute</em> (Promethean Press). Excellent for home use and pentatonic-flute practice</li>
+      <li><strong>Nancy Foster — <em>Dancing As We Sing: Seasonal Circle Plays &amp; Traditional Singing Games for Young Children</em></strong></li>
+      <li><strong>Kundry Willwerth (arr.) — <em>Let's Dance &amp; Sing</em></strong> (Mercury Press)</li>
+      <li><strong>Ilian Willwerth — <em>Merrily We Sing: Original Songs in the Mood of the Fifth</em></strong></li>
+      <li><strong>Christel Dhom — Waldorf seasonal songs</strong>. Often paired with her puppet-making materials, Dhom's small song collections accompany the puppet plays of the Waldorf kindergarten</li>
+    </ul>
+
+    <h3>Books on the philosophy and practice of Waldorf music</h3>
+    <ul class="gentle">
+      <li><strong><em>The Mood of the Fifth: A Musical Approach to Early Childhood</em></strong> (WECAN Publications). The foundational text on the early-childhood approach</li>
+      <li><strong>Andrea Lyman — <em>Let There Be Music: The Music Curriculum in the Waldorf School, Grades 1–8</em></strong>. An overview essay widely available through the Association for Waldorf Music Education at <em>waldorfmusic.org</em></li>
+      <li><strong>Reinhild Brass — <em>Music From Inside Out: Reflections on Education through Music</em></strong>. A more philosophical exploration</li>
+      <li><strong>Julius Knierim — <em>Quintenlieder: Music for Young Children in the Mood of the Fifth</em></strong>. The classic European reference</li>
+    </ul>
+
+    <h3>Instruments for the home</h3>
+    <ul class="gentle">
+      <li><strong>Choroi pentatonic flute</strong> — the Waldorf-standard wooden flute for ages 5+. Available from A Child's Dream, Bella Luna Toys, Mercurius, and Myriad Natural Toys (UK)</li>
+      <li><strong>Choroi interval flute</strong> — even simpler than the pentatonic; just the open intervals. Excellent first flute</li>
+      <li><strong>Children's lyre / kinderharfe</strong> — small seven-string Waldorf harp. Choroi and Auris are the two main makers; both are sold through the Waldorf supply shops</li>
+      <li><strong>Soprano recorder</strong> — for Class 3 onwards. Choroi makes a Waldorf-style wooden recorder; for budget alternatives, Yamaha and Aulos make good plastic recorders that schools also use</li>
+      <li><strong>Kalimba / thumb piano</strong> — pentatonic versions are widely available and need no tuning; a delightful first instrument</li>
+    </ul>
+
+    <h3>Where to source instruments and books</h3>
+    <ul class="gentle">
+      <li><strong>A Child's Dream</strong> (<em>achildsdream.com</em>) — US. Comprehensive Waldorf music supplies including Choroi flutes, kinderharps, recorders, and most of the songbooks above</li>
+      <li><strong>Bella Luna Toys</strong> (<em>bellalunatoys.com</em>) — US. Music supplies and instruments</li>
+      <li><strong>Mercurius</strong> (<em>mercurius-international.com</em>) — international wholesaler</li>
+      <li><strong>Myriad Natural Toys</strong> (<em>myriadnaturaltoys.com</em>) — UK. Choroi flutes and Waldorf music supplies</li>
+      <li><strong>Choroi</strong> (<em>choroi.de</em>) — Germany. The manufacturer of the canonical Waldorf flutes, lyres, and pentatonic instruments. International shipping</li>
+      <li><strong>Auris</strong> — Sweden. High-quality children's lyres and Waldorf instruments</li>
+      <li><strong>Waldorf Publications</strong> (<em>waldorfpublications.org</em>) — the main source for Waldorf-specific songbooks in North America</li>
+      <li><strong>Mercury Press</strong> — small Waldorf publisher; many songbooks are out of print elsewhere but available here</li>
+      <li><strong>Promethean Press</strong> (Portland, Oregon) — publisher of John C. Miles's songbooks and other Waldorf music resources</li>
+    </ul>
+
+    <h3>Organisations</h3>
+    <ul class="gentle">
+      <li><strong>Association for Waldorf Music Education (AWME)</strong> — <em>waldorfmusic.org</em>. The professional association for Waldorf music teachers; publishes articles, curriculum outlines, and a recommended songbooks list. An invaluable resource for any Waldorf family or teacher</li>
+      <li><strong>WECAN (Waldorf Early Childhood Association of North America)</strong> — publisher of <em>The Mood of the Fifth</em> and many early-childhood resources</li>
+    </ul>
+
+    <div class="pull-quote">
+      The child does not learn to sing the music. The child is sung by the music — and slowly, over years, learns to sing it back.
+    </div>
+  </section>
+
+  <footer>
+    <span class="ornament">✦</span>
+    A section of <em>The Waldorf Path Directory</em>
+    <span class="ornament">✦</span>
+  </footer>
+
+</div>
+
+</body>
+</html>

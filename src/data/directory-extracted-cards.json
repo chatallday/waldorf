@@ -1,0 +1,2444 @@
+[
+  {
+    "name": "Disana",
+    "description": "Germany. Founded 1969. Oldest organic textile brand. Fine knit + boiled wool. Also organic cotton cloth nappies + wool diaper covers. All made in Germany.",
+    "tag": "GOTS certified",
+    "section": "unknown"
+  },
+  {
+    "name": "Engel Natur",
+    "description": "Germany (family business since 1927). Merino/silk base layers. Babies through adults. No chemical finishing. No AZO dyes.",
+    "tag": "IVN BEST + GOTS",
+    "section": "unknown"
+  },
+  {
+    "name": "Reiff Strickmode",
+    "description": "Germany. 100% wool fleece specialist. Baby sleep sacks in multiple weights (1.0, 2.5, 3.5 TOG). Made in-house.",
+    "tag": "GOTS",
+    "section": "unknown"
+  },
+  {
+    "name": "Hocosa",
+    "description": "Switzerland. Wool/silk/cotton underwear and outerwear. Organic kbT animal husbandry.",
+    "tag": "GOTS + IVN-BEST",
+    "section": "unknown"
+  },
+  {
+    "name": "Pure Pure by Bauer",
+    "description": "Germany/Italy. 100% natural fibre. Gender-open baby clothes. Hats, mittens, rompers, cardigans.",
+    "tag": "GOTS",
+    "section": "unknown"
+  },
+  {
+    "name": "Nui Organics",
+    "description": "New Zealand. Organic Merino wool + cotton. Temperature-regulating. Popular in Waldorf homes globally.",
+    "tag": "GOTS",
+    "section": "unknown"
+  },
+  {
+    "name": "⭐ SteinerBooks / Anthroposophic Press (USA)",
+    "description": "The primary USA publisher and bookshop for Steiner's works and all anthroposophical books. Full catalogue, digital editions, new releases. steinerbooks.org · Also: rudolfsteinerbookstore.com",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "⭐ Waldorf Publications (USA)",
+    "description": "AWSNA's publishing arm. Curriculum guides, teacher resources, research and parent books. Full catalogue and online store. waldorfpublications.org",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "⭐ Floris Books (UK/International)",
+    "description": "Scotland, UK. One of the world's most important Waldorf publishers — Steiner's works, child development, education, biodynamics, children's books. Ships internationally. florisbooks.co.uk",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Hawthorn Press (UK/International)",
+    "description": "UK. Specialists in Waldorf education, arts and crafts, family life and social renewal. Many of the most-read Waldorf parenting books. hawthornpress.com · Ships internationally.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "WECAN Books (USA)",
+    "description": "Waldorf Early Childhood Association of North America. Publisher of early childhood books, songbooks and curriculum resources. waldorfearlychildhood.org/store",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "rsarchive.org (Free)",
+    "description": "All of Steiner's education lectures available free online. The Education of the Child, Study of Man, Kingdom of Childhood and 6,000+ other lectures. Free. Always check here before buying.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "🫀 Fundamentals of Therapy",
+    "description": "Rudolf Steiner &amp; Ita Wegman. Foundational text of anthroposophic medicine. How to think about health, illness and healing from conception onward. Essential for parents and practitioners.",
+    "tag": "SteinerBooks",
+    "section": "unknown"
+  },
+  {
+    "name": "🫀 Cradle of a Healthy Life",
+    "description": "Dr. Johanna Steegmans. WECAN. Pregnancy, birth and the first weeks through an anthroposophical lens. Physical and spiritual preparation for the child's arrival.",
+    "tag": "WECAN",
+    "section": "unknown"
+  },
+  {
+    "name": "🫀 Conception, Birth and Early Childhood",
+    "description": "Norbert Glas. SteinerBooks. Anthroposophical view of conception, prenatal life and birth. The physical and spiritual significance of these first moments.",
+    "tag": "SteinerBooks",
+    "section": "unknown"
+  },
+  {
+    "name": "💛 A Warm and Gentle Welcome",
+    "description": "Margaret Ris &amp; Trice Atchison. WECAN. Nurturing children from birth to age three. Welcoming the new soul into family life with warmth, rhythm and simplicity.",
+    "tag": "WECAN",
+    "section": "unknown"
+  },
+  {
+    "name": "🫀 The Child from Birth to Three in Waldorf Education",
+    "description": "Patzlaff, Grah-Wittich &amp; Howard (eds). WECAN. Physical, emotional and spiritual development in the first three years. Concrete suggestions for home and care settings.",
+    "tag": "WECAN",
+    "section": "unknown"
+  },
+  {
+    "name": "🫀 The First Three Years of the Child",
+    "description": "Karl König. SteinerBooks. Walking, speaking, thinking — the three great developmental achievements. Written by the founder of Camphill. Deep, beautiful, essential.",
+    "tag": "SteinerBooks",
+    "section": "unknown"
+  },
+  {
+    "name": "🫀 Raising Sound Sleepers",
+    "description": "Dr. Adam Blanning MD. SteinerBooks (2024). Helping infants and young children develop healthy sleep through sensory awareness and rhythm. Anthroposophic family medicine.",
+    "tag": "SteinerBooks 2024",
+    "section": "unknown"
+  },
+  {
+    "name": "🫀 A Waldorf Guide to Children's Health",
+    "description": "Dr. Michaela Glöckler, Dr. Wolfgang Goebel &amp; Dr. Karin Michael. Floris. Essential family health reference from birth through adolescence. Illnesses, symptoms, anthroposophic treatments. The Waldorf family's household medical book.",
+    "tag": "Floris Books",
+    "section": "unknown"
+  },
+  {
+    "name": "💛 The Dignity of the Young Child",
+    "description": "Dr. Michaela Glöckler. WECAN. Care for the first three years. The inner life and dignity of the infant and what babies truly need from adults.",
+    "tag": "WECAN",
+    "section": "unknown"
+  },
+  {
+    "name": "💛 The Creative Word",
+    "description": "Daniel Udo de Haes. WECAN. The young child's experience of language and storytelling. How speech forms the soul of the very young child in the first years.",
+    "tag": "WECAN",
+    "section": "unknown"
+  },
+  {
+    "name": "☀️ Creative Play for Your Baby",
+    "description": "Christopher Clouder &amp; Janni Nicol. Hawthorn. Open-ended, age-appropriate play from birth. Natural toys, sensory play, Waldorf-informed developmental activities for 0–2 years.",
+    "tag": "Hawthorn Press",
+    "section": "unknown"
+  },
+  {
+    "name": "☀️ Nurturing Children and Families",
+    "description": "Sarah Baldwin. WECAN. One model of a parent-child programme in a Waldorf school. Songs, movement, seasonal crafts and rhythm for babies and toddlers.",
+    "tag": "WECAN",
+    "section": "unknown"
+  },
+  {
+    "name": "The Care and Development of the Human Senses",
+    "description": "Willi Aeppli. Steiner Schools Fellowship. Significance of the twelve senses in early childhood education. How sense experiences shape healthy physical development.",
+    "tag": "Floris Books",
+    "section": "unknown"
+  },
+  {
+    "name": "The First Seven Years: Physiology of Childhood",
+    "description": "Edmond Schoorel (Netherlands). RSC Press. What is happening in the young child's body during the first seven years — the etheric body and its work. Landmark physiological text.",
+    "tag": "RSC Press",
+    "section": "unknown"
+  },
+  {
+    "name": "The Twelve Senses",
+    "description": "Albert Soesman (Netherlands). Hawthorn. Touch, life, self-movement, balance, smell, taste, sight, warmth, hearing, language, concept, ego — clearly explained. Why foundational senses matter for learning and health.",
+    "tag": "Hawthorn Press",
+    "section": "unknown"
+  },
+  {
+    "name": "Under the Sky",
+    "description": "Sally Schweizer (UK). Sophia Books. Playing, working and enjoying in the open air. The outdoor Waldorf life — mud, water, seasons, physical exploration. Movement as medicine for the developing body.",
+    "tag": "Sophia Books",
+    "section": "unknown"
+  },
+  {
+    "name": "You Are Your Child's First Teacher",
+    "description": "Rahima Baldwin Dancy (USA). THE gateway book for all Waldorf parents. Practical, warm, comprehensive. Covers imitation, rhythm, temperament, play, sleep, discipline, festivals, media. Birth to age 7 primarily.",
+    "tag": "SteinerBooks",
+    "section": "unknown"
+  },
+  {
+    "name": "Beyond the Rainbow Bridge",
+    "description": "Barbara Patterson &amp; Pamela Bradley (USA). Michaelmas Press. Nurturing children from birth to seven. Rhythm, will forces, temperament, and how environment shapes the young child's soul.",
+    "tag": "Michaelmas Press",
+    "section": "unknown"
+  },
+  {
+    "name": "Seven Times the Sun",
+    "description": "Shea Darian (USA). Gilead Press. Guiding your child through the rhythms of the day. Songs, verses and daily rituals that create emotional security and seasonal rhythm in family life.",
+    "tag": "Gilead Press",
+    "section": "unknown"
+  },
+  {
+    "name": "Simplicity Parenting",
+    "description": "Kim John Payne (Australia/USA). Four steps: simplify environment, establish rhythm, schedule a break in schedules, filter the adult world. Reduces cumulative stress. The most widely read Waldorf-adjacent parenting book worldwide.",
+    "tag": "Ballantine / Hawthorn",
+    "section": "unknown"
+  },
+  {
+    "name": "Healing Stories for Challenging Behaviour",
+    "description": "Susan Perrow (Australia). Custom therapeutic stories using metaphor, journey and resolution to address specific behaviours — non-confrontationally. Translated into 10+ languages. Works from age 3 upward.",
+    "tag": "Hawthorn Press",
+    "section": "unknown"
+  },
+  {
+    "name": "Nøkken: A Danish Waldorf Child Care",
+    "description": "Helle Heckmann (Denmark). WECAN. Waldorf-inspired childminding. Community, rhythm, outdoor life. Emotional security through simple, unhurried daily life. Pioneer of the forest kindergarten movement.",
+    "tag": "WECAN Books",
+    "section": "unknown"
+  },
+  {
+    "name": "Working with Anxious, Nervous and Depressed Children",
+    "description": "Henning Köhler (Germany). Understanding children with emotional difficulties from an anthroposophic perspective. Practical tools for parents and teachers from age 3 upward.",
+    "tag": "AWSNA / Floris",
+    "section": "unknown"
+  },
+  {
+    "name": "Phases of Childhood",
+    "description": "Bernard Lievegoed (Netherlands). Floris. Growing in body, soul and spirit through all developmental phases. A classic anthroposophical developmental psychology spanning birth through adolescence.",
+    "tag": "Floris Books",
+    "section": "unknown"
+  },
+  {
+    "name": "Heaven on Earth",
+    "description": "Sharifa Oppenheimer (USA). SteinerBooks. Creating the Waldorf kindergarten at home. Rhythm, play environments, outdoor spaces, sensory richness, festival celebrations. Practical and beautiful.",
+    "tag": "SteinerBooks",
+    "section": "unknown"
+  },
+  {
+    "name": "Free to Learn",
+    "description": "Lynne Oldfield (UK). Hawthorn. Introducing Steiner Waldorf early childhood education. The principles and methods of the kindergarten. Why childhood matters and early years should not be rushed.",
+    "tag": "Hawthorn Press",
+    "section": "unknown"
+  },
+  {
+    "name": "The Genius of Play",
+    "description": "Sally Jenkinson (UK). Hawthorn. Celebrating the spirit of childhood. The developmental necessity of unstructured, creative, imaginative play. A powerful case for protecting free play.",
+    "tag": "Hawthorn Press",
+    "section": "unknown"
+  },
+  {
+    "name": "Work and Play in Early Childhood",
+    "description": "Freya Jaffke (Germany). SteinerBooks. How meaningful domestic work — cooking, cleaning, gardening — forms the heart of the Waldorf kindergarten and builds the child's will forces.",
+    "tag": "SteinerBooks",
+    "section": "unknown"
+  },
+  {
+    "name": "On the Play of the Child",
+    "description": "Freya Jaffke (ed) (Germany). WECAN. Steiner's indications for working with young children. Essential reading for kindergarten teachers and parents wanting to understand play more deeply.",
+    "tag": "WECAN",
+    "section": "unknown"
+  },
+  {
+    "name": "Developmental Signatures (Ages 3–9)",
+    "description": "Rainer Patzlaff et al. (Germany). AWSNA. Core values and practices in Waldorf education for children ages 3–9. Detailed developmental markers and how the kindergarten responds to them.",
+    "tag": "AWSNA",
+    "section": "unknown"
+  },
+  {
+    "name": "Understanding Children's Drawings",
+    "description": "Michaela Strauss (Germany). Rudolf Steiner Press. Reading children's drawings as a developmental window. How a drawing reveals the child's inner developmental stage — invaluable for parents and teachers.",
+    "tag": "RSP",
+    "section": "unknown"
+  },
+  {
+    "name": "Creative Play for Your Toddler (Ages 2–4)",
+    "description": "Christopher Clouder (UK). Hawthorn. Waldorf toy projects and age-appropriate sensory, movement and creative play for toddlers. Nature-based activities.",
+    "tag": "Hawthorn Press",
+    "section": "unknown"
+  },
+  {
+    "name": "Gesture Games for Spring &amp; Summer / Autumn &amp; Winter",
+    "description": "Wilma Ellersiek (Germany). WECAN. Finger games and seasonal gesture poems for kindergarten. Songs, movement, language and touch — deeply nourishing for the very young child developmentally.",
+    "tag": "WECAN Books",
+    "section": "unknown"
+  },
+  {
+    "name": "Let Us Form a Ring / Dancing As We Sing",
+    "description": "Nancy Foster (USA). WECAN. Circle games and songs for the kindergarten year. Movement and music woven together in seasonal rhythm.",
+    "tag": "WECAN Books",
+    "section": "unknown"
+  },
+  {
+    "name": "Under the Stars",
+    "description": "Renate Long-Breipohl (Australia/Germany). Hawthorn. Foundations of Steiner Waldorf early childhood education. International perspective — how these principles apply across cultures and countries.",
+    "tag": "Hawthorn Press",
+    "section": "unknown"
+  },
+  {
+    "name": "First Grade Readiness",
+    "description": "Nancy Blanning (ed). WECAN. Resources, insights and tools for navigating the transition from kindergarten to Grade 1. Key signs of physical, emotional and developmental readiness.",
+    "tag": "WECAN",
+    "section": "unknown"
+  },
+  {
+    "name": "A Waldorf Guide to Children's Health (continued)",
+    "description": "Glöckler, Goebel &amp; Michael. Floris. Childhood illnesses, fevers, ear infections, common complaints throughout the school years. Why fever has developmental value. The household medical reference.",
+    "tag": "Floris Books",
+    "section": "unknown"
+  },
+  {
+    "name": "Educating Through Arts and Crafts",
+    "description": "Michael Martin (ed) (UK). How handwork — knitting, weaving, carving, sewing — builds will forces, fine motor coordination and physical intelligence in the school-age child, Grades 1–8.",
+    "tag": "SWSF Publications",
+    "section": "unknown"
+  },
+  {
+    "name": "The Extra Lesson",
+    "description": "Audrey McAllen (UK). Hawthorn. Movement-based remedial programme for reading, writing or arithmetic difficulties. Specific movement sequences that support brain integration. Grades 1–6.",
+    "tag": "Hawthorn Press",
+    "section": "unknown"
+  },
+  {
+    "name": "Knit for Health and Wellness",
+    "description": "Betsan Corkhill (UK). Research-based guide to knitting's measurable physical and mental health benefits. Used in Waldorf handwork teacher education and WHE conferences.",
+    "tag": "WHE",
+    "section": "unknown"
+  },
+  {
+    "name": "Crossing the Bridge: The Nine-Year Change",
+    "description": "Hermann Koepke. SteinerBooks. A lucid, readable explanation of the 9-year threshold — why children suddenly feel alone and separate from parents and peers. What adults can do at this pivotal moment.",
+    "tag": "SteinerBooks",
+    "section": "unknown"
+  },
+  {
+    "name": "The Soul of Discipline",
+    "description": "Kim John Payne (Australia/USA). Ballantine. Warm, firm and calm guidance from toddlers to teens. Developmentally appropriate discipline — how to respond differently at each age and stage.",
+    "tag": "Ballantine",
+    "section": "unknown"
+  },
+  {
+    "name": "Therapeutic Storytelling: 101 Healing Stories for Children",
+    "description": "Susan Perrow (Australia). Hawthorn. 101 stories for challenging behaviour, grief, anxiety, bullying, teasing, nightmares, bedwetting and more. Ages 3–10+. Metaphor, journey and resolution framework.",
+    "tag": "Hawthorn Press",
+    "section": "unknown"
+  },
+  {
+    "name": "An A-Z Collection of Behaviour Tales",
+    "description": "Susan Perrow (Australia). Hawthorn. Illustrated quick-reference collection — from Angry Ant to Zestless Zebra. Find a story for a specific behavioural challenge instantly. Grades 1–4.",
+    "tag": "Hawthorn Press",
+    "section": "unknown"
+  },
+  {
+    "name": "Stories to Light the Night",
+    "description": "Susan Perrow (Australia). Hawthorn. Stories for grief, loss, death, divorce, adoption, pet loss, loss of health. 94 stories from multiple cultures. For when a child or class has experienced loss. Ages 5–adult.",
+    "tag": "Hawthorn Press",
+    "section": "unknown"
+  },
+  {
+    "name": "A Practical Guide to Curative Education",
+    "description": "Robyn M. Brown (USA). Lindisfarne Books, 440 pp. The seven life processes as a diagnostic and therapeutic lens for all children showing difficulties — for class teachers, parents and support staff Grades 1–8.",
+    "tag": "Lindisfarne Books",
+    "section": "unknown"
+  },
+  {
+    "name": "Being at Your Best When Your Kids Are at Their Worst",
+    "description": "Kim John Payne (Australia/USA). Ballantine. How to regulate yourself in difficult parenting moments — staying grounded and present when the child is most challenging.",
+    "tag": "Ballantine",
+    "section": "unknown"
+  },
+  {
+    "name": "Storytelling with Children",
+    "description": "Nancy Mellon (USA). Hawthorn. How to use story as the living heart of teaching across the grades. Fairy tales, nature stories, hero myths — why each type is right for each grade level.",
+    "tag": "Hawthorn Press",
+    "section": "unknown"
+  },
+  {
+    "name": "Tasks and Content of the Steiner-Waldorf Curriculum",
+    "description": "Rawson, Avison &amp; Richter. Floris. Complete curriculum reference Grades 1–12. What is taught, why it is taught at that age, and how it relates to the child's development at each specific year.",
+    "tag": "Floris Books",
+    "section": "unknown"
+  },
+  {
+    "name": "A Handbook for Waldorf Class Teachers",
+    "description": "Kevin Avison (UK). Floris. Comprehensive practical guide for class teachers. Grade-by-grade curriculum, teaching approaches and how to meet the developmental needs of each year from 1–8.",
+    "tag": "Floris Books",
+    "section": "unknown"
+  },
+  {
+    "name": "School as a Journey",
+    "description": "Torin Finser (USA). SteinerBooks. An eight-year class teacher memoir — Grades 1–8 with one beloved class. The most inspiring account of what a Waldorf class teacher does year by year.",
+    "tag": "SteinerBooks",
+    "section": "unknown"
+  },
+  {
+    "name": "The Roadmap to Literacy",
+    "description": "Janet Langley &amp; Jennifer Militzer-Kopperl (USA). Mill City Press. Guide to teaching language arts in Waldorf schools, Grades 1–3. Phonics-based, developmentally appropriate, comprehensive. \"Game changer.\"",
+    "tag": "Mill City Press",
+    "section": "unknown"
+  },
+  {
+    "name": "Writing to Reading the Steiner Waldorf Way",
+    "description": "Allanson &amp; Teensma (UK). Floris. Foundations of creative literacy in Classes 1–2. How letters emerge from images and stories — the Waldorf approach to beginning reading and writing.",
+    "tag": "Floris Books",
+    "section": "unknown"
+  },
+  {
+    "name": "Making Math Meaningful: Grades 1–5",
+    "description": "Fabrie, Gottenbos &amp; Jamie York (Netherlands/USA). Step-by-step progressions, main lesson ideas, developmentally appropriate approach to all four processes in lower school.",
+    "tag": "Jamie York Press",
+    "section": "unknown"
+  },
+  {
+    "name": "Making Math Meaningful: Grades 6–8",
+    "description": "Jamie York (USA). Middle school Waldorf math. Fractions, decimals, percents, geometry, algebra introduction — all with developmentally appropriate pacing and imaginative framing.",
+    "tag": "Jamie York Press",
+    "section": "unknown"
+  },
+  {
+    "name": "Creative Form Drawing",
+    "description": "Ernst Schubert (Germany). Hawthorn. Form drawing for Classes 1–4. The Waldorf-specific subject that develops spatial sense, handwriting readiness, bilateral coordination and inner patterning.",
+    "tag": "Hawthorn Press",
+    "section": "unknown"
+  },
+  {
+    "name": "Colouring with Block Crayons",
+    "description": "Sieglinde de Francesca (USA). Floris. Classic guide to Waldorf block crayon technique — how colour is used developmentally in Grades 1–3 to nourish the feeling life through art.",
+    "tag": "Floris Books",
+    "section": "unknown"
+  },
+  {
+    "name": "Painting and Drawing in Waldorf Schools",
+    "description": "Thomas Wildgruber (Germany). Floris. Definitive art curriculum guide — wet-on-wet painting, form drawing, charcoal and pastel from Grades 1–12 with full developmental rationale.",
+    "tag": "Floris Books",
+    "section": "unknown"
+  },
+  {
+    "name": "Waldorf Games Handbook",
+    "description": "Kim John Payne, Waletzko &amp; Garrett. Hawthorn. Circle games, seasonal games, singing games — movement-based learning for Grades 1–3 developing social skills and physical intelligence together.",
+    "tag": "Hawthorn Press",
+    "section": "unknown"
+  },
+  {
+    "name": "🫀 Making Math Meaningful: Grades 6–8",
+    "description": "Jamie York (USA). Business math, irrational numbers, square roots, basic algebra, geometry — paced to the emerging capacity for abstract thinking in the pre-adolescent years.",
+    "tag": "Jamie York Press",
+    "section": "unknown"
+  },
+  {
+    "name": "💛 The Soul of Discipline",
+    "description": "Kim John Payne. The middle years — how to hold boundaries with warmth as the adolescent body and soul begins to emerge. Non-punitive approaches grounded in Waldorf development.",
+    "tag": "Ballantine",
+    "section": "unknown"
+  },
+  {
+    "name": "💛 Therapeutic Storytelling",
+    "description": "Susan Perrow (Australia). Stories for older children — grief, exclusion, anxiety, transition. The metaphor framework continues to work into early adolescence. Workshop training via susanperrow.com",
+    "tag": "Hawthorn Press",
+    "section": "unknown"
+  },
+  {
+    "name": "☀️ Tasks and Content of the Steiner-Waldorf Curriculum (Grades 6–8)",
+    "description": "Rawson, Avison &amp; Richter. Floris. Roman history, physics, chemistry, perspective drawing, world geography, algebra, biography — how each subject meets the 12–14 year old developmentally.",
+    "tag": "Floris Books",
+    "section": "unknown"
+  },
+  {
+    "name": "🫀 A Waldorf Guide to Children's Health (adolescent chapters)",
+    "description": "Glöckler, Goebel &amp; Michael. Floris. Puberty, sleep, substance use, mental health — through an anthroposophic medical lens. Continues to be relevant through age 18.",
+    "tag": "Floris Books",
+    "section": "unknown"
+  },
+  {
+    "name": "💛 Between Form and Freedom",
+    "description": "Betty Staley (USA). Hawthorn. THE essential guide to adolescent development in Waldorf education. Identity, relationships, idealism, emotional volatility, the search for meaning. Required reading for high school teachers and parents of teenagers.",
+    "tag": "Hawthorn Press",
+    "section": "unknown"
+  },
+  {
+    "name": "💛 Education for Adolescents",
+    "description": "Rudolf Steiner. SteinerBooks. The foundational text on the adolescent stage — how the ego forces work, what the young person needs from education. Used in Sunbridge and CfA high school programs.",
+    "tag": "SteinerBooks",
+    "section": "unknown"
+  },
+  {
+    "name": "💛 Trailing Clouds of Glory",
+    "description": "Douglas Gerwin (ed) (USA). Waldorf Publications. The changing relationships of young people through puberty and what teachers can do. Essays by multiple Waldorf high school educators.",
+    "tag": "Waldorf Publications",
+    "section": "unknown"
+  },
+  {
+    "name": "☀️ Making Math Meaningful: High School (Grades 9–12)",
+    "description": "Jamie York (USA). 30 years of Waldorf high school math. Projective geometry, calculus, complex numbers, philosophy of math. \"Chock-full of awe-inspiring mathematics.\"",
+    "tag": "Jamie York Press",
+    "section": "unknown"
+  },
+  {
+    "name": "☀️ Education Towards Freedom",
+    "description": "Frans Carlgren (Sweden). Floris. Beautifully illustrated international survey of Waldorf schools — covering kindergarten through high school. The iconic visual and narrative overview of the whole Waldorf journey.",
+    "tag": "Floris Books",
+    "section": "unknown"
+  },
+  {
+    "name": "☀️ Understanding Waldorf Education",
+    "description": "Jack Petrash (USA). Floris. Jargon-free. Kindergarten through high school from the inside out. Accessible and reassuring for parents of children in upper grades.",
+    "tag": "Floris Books",
+    "section": "unknown"
+  },
+  {
+    "name": "All Year Round",
+    "description": "Druitt, Fynes-Clinton &amp; Rowling (UK). Hawthorn. THE seasonal festival book — stories, crafts, recipes, songs for every season and festival. Suitable for all faiths and secular homes. Use from birth through high school.",
+    "tag": "Hawthorn Press",
+    "section": "unknown"
+  },
+  {
+    "name": "Festivals Together",
+    "description": "Fitzjohn, Weston &amp; Large (UK). Hawthorn. A multicultural festival guide alongside the seasonal calendar. How to celebrate across faiths and cultures in the Waldorf spirit.",
+    "tag": "Hawthorn Press",
+    "section": "unknown"
+  },
+  {
+    "name": "The Birthday Book",
+    "description": "Ann Druitt &amp; Christine Fynes-Clinton. Hawthorn. Waldorf-style birthday traditions, crafts and celebrations across ages. How to mark each year meaningfully as the child grows.",
+    "tag": "Hawthorn Press",
+    "section": "unknown"
+  },
+  {
+    "name": "Making Peg Dolls &amp; More",
+    "description": "Margaret Bloom (UK). Hawthorn. Waldorf-inspired doll-making and craft projects for families. Seasonal nature crafts for children across age groups.",
+    "tag": "Hawthorn Press",
+    "section": "unknown"
+  },
+  {
+    "name": "The Education of the Child",
+    "description": "Rudolf Steiner. The foundational text. Every parent and teacher begins here. The three seven-year phases, the fourfold human being, how education must respond to child development.",
+    "tag": "SteinerBooks",
+    "section": "unknown"
+  },
+  {
+    "name": "Waldorf Education: Rudolf Steiner's Ideas in Practice",
+    "description": "Christopher Clouder &amp; Martyn Rawson (UK). Floris. Comprehensive overview from kindergarten through high school. Good for parents new to Waldorf at any stage.",
+    "tag": "Floris Books",
+    "section": "unknown"
+  },
+  {
+    "name": "Leaving Room for the Angels",
+    "description": "Reg Down (Canada/SA/Ireland). AWSNA Publications. Eurythmy and the art of teaching. \"The first section should be read by all Waldorf teachers.\" 240 pages. Artistic pedagogy through the lens of movement and eurythmy.",
+    "tag": "AWSNA",
+    "section": "unknown"
+  },
+  {
+    "name": "Education for Special Needs (Curative Education Course)",
+    "description": "Rudolf Steiner. 12 lectures. Every curative educator begins here. Applicable across all age ranges. Free online at rsarchive.org; in print via Rudolf Steiner Press.",
+    "tag": "RSP / rsarchive.org",
+    "section": "unknown"
+  },
+  {
+    "name": "A Practical Guide to Curative Education",
+    "description": "Robyn M. Brown. Lindisfarne Books, 440 pp. The seven life processes as a practical lens for all children — especially those with challenges. For class teachers, parents and support staff across all grade levels.",
+    "tag": "Lindisfarne Books",
+    "section": "unknown"
+  },
+  {
+    "name": "Children with a Difference",
+    "description": "Walter Holtzapfel. Floris. Background of Steiner special education. How anthroposophical principles apply to various developmental and learning differences across childhood.",
+    "tag": "Floris Books",
+    "section": "unknown"
+  },
+  {
+    "name": "Autism: Medical, Educational and Social Issues",
+    "description": "Karl König. Floris/SteinerBooks. Perspective on autism from the founder of Camphill. The spiritual individuality of autistic children — historic and still profoundly relevant.",
+    "tag": "Floris / SteinerBooks",
+    "section": "unknown"
+  },
+  {
+    "name": "🇦🇷 Editorial Antroposófica (Argentina)",
+    "description": "Primary Argentine publisher and bookshop. Full online store — Educación Waldorf, Medicina Antroposófica, Literatura Infantil, Pedagogía Curativa. Ships to all of Latin America. antroposofica.com.ar",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "🇪🇸 Editorial Rudolf Steiner (Spain)",
+    "description": "Founded 1975. The most complete Spanish-language publisher of Waldorf and Steiner books. Ships worldwide. editorialrudolfsteiner.com",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "🇪🇸 Editorial Pau de Damasc (Spain)",
+    "description": "Waldorf pedagogy, anthroposophy, Goethean science, curative education, children's stories in Spanish and Catalan. Also serves Chile (chile.paudedamasc.com). paudedamasc.com",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "🇪🇸 ING Edicions (Spain)",
+    "description": "Spanish Waldorf curriculum materials, art books, children's literature in Spanish. Pedagogía Waldorf section. ingedicions.com",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "🇧🇷 Editora Antroposófica (Brazil)",
+    "description": "Brazil's leading publisher for anthroposophical books in Portuguese. Full Waldorf pedagogy range. editora.com.br",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "🌎 libros-books.com (Mexico)",
+    "description": "Mexican bookshop distributing all major Spanish-language anthroposophical publishers: Antroposófica, Rudolf Steiner, Pau de Damasc, Idunn (Chile), Waldorf Publications and more. Ships to all of Latin America and Mexico.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "🌍 rsarchive.org (Free)",
+    "description": "Rudolf Steiner Archive. Many Steiner lectures and foundational texts available free in Spanish online. Check before buying. rsarchive.org",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "🌎 Revistas / Magazines",
+    "description": "<strong>Campanada</strong> — Spanish-language Waldorf journal (revista) published by ING Edicions. The main ongoing Spanish-language Waldorf educational publication. · <strong>Erziehungskunst</strong> — some articles translated to Spanish. Search @erziehungskunst on Instagram for Spanish content.",
+    "tag": "Ongoing reading",
+    "section": "unknown"
+  },
+  {
+    "name": "Nanchen Natur",
+    "description": "Germany. Handmade one-by-one. Each doll stuffed by hand with organic pure new wool. Each face individually hand-painted — no two alike. \"Doll doctor\" repair service. From 3 months+.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Ambrosius / Eco Flower Fairies",
+    "description": "Romania / USA. Founded 1996 for the local Waldorf school in Cluj-Napoca. Wool felt flower fairies, gnomes, seasonal figures. Empowers mothers, retirees & disabled workers. Ships to 4 continents.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Käthe Kruse",
+    "description": "Germany. Historic German doll maker. 100+ years. Soft fabric collector and play dolls.",
+    "tag": "Germany",
+    "section": "unknown"
+  },
+  {
+    "name": "Dolls 4 Tibet",
+    "description": "Fair trade Waldorf-style dolls supporting Tibetan communities.",
+    "tag": "Fair Trade",
+    "section": "unknown"
+  },
+  {
+    "name": "Start with the kinder lyre",
+    "description": "The kinder lyre (also called kinder harp or pentatonic lyre) is the most versatile Waldorf home instrument. It is tuned to the pentatonic scale so everything played on it sounds beautiful — parents don't need to know music to begin. Play it softly at bedtime, during rest time, or to accompany singing. Children aged 2+ can pluck it. The most recommended first instrument for a Waldorf home. Available from Choroi, Auris, Harps of Lorien and many Waldorf suppliers.",
+    "tag": "Ages 0+ · All families",
+    "section": "unknown"
+  },
+  {
+    "name": "Sing every day — without apology",
+    "description": "The most important thing you can do musically for your child is simply sing — even if you think your voice is imperfect. Children do not hear imperfection. They hear love, presence and warmth. Sing the transition songs in this directory. Sing the seasonal songs. Sing the meal blessing. Sing a lullaby. The voice you have is perfect enough.",
+    "tag": "All ages · All families",
+    "section": "unknown"
+  },
+  {
+    "name": "The pentatonic flute (Ages 6+)",
+    "description": "A Choroi pentatonic flute is the first instrument a Grade 1 Waldorf child receives. It is tuned to the pentatonic scale — only five notes, all harmonious. Children learn to play by imitation, not notation. At home, the parent learns alongside the child. Simple seasonal songs, lullabies and nature melodies can be played within the first few lessons. Available from Choroi.org · Waldorf instrument suppliers · approximately €25–35.",
+    "tag": "Ages 6+ · Grade 1",
+    "section": "unknown"
+  },
+  {
+    "name": "Pentatonic glockenspiel (Ages 3+)",
+    "description": "The Auris pentatonic glockenspiel is a beloved home instrument — six or eight bars tuned to the pentatonic scale, in a beautiful wooden frame. Played with a soft mallet. A child can play it alone without producing discord — every note combination sounds harmonious. Ideal for toddler musical exploration and early childhood free play. Available from Auris (aurisinstruments.com) · Bella Luna Toys · Waldorf suppliers worldwide.",
+    "tag": "Ages 2+ · Kindergarten",
+    "section": "unknown"
+  },
+  {
+    "name": "Recorder (Ages 9+ / Grade 3)",
+    "description": "The soprano recorder is the standard Grade 3–8 Waldorf school instrument — affordable, portable, beautiful when well played. Mollenhauer and Moeck are the preferred German wooden recorder makers used in Waldorf schools. Avoid plastic recorders where possible — the wooden tone is warmer and more alive. A good wooden soprano recorder costs approximately €20–40. Lessons at home: the Waldorf recorder songbook series by many publishers.",
+    "tag": "Ages 9+ · Grade 3",
+    "section": "unknown"
+  },
+  {
+    "name": "String instruments (Ages 9+ / Grade 3)",
+    "description": "Most Waldorf schools begin violin or cello in Grade 3. Hiring rather than buying is strongly recommended for the first 1–2 years. Waldorf string education follows a strongly aural, imitative approach — the Suzuki method is compatible and widely used alongside Waldorf pedagogy. Practice 10–15 minutes daily in the early years is far more valuable than occasional long sessions.",
+    "tag": "Ages 9+ · Grade 3",
+    "section": "unknown"
+  },
+  {
+    "name": "Singing games and circle time at home",
+    "description": "The simplest and most complete music practice for young children is the singing game — movement, song, rhythm and social interaction all in one. Books: <em>Singing Games for Families, Schools and Communities</em> (Anna Rainville &amp; Laurie Clark, WECAN); <em>Dancing As We Sing</em> (Nancy Foster, WECAN); <em>Let Us Form a Ring</em> (Nancy Foster, WECAN). These three books contain everything a family needs to bring Waldorf music to life at home.",
+    "tag": "Ages 2–10 · Home circle",
+    "section": "unknown"
+  },
+  {
+    "name": "Harps of Lorien — Kinder Lyres (USA)",
+    "description": "Raphael Weisman has been making kinder lyres for over 20 years. The most trusted North American maker of pentatonic children's lyres — used in partnership with the Christopherus Waldorf homeschool curriculum. High quality, affordable, made with care. harpsoflorien.com",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Choroi",
+    "description": "Germany. THE Waldorf instrument maker. Developed with the Goetheanum Medical Section. Workshops employ disabled and disadvantaged workers. Pentatonic flutes (pear/cherry wood, 440Hz/432Hz), lyres, harps, glockenspiels.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Auris",
+    "description": "Sweden. Pentatonic & diatonic glockenspiels, xylophones, children's harps and lyres. Maple and birch. Widely used in Waldorf schools.",
+    "tag": "Sweden",
+    "section": "unknown"
+  },
+  {
+    "name": "Mollenhauer",
+    "description": "Germany. High-quality wooden recorders (soprano, alto, tenor). Beloved in Waldorf upper grades.",
+    "tag": "Germany",
+    "section": "unknown"
+  },
+  {
+    "name": "Moeck",
+    "description": "Germany. Wooden recorders. Used from Grade 3 onward in Waldorf schools.",
+    "tag": "Germany",
+    "section": "unknown"
+  },
+  {
+    "name": "Hokema",
+    "description": "Germany. Kalimbas in natural cherry wood. B5, B9, B17 — pentatonic tunings.",
+    "tag": "Germany",
+    "section": "unknown"
+  },
+  {
+    "name": "Bartl",
+    "description": "Germany. Harmonicas. Widely used in Waldorf lower grades.",
+    "tag": "Germany",
+    "section": "unknown"
+  },
+  {
+    "name": "Stockmar",
+    "description": "Germany. Beeswax crayons and blocks, watercolour paints. Based on Goethe's colour circle. The school standard worldwide for 60+ years.",
+    "tag": "Germany",
+    "section": "unknown"
+  },
+  {
+    "name": "Lyra",
+    "description": "Germany. Super Ferby triangular coloured pencils. Waldorf assortment sets. Children's grip-friendly design. Also: Lyra Skin Tone coloured pencil sets — available at Cincinnati Waldorf School store and selected Waldorf retailers.",
+    "tag": "Germany",
+    "section": "unknown"
+  },
+  {
+    "name": "Mercurius",
+    "description": "Netherlands. Chalk, watercolour pencils, colour giants. 30+ years supplying Waldorf schools.",
+    "tag": "Netherlands",
+    "section": "unknown"
+  },
+  {
+    "name": "Filana",
+    "description": "USA. Beeswax crayons. Made in USA. Non-toxic.",
+    "tag": "USA",
+    "section": "unknown"
+  },
+  {
+    "name": "Natural Earth Paint",
+    "description": "USA. Truly non-toxic earth pigment paints. Green America certified. Recommended for children with sensitivities.",
+    "tag": "USA",
+    "section": "unknown"
+  },
+  {
+    "name": "Honeysticks",
+    "description": "New Zealand. Pure beeswax crayons. NZ-made. Very popular in Waldorf homes.",
+    "tag": "New Zealand",
+    "section": "unknown"
+  },
+  {
+    "name": "🇩🇪 HABA — Germany",
+    "description": "Bad Rodach, Germany. Family-run since 1938. Classic wooden toys, building blocks, board games, soft toys. Waldorf-compatible, beautifully crafted. Available worldwide at habatoys.com and major toy retailers internationally.",
+    "tag": "Germany · Worldwide",
+    "section": "unknown"
+  },
+  {
+    "name": "🇩🇪 Heidi Hilscher Dolls — Germany",
+    "description": "Germany. Handmade in the Waldorf doll-making tradition. Highest quality — from dresses to delicate features. Expressions deliberately simple to encourage imagination. Available internationally via Waldorf toy shops and The Wooden Wagon.",
+    "tag": "Germany · Dolls",
+    "section": "unknown"
+  },
+  {
+    "name": "🇩🇪 Nanchen Dolls — Germany",
+    "description": "Germany. Companion brand to Heidi Hilscher. Handmade Waldorf-tradition dolls. Lovingly detailed, imagination-fostering. Available internationally via Waldorf toy shops worldwide.",
+    "tag": "Germany · Dolls",
+    "section": "unknown"
+  },
+  {
+    "name": "🇷🇴 Wood Pecker Factory — Romania",
+    "description": "Bucharest, Romania. Hand-crafted wooden animals, trees, flowers, princesses and knights — similar aesthetic to Ostheimer and Holztiger. Sea animals, woodland, farm, African animals, birds, dinosaurs. Etsy: WoodPeckerFactory",
+    "tag": "Romania · Etsy",
+    "section": "unknown"
+  },
+  {
+    "name": "🇺🇦 Waldorf World — Ukraine",
+    "description": "Dnipro, Ukraine. Stunning needle-felted gnomes, fairies, fairy houses, animals, fruits, vegetables and birthday crowns. Wool with real flourishes — pine cones, moss, snail shells, beading. International shipping. Etsy: WaldorfWorld",
+    "tag": "Ukraine · Felt · Etsy",
+    "section": "unknown"
+  },
+  {
+    "name": "🇷🇺 Green Taiga — Russia",
+    "description": "Novosibirsk, Russia. Waldorf-inspired animals and trees from alder wood. Non-toxic water-based paints, linseed oil and wax. Great character through carving. European and American shipping. Etsy: GreenTaiga",
+    "tag": "Russia · Wooden · Etsy",
+    "section": "unknown"
+  },
+  {
+    "name": "Ailefo",
+    "description": "Denmark. Organic modelling clay. No synthetic materials.",
+    "tag": "Denmark",
+    "section": "unknown"
+  },
+  {
+    "name": "Namaki",
+    "description": "France. Organic face paint for children. Certified organic.",
+    "tag": "France",
+    "section": "unknown"
+  },
+  {
+    "name": "⭐ We Are Colorful — Mudpuppy",
+    "description": "USA. 18 beautiful wax crayons in skin tones far beyond just peach and brown — the full human spectrum. Housed in a sturdy reusable tin. Ages 3+. Meets CPSIA, ASTM and CE safety standards. Designed by Courtney Ahn. Available at mudpuppy.com, Amazon, and toy retailers worldwide. The tin makes it a wonderful birthday gift. \"Celebrate the wonderful range of skin tones and help every child feel represented.\"",
+    "tag": "🌍 18 skin tones · Ages 3+",
+    "section": "unknown"
+  },
+  {
+    "name": "Faber-Castell World Colors EcoPencils",
+    "description": "Germany/USA. 27 coloured pencils including 3 duo-tone pencils giving 6 blendable skin tone shades. Developed with makeup artists for accurate skin tone blending. Made from certified sustainable forestry wood. Highly pigmented, smooth lay-down. Available at fabercastell.com and art supply shops worldwide. Also: Faber-Castell Black Edition — 12 skin tone coloured pencils on dark paper.",
+    "tag": "Germany · Ages 5+",
+    "section": "unknown"
+  },
+  {
+    "name": "Lyra Skin Tone Coloured Pencils",
+    "description": "Germany. Lyra's trusted quality in a skin tone assortment. Available at Cincinnati Waldorf School store (cincinnatiwaldorfschool.org) and selected Waldorf art suppliers. Lyra's Super Ferby pencils have been used in Waldorf schools for decades — the skin tone range extends this trusted quality.",
+    "tag": "Germany · Waldorf trusted",
+    "section": "unknown"
+  },
+  {
+    "name": "Stockmar Skin Tone Wax Blocks",
+    "description": "Germany. Stockmar's beeswax block crayons include several shades suitable for skin tone work — particularly in the \"Assorted\" and \"Supplement\" sets. For the widest range, combine Stockmar's natural ochre, caramel, sienna and umber tones. Used in Waldorf schools worldwide for main lesson book portrait work. Available from all Waldorf art suppliers.",
+    "tag": "Germany · Waldorf standard",
+    "section": "unknown"
+  },
+  {
+    "name": "Derwent Coloursoft Skintones",
+    "description": "UK. Professional-quality coloured pencil set specifically for skin tone work. Soft, highly blendable core. Beloved by older Waldorf students (Grades 6+) for portrait and figure work in main lesson books. Available at art supply retailers and derwent.com",
+    "tag": "UK · Grades 6+ / Adults",
+    "section": "unknown"
+  },
+  {
+    "name": "🖐 Fine motor development",
+    "description": "Strength and coordination in the small muscles of the hands and fingers directly prepares for writing, instrument playing and all handwork. Fingers that can gesture, tap, weave and point with precision are fingers ready to hold a pencil, knit a stitch or bow a violin string.",
+    "tag": "Ages 2–9",
+    "section": "unknown"
+  },
+  {
+    "name": "🧠 Bilateral brain coordination",
+    "description": "Most finger games use both hands together — or alternate left and right in sequence — crossing the body's midline. This bilateral coordination connects the brain's two hemispheres and is the same neurological foundation required for reading and writing. Finger games are, in the most literal sense, brain-building.",
+    "tag": "Ages 0–7 · Brain",
+    "section": "unknown"
+  },
+  {
+    "name": "📖 Language and memory",
+    "description": "Verse, rhyme, repetition and movement together are the most powerful tools for language acquisition available to the young child. The physical gesture anchors the word in the body — the child who acts out \"the spider climbs up the drainpipe\" remembers the word \"drainpipe\" forever. Memory is embodied.",
+    "tag": "All ages · Language",
+    "section": "unknown"
+  },
+  {
+    "name": "🎵 Rhythm and musicality",
+    "description": "Coordinating speech with movement develops internal rhythm — the foundation of musicality, mathematics and social synchrony. A child who can keep a steady beat with their fingers while saying a verse is a child whose nervous system is learning to organise time.",
+    "tag": "Ages 2–8 · Music",
+    "section": "unknown"
+  },
+  {
+    "name": "🔢 Number sense",
+    "description": "Counting games and one-to-one correspondence are naturally embedded in finger games — \"one little finger, two little fingers...\" Long before formal arithmetic, the child's fingers teach them that numbers are real, embodied and reliable.",
+    "tag": "Ages 3–7 · Maths",
+    "section": "unknown"
+  },
+  {
+    "name": "💛 Loving connection",
+    "description": "The most important dimension of finger games for the very young child is the intimate human contact — an adult fully present, playing, touching, singing. The hand games in Ellersiek's <em>Giving Love, Bringing Joy</em> are specifically designed as touch games for parent and baby. This loving presence is itself nourishment.",
+    "tag": "Birth–Age 5 · Relationship",
+    "section": "unknown"
+  },
+  {
+    "name": "🌅 Good Morning — Kindergarten Opening (Traditional)</div>\n          <div class=\"entry-sub\" style=\"font-style:italic;line-height:2\">\n            Good morning, dear Earth<br>\n            Good morning, dear Sun<br>\n            Good morning, dear trees<br>\n            And the flowers, everyone<br>\n            Good morning, dear bees<br>\n            And birds in the trees<br>\n            Good morning to you<br>\n            And good morning to me\n          </div>\n          <span class=\"entry-tag\">Kindergarten · Opening</span>\n        </div>\n        <div class=\"entry\">\n          <div class=\"entry-name\">☀️ The Sun with Loving Light — Rudolf Steiner (Grades 1–4)</div>\n          <div class=\"entry-sub\" style=\"font-style:italic;line-height:2\">\n            The Sun with loving light<br>\n            Makes bright for me each day<br>\n            The soul with spirit power<br>\n            Gives strength unto my limbs<br>\n            In sunlight shining clear<br>\n            I revere, oh God<br>\n            The strength of humankind<br>\n            Which thou so graciously<br>\n            Hast planted in my soul<br>\n            That I with all my might<br>\n            May love to work and learn\n          </div>\n          <span class=\"entry-tag\">Grades 1–4 · Rudolf Steiner</span>\n        </div>\n        <div class=\"entry\">\n          <div class=\"entry-name\">🌍 The Earth Is Firm (Traditional)</div>\n          <div class=\"entry-sub\" style=\"font-style:italic;line-height:2\">\n            The earth is firm beneath my feet<br>\n            The sun shines bright above<br>\n            And here I stand, so straight and strong<br>\n            All things to know and love\n          </div>\n          <span class=\"entry-tag\">Grades 1–3 · Morning</span>\n        </div>\n        <div class=\"entry\">\n          <div class=\"entry-name\">🌙 Parent-Child Opening Verse (Traditional)</div>\n          <div class=\"entry-sub\" style=\"font-style:italic;line-height:2\">\n            Down is the earth, up is the sky<br>\n            Here is my family and here am I<br>\n            The golden sun is shining<br>\n            Up in the sky so blue<br>\n            Good morning, happy morning<br>\n            Good morning, sun, to you\n          </div>\n          <span class=\"entry-tag\">Parent &amp; Child · Ages 0–3</span>\n        </div>\n        <div class=\"entry\">\n          <div class=\"entry-name\">🍽 Meal Blessing (Traditional)</div>\n          <div class=\"entry-sub\" style=\"font-style:italic;line-height:2\">\n            The earth that grows for us this food<br>\n            The sun that makes it ripe and good<br>\n            Dear Earth, dear Sun, by you we live<br>\n            Our loving thanks to you we give\n          </div>\n          <span class=\"entry-tag\">All Ages · Meal Time</span>\n        </div>\n        <div class=\"entry\">\n          <div class=\"entry-name\">📖 Story Time Song (Traditional)</div>\n          <div class=\"entry-sub\" style=\"font-style:italic;line-height:2\">\n            Fairies of the story time<br>\n            Come and share your stories with me<br>\n            I am listening with my ears<br>\n            And I'm sitting quietly\n          </div>\n          <span class=\"entry-tag\">Kindergarten–Grade 2 · Transition</span>\n        </div>\n        <div class=\"entry\">\n          <div class=\"entry-name\">🌅 Morning Has Come (Traditional)</div>\n          <div class=\"entry-sub\" style=\"font-style:italic;line-height:2\">\n            Morning has come<br>\n            Night is away<br>\n            Rise with the sun<br>\n            And welcome the day\n          </div>\n          <span class=\"entry-tag\">All Ages · Morning</span>\n        </div>\n        <div class=\"entry\">\n          <div class=\"entry-name\">🕯️ Lantern Song — Martinmas (Traditional)</div>\n          <div class=\"entry-sub\" style=\"font-style:italic;line-height:2\">\n            I go with my little lantern<br>\n            My lantern goes with me<br>\n            Above the stars are shining<br>\n            Below us shines the street<br>\n            Laterne, Laterne<br>\n            Sonne, Mond und Sterne\n          </div>\n          <span class=\"entry-tag\">Martinmas · November</span>\n        </div>\n      </div>\n    </div>\n\n\n\n<div class=\"subsection\">\n      <div class=\"subsection-title\">🌊 Transition Songs — For the Rhythmic Waldorf Day</div>\n      <p style=\"font-size:13px;color:var(--ink-soft);margin-bottom:16px\">It is a much more joyful experience to sing \"This is the way we wash our hands\" rather than shouting \"Come and wash your hands now!\" while your toddler cheekily runs around the house with muddy hands. Keep your transition songs simple enough for children to sing by themselves — you will hear children singing the songs on their own, reminding themselves of the steps to accomplish a job. The best transition songs: short (4–8 lines), rhythmic, action-based and sung to a simple melody the child can join in with immediately.</p>\n\n      <div class=\"entry-grid\">\n\n        <div class=\"entry\">\n          <div class=\"entry-name\">🧼 Wash, Wash, Wash Your Hands (Traditional Waldorf)</div>\n          <div class=\"entry-sub\" style=\"font-style:italic;line-height:2\">\n            Wash, wash, wash your hands<br>\n            Make them nice and clean<br>\n            Wash the germs right down the drain<br>\n            Make them nice and clean\n          </div>\n          <div style=\"font-size:12px;color:var(--ink-muted);margin-top:8px\">Sung to the tune of Row, Row, Row Your Boat. Simple, rhythmic, action-based. Children naturally mime the washing motion. Used in Waldorf kindergartens and homes worldwide before meals and after outdoor play.</div>\n          <span class=\"entry-tag\">Ages 2+ · Before meals · After play</span>\n        </div>\n\n        <div class=\"entry\">\n          <div class=\"entry-name\">🧼 This Is the Way We Wash Our Hands (Traditional)</div>\n          <div class=\"entry-sub\" style=\"font-style:italic;line-height:2\">\n            This is the way we wash our hands<br>\n            Wash our hands, wash our hands<br>\n            This is the way we wash our hands<br>\n            Before we eat our food\n          </div>\n          <div style=\"font-size:12px;color:var(--ink-muted);margin-top:8px\">Sung to the tune of Here We Go Round the Mulberry Bush. Add verses: \"This is the way we dry our hands… / This is the way we comb our hair…\" — endlessly adaptable for any routine.</div>\n          <span class=\"entry-tag\">Ages 2–6 · Daily routines</span>\n        </div>\n\n        <div class=\"entry\">\n          <div class=\"entry-name\">🧹 Clean-Up Song — Twinkle Version (Traditional Waldorf)</div>\n          <div class=\"entry-sub\" style=\"font-style:italic;line-height:2\">\n            Twinkle, twinkle little star<br>\n            Stop and clean up where you are<br>\n            It's time to put the toys away<br>\n            We will play another day<br>\n            Twinkle, twinkle little star<br>\n            Stop and clean up where you are\n          </div>\n          <div style=\"font-size:12px;color:var(--ink-muted);margin-top:8px\">Sung to the tune of Twinkle Twinkle Little Star. Gets the job done and offers encouragement of fun the next time the children are together. Warm, reassuring — \"we will play another day\" honours the child's play rather than simply ending it.</div>\n          <span class=\"entry-tag\">Ages 2–7 · Tidy-up time</span>\n        </div>\n\n        <div class=\"entry\">\n          <div class=\"entry-name\">🧹 Everybody Clean Up (Traditional)</div>\n          <div class=\"entry-sub\" style=\"font-style:italic;line-height:2\">\n            Everybody clean up, clean up, clean up<br>\n            Everybody clean up, after lunch<br>\n            Trash in the trashcan, recycle in the bin<br>\n            When we work together we all win!\n          </div>\n          <div style=\"font-size:12px;color:var(--ink-muted);margin-top:8px\">Light, energetic and community-minded — \"when we work together we all win\" is deeply Waldorf in spirit. Change words to suit context: \"clean up after play / clean up before we go.\"</div>\n          <span class=\"entry-tag\">Ages 3–8 · After meals · Tidy-up</span>\n        </div>\n\n        <div class=\"entry\">\n          <div class=\"entry-name\">🎒 Getting Ready to Go Outside (Traditional Waldorf)</div>\n          <div class=\"entry-sub\" style=\"font-style:italic;line-height:2\">\n            Put on your snow boots — tug, tug<br>\n            Put on your winter coat — zip, zip<br>\n            Put on your cosy hat — whoop!<br>\n            Put on your mittens now — both hands!<br>\n            We're playing in the snow, hurray!\n          </div>\n          <div style=\"font-size:12px;color:var(--ink-muted);margin-top:8px\">Sung to The Farmer in the Dell or another simple tune. The onomatopoeic words (tug, zip, whoop) delight young children and prompt the action simultaneously. Adaptable for any season — \"put on your sun hat / put on your raincoat.\"</div>\n          <span class=\"entry-tag\">Ages 2–6 · Getting dressed · Seasonal</span>\n        </div>\n\n        <div class=\"entry\">\n          <div class=\"entry-name\">🚶 Walking Down the Hall (Traditional)</div>\n          <div class=\"entry-sub\" style=\"font-style:italic;line-height:2\">\n            We're walking down the hall<br>\n            We're walking down the hall<br>\n            Let's keep together, friends<br>\n            We're walking down the hall\n          </div>\n          <div style=\"font-size:12px;color:var(--ink-muted);margin-top:8px\">A simple moving verse for transitions between rooms or from indoors to outdoors. The rhythm of the song naturally regulates the pace of children's feet. Change to \"We're walking to the garden / We're walking to the table.\"</div>\n          <span class=\"entry-tag\">Ages 2–7 · Moving transitions</span>\n        </div>\n\n        <div class=\"entry\">\n          <div class=\"entry-name\">👋 Welcome Song — Each Child Named (Traditional)</div>\n          <div class=\"entry-sub\" style=\"font-style:italic;line-height:2\">\n            We're all here today<br>\n            We're all here today!<br>\n            Clap, clap, oh clap your hands<br>\n            We're all here today!<br>\n            [Child's name] is here today<br>\n            Clap, clap, oh clap your hands<br>\n            [Child's name] is here today!\n          </div>\n          <div style=\"font-size:12px;color:var(--ink-muted);margin-top:8px\">A favourite for opening circle because clapping keeps everyone involved. Children are invited to dance in the circle after their verse. Every child is named, seen and celebrated. A profound act of recognition for the young child.</div>\n          <span class=\"entry-tag\">Ages 2–7 · Morning circle · Opening</span>\n        </div>\n\n        <div class=\"entry\">\n          <div class=\"entry-name\">🛏️ Rest Time Verse (Traditional)</div>\n          <div class=\"entry-sub\" style=\"font-style:italic;line-height:2\">\n            The flowers, they grow on your ten little toes<br>\n            All the way up to your little nose<br>\n            The petals unfold as you rest and be still<br>\n            Breathe in the perfume and be, if you will\n          </div>\n          <div style=\"font-size:12px;color:var(--ink-muted);margin-top:8px\">A therapeutic touch verse for rest time — gentle massage of toes while singing. Can be accompanied by light touch to help the child settle. Particularly beautiful after outdoor play before the midday meal.</div>\n          <span class=\"entry-tag\">Ages 1–5 · Rest time · Therapeutic touch</span>\n        </div>\n\n        <div class=\"entry\">\n          <div class=\"entry-name\">🍞 Before Baking / Cooking (Traditional Waldorf)</div>\n          <div class=\"entry-sub\" style=\"font-style:italic;line-height:2\">\n            Little hands so busy<br>\n            Kneading, kneading, kneading<br>\n            Round and round the dough goes<br>\n            Warm and soft and growing<br>\n            Into the oven, into the oven<br>\n            Warm and golden baking\n          </div>\n          <div style=\"font-size:12px;color:var(--ink-muted);margin-top:8px\">A simple verse to sing while kneading bread dough — one of the classic Waldorf kindergarten activities. The words follow the action. Children love joining in with the kneading motion.</div>\n          <span class=\"entry-tag\">Ages 3–7 · Baking · Handwork</span>\n        </div>\n\n        <div class=\"entry\">\n          <div class=\"entry-name\">🌙 Goodbye / End of Day (Traditional Waldorf)</div>\n          <div class=\"entry-sub\" style=\"font-style:italic;line-height:2\">\n            Now we take our love and light<br>\n            Back to mother smiling bright<br>\n            Back to father, kind and warm<br>\n            Holding baby in their arms<br>\n            Goodbye now, goodbye!<br>\n            Blessings on our day!\n          </div>\n          <div style=\"font-size:12px;color:var(--ink-muted);margin-top:8px\">The classic parent-child closing verse. Bridges the child from the group back to the family with warmth and care. The day is not simply \"over\" — it is consciously returned to the home with a blessing.</div>\n          <span class=\"entry-tag\">All Ages · Closing · Goodbye</span>\n        </div>\n\n        <div class=\"entry\">\n          <div class=\"entry-name\">💡 How to Create Your Own Transition Songs",
+    "description": "Choose a familiar tune — Here We Go Round the Mulberry Bush, The Farmer in the Dell, Row Row Row Your Boat, are all good choices. Then make up a rhyme — one concept per verse. You will usually need 8 beats to fit into the song — play around with it until your song is satisfying! The best transition songs are personal, specific and sung consistently — the same song, the same tune, every single day. That is what makes them work. Children begin to self-regulate simply upon hearing the opening notes.",
+    "tag": "Tip for parents &amp; teachers",
+    "section": "daily-verse-widget"
+  },
+  {
+    "name": "The Mood of the Fifth",
+    "description": "Before the pure pentatonic scale, Steiner identified an even earlier musical mood — the \"mood of the fifth\" — for the very youngest children (ages 0–5). This is an open, floating, unresolved musical quality using the interval of a fifth. It creates a sense of infinite space, like a question hanging in the air without needing an answer. Waldorf lullabies and nursery songs in this mood have a quality of hovering between earth and heaven — perfect for the baby and toddler still arriving into the world. Julius Knierim's <em>Quintenlieder</em> (Mood of the Fifth songs) is the classic resource.",
+    "tag": "Birth–Age 5",
+    "section": "unknown"
+  },
+  {
+    "name": "Pure Pentatonic",
+    "description": "From approximately ages 3–7 (Kindergarten through Grade 2), the pentatonic scale is used exclusively. Songs feel open, dreamy, never quite resolved. There are no leading tones pulling toward a final note — the child floats in the music as they float in play. Instruments tuned to the pentatonic scale — kinder harp, pentatonic lyre, glockenspiel — create a harmonious and ethereal sound perfectly suited to young children.",
+    "tag": "Ages 3–7 · K–Grade 2",
+    "section": "unknown"
+  },
+  {
+    "name": "Diatonic Scale &amp; Folk Songs",
+    "description": "Many folk songs are either in the pentatonic scale or in one of the traditional modes — these tonalities are precursors to our more familiar major and minor scales and lend themselves well to improvisation. From Grade 3 onward, the full diatonic scale arrives with the 9-year change. Music now has a clear tonic, a clear ending. The child stands on firm ground musically as they do developmentally.",
+    "tag": "Grade 3+ · Age 9+",
+    "section": "unknown"
+  },
+  {
+    "name": "Why no minor key for young children?",
+    "description": "Young children should not be given songs in minor keys — the sadness, heaviness and earthward pull of minor tonality is too much for the soul of a child still arriving into the world. Minor keys appear in the Waldorf curriculum from Grade 3–4 onward, once the child has established themselves on the earth. Before this, all songs are major-inflected or pentatonic.",
+    "tag": "Important principle",
+    "section": "unknown"
+  },
+  {
+    "name": "🌱 Spring Songs",
+    "description": "Spring is announced through song weeks before it arrives — the children hear the songs and feel spring coming. Classic spring songs: <em>In the Springtime Little Bunnies Go Hop Hop</em> (circle movement song) · <em>The Farmer is Working the Fields</em> (farming rhythm song, Grade 3) · <em>Humble Bumble Bees Are Buzzing</em> (nature song, variable tempo) · <em>Down by the Station</em> · Spring nature rounds. Seeds, blossoms, bees, birds returning.",
+    "tag": "March–May",
+    "section": "unknown"
+  },
+  {
+    "name": "☀️ Summer / St. John's Songs",
+    "description": "Midsummer songs celebrating the sun at its height. Fire songs, songs of warmth and light, outdoor singing. <em>The Sun with Loving Light</em> is especially powerful at Midsummer. Outdoor circle games and singing games are at their richest in June. Water songs for water play.",
+    "tag": "June · St. John's Day",
+    "section": "unknown"
+  },
+  {
+    "name": "🍁 Autumn Songs",
+    "description": "<em>Autumn Leaves Are Falling Down</em> · <em>Put On Your Dresses of Red and Gold</em> · <em>Autumn Good Morning, Summer Good Night</em> · harvest songs, apple picking songs, hedgehog and squirrel preparing for winter. Michaelmas dragon songs for older children. Warm, earthy tones. Songs slow down as the year breathes in.",
+    "tag": "September–November",
+    "section": "unknown"
+  },
+  {
+    "name": "🕯️ Martinmas Songs — November",
+    "description": "Lantern songs are among the most beautiful in the Waldorf tradition. Children make paper lanterns and walk in procession after dark. <em>I Go With My Little Lantern</em> (German: Laterne Laterne) is sung in schools across Europe, Australia, New Zealand and South Africa. Also: St. Martin sharing his cloak song.",
+    "tag": "November 11",
+    "section": "unknown"
+  },
+  {
+    "name": "🌟 Advent Songs",
+    "description": "The Advent garden is accompanied by the most beloved songs of the Waldorf year. <em>Flicker Little Candle</em> · <em>Sunlight Fast is Dwindling</em> · <em>Glimmer Lantern Glimmer</em> · <em>The Earth Was Dark</em>. Songs grow quieter and more inward through the four weeks of Advent, building to the profound stillness of Christmas. The Advent spiral walk is done in silence, broken only by song.",
+    "tag": "December · Advent",
+    "section": "unknown"
+  },
+  {
+    "name": "❄️ Winter Songs",
+    "description": "Snow songs, frost songs, songs of the sleeping earth. <em>Where Are the Froggies When the North Wind Blows?</em> · star songs, animal sleep songs, cozy warmth and hearth songs. The mood is inward, hushed, tender. Winter songs are the most lullaby-like of the year.",
+    "tag": "December–February",
+    "section": "unknown"
+  },
+  {
+    "name": "🌼 Easter / Spring Festival Songs",
+    "description": "Resurrection songs, butterfly songs, seed-growing songs. <em>Blessings on the Blossoms</em> · <em>Down by the Station Rainbow Fairies</em>. Easter songs celebrate transformation — the caterpillar becoming a butterfly, the seed becoming a plant — with great joy and light.",
+    "tag": "March–April · Easter",
+    "section": "unknown"
+  },
+  {
+    "name": "🐉 Michaelmas Songs — September",
+    "description": "Songs of courage, light overcoming darkness, the archangel Michael and the dragon. <em>Michael and the Dragon</em> songs for Grades 3–5. Rowan berry songs, iron songs, harvest songs. Michaelmas songs have a different quality — stronger, more martial, calling the child to courage as the darker half of the year approaches.",
+    "tag": "September 29 · Michaelmas",
+    "section": "unknown"
+  },
+  {
+    "name": "tiptoes-lightly.net ⭐",
+    "description": "Reg Down (Canada/South Africa). 230+ free stories AND dozens of songs, circle verses and seasonal poems sorted by age and grade. The most generous free Waldorf resource anywhere online.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "waldorfearlychildhood.org (WECAN)",
+    "description": "WECAN's Gateways journal archives contain songs, verses and circle time resources for early childhood. Free downloadable issues available. waldorfearlychildhood.org",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "waldorfmusic.org (AWME)",
+    "description": "Association for Waldorf Music Education. Articles on the music curriculum, recommended songbooks list, and music education resources. Free access. waldorfmusic.org",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "cedarwoodschool.org",
+    "description": "Cedarwood Waldorf School's free online Song &amp; Verse collection — seasonal verses, circle songs, blessing verses and fingerplays, organised by season. cedarwoodschool.org/buttercup/song-verse",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "waldorfteacherresources.com",
+    "description": "Verses and songs organised by grade and theme — Advent, Christmas, circle, fall, farming, festivals, math verses, remedial, seasonal, spring. Free to search. waldorfteacherresources.com",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "earthschooling.info",
+    "description": "Earthschooling's free basic Waldorf verses page — morning verse, afternoon song, story time song, meal blessing, transition verses. A quick reference for new Waldorf families. earthschooling.info/thebearthinstitute/basic-waldorf-verses",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "YouTube — \"Sunday with Sarah\" (WECAN)",
+    "description": "Sarah Baldwin (WECAN) shares seasonal Waldorf songs and verses on YouTube. A warm, gentle sung resource for parents wanting to hear how songs are sung authentically. Search \"Sunday with Sarah Waldorf songs.\"",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "lavendersbluehomeschool.com",
+    "description": "Lavender's Blue Homeschool. Free guide to Waldorf circle time songs and verses for kindergarten and early grades. Excellent practical explanation of how to build a morning circle. lavendersbluehomeschool.com",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Read slowly, twice daily",
+    "description": "Read the verse once in the morning on waking, and once in the evening before sleep. Do not try to analyse or understand it intellectually. Let the images and language wash over you. The meaning will deepen through the week.",
+    "tag": "",
+    "section": "cots-widget"
+  },
+  {
+    "name": "Memorise it",
+    "description": "By midweek, try to recall the verse from memory. Saying it quietly to yourself while walking, doing housework or tending the garden brings it deeper into your life. The verse becomes a companion — always available in the inner world.",
+    "tag": "",
+    "section": "cots-widget"
+  },
+  {
+    "name": "Connect it to what you see",
+    "description": "The verses are mirrors of the outer world. In late summer you feel the light drawing inward; in deep winter a warmth stirs from within. Notice how the verse speaks to what you observe in nature that week — the length of day, the quality of light, the temperature of the air.",
+    "tag": "",
+    "section": "cots-widget"
+  },
+  {
+    "name": "The counter verse",
+    "description": "Steiner marked each verse from Spring-Summer-Autumn (1–26) with a letter of the alphabet and matched them with corresponding verses for Autumn-Winter-Spring (27–52). This pairing reveals a magnificent polarity of opposing forces that influence the soul striving through the seasons, travelling the path of a lemniscate. The verse exactly opposite yours in the year is your \"counter verse\" — read both together for depth.",
+    "tag": "",
+    "section": "cots-widget"
+  },
+  {
+    "name": "Northern vs Southern Hemisphere",
+    "description": "The first verse starts with Easter during the blossoming of Spring in the Northern Hemisphere. Since it is autumn in the Southern Hemisphere, Week 27 may be a more appropriate starting point on Easter Sunday for those in Australia, New Zealand, South Africa, South America. The southern verses begin at the autumn/winter quality and mirror north.",
+    "tag": "",
+    "section": "cots-widget"
+  },
+  {
+    "name": "Share it with children",
+    "description": "The verses are deep for young children as written — but their essence can be distilled into a morning verse or nature observation for the family. \"This week our verse speaks of the light drawing inward — let's notice together how the days are growing shorter.\" The Calendar connects home and cosmos.",
+    "tag": "",
+    "section": "cots-widget"
+  },
+  {
+    "name": "Learn the story first, not the words",
+    "description": "Read the story two or three times until you feel the shape — beginning, middle, turning point and resolution. Know the bones; let the flesh come in the moment. You don't need to memorise word for word.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Create a simple ritual",
+    "description": "Light a candle. Dim the lights. Sit together in the same spot each evening. A short opening verse signals: \"now story-time begins.\" The ritual creates anticipation and a sacred space for the story to enter.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Slow down and pause",
+    "description": "Silence is not emptiness — it is where the child's imagination fills in the pictures. Speak slowly, especially at turning points. Let the dragon appear in silence before you name it.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Tell the same story many times",
+    "description": "Young children especially love repetition. Each time they hear the same story they go deeper into it. Repeat a story for a week, a month, a whole season. It becomes part of them permanently.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Use your voice as an instrument",
+    "description": "Louder for the giant, softer for the fairy, slower for sadness, faster for the chase. You need no costumes or props. Your voice contains all the characters — let it.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Where to learn more",
+    "description": "Storytelling with Children — Nancy Mellon (Hawthorn) · susanperrow.com (therapeutic storytelling) · tiptoes-lightly.net (Reg Down — 230+ free stories by age and grade) · dancinghandsfrolickingvoices.org (Lynn St Pierre)",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Will forces and the hands",
+    "description": "In Steiner's developmental view, the will is educated through the hands. Thinking educates itself through study; feeling through art and music; but the will — the capacity to act, to persist, to complete — is built through practical physical work. Woodwork is one of the primary will-educating activities in the Waldorf curriculum, alongside handwork, gardening and eurythmy.",
+    "tag": "🙌 Will · Hands",
+    "section": "unknown"
+  },
+  {
+    "name": "Fine motor development and brain development",
+    "description": "Using the brain to control the hands, tools and natural materials is one of the most complex neurological activities a human being performs. Like handwriting, it stimulates multiple regions of the brain simultaneously. Woodworking builds fine motor skills, hand-eye coordination, spatial reasoning, powers of concentration and perseverance with difficult tasks.",
+    "tag": "Brain · Motor · Cognition",
+    "section": "unknown"
+  },
+  {
+    "name": "The beauty of useful things",
+    "description": "Throughout the woodwork curriculum, the teacher awakens an appreciation for the combination of usefulness and beauty. A spoon must fit the hand. A bowl must hold soup. A chair must bear a person's weight. When children make objects that are truly useful and truly beautiful — both — something profound happens in their relationship to the material world.",
+    "tag": "Beauty · Usefulness · Craft",
+    "section": "unknown"
+  },
+  {
+    "name": "Respect for materials and the earth",
+    "description": "Wood comes from a living tree. Each piece has grain, character, history. A child who has spent weeks carving a bowl from a single block of wood will never look at a tree — or a piece of furniture — the same way again. Gaining respect for the source of materials is the first stage a child can take towards developing individual responsibility and resourcefulness.",
+    "tag": "Nature · Respect · Earth",
+    "section": "unknown"
+  },
+  {
+    "name": "Individuality expressed in form",
+    "description": "From Grade 6 onward, woodwork projects begin to reflect the individual child's style — the curve of a spoon, the proportion of a bowl, the design of a boat. The material resists and the tool corrects. The child must negotiate between intention and reality. This develops sound judgement and authentic self-expression more effectively than any test.",
+    "tag": "Individuality · Design · Judgement",
+    "section": "unknown"
+  },
+  {
+    "name": "Confidence through completion",
+    "description": "Every woodwork project begins as a raw block of wood and ends as something beautiful and useful. A child who holds a spoon they have made with their own hands — who has struggled, persisted and completed — carries a confidence that no grade can give. <em>\"The confidence and satisfaction that comes from making something by hand\"</em> is one of woodwork's most important gifts.",
+    "tag": "Confidence · Completion · Pride",
+    "section": "unknown"
+  },
+  {
+    "name": "Crossing the midline",
+    "description": "Knitting requires both hands to work in coordinated alternation across the body's midline — a fundamental neurological development skill that connects the right and left hemispheres of the brain. This is required for overall coordination and for everyday tasks such as writing, reading, and dressing. Research confirms what Waldorf education has long practised: fine motor development is directly connected to literacy and numeracy.",
+    "tag": "☀️ Brain · Coordination",
+    "section": "unknown"
+  },
+  {
+    "name": "Educating the will",
+    "description": "A pair of socks takes the entire school year to complete. A Waldorf doll takes months. Handwork teaches patience, persistence and the capacity to hold a long-term goal in mind through daily practice. This education of the will — the ability to sustain effort toward a distant completion — is one of the most vital capacities a human being can develop, and one of the least taught in modern education.",
+    "tag": "🙌 Will · Persistence",
+    "section": "unknown"
+  },
+  {
+    "name": "Mathematical thinking in the hands",
+    "description": "Knitting and crochet are fundamentally mathematical — counting stitches, understanding pattern, working with sequences, recognising symmetry, increasing and decreasing at precise intervals. The practice of carefully observing and analysing stitches is a forerunner for pattern recognition, fundamental to mathematics, especially geometry. Children who knit well tend to be strong mathematicians.",
+    "tag": "🔢 Pattern · Maths · Logic",
+    "section": "unknown"
+  },
+  {
+    "name": "The beauty of the useful",
+    "description": "Every handwork project must be beautiful and useful simultaneously. A knitted flute case must be the right size and must be beautiful. A sewn doll must be structurally sound and must have soul. This cultivates aesthetic discrimination — the capacity to care about quality — which is increasingly rare and increasingly precious.",
+    "tag": "💛 Beauty · Usefulness",
+    "section": "unknown"
+  },
+  {
+    "name": "Rhythm and the feeling life",
+    "description": "The rhythmic movements of knitting — the looping, the interweaving, the regularity of stitch after stitch — work directly on the feeling life of the child. Handwork calms. It centres. It creates a healing, meditative state. Children who struggle with anxiety, restlessness or attention difficulties often find that knitting provides exactly the rhythmic physical anchor they need. Research confirms knitting's measurable benefits for mental health (see Betsan Corkhill's work).",
+    "tag": "💛 Rhythm · Calm · Feeling",
+    "section": "unknown"
+  },
+  {
+    "name": "Connections across the whole curriculum",
+    "description": "Handwork is not isolated from the rest of learning — it is woven through it. Knitted toy animals in Grade 1–2 connect to fables and the Animal Kingdom block in Grade 4. Sewing a doll in Grade 6–7 connects to physiology in high school. Machine sewing in Grade 8 connects directly to the Industrial Revolution main lesson block. The handwork curriculum and the main lesson curriculum breathe together.",
+    "tag": "☀️ Curriculum · Integration",
+    "section": "unknown"
+  },
+  {
+    "name": "Knitting Needles (bamboo or wooden)",
+    "description": "Grade 1–2: 5–6mm thick bamboo needles. Grade 3: 4mm. Grade 4+: 3.5–4mm metal or bamboo. Avoid plastic. A Child's Dream · Acorns &amp; Twigs · Waldorfshop EU all carry full sets.",
+    "tag": "Grades 1+",
+    "section": "unknown"
+  },
+  {
+    "name": "Crochet Hooks (bamboo)",
+    "description": "5–6mm for beginners using chunky Filges yarn. Grade 4–5 typically begin crochet. Bamboo hooks feel warm in the hand — preferred in Waldorf schools.",
+    "tag": "Grades 4+",
+    "section": "unknown"
+  },
+  {
+    "name": "French Knitting Fork (wooden)",
+    "description": "The very first knitting tool in Grade 1. Filges wooden knitting fork · Maplerose · A Child's Dream. Simple cord-making — the beginning of all knitting.",
+    "tag": "Grade 1",
+    "section": "unknown"
+  },
+  {
+    "name": "Loom / Weaving Frame (wooden)",
+    "description": "Filges square children's weaving frame with comb, rod and shuttle. Grade 2–3 standard. Also: rigid heddle looms for Grade 4–5. Waldorfshop EU · A Child's Dream · Bella Luna Toys.",
+    "tag": "Grades 2–5",
+    "section": "unknown"
+  },
+  {
+    "name": "Felting Needles + Foam Pad",
+    "description": "Coarse needle for attachment work; fine needle for detail. Always use foam pad to protect work surface. Filges · The Felting Source · Living Felt · Weir Crafts all sell good sets.",
+    "tag": "Felting",
+    "section": "unknown"
+  },
+  {
+    "name": "Bubble Wrap + Mesh for Wet Felting",
+    "description": "Bubble wrap (bumpy side up) + mesh netting + warm soapy water. All standard wet felting tools. Available at hardware stores or through The Felting Source / Living Felt as kits.",
+    "tag": "Wet Felting",
+    "section": "unknown"
+  },
+  {
+    "name": "Embroidery Hoop + Needle",
+    "description": "For Grade 4+ cross-stitch and embroidery. Wooden hoops only (no plastic). Maplerose · A Child's Dream · Acorns &amp; Twigs carry appropriate sizes and blunt needles for children.",
+    "tag": "Grade 4+",
+    "section": "unknown"
+  },
+  {
+    "name": "Drop Spindle (wooden)",
+    "description": "For Grade 5–6 spinning introduction. Simplest form of spinning. Weir Crafts · A Child's Dream · Fibrecraft carry lightweight spindles suitable for beginners.",
+    "tag": "Grades 5–6",
+    "section": "unknown"
+  },
+  {
+    "name": "1912 — The First Founding",
+    "description": "The first Anthroposophical Society was founded in Cologne on 28 December 1912, growing out of Rudolf Steiner's German section of the Theosophical Society after a decisive break over the question of Krishnamurti. Founding members included Marie von Sivers (later von Steiner), Michael Bauer and Carl Unger. The Society was formally constituted at the General Assembly in Berlin, February 1913.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "1913–1922 — The First Goetheanum",
+    "description": "The Goetheanum — designed by Rudolf Steiner down to its last sculptural detail — was built in Dornach, Switzerland as the centre of the anthroposophical movement. Built largely by volunteers from across Europe. New Year's Eve 1922: the first Goetheanum was destroyed by arson. Steiner immediately began designing the second Goetheanum — in concrete — which stands today.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "1923 — The Christmas Conference",
+    "description": "At Christmas 1923 in Dornach, Steiner re-founded the Society as the <strong>General Anthroposophical Society</strong> — placing himself at its head for the first time and uniting the outer Society with the esoteric School of Spiritual Science. He gave the Foundation Stone Meditation as the spiritual cornerstone. This conference is considered the most significant single event in the history of the anthroposophical movement.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "1924–1925 — The Final Year",
+    "description": "In 1924 alone, Steiner gave the Agriculture Course (biodynamics), the Curative Education Course, the Pastoral Medicine Course, the Art of Education courses, the Karma lectures (over 80 lectures), the First Class of the School of Spiritual Science, and the Calendar of the Soul Supplement verses. He collapsed in September 1924 and died on 30 March 1925. He left behind over 6,000 lectures and 30 written books.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Today — A Living Worldwide Movement",
+    "description": "Today the General Anthroposophical Society connects many hundreds of groups, branches and regional societies worldwide. The spectrum ranges from open discussion meetings to specialised thematic working groups, from spiritual science study groups to informal reading circles, to people from all areas of life committed to inner development and practical service. The Goetheanum in Dornach remains the world centre and hosts an annual General Assembly.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Study and reading circles",
+    "description": "The most common activity — a small group meets regularly (weekly or monthly) to read and discuss Steiner's writings or lectures. Often a single book is read aloud and discussed over many months. The slow, communal reading of a text reveals dimensions invisible to solitary study. Open to newcomers in most groups.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Lectures and public events",
+    "description": "Branches regularly invite speakers to lecture on aspects of anthroposophy, Waldorf education, biodynamic farming, anthroposophic medicine, the arts and social questions. Many events are open to the public and free of charge. Check your national society's events calendar.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Seasonal festivals",
+    "description": "Branches celebrate the four major festivals of the year — Michaelmas (September), Christmas/Advent, Easter and St. John's/Midsummer — with artistic programmes, lectures and community gatherings. These festivals bring together Waldorf teachers, parents, biodynamic farmers, doctors, artists and general members.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Artistic activities",
+    "description": "Many branches maintain ongoing artistic activity — eurythmy groups, speech formation workshops, painting groups, sculpture courses. The arts are understood in anthroposophy not as entertainment but as a path of inner development. Artistic work done in the right spirit can be as spiritually nourishing as meditation.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "The School of Spiritual Science",
+    "description": "The esoteric heart of the Society. The First Class (19 foundational lessons given by Steiner in 1924) is conducted by Class Holders in branches worldwide. Attendance at the First Class requires formal Society membership and a year of active participation. The Second and Third Classes were never completed before Steiner's death.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Starting a study group",
+    "description": "You don't need to wait to find an existing group — two or three people reading Steiner together with sincere interest is all that is needed to begin. Contact your national society to register the group and connect with resources. The ASA handbook for groups and branches (free PDF at anthroposophy.org) is an excellent guide.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Freie Waldorfschule Uhlandshöhe — Stuttgart",
+    "description": "The first Waldorf school in the world — founded 7 September 1919. Still operating today at the same address in Stuttgart. The Uhlandshöhe is a hill in Stuttgart's east end. The original school building, designed with Steiner's input, still stands. A living monument to the beginning of a global education movement. waldorfschule-uhlandshoehe.de",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Emil Molt (1876–1936) — The Founder",
+    "description": "Director of the Waldorf-Astoria cigarette factory in Stuttgart. Deeply committed to social renewal through education. Approached Rudolf Steiner in 1919 with the vision of a new kind of school for workers' children. Molt provided the building, the funding and the commitment. Without Emil Molt there would have been no first Waldorf school.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Karl Stockmeyer (1885–1963)",
+    "description": "One of the founding teachers of the first Waldorf school. Author of <em>Rudolf Steiner's Curriculum for Waldorf Schools</em> — the definitive curriculum document, compiled from Steiner's faculty meetings and still used as a primary reference by Waldorf schools worldwide.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Caroline von Heydebrand (1902–1938)",
+    "description": "One of the most gifted of the first Waldorf teachers. Author of <em>Childhood: A Study of the Growing Soul</em> — a beautiful and profound account of child development in the Waldorf tradition. Died tragically young. Her work remains one of the most loved books in Waldorf early childhood education.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "⭐ geistesleben.de",
+    "description": "Verlag Freies Geistesleben Online-Shop — vollständiger Katalog, Bücher und eBooks. Direktkauf vom Verlag.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "⭐ urachhaus.de",
+    "description": "Verlag Urachhaus Online-Shop — Kinderbücher, Pädagogik, Medizin, erziehungsKUNST-Abonnement.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "⭐ waldorfshop.eu",
+    "description": "Größter Waldorf-Onlineshop in Europa — Bücher, Kunstmaterial, Instrumente, Wolle, Spielzeug. Versand europaweit.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "rudolfsteinerbuchhandlung.de",
+    "description": "Rudolf Steiner Buchhandlung — spezialisiert auf anthroposophische und Waldorf-Literatur. Vollständiges Sortiment aller deutschen Verlage.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "shop.waldorfkindergarten.de",
+    "description": "Online-Shop der Vereinigung der Waldorfkindergärten — Bücher speziell für Frühpädagogik und Kindergarten.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "anthroposophie.net (Kostenlos)",
+    "description": "Deutschsprachiges Archiv der Steiner-Vorträge — alle Gesamtausgabe-Bände kostenlos online. Das deutsche Gegenstück zu rsarchive.org.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@erziehungskunst 🇩🇪",
+    "description": "Official Instagram of <em>erziehungsKUNST</em> magazine — Waldorf education news, pedagogy, festivals, articles and school life from across Germany's 250+ Waldorf schools. The most authoritative German-language Waldorf Instagram account.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@goetheanum 🇨🇭",
+    "description": "Official Instagram of the Goetheanum, Dornach — the world centre of anthroposophy. Events, art, architecture, conferences, performances and the living life of the Goetheanum community. German and English content.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfschule 🇩🇪",
+    "description": "German Waldorf school community — art, festivals, main lesson books from across Germany's Waldorf schools. Official account of the Bund der Freien Waldorfschulen. Primarily in German.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfweltweit 🌍",
+    "description": "Waldorf worldwide — an international German-language community account connecting Waldorf schools, teachers and families across all continents. Bilingual German/English content.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "⭐ @illustration.carina.pencet 🇩🇪 · 11K",
+    "description": "Freiburg im Breisgau. Waldorf graduate and watercolour illustrator — fairies, gnomes, elves, seasonal nature beings. Author and illustrator of <em>Pelle und die Wichteltür</em> (Bibana Verlag, 2025). Downloadable illustrations and annual calendar. carina-pencet.de",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Waldorf-Ideen-Pool FREE 🇩🇪",
+    "description": "Marcus Kraneburg's free teacher resource site — hundreds of lesson plans, main lesson book examples, craft ideas and pedagogical articles in German. One of the richest free Waldorf resources in the German-speaking world. waldorf-ideen-pool.de",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "AnthroWiki 🇩🇪/🌍",
+    "description": "The anthroposophical encyclopaedia in German and English — comprehensive articles on all aspects of Steiner's work, the Society's history, key concepts and practical fields. One of the best research tools for German-speaking students of anthroposophy. en.anthro.wiki · de.anthro.wiki",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Waldorf-Podcast: Waldorf.Perspektiven 🇩🇪",
+    "description": "The official podcast of the Bund der Freien Waldorfschulen. Interviews, lectures and discussions on Waldorf pedagogy, school life, child development and the future of education. In German. Available via waldorfschule.de and all major podcast platforms.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Waldorf World List (PDF)",
+    "description": "The complete annual directory of all 1,092 Waldorf schools in 64 countries and 1,857 kindergartens in 70+ countries. Includes all teacher training centres worldwide. Updated annually by Freunde Waldorf.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "IASWECE World List (searchable)",
+    "description": "Searchable online database of all Waldorf kindergartens and early childhood training programmes worldwide. Filter by country, city or training centre. Updated periodically.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "IVAA Member Countries (doctors)",
+    "description": "Find the anthroposophic doctors association for any of the 40 IVAA member countries — the first step to finding a practitioner anywhere in the world.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Freunde Waldorf — Worldwide Map",
+    "description": "Interactive world map and country-by-country Waldorf news, school lists, social projects and teacher training resources for every continent.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Medical Section Goetheanum — Training Worldwide",
+    "description": "All accredited anthroposophic medicine training programmes worldwide listed on the Medical Section website — including Latin American IPMT cycles and the Goetheanum Medical Section annual training weeks.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Anthromedics (International Research)",
+    "description": "Professional portal for anthroposophic medicine practitioners worldwide. 200+ articles in English. Published by the Medical Section at Goetheanum and GAÄD. Free access.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "🇦🇺 Australian Waldorf Steiner Buy Sell Swap",
+    "description": "Active community group for buying and selling Waldorf toys, books, curriculum materials, natural clothing and handwork supplies. Australia-wide.",
+    "tag": "Facebook Group · Australia",
+    "section": "unknown"
+  },
+  {
+    "name": "🇺🇸 Waldorf/Steiner Education USA Community",
+    "description": "Large USA community group. Resources, advice and buy/sell/swap of Waldorf curriculum books, toys and homeschool materials.",
+    "tag": "Facebook Group · USA",
+    "section": "unknown"
+  },
+  {
+    "name": "🌍 Waldorf Homeschool Network",
+    "description": "19,000+ members worldwide. Buy/sell/swap of curriculum, books, toys and supplies posted regularly within the community. Active and supportive.",
+    "tag": "Facebook Group · Global",
+    "section": "unknown"
+  },
+  {
+    "name": "🇬🇧 UK Waldorf/Steiner Buy Sell Swap",
+    "description": "UK-based group for buying and selling Waldorf curriculum materials, toys, clothing and handwork supplies. Search \"Waldorf Buy Sell UK\" on Facebook to find current active groups.",
+    "tag": "Facebook Group · UK",
+    "section": "unknown"
+  },
+  {
+    "name": "🌍 Waldorf Essentials Community (Facebook)",
+    "description": "Associated with the Waldorf Essentials curriculum. Parents often post second-hand curriculum bundles and Waldorf materials for sale within the group.",
+    "tag": "Facebook Group · International",
+    "section": "unknown"
+  },
+  {
+    "name": "🌍 Nui Organics Buy Sell Swap (Facebook)",
+    "description": "Brand-specific resale group for Nui Organics merino wool children's clothing. High trust, brand-aware community. Search \"Nui Organics Buy Sell Swap\" on Facebook.",
+    "tag": "Facebook Group · International",
+    "section": "unknown"
+  },
+  {
+    "name": "🌍 Disana / Natural Baby Clothing (Facebook)",
+    "description": "Search \"Disana,\" \"natural wool baby clothing\" or \"organic children's clothing buy sell swap\" on Facebook to find active groups trading natural fibre brands.",
+    "tag": "Facebook Group · International",
+    "section": "unknown"
+  },
+  {
+    "name": "📍 Local Waldorf School Community Groups",
+    "description": "Every Waldorf school has a parent community — many have their own Facebook groups, WhatsApp groups or newsletters where families sell Waldorf items locally. Ask your school's parent organisation.",
+    "tag": "Local · All Countries",
+    "section": "unknown"
+  },
+  {
+    "name": "Search by brand name, not \"Waldorf\"",
+    "description": "On general platforms (eBay, Facebook Marketplace, Vinted) search the specific brand — \"Grimm's rainbow,\" \"Ostheimer fox,\" \"Disana wool,\" \"Grapat nins\" — not just \"Waldorf toy.\" You'll find far more results and better prices.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Set up saved searches and alerts",
+    "description": "On eBay, ThredUp, Vinted and Facebook Marketplace you can save searches and get email or app alerts when new listings appear. Set up alerts for your most-wanted items (Grimm's, specific Ostheimer animals, Disana sizes) and check them weekly.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Inspect wooden toys carefully",
+    "description": "Waldorf wooden toys are designed to be sanded and re-oiled. Even heavily played-with pieces can often be restored with fine sandpaper and a coat of beeswax or linseed oil. Don't reject items just for surface scratches — look at the structure.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Attend Waldorf school seasonal fairs",
+    "description": "Waldorf school Advent, Easter and autumn fairs often have a secondhand table where families sell books, toys, clothing and handwork supplies. These are gold mines — items are often very fairly priced and the sellers know exactly what they have.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Check op shops / charity shops / tip shops",
+    "description": "Many beloved Waldorf families have found Grimm's rainbows, wooden dollhouses and even Waldorf curriculum books at op shops and charity shops for almost nothing. Go regularly. The tip shop (transfer station secondhand section) in Australia is legendary for this.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Buy curriculum books in sets",
+    "description": "Waldorf curriculum books (Waldorf Essentials, Christopherus, Live Education, Oak Meadow) are often sold as full grade sets by homeschooling families who have finished that grade. A full Grade 3 or Grade 4 set can save 60–70% vs buying new. Search in Waldorf homeschool Facebook groups.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Restore and re-home wool clothing",
+    "description": "Disana, Engel Natur and Reiff wool items can be carefully hand-washed and re-lanolised to restore softness. Pilling on wool can be removed with a fabric shaver. A \"worn\" looking Disana romper is often fully usable and just needs a little care.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Best search terms to use",
+    "description": "Toys: Grimm's · Ostheimer · Grapat · Sarah's Silks · HABA · Debresk · Fagus · Holztiger · Fridy (Fröbel).<br>Books: Floris Books · Hawthorn Press · Elsa Beskow · Waldorf education · Steiner.<br>Clothing: Disana · Engel Natur · Reiff · Hocosa · Nui Organics · Merino wool baby · organic wool children.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Morning gathering &amp; circle",
+    "description": "The day begins with song, movement and seasonal verse. The group comes together in rhythm before the day unfolds. Often outdoors.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Morning craft or artistic activity",
+    "description": "Watercolour painting, wet felting, knitting, woodcarving, weaving, bookmaking, natural dyeing — chosen to match the theme and the children's developmental ages.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Outdoor free play",
+    "description": "Unstructured time in nature — building forts, fairy houses, exploring creeks, climbing trees, digging, gardening. Essential. Unhurried. The heart of the Waldorf summer.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Lunch &amp; rest",
+    "description": "A shared meal, often with food grown or cooked by the children themselves. Quiet rest time for the youngest campers. Story time or reading for older children.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Afternoon activity",
+    "description": "Water play, swimming, nature walk, storytelling, singing games, theatre rehearsal, farm chores, outdoor games, cooking snacks. Theme-specific and age-appropriate.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Closing circle",
+    "description": "The day ends as it began — together. A closing song, seasonal verse or story. The rhythm of arrival and departure is honoured every single day.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Register in January",
+    "description": "Most Waldorf summer camps open registration in January or February and fill within days or weeks. Subscribe to camp newsletters from autumn onward so you receive the registration announcement immediately.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Ask about scholarships",
+    "description": "Almost every Waldorf summer camp offers some income-based scholarships, bursaries or sliding-scale tuition. Many don't advertise them prominently — email the camp directly and ask. The Waldorf school movement strongly believes camp should be accessible to every child.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Join the waitlist",
+    "description": "If your preferred session is full, join the waitlist immediately. Waldorf camps often have significant turnover as families' summer plans change — waitlisted families frequently get spots.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Open to all children",
+    "description": "Most Waldorf summer camps explicitly welcome children who do NOT attend the host Waldorf school. Summer camp is often a family's first experience of Waldorf education — and a wonderful introduction for children from other school backgrounds.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Find your nearest camp",
+    "description": "Every AWSNA-member Waldorf school in North America is listed at awsna.org/find-a-waldorf-school. Most run summer programmes. Email or call your nearest school and ask about their summer camp even if it's not prominent on their website.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Southern Hemisphere timing",
+    "description": "For Australia, New Zealand and South Africa, summer camps run December–January. Contact your nearest Waldorf school from September onward to enquire about January holiday programmes.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "The farm as a living organism",
+    "description": "Biodynamic agriculture is an ecological, holistic, and regenerative approach to farming, food, and nutrition. It is founded on a deep respect for nature, and a recognition that everything in our world, above and below, is beautifully interconnected — soil, water, plants, animals, people, and the cosmos. In the ideal biodynamic farm, the whole farm — fields, livestock, woodland, compost, garden — functions as a single self-sustaining organism.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Beyond organic",
+    "description": "Biodynamic goes further than organic. Organic farming avoids harmful inputs; biodynamic farming actively builds life forces in the soil and plant through specific preparations, timing by the cosmic calendar and treatment of the farm as a whole. As one Demeter farmer puts it: <em>\"Biodynamics is the oldest, most established holistic farming practice and at the same time the most future-bearing — truly regenerative for soil, planet, economy and human communities. Agriculture 3.0.\"</em>",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "The biodynamic preparations",
+    "description": "At the heart of biodynamic practice are eight specific preparations — numbered 500–508 — made from medicinal plants, minerals and animal materials, used in tiny quantities to enliven soil, compost and plants. The most famous are: <strong>Preparation 500</strong> (horn manure — cow manure packed into a cow horn and buried over winter, then stirred with water and sprayed on soil to stimulate root growth and soil life) and <strong>Preparation 501</strong> (horn silica — ground quartz crystal buried in a cow horn over summer, then stirred and sprayed to enhance photosynthesis and plant quality).",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "The cosmic planting calendar",
+    "description": "Biodynamic farmers time their planting, cultivation and harvest by a cosmic calendar — the positions of the moon and planets. Root days (moon in earth constellations) are ideal for root vegetable work; flower days (moon in air constellations) for flowers; fruit days (moon in fire constellations) for fruit and seed; leaf days (moon in water constellations) for leafy greens. Maria Thun developed and researched the Biodynamic Sowing and Planting Calendar over 50+ years — still published annually by Floris Books.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Cow horns and spiritual science",
+    "description": "Rudolf Steiner identified the cow as having a special relationship to the cosmos — the cow's horns are understood as organs that reflect and concentrate cosmic forces back into the animal's digestive system. Packing the horn manure and horn silica preparations inside actual cow horns and burying them over winter/summer is not a metaphor — it is a precise spiritual-scientific practice that experienced biodynamic farmers report produces measurable results in soil vitality and plant health.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Demeter certification",
+    "description": "Demeter USA is the only certifier for Biodynamic farms and products in the United States. The entire farm, versus a particular crop, must be certified, and farms are inspected annually. The Demeter mark is the world's highest standard for ecological and ethical farming — and the only one that requires the biodynamic preparations and cosmic calendar. demeter.net",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "⭐ Demeter International — Global Farm Finder",
+    "description": "The authoritative global directory of all Demeter-certified biodynamic farms across 63 countries. Search by country, product type or region. demeter.net — click \"Find Farms\" or \"Members.\" The only directory that guarantees full biodynamic standards.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "🇺🇸 Demeter USA — US Farm Directory",
+    "description": "The complete directory of Demeter-certified biodynamic farms, dairies, wineries and processors in the USA. Also: DemeterLOCAL — community groups supporting biodynamic farming within 200-mile regional food sheds. demeter-usa.org",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "🇺🇸 Biodynamic Association — Farm Directory (USA)",
+    "description": "Members of the Biodynamic Association can search a directory of biodynamic farms near them. Also: LocalHarvest.org — searchable database of CSA farms, organic and biodynamic farms and farmers markets throughout the USA. biodynamics.com · localharvest.org",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "🇬🇧 Biodynamic Association — UK &amp; Ireland",
+    "description": "The UK biodynamic farming association. Farm directory, education resources, Demeter certification support. biodynamic.org.uk — find certified biodynamic farms, veg boxes and products across the UK and Ireland.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "🇩🇪 Demeter Deutschland — Germany",
+    "description": "Germany has one of the largest biodynamic farming movements in the world — hundreds of Demeter-certified farms. Farm and product finder: demeter.de/produkte-kaufen — search by postcode and product type. The most comprehensive national biodynamic farm network in the world.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "🇦🇺 Biodynamic Agriculture Australia (BAA)",
+    "description": "Australia's national biodynamic organisation — farm directory, training, preparation sales, publications. biodynamics.net.au · Also: Demeter Australia at demeterorganic.com.au for certified product listings.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "🇳🇿 New Zealand — Biodynamic Farming",
+    "description": "Biodynamic farming well established in New Zealand. Find farms via Demeter International (demeter.net) or the Biodynamic Farming and Gardening Association of NZ. Search: demeter NZ.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "🇧🇷 Instituto Biodinâmico (IBD) — Brazil &amp; South America",
+    "description": "The main biodynamic certification body in South America. Farm directory, certification information and producer listings for Brazil and wider Latin America. ibd.com.br",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "🇿🇦 Biodynamic South Africa",
+    "description": "Growing biodynamic movement in South Africa — several certified farms and wine estates. Find via Demeter International or search \"Demeter South Africa.\" Wine estates: Waterkloof, Reyneke, Stellar Organics among the most known biodynamic producers.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "🇮🇳 India — Biodynamic Farming",
+    "description": "India has a significant and growing biodynamic movement, particularly in southern states. Several Demeter-certified farms and tea gardens. Contact via Demeter International or the Organic Farming Association of India for biodynamic producer listings.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "🌍 Find CSA Farms Worldwide",
+    "description": "Community Supported Agriculture (CSA) — families buy weekly vegetable boxes directly from a local biodynamic farm. The most direct way to bring biodynamic food to your table. Search \"biodynamic CSA\" + your location. In the USA: localharvest.org. In Europe: each national Demeter organisation maintains CSA listings. In Australia: biodynamics.net.au",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Hawthorne Valley Farm — Hudson Valley, New York ⭐",
+    "description": "One of North America's most celebrated and visited biodynamic farms. Connected to Hawthorne Valley Waldorf School. CSA, farm store, open days, apprenticeships, workshops. A living example of anthroposophical community farming. hawthornevalleyfarm.org",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "The ancient planetary order",
+    "description": "Ancient astronomers recognised seven celestial bodies visible to the naked eye — the Sun, Moon, Mars, Mercury, Jupiter, Venus and Saturn. They arranged them in order of their apparent speed across the sky, from slowest to fastest: Saturn · Jupiter · Mars · Sun · Venus · Mercury · Moon. Each planet was assigned to rule one hour of the day, cycling continuously through the seven. The planet ruling the first hour of each day gave that day its name.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "From Latin to English",
+    "description": "The Latin names — dies Solis (Sun), dies Lunae (Moon), dies Martis (Mars), dies Mercurii (Mercury), dies Jovis (Jupiter), dies Veneris (Venus), dies Saturni (Saturn) — survive in the Romance languages: dimanche/lundi/mardi/mercredi/jeudi/vendredi/samedi (French). In English, the Norse and Anglo-Saxon peoples substituted their own gods: Tiw (Mars), Woden (Mercury), Thor (Jupiter), Frigg (Venus) — giving us Tuesday, Wednesday, Thursday, Friday. But the cosmic sequence remained exactly the same.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Rudolf Steiner and the planetary forces",
+    "description": "Rudolf Steiner described the seven planets not merely as physical bodies but as bearers of living spiritual forces — each one streaming specific qualities into the earth, human physiology and human soul life. The correspondence between planets, days, metals, plants, organs, colours and grains is not superstition but spiritual science — the recognition that the cosmos and the human being are made of the same substance, breathing together in a sevenfold rhythm.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Why it matters for children",
+    "description": "In Waldorf education, children live in the rhythm of the week without intellectualising it. Oat porridge on Friday. Barley soup on Tuesday. The colour of the day reflected in the classroom's seasonal table, in what the teacher wears, in the quality of the morning circle. Over years, the child absorbs the sevenfold cosmic rhythm into their body and feeling life — a foundation of order, beauty and connection to the living cosmos.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "The grain of the day",
+    "description": "The most grounded way to begin. Serve oat porridge on Friday, rice on Monday, barley soup on Tuesday, millet on Wednesday, rye bread on Thursday, corn polenta on Saturday, wheat bread on Sunday. You do not need to follow this rigidly — even occasional awareness of it brings a quality of cosmic rhythm to the family table.",
+    "tag": "Kitchen · Family",
+    "section": "unknown"
+  },
+  {
+    "name": "The colour of the day",
+    "description": "In Waldorf kindergartens, the colour of the day is often reflected in what the teacher wears, in the flowers on the nature table, in the silk draped over the seasonal display. At home: a purple cloth on Monday, something red on Tuesday, a yellow candle on Wednesday. Small, beautiful gestures that mark the day's quality without explanation.",
+    "tag": "Home · Kindergarten",
+    "section": "unknown"
+  },
+  {
+    "name": "The quality of the day",
+    "description": "Each day has an inner quality — Mercury's lightness and communication (Wednesday is a good day for writing and conversation), Venus's beauty and artistry (Friday for making and creating), Mars's will and courage (Tuesday for difficult tasks requiring determination). This is not superstition but a gentle attentiveness to the living qualities of time.",
+    "tag": "Inner work · Adults",
+    "section": "unknown"
+  },
+  {
+    "name": "The daily rhythm in school",
+    "description": "In many Waldorf schools, the day of the week shapes the quality of the lessons without announcement. Tuesday main lessons may have a stronger will-activity quality. Friday may have more artistic work. The teacher who is inwardly attuned to the planetary week brings these forces to the children as an unconscious gift — like sunlight that warms without being seen.",
+    "tag": "Teachers · Schools",
+    "section": "unknown"
+  },
+  {
+    "name": "The Waldorf Path daily splash",
+    "description": "Every time you open The Waldorf Path, the daily splash screen greets you with the planet, colour and grain of that day. The background colour shifts. This is your daily cosmic compass — a small, free gift of cosmic orientation to begin your day with awareness of the living forces at work in the world.",
+    "tag": "This app · Daily",
+    "section": "unknown"
+  },
+  {
+    "name": "Further reading",
+    "description": "Rudolf Steiner speaks about the planetary forces and their relationship to human beings in many lecture cycles — particularly: <em>Man in the Light of Occult Physiology and Occult Physiology</em> (GA 128), <em>Spiritual Beings in the Heavenly Bodies and the Kingdoms of Nature</em> (GA 136), and <em>Nutrition</em> (GA anthology). All available free at rsarchive.org.",
+    "tag": "rsarchive.org · Free",
+    "section": "unknown"
+  },
+  {
+    "name": "🥕 Root Vegetables — Head &amp; Nerve-Sense System",
+    "description": "Root vegetables are said to have a positive effect on nerves and head. Carrots, beets, turnips, parsnips, celeriac — these grow downward into the earth, drawing mineral forces. They nourish clarity of thought, concentration and the nervous system. In Waldorf nutrition, root vegetables are served especially when mental alertness is needed. Carrot in all its forms is particularly valued.",
+    "tag": "☀️ Head · Thinking",
+    "section": "unknown"
+  },
+  {
+    "name": "🥬 Leafy Vegetables &amp; Stems — Heart &amp; Rhythmic System",
+    "description": "Leafy vegetables, salads and cabbage strengthen heart and lungs. Spinach, kale, lettuce, chard, cabbage, herbs — these grow in the middle zone, between root and flower. They nourish the rhythmic system — heart, lungs and circulation. Connected to the feeling life. Salads and leafy greens are the food of balance, rhythm and equanimity.",
+    "tag": "💛 Heart · Feeling",
+    "section": "unknown"
+  },
+  {
+    "name": "🍎 Fruits, Seeds &amp; Flowers — Metabolism &amp; Will",
+    "description": "Fruits and seeds stimulate digestion and metabolism. Apples, berries, tomatoes, cucumbers, squash, nuts — these grow upward toward the sun, filled with warmth and light. They nourish the metabolic-limb system — digestion, warmth, will and activity. Fruit is the food of action, energy and enthusiasm.",
+    "tag": "🙌 Hands · Will",
+    "section": "unknown"
+  },
+  {
+    "name": "🌈 The Balanced Plate",
+    "description": "In order to achieve a harmonious equilibrium, food from each different segment should be eaten daily. A Waldorf-inspired meal brings root, leaf and fruit to the table together — nourishing the whole human being, not just one aspect. This is the practical application of the threefold principle in the kitchen.",
+    "tag": "Daily practice",
+    "section": "unknown"
+  },
+  {
+    "name": "The kindergarten snack",
+    "description": "In most Waldorf kindergartens, snack preparation is a daily activity shared by the children and the teacher — kneading bread dough, spreading butter, cutting fruit, washing vegetables. The snack is always preceded by a meal blessing verse. Typical: whole grain bread with butter and honey, seasonal fruit, vegetable soup, rice porridge, millet with vegetables.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "The school garden",
+    "description": "In Waldorf schools worldwide, there is a conscious effort to keep school snacks and meals as natural as possible. Most schools have a garden and encourage the growing of vegetables and the grinding of grain. The school garden is a curriculum feature from Grade 3 onward — children grow, harvest and cook their own food.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Bread baking in school",
+    "description": "Bread baking is one of the most beloved Waldorf classroom activities — children grind grain, mix dough, knead it with their hands, watch it rise, bake it and eat it together. This single activity nourishes body, soul and spirit simultaneously. It appears most naturally in Grade 3 (Old Testament, farming, crafts) but can be done at any grade.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "No screens at meals",
+    "description": "Meals in Waldorf homes and schools are always screen-free, often accompanied by conversation, a story or seasonal music. Eating while distracted is understood to reduce the body's ability to receive the food's nourishment — the digestive process begins with attention, gratitude and presence.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Demeter International",
+    "description": "The international biodynamic certification and farmers organisation. The Demeter mark on food guarantees biodynamic production to Steiner's original agricultural indications. demeter.net — find Demeter-certified producers in your country.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Biodynamic Association (USA)",
+    "description": "Resources, farm directory and education for biodynamic agriculture in North America. Farm locator to find your nearest Demeter-certified farm. biodynamicassociation.org",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Biodynamic Association (UK)",
+    "description": "UK biodynamic farming association. Farm directory and food sourcing guide. biodynamic.org.uk",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Instituto Biodinâmico — IBD (Brazil)",
+    "description": "The main biodynamic certification body in South America. Connected to the Waldorf and anthroposophical agricultural movement. ibd.com.br",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Weleda — Biodynamic Medicinal Garden",
+    "description": "Weleda has maintained a biodynamic medicinal plant garden since 1921. Their products use biodynamically grown ingredients. weleda.com — find local distributors worldwide.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "CSA Farms — Community Supported Agriculture",
+    "description": "Many biodynamic farms operate CSA (Community Supported Agriculture) schemes — families buy a weekly vegetable box directly from the farm. This is the most direct way to bring biodynamic food to the table. Search \"biodynamic CSA\" + your location to find a local farm.",
+    "tag": "Search locally",
+    "section": "unknown"
+  },
+  {
+    "name": "Block crayons, not sticks",
+    "description": "Waldorf chalkboard drawings use block chalk (Stockmar or similar) — not thin chalk sticks. The flat side creates broad strokes of colour; the edge creates lines. Teachers blend, layer and build up colour. The result is nothing like a conventional blackboard — it is a luminous, warm, coloured drawing that fills the board with life and light.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Seasonal and curriculum-linked",
+    "description": "The board changes with the seasons, the festivals and the curriculum block. In autumn the board shows forest floors and harvest. In December, a deep blue Advent landscape. In Grade 3, Noah's ark and ancient Hebrew scenes. In Grade 5, the gods of ancient Greece. Every block has its visual world.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Drawing in front of the children",
+    "description": "When a teacher draws the day's image in front of the class — slowly, step by step — something profound happens. Children hold their breath. They watch the process of creation. They see that beauty can be made with effort and courage. This act of drawing is itself a lesson in will, patience and artistic devotion.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Main lesson books echo the board",
+    "description": "After the board drawing is complete, children often recreate an element of it — or their own version — in their main lesson books with beeswax crayons or coloured pencils. The board is the seed; the child's book is the flowering. The two are in constant artistic dialogue throughout the school day.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "⭐ @waldorfblackboard · 23K followers",
+    "description": "Run by Waldorf teacher/consultant @danijelazura. \"Waldorf chalkboard drawings from 🌎 — your help and inspiration.\" 1,581 posts. A curated international collection crediting contributing teachers worldwide. The richest single chalkboard Instagram account — seasonal, festival and curriculum-specific drawings from all grades.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@khalsaart — Narsingh Khalsa",
+    "description": "USA. Waldorf teacher and chalkboard artist. Instagram, Facebook (49K) and Etsy (TeachingWaldorf). Drawings spanning Grades 1–8, seasonal boards, curriculum-specific content. One of the most followed individual Waldorf teacher-artists online.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@wondergarten",
+    "description": "Puyallup, WA, USA. Nathaniel &amp; Lisa Santa Cruz. Waldorf-inspired early childhood programme. Beautiful seasonal chalkboard illustrations by Nathaniel Santa Cruz throughout the Wondergarten curriculum. Viral global community. @waldorfblackboard features Wondergarten boards regularly.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfartists 🎨",
+    "description": "International community of Waldorf-inspired 2D artists including chalkboard work. Run by @waldorfinspiration. Features teacher-artists from around the world — paintings, main lesson book art and seasonal board drawings. 10K+ followers.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@chalkdrawingsofwaldorf",
+    "description": "Dedicated collection of Waldorf chalkboard drawings from teachers worldwide. Seasonal, festival and curriculum-linked boards. Community gathering place for Waldorf teacher-artists.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfthisway — Sophie (NZ)",
+    "description": "New Zealand. Waldorf curriculum developer Sophie shares main lesson book work, chalkboard drawings and curriculum planning alongside her Waldorf Your Way programme. @waldorfthisway on Instagram.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfwithmariam (UK)",
+    "description": "UK. Waldorf maths specialist who also shares beautiful main lesson book pages and chalkboard drawing photos. Gallery of Waldorf main lesson books and chalkboard drawings at waldorfwithmariam.com/photo-collection.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfearlychildhood (WECAN)",
+    "description": "Official WECAN account. Features seasonal kindergarten and early childhood chalkboard boards from Waldorf teachers in the USA and internationally. Authentic, teacher-submitted seasonal boards.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfinspiration 🎨",
+    "description": "Waldorf art, seasonal living and community content. Runs the @waldorfartists showcase. Regularly features chalkboard drawings alongside wet-on-wet painting and main lesson book art from Waldorf teachers worldwide.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Pinterest — Arne Kaiser",
+    "description": "pinterest.com/arnekaiser — Arne Kaiser's extensive collection of his own chalkboard drawings organised by grade and curriculum block. Grades 1–8. One of the most organised and comprehensive single-teacher chalkboard reference collections online. Paired with his book <em>My Chalkboard.</em>",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@peacewithnaturehandwork 🛍📚",
+    "description": "Chenoa Pelligra. Traveling Waldorf handwork teacher. 18 years experience. Ages 5–adults. Seasonal nature crafts, knitting, felting, weaving. <strong>65K followers.</strong>",
+    "tag": "Handwork · USA",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorf_handwork_educators 📚",
+    "description": "WHE — Elizabeth Seward PhD & Shellie Smith. Conferences, 2-year teacher training, curriculum. \"Inspiring handwork through the Waldorf lens.\" 3.8K followers.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfwithmariam 📚🔢",
+    "description": "UK. Trained Waldorf/state teacher. Maths specialist. Resources and mentoring for Waldorf homeschoolers.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfessentials 📚",
+    "description": "Melisa & Erik Nielsen. Curriculum, homeschool life, podcast, mentoring. <strong>20.3K followers.</strong>",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfy 📚",
+    "description": "Ashley Renwick. Podcast, blog, inclusive community. <strong>14.7K followers.</strong>",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfearlychildhood 📚",
+    "description": "WECAN official. \"Protecting and nurturing early childhood.\" 7.8K followers.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfartists 🎨",
+    "description": "Waldorf-inspired 2D artists worldwide. Run by @waldorfinspiration. 10K followers.",
+    "tag": "Art · International",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfinspiration 🎨📚",
+    "description": "Waldorf art, seasonal living, and community content. Runs the @waldorfartists showcase.",
+    "tag": "Art · International",
+    "section": "unknown"
+  },
+  {
+    "name": "@thechildisthecurriculum 📚",
+    "description": "Annie Haas. Waldorf homeschool mother of 3. Seasonal tables, anthroposophy, lesson activities.",
+    "tag": "Homeschool · USA",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfthisway 📚✏️",
+    "description": "Sophie. Waldorf consultant and curriculum developer. Main Lesson Block Guides, Waldorf Your Way 1:1 programme, Starpath Learning curriculum. New Zealand. hello@waldorfthisway.com",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "⭐ @anthroposophylife — The Sophia Circle 🌿📖",
+    "description": "Jacksonville, Florida. Anthroposophical study group recognised by the Anthroposophical Society of America. Founded and led by Barbara Braathen. Part of the Jacksonville Educational Community (JEC), an anthroposophical non-profit supporting Spring River School — a Waldorf-inspired homeschool for Grades K–12. Over 500 families reached. Activities include: monthly study circles (in-person Jacksonville Beach + online Zoom); Sophia Circle Book Club (weekly Wednesdays, deep reading of Steiner works); Holy Nights Candle Meditations each Christmas season; Elemental Festivals outdoors; Building Bridges teacher training events (incl. with Dr. Torin Finser). High School programming from 2024/25. \"To bring the healing knowledge of anthroposophy to as many as possible.\" Contact: sophiacircleflorida@gmail.com",
+    "tag": "Anthroposophy · Study Group · USA",
+    "section": "unknown"
+  },
+  {
+    "name": "⭐ @threefold_educational — The Threefold Community 🌿🎨",
+    "description": "Chestnut Ridge, New York. <em>\"An anthroposophical community of people working in service to Waldorf education, biodynamics, the arts, spirituality, and social life.\"</em> The Threefold Educational Foundation stewards a 140-acre campus in the Hudson Valley, home to one of the most significant clusters of anthroposophical initiatives in North America: Green Meadow Waldorf School · Sunbridge Institute (Waldorf teacher education) · Eurythmy Spring Valley (school + performing ensemble) · The Otto Specht School (curative education) · Threefold Community Farm (biodynamic) · The Fellowship Community (intentional community for elders) · Threefold Café · Hungry Hollow Co-op Natural Foods · The Steiner School of Speech Arts · The Fiber Craft Studio · The Christian Community Church · Threefold Branch of the Anthroposophical Society of America. Established 1926. threefold.org",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfweltweit 🌍",
+    "description": "Friends of Waldorf Education, Germany (Freunde der Erziehungskunst). Impressions from Waldorf schools, kindergartens and curative education worldwide. German and English.",
+    "tag": "Germany · International",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfoneworld 🌍",
+    "description": "Friends of Waldorf Education. News from the worldwide WOW-Day action day and stories from projects worldwide. International.",
+    "tag": "Germany · International",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorf_uk 🇬🇧",
+    "description": "Waldorf UK — national representative body for Steiner Waldorf education in the UK. News, events, teacher resources, school life. 1,566 followers.",
+    "tag": "UK",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfpedagogia 🇧🇷",
+    "description": "Brazil. Main Portuguese-language Waldorf Instagram. Kindergarten activities, seasonal crafts, curriculum ideas from Brazil's 36 Waldorf schools. Search also #waldorfbrasil.",
+    "tag": "Brazil · Portuguese",
+    "section": "unknown"
+  },
+  {
+    "name": "⭐ @dollbelge 🇧🇪 · 215K followers",
+    "description": "Belgium. Viktoriya Vashchenko. Organic Waldorf dolls handcrafted in Belgium. 215,000 followers. DIY kits, PDF tutorials, finished dolls. Collaborates with Waldorf illustrator Daniela Drescher. Worldwide shipping. The largest Waldorf doll-making Instagram community in the world.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@pedagogiawaldorf 🌎",
+    "description": "Spanish-language Waldorf community — active across Argentina, Chile, Colombia, Mexico and Spain. Seasonal crafts, kindergarten circles in Spanish. Search also #waldorfeducacion.",
+    "tag": "Latin America · Spanish",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfschule 🇩🇪",
+    "description": "Germany. German Waldorf school community — art, festivals, main lesson books from Germany's 250+ Waldorf schools. Primarily in German. Also follow #waldorfschule.",
+    "tag": "Germany · German",
+    "section": "unknown"
+  },
+  {
+    "name": "⭐ @illustration.carina.pencet 🇩🇪 · 11K followers",
+    "description": "Germany (Freiburg im Breisgau). <em>\"Mit Farben das Unsichtbare sichtbar werden lassen\"</em> — making the invisible visible through colour. Carina Pencet grew up at the Freie Waldorfschule in Freiburg in a deeply anthroposophical environment, without television or plastic toys. Watercolour illustrator of fairies, gnomes, elves, nature beings and seasonal Waldorf-inspired scenes. Author and illustrator of <em>Pelle und die Wichteltür</em> (Bibana Verlag, November 2025) — her first children's book. Also offers downloadable illustrations and an annual calendar (2026). Her greatest wish: to bring beauty and healing into the world, and to remind people of the nature beings. Contact: carina@pencet.de · carina-pencet.de",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@erziehungskunst 🇩🇪",
+    "description": "Germany. Official Instagram of Erziehungskunst — the Waldorf movement's main journal. Articles, school life, festivals and curriculum insights in German.",
+    "tag": "Germany · German",
+    "section": "unknown"
+  },
+  {
+    "name": "@goetheanum 🇨🇭",
+    "description": "Dornach, Switzerland. The Goetheanum — world centre of the Anthroposophical Society. Architecture, eurythmy, lectures, festivals, seasonal celebrations from the heart of the movement.",
+    "tag": "Switzerland · International",
+    "section": "unknown"
+  },
+  {
+    "name": "@steinerschoolmbagathi 🇰🇪",
+    "description": "Rudolf Steiner School Mbagathi, Nairobi, Kenya. East African Waldorf school life — 325 children, organic garden, East African teacher training programme.",
+    "tag": "Kenya · East Africa",
+    "section": "unknown"
+  },
+  {
+    "name": "@ccfe_waldorf 🇿🇦",
+    "description": "Centre for Creative Education, Cape Town. Waldorf teacher training in Africa — township ECD centres, Zenzeleni Campus, B.Ed and Eurythmy programmes.",
+    "tag": "South Africa",
+    "section": "unknown"
+  },
+  {
+    "name": "@magiconionstoys 🛍🌿",
+    "description": "The Magic Onions. Waldorf nature crafts, seasonal tables, toy recommendations. Long-running beloved account.",
+    "tag": "Crafts · USA",
+    "section": "unknown"
+  },
+  {
+    "name": "@cosy.waldorf.fam 🛍📚",
+    "description": "Laura. Waldorf childhood educator turned SAHM. Free Waldorf resources, wooden toys, craft inspiration. 10% off Sarah's Silks with LAURA10. <strong>9.1K followers.</strong>",
+    "tag": "Family · UK",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfinthewild 🌿",
+    "description": "Waldorf in the Wild. Outdoor, nature-based Waldorf play and learning inspiration.",
+    "tag": "Outdoor · Nature",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfweltweit 🌍",
+    "description": "Friends of Waldorf Education (Freunde Waldorf). Impressions from Waldorf schools, kindergartens and curative education institutions worldwide.",
+    "tag": "International",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorf_uk 📚",
+    "description": "UK Steiner education news, events, and community. 1.5K followers.",
+    "tag": "UK",
+    "section": "unknown"
+  },
+  {
+    "name": "@toadstool_studios 🛍🍄",
+    "description": "Waldorf-inspired handmade items. Iconic Toadie the Toadstool creations. PDF patterns available. Seasonal and nature table pieces.",
+    "tag": "Handmade · Seasonal",
+    "section": "unknown"
+  },
+  {
+    "name": "@bellalunatoys 🛍",
+    "description": "Bella Luna Toys. Product inspiration, Waldorf toy education, seasonal play ideas. Moon Child Blog.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@sarahssilks 🛍",
+    "description": "Sarah's Silks. Playsilks and imaginative play. Waldorf & Montessori teacher recommended. USA.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@grapat 🛍",
+    "description": "Grapat official. Loose parts, nins, mandalas. Stunning product photography from Spain.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@grimmswooden 🛍",
+    "description": "Grimm's Toys official. Rainbow stackers, open-ended wooden toys. Germany.",
+    "tag": "Germany",
+    "section": "unknown"
+  },
+  {
+    "name": "@ostheimer_holzspielzeug 🛍",
+    "description": "Ostheimer official. Handcrafted wooden figures. 80+ years. Germany.",
+    "tag": "Germany",
+    "section": "unknown"
+  },
+  {
+    "name": "@tara_treasures 🛍",
+    "description": "Tara Treasures. Felt Waldorf toys. Australia-wide. Ethically handmade.",
+    "tag": "Australia",
+    "section": "unknown"
+  },
+  {
+    "name": "@babipur 🛍",
+    "description": "Babipur. UK indie Waldorf toy shop. Wales. First UK retailer of Wobbel Board.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@myriadnaturaltoys 🛍",
+    "description": "Myriad Natural Toys & Crafts. UK. Family-run since 1998. Natural toys and art materials.",
+    "tag": "UK",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfpublications 📚",
+    "description": "Waldorf Publications official. Book releases, seasonal articles, curriculum support. AWSNA.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@florisbooks 📚🛍",
+    "description": "Floris Books official. Waldorf children's books, Elsa Beskow, curriculum. Scotland.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@seasonsofseven 📚🛍",
+    "description": "Melanie. Coaching, mentoring, online Waldorf classes. 5.1K followers. Florida.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfhandwork 📚",
+    "description": "WHE conferences and handwork education. Annual conferences, teacher training, resources.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@acorn_school 📚🌱",
+    "description": "Holistic Family-Centered Education. Waldorf & Charlotte Mason inspired. Farm school, Gilbert AZ. 13K followers.",
+    "tag": "School · USA",
+    "section": "unknown"
+  },
+  {
+    "name": "@hearthandgnome 📚🎵",
+    "description": "Kimberly Parsons. Music Unfolds program for Waldorf homeschoolers. Seasonal and musical content.",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorf.homeschool 📚",
+    "description": "Waldorf homeschool community. Seasonal tables, lessons, handwork, craft ideas. Active community account.",
+    "tag": "Homeschool",
+    "section": "unknown"
+  },
+  {
+    "name": "@naturally.learning 🌿📚",
+    "description": "Waldorf-inspired natural learning. Seasonal living, nature crafts, homeschool inspiration. Community-focused content.",
+    "tag": "Nature · Learning",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfinspired.life 🌿",
+    "description": "Waldorf-inspired family life. Seasonal living, crafts, nature table, rhythm and flow. Beautiful aesthetic content.",
+    "tag": "Family · Seasonal",
+    "section": "unknown"
+  },
+  {
+    "name": "@waldorfmama 👩‍👧‍👦",
+    "description": "Waldorf mama community content. Parenting, seasonal activities, homeschool life. Relatable family-focused content.",
+    "tag": "Family · Parenting",
+    "section": "unknown"
+  },
+  {
+    "name": "@mothering.the.waldorf.way 📚",
+    "description": "Waldorf parenting and homeschool content from a mother's perspective. Practical seasonal activities and rhythm.",
+    "tag": "Parenting · Homeschool",
+    "section": "unknown"
+  },
+  {
+    "name": "VulpsToys 🦊",
+    "description": "2,300+ reviews. Waldorf wooden stackers, animals, gnomes, nativity, small world. One of the most popular Waldorf Etsy shops. Ships internationally.",
+    "tag": "Etsy · International",
+    "section": "unknown"
+  },
+  {
+    "name": "WoodandRoomUA",
+    "description": "5,200+ reviews. Waldorf wooden toys made in Ukraine. High volume, reliable, beautiful natural wood. Ships worldwide.",
+    "tag": "Etsy · Ukraine",
+    "section": "unknown"
+  },
+  {
+    "name": "ShopJoeyCo",
+    "description": "3,100+ reviews. Waldorf-inspired wooden play items. Free shipping on many items. Popular internationally.",
+    "tag": "Etsy · USA",
+    "section": "unknown"
+  },
+  {
+    "name": "TheWoodPeckerFactory",
+    "description": "Romania. Hand-carved wooden animals, trees, knights, princesses. FSC certified. Olive oil and beeswax finish.",
+    "tag": "Etsy · Romania",
+    "section": "unknown"
+  },
+  {
+    "name": "Forest Melody Store",
+    "description": "Trees and forest animals from linden, alder and oak wood. Perfect for nature tables and small world play.",
+    "tag": "Etsy · Eastern Europe",
+    "section": "unknown"
+  },
+  {
+    "name": "Mr Fox Crafts",
+    "description": "Bulgaria. Heirloom wooden figurines in sustainable beech wood. No facial features — true Waldorf philosophy.",
+    "tag": "Etsy · Bulgaria",
+    "section": "unknown"
+  },
+  {
+    "name": "Dadaka Craft",
+    "description": "Ukraine. Maple wood animals and pull toys. Vegetable oil pigments. Beautiful for nature table sets.",
+    "tag": "Etsy · Ukraine",
+    "section": "unknown"
+  },
+  {
+    "name": "Treemagination",
+    "description": "Waldorf-inspired dollhouses and treehouse play sets. Natural aesthetic. Open-ended nature-based play.",
+    "tag": "Etsy · Dollhouses",
+    "section": "unknown"
+  },
+  {
+    "name": "LoveNaturePlay",
+    "description": "Waldorf dollhouse accessories and nature play items. Handmade with natural materials.",
+    "tag": "Etsy · Small World",
+    "section": "unknown"
+  },
+  {
+    "name": "Allwoodenbiz",
+    "description": "1,700+ reviews. Waldorf wooden dollhouses, furniture and play items. Large selection. Popular and reliable.",
+    "tag": "Etsy · Dollhouses",
+    "section": "unknown"
+  },
+  {
+    "name": "Folkwood (QLD, Australia)",
+    "description": "Wooden Waldorf toys for small world play and stacking puzzles. All made to order. Queensland-based.",
+    "tag": "Etsy · Australia",
+    "section": "unknown"
+  },
+  {
+    "name": "WoodContourCanada",
+    "description": "Canada. Waldorf wooden toys and nature-inspired play items. Canadian maker, quality craftsmanship.",
+    "tag": "Etsy · Canada",
+    "section": "unknown"
+  },
+  {
+    "name": "CaliforniaStudioArt",
+    "description": "Waldorf toys and nature-inspired items. California-based maker with refined artistic aesthetic.",
+    "tag": "Etsy · USA",
+    "section": "unknown"
+  },
+  {
+    "name": "outsideeverywhere",
+    "description": "Nature-inspired Waldorf small world play items. Beautiful natural materials, outdoor and seasonal themes.",
+    "tag": "Etsy · Small World",
+    "section": "unknown"
+  },
+  {
+    "name": "Heartmadedoll",
+    "description": "717+ reviews. Handmade Waldorf dolls. Free shipping. High quality, 5-star reviews. Very popular.",
+    "tag": "Etsy · Dolls",
+    "section": "unknown"
+  },
+  {
+    "name": "ArtAndDoll",
+    "description": "929+ reviews. Waldorf-inspired dolls. Beautiful handcrafted figures with artistry in detail.",
+    "tag": "Etsy · Dolls",
+    "section": "unknown"
+  },
+  {
+    "name": "YulkaAndDolls",
+    "description": "328+ reviews. Waldorf-style dolls. Loved for quality of face painting and clothing detail.",
+    "tag": "Etsy · Dolls",
+    "section": "unknown"
+  },
+  {
+    "name": "HeadHandsHeart",
+    "description": "89+ reviews. Heirloom Waldorf dolls. Higher price point — exceptional craftsmanship. Highly regarded.",
+    "tag": "Etsy · Heirloom",
+    "section": "unknown"
+  },
+  {
+    "name": "Deb's Steiner Dolls",
+    "description": "NSW, Australia. Full-size Waldorf dolls and rainbow gnomes. Hand-dyed 100% wool. Made to order.",
+    "tag": "Etsy · Australia",
+    "section": "unknown"
+  },
+  {
+    "name": "WaldorfDollShops",
+    "description": "Waldorf doll kits and finished dolls. Good for those beginning their doll-making journey.",
+    "tag": "Etsy · Dolls",
+    "section": "unknown"
+  },
+  {
+    "name": "ThreeSistersDolls",
+    "description": "Waldorf-inspired soft dolls. Handmade with care and natural materials. Beautiful sibling-set options.",
+    "tag": "Etsy · Dolls",
+    "section": "unknown"
+  },
+  {
+    "name": "WoolMoonFelt",
+    "description": "117+ reviews. Needle felted Waldorf figures and miniatures. Beautiful seasonal and nature table pieces.",
+    "tag": "Etsy · Felt",
+    "section": "unknown"
+  },
+  {
+    "name": "WildHeartFiberArts",
+    "description": "Waldorf-inspired fibre arts and felt creations. Nature-inspired seasonal and small world items.",
+    "tag": "Etsy · Fibre",
+    "section": "unknown"
+  },
+  {
+    "name": "Waldorf World (Ukraine)",
+    "description": "Needle-felted gnomes, fairies, fairy houses with real moss and pine cones, seasonal crowns. Mothers working from home.",
+    "tag": "Etsy · Ukraine",
+    "section": "unknown"
+  },
+  {
+    "name": "GaiasChildrenFairies",
+    "description": "Seasonal fairy and nature table figures. Handmade. Delicate fairy world aesthetic — gnomes, fairies, characters.",
+    "tag": "Etsy · Fairies",
+    "section": "unknown"
+  },
+  {
+    "name": "Niniani Creations",
+    "description": "NSW, Australia. Wool felted gnomes, peg people, wet-felted play mats. Local ethically farmed fibre.",
+    "tag": "Etsy · Australia",
+    "section": "unknown"
+  },
+  {
+    "name": "Fairy Shadow (Tania)",
+    "description": "California, USA. Waldorf babies, mini critters, Waldorf figures. Distinctive personal style beloved in the community.",
+    "tag": "Etsy · USA",
+    "section": "unknown"
+  },
+  {
+    "name": "MyFeltStoryOfficial",
+    "description": "Felt story sets and small world pieces. Interactive storytelling felt boards. Waldorf-inspired learning through play.",
+    "tag": "Etsy · Felt Stories",
+    "section": "unknown"
+  },
+  {
+    "name": "SunriseGiftforKids",
+    "description": "Waldorf-inspired toys and gift items. Seasonal and nature-themed handmade pieces for children.",
+    "tag": "Etsy · Gifts",
+    "section": "unknown"
+  },
+  {
+    "name": "Mint & Mont Designs",
+    "description": "Queensland, Australia. Felt play mats with 3D tufts and flourishes. Made to order. Beloved in Australian Waldorf community.",
+    "tag": "Etsy · Australia",
+    "section": "unknown"
+  },
+  {
+    "name": "My Big World Playscapes",
+    "description": "Ohio, USA. Felt play mats and small world wooden accessories. Custom commissions available.",
+    "tag": "Etsy · USA",
+    "section": "unknown"
+  },
+  {
+    "name": "huttonroad",
+    "description": "1,400+ reviews. Waldorf-inspired art and nature items. Consistent quality, popular with homeschoolers.",
+    "tag": "Etsy · Art",
+    "section": "unknown"
+  },
+  {
+    "name": "MoonlightMotherhood1",
+    "description": "Waldorf-inspired items for mothers and families. Seasonal living, natural home, handmade goods.",
+    "tag": "Etsy · Seasonal",
+    "section": "unknown"
+  },
+  {
+    "name": "JustAddImaginationCo",
+    "description": "Waldorf-inspired creative play items and art resources. Open-ended play focus. Lovely natural aesthetic.",
+    "tag": "Etsy · Creative Play",
+    "section": "unknown"
+  },
+  {
+    "name": "LightOfTheStone",
+    "description": "Nature and Waldorf-inspired items. Stone, wood and natural materials. Beautiful nature table pieces.",
+    "tag": "Etsy · Nature",
+    "section": "unknown"
+  },
+  {
+    "name": "The Acorn and Oak",
+    "description": "Melbourne, Australia. Handmade peg dolls, gnomes and bunnies from wood and hand-dyed wool felt.",
+    "tag": "Etsy · Australia",
+    "section": "unknown"
+  },
+  {
+    "name": "NoelinoToys",
+    "description": "Romania. FSC certified wood. Olive oil and beeswax finish. Waldorf mushrooms, wooden figurines, play sets. Also noelinotoys.com",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "⭐ @raduga_grez · 117K followers",
+    "description": "\"Toys as Art · Toygetherness.\" The internationally most followed Russian Waldorf toy maker. Wooden stackers, rainbows, food sets, gnomes and animals. Nature-inspired colours. Third-generation carpenters. Ships worldwide directly. raduga-grez.com",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "@vulpstoys",
+    "description": "Russia. Wooden Waldorf toys — stackers, animals, trees, story sets and gnomes. Beautiful earthy aesthetic. Ships Europe and America.",
+    "tag": "Russia · Wooden toys",
+    "section": "unknown"
+  },
+  {
+    "name": "Ярмарка Мастеров / Livemaster.ru",
+    "description": "Russia's largest handmade marketplace — equivalent to Etsy for Russian-speaking countries. Enormous range of Waldorf-inspired wooden toys, felt toys, dolls and handmade wool items. Search: вальдорф · войлочные игрушки · деревянные игрушки вальдорф. Some sellers ship internationally. livemaster.ru",
+    "tag": "",
+    "section": "unknown"
+  },
+  {
+    "name": "Russian Instagram hashtags",
+    "description": "The Russian Waldorf community is large and active on Instagram — but primarily in Russian. Key hashtags: #вальдорф · #вальдорфскаяпедагогика · #вальдорфскаяшкола · #деревянныеигрушки (wooden toys) · #войлочныеигрушки (felt toys) · #вальдорфскийдетскийсад (Waldorf kindergarten).",
+    "tag": "Instagram · Russian",
+    "section": "unknown"
+  },
+  {
+    "name": "Etsy search — Russian felt &amp; wool makers",
+    "description": "Large community of Russian and Eastern European felt and wool artisans on Etsy. Search: \"Russian felt toys\" · \"wool felt gnome Russia\" · \"needle felted animals Russia\" · \"waldorf felt Russia.\" Extraordinary quality at very reasonable prices. Filter by seller location where possible.",
+    "tag": "Etsy search tip",
+    "section": "unknown"
+  }
+]

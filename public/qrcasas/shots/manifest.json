@@ -1,0 +1,10 @@
+﻿{
+  \"generatedAt\": \"2026-08-26T18:56:19.2488066-05:00\",
+  \"shots\": [
+    {\"id\": \"01-the-question\", \"file\": \"qrcasas/shots/01-the-question.jpg\"},
+    {\"id\": \"02-the-life\", \"file\": \"qrcasas/shots/02-the-life.jpg\"},
+    {\"id\": \"03-the-choice\", \"file\": \"qrcasas/shots/03-the-choice.jpg\"},
+    {\"id\": \"04-the-contrast\", \"file\": \"qrcasas/shots/04-the-contrast.jpg\"},
+    {\"id\": \"05-the-home\", \"file\": \"qrcasas/shots/05-the-home.jpg\"}
+  ]
+}

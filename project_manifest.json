@@ -1,0 +1,171 @@
+{
+  "project": {
+    "name": "The Waldorf Path",
+    "version": "2.2.0",
+    "description": "A curated SaaS directory and resource platform for Waldorf / Steiner education families, mentors, and practitioners worldwide. Features 4-tab Teable-inspired directory (Find a Mentor, Guided Match, My Path, Insights), 60+ local articles, 1,015 directory entries, AI-powered search, and Stripe-ready subscriptions.",
+    "created": "2026-05-23",
+    "last_updated": "2026-07-29",
+    "maintainer": "Mike (dynamicmike@gmail.com)",
+    "client": "Nina (The Waldorf Path)"
+  },
+
+  "urls": {
+    "live": "https://github-files-opal.vercel.app/",
+    "custom_domain": "http://waldorf.maistermind.com/",
+    "admin_dashboard": "https://github-files-opal.vercel.app/?view=admin",
+    "github_repo": "https://github.com/dynamicmike-dashboard/Nina-Waldorf.git",
+    "vercel_project": "https://vercel.com/dynamicmike-dashboard/github-files"
+  },
+
+  "local_paths": {
+    "project_root": "F:/Mike d drive/Mike Webs/Client Projects/Nina - Waldorf and Steiner Education App/github-files",
+    "public_documents": "F:/Mike d drive/Mike Webs/Client Projects/Nina - Waldorf and Steiner Education App/github-files/public/documents",
+    "src_components": "F:/Mike d drive/Mike Webs/Client Projects/Nina - Waldorf and Steiner Education App/github-files/src/components",
+    "src_data": "F:/Mike d drive/Mike Webs/Client Projects/Nina - Waldorf and Steiner Education App/github-files/src/data",
+    "src_services": "F:/Mike d drive/Mike Webs/Client Projects/Nina - Waldorf and Steiner Education App/github-files/src/services",
+    "api_handlers": "F:/Mike d drive/Mike Webs/Client Projects/Nina - Waldorf and Steiner Education App/github-files/api"
+  },
+
+  "tech_stack": {
+    "framework": "React 19 + Vite 6",
+    "language": "TypeScript",
+    "styling": "TailwindCSS v4",
+    "animation": "Motion (Framer Motion)",
+    "database": "Teable (cloud, hosted at app.teable.io)",
+    "ai_primary": "Google Gemini (via @google/genai)",
+    "ai_fallback": "OpenAI GPT-4o-mini",
+    "hosting": "Vercel",
+    "local_dev_port": 3005
+  },
+
+  "teable_tables": {
+    "mentors": {
+      "id": "tbl6KvPXOhrVpXupA93",
+      "description": "All mentor/guide profiles (170 entries)",
+      "key_fields": ["Name", "Specialty", "Grade_Level", "Bio", "Photo_URL", "Claim_Status", "Stripe_ID", "Claimant_Email", "Profile_Visibility", "Title", "Awards", "Lessons", "Membership_Tier", "Publishing_State", "Directory_Eligible", "Profile_Type", "Support_Modes", "Languages", "Topic_Tags", "Multilingual_Aliases", "Social_Links"]
+    },
+    "resources": {
+      "id": "tblztNjIsTKuI8mxuPl",
+      "description": "Curated external resource links, articles, and editorial content (130+ entries)",
+      "key_fields": ["Title", "Category", "Grade", "File_Link", "Is_Free", "Mentor_ID", "Content_Type", "Publishing_State", "Language", "Topic_Tags", "Provenance", "Featured", "Country", "Description"]
+    },
+    "daily_rhythms": {
+      "id": "tblyhpS9TM2TMKOGU8B",
+      "description": "Seasonal verses and daily rhythm content",
+      "key_fields": ["Season", "Verse_Text"]
+    },
+    "accounts": {
+      "id": "tblgprvMCO9opqRjOFf",
+      "description": "User/mentor accounts with auth roles and billing status",
+      "key_fields": ["Email", "Roles", "Auth_User_ID", "Display_Name", "Account_Status", "Billing_Status", "Languages", "Location", "Timezone", "Registered_At", "Last_Login_At", "Terms_Accepted_At", "Stage_Preferences", "Interests", "Marketing_Consent", "Billing_Records", "Mentors", "Sponsor_Offers", "Enquiries", "Admin_Alerts"]
+    },
+    "admin_alerts": {
+      "id": "tblbxAGreFEyE7Pi9PE",
+      "description": "Admin alerts, sponsor inquiries, claim notifications (formerly System_Admin — no plaintext creds)",
+      "key_fields": ["Alert_Type", "Description", "Timestamp", "Status"]
+    },
+    "enquiries": {
+      "id": "tblEnquiries",
+      "description": "Authenticated user-to-mentor communication records",
+      "key_fields": ["Account_ID", "Mentor_ID", "Message", "Timestamp", "Status", "Direction"]
+    },
+    "sponsor_offers": {
+      "id": "tblSponsorOffers",
+      "description": "Sponsor applications, campaign details, payments, placements",
+      "key_fields": ["Account_ID", "Brand_Name", "Email", "Website", "Description", "Logo_URL", "Tier", "Price", "Campaign_Start", "Campaign_End", "Payment_Status", "Placement_Status"]
+    },
+    "billing_records": {
+      "id": "tblBillingRecords",
+      "description": "Admin-only Stripe customer, subscription, and payment references",
+      "key_fields": ["Account_ID", "Stripe_Customer_ID", "Stripe_Subscription_ID", "Plan_Type", "Status", "Amount", "Currency", "Billing_Period_Start", "Billing_Period_End"]
+    }
+  },
+
+  "subscription_tiers": {
+    "free": {
+      "label": "Free",
+      "access": ["Directory browsing", "AI Concierge (limited)", "Free resources", "Daily rhythm"],
+      "price": "$0"
+    },
+    "user_premium": {
+      "label": "User Premium",
+      "access": ["All resources", "Direct mentor contact", "Enhanced AI Concierge", "Personalized pathways"],
+      "price": "$9/month"
+    },
+    "mentor_basic": {
+      "label": "Mentor Basic",
+      "access": ["List name & skills", "Appear in directory"],
+      "price": "$0"
+    },
+    "mentor_pro": {
+      "label": "Mentor Pro",
+      "access": ["Profile photo", "Social media links", "Receive enquiries", "Featured placement upsell"],
+      "price": "$19.99/month"
+    }
+  },
+
+  "sponsor_tiers": {
+    "ticker_slot": {
+      "label": "Home Page Ticker Slot",
+      "price": "$15/month",
+      "includes": "Logo, brand name, short description, direct link in homepage scrolling ticker"
+    },
+    "ticker_plus_highlight": {
+      "label": "Ticker + Dedicated Highlight",
+      "price": "$35/month",
+      "includes": "Standard ticker inclusion plus featured priority ranking banner"
+    }
+  },
+
+  "auth_system": {
+    "user_login": "Email lookup in Accounts table (Roles='user')",
+    "mentor_login": "Email lookup in Accounts table (Roles='mentor')",
+    "admin_dashboard": "Separate login with admin-specific dashboard (not in PWA Profile tab); admin users stored in Admin_Alerts table (Alert_Type='Admin User')",
+    "session_storage": "localStorage key: LOGGED_IN_USER — object: { email, role, subscriptionActive, fullName }",
+    "public_access": "Anyone can browse directory/resources without login",
+    "gated_features": "Contact mentors, submit enquiries, mentor pro features require login + subscription"
+  },
+
+  "directory_tabs": {
+    "find_a_mentor": "Search + 4 dropdown filters (developmental stage, specialty, location, profile status), list/grid toggle, pagination (20/page), bookmark to My Path, 1.5x featured cards with gold frame",
+    "guided_match": "4-step wizard with progress bar (25% increments): Step 1 Child/Developmental Stage (single), Step 2 Support Goals (multi), Step 3 Specialty Needs (multi), Step 4 Location/Priorities. Continue gated on selection. Results filter mentors by choices.",
+    "my_path": "Browser-localStorage shortlist of bookmarked mentors. Empty state with CTA to Find a Mentor. Not stored on server.",
+    "insights": "Admin-only. Stats cards, colour-coded bar charts (profile status, developmental stage, location coverage, resource categories/grades), data-quality gap table."
+  },
+
+  "local_content": {
+    "articles": 64,
+    "pdfs": 7,
+    "directory_entries": 1015,
+    "article_viewer": "Iframe fallback for complex CSS articles, in-app rendering for simpler HTML",
+    "content_registry": "src/data/contentRegistry.ts — indexes all local articles/pdfs/directories with metadata (title, category, grade, tags, language)"
+  },
+
+  "build_optimization": {
+    "code_splitting": "React.lazy on EnhancedDirectory, ProfilePanel, ResourcesPanel; manualChunks splits vendor (motion/react) and icons (lucide-react)",
+    "chunk_sizes": {
+      "index_js": "741 kB (192 kB gzip)",
+      "vendor": "120 kB (41 kB gzip)",
+      "icons": "14 kB (3 kB gzip)",
+      "EnhancedDirectory": "37 kB (9 kB gzip)",
+      "ProfilePanel": "85 kB (19 kB gzip)",
+      "ResourcesPanel": "11 kB (4 kB gzip)",
+      "contentRegistry": "28 kB (5 kB gzip)"
+    }
+  },
+
+  "vercel_env_vars_required": {
+    "TEABLE_API_KEY": "Set in Vercel dashboard ✓",
+    "GEMINI_API_KEY": "Set in Vercel dashboard ✓",
+    "STRIPE_SECRET_KEY": "Needs Nina's Stripe secret key",
+    "STRIPE_USER_PREMIUM_PRICE_ID": "Needs Stripe price ID for user-premium plan",
+    "STRIPE_MENTOR_PRO_PRICE_ID": "Needs Stripe price ID for mentor-pro plan"
+  },
+
+  "git": {
+    "remote": "https://github.com/dynamicmike-dashboard/Nina-Waldorf.git",
+    "main_branch": "main",
+    "deploy_trigger": "Push to main auto-deploys via Vercel GitHub integration",
+    "latest_commit": "eed0772 — fix: resource/article search now includes topicTags in synonym expansion"
+  }
+}

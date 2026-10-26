@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/teable/:path*",
+      "destination": "/api/teable-proxy?path=:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

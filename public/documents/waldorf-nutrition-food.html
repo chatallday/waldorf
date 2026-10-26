@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Waldorf Nutrition and Food</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f5ede0;--warm:#efe3cf;--deep:#e8d8bd;--ink:#3b2a1a;--soft:#6b5840;--rust:#a8492a;--moss:#5a6b3f;--wool:#b8a583;--shadow:rgba(59,42,26,.08);--btn:#fff8ee;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#211a12;--warm:#2b2218;--deep:#41341f;--ink:#efe3cf;--soft:#c9b898;--rust:#e0825f;--moss:#a5b87c;--wool:#8a7558;--shadow:rgba(0,0,0,.3);--btn:#211a12;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#211a12;--warm:#2b2218;--deep:#41341f;--ink:#efe3cf;--soft:#c9b898;--rust:#e0825f;--moss:#a5b87c;--wool:#8a7558;--shadow:rgba(0,0,0,.3);--btn:#211a12;color-scheme:dark}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'EB Garamond',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.6;font-size:19px}
+.container{max-width:980px;margin:0 auto;padding:56px 24px 90px}
+header{text-align:center;margin-bottom:36px;padding-bottom:32px;border-bottom:1px solid var(--deep)}
+.eyebrow,.tag,.toc-title{font-family:'Caveat',cursive;color:var(--rust)}
+.eyebrow{font-size:24px}
+h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,6vw,56px);line-height:1.1;margin:6px 0 14px}
+.subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--soft);max-width:620px;margin:0 auto}
+.intro{max-width:700px;margin:0 auto 40px;color:var(--soft);font-size:18px}
+.intro p+p{margin-top:12px}
+.toc{background:var(--warm);border:1px solid var(--deep);border-radius:4px;padding:18px 28px;margin-bottom:48px;box-shadow:0 2px 8px var(--shadow)}
+.toc a{color:var(--ink);text-decoration:none;display:inline-block;margin:4px 18px 4px 0;font-size:17px}.toc a:hover{color:var(--rust)}
+.toc-title{font-size:22px;display:block}
+section{margin-bottom:52px;scroll-margin-top:40px}
+h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:32px;color:var(--rust);line-height:1.2}
+h2 .roman{font-style:italic;font-weight:400;color:var(--wool);margin-right:10px;font-size:26px}
+.lead{font-style:italic;color:var(--soft);margin:6px 0 16px;font-size:19px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.card{background:var(--warm);border:1px solid var(--deep);border-radius:4px;padding:18px 20px;box-shadow:0 1px 4px var(--shadow);display:flex;flex-direction:column}
+.card .tag{font-size:19px}
+.card h4{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;line-height:1.2;margin-bottom:6px}
+.card p{font-size:15.5px;color:var(--soft);margin-bottom:12px;line-height:1.5}
+.card p:last-child{margin-bottom:0}
+.buy{margin-top:auto;display:inline-block;align-self:flex-start;font-family:'Caveat',cursive;font-size:21px;color:var(--rust);text-decoration:none;border:1.5px solid var(--rust);border-radius:3px;padding:3px 12px;background:var(--btn)}
+.buy:hover{background:var(--rust);color:var(--btn)}
+.tablewrap{overflow-x:auto;border:1px solid var(--deep);border-radius:4px;box-shadow:0 1px 4px var(--shadow)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:15.5px;background:var(--warm)}
+th{font-family:'Caveat',cursive;font-size:21px;color:var(--rust);text-align:left;padding:10px 14px;background:var(--deep);font-weight:600}
+td{padding:12px 14px;border-top:1px solid var(--deep);vertical-align:top;color:var(--soft);line-height:1.5}
+td:first-child{color:var(--ink);font-weight:600;white-space:nowrap}
+td:first-child span{display:block;font-weight:400;font-style:italic;font-size:14.5px;color:var(--moss)}
+td:last-child{color:var(--ink)}
+footer{text-align:center;padding-top:30px;margin-top:56px;border-top:1px solid var(--deep);color:var(--soft);font-style:italic;font-size:16px}
+@media(max-width:600px){body{font-size:18px}.container{padding:40px 16px 70px}h2{font-size:28px}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="eyebrow">Grain · Garden · Table</div>
+<h1>Waldorf Nutrition and Food</h1>
+</header>
+
+<nav class="toc"><span class="toc-title">Jump to</span>
+<a href="#grain">Grain of the day</a><a href="#plant">Root, leaf, fruit</a><a href="#home">At home</a><a href="#school">At school</a><a href="#books">Books</a><a href="#sources">Where to find food</a><a href="#read">Read Steiner</a></nav>
+
+<section id="grain">
+<h2><span class="roman">I.</span>The grain of the day</h2>
+<p class="lead">Each day of the week has its own grain, tied to a planet. This one is Waldorf tradition.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Day</th><th>Grain</th><th>What it's like</th></tr></thead>
+<tbody>
+<tr><td>Sunday<span>Sun</span></td><td>Wheat</td><td>Warm and golden. Bread, mostly.</td></tr>
+<tr><td>Monday<span>Moon</span></td><td>Rice</td><td>White, soft and calming.</td></tr>
+<tr><td>Tuesday<span>Mars</span></td><td>Barley</td><td>Old and sturdy. Good in soups and stews.</td></tr>
+<tr><td>Wednesday<span>Mercury</span></td><td>Millet</td><td>Light, quick to cook, bright yellow.</td></tr>
+<tr><td>Thursday<span>Jupiter</span></td><td>Rye</td><td>Dark and hardy. The bread grain of northern Europe.</td></tr>
+<tr><td>Friday<span>Venus</span></td><td>Oats</td><td>Soothing. Porridge.</td></tr>
+<tr><td>Saturday<span>Saturn</span></td><td>Corn</td><td>Heavy and earthy. Polenta or cornbread.</td></tr>
+</tbody></table></div>
+<p class="lead" style="margin-top:14px">Nobody follows this to the letter. Even doing it a few days a week gives the week a shape, and kids pick up on that.</p>
+</section>
+
+<section id="plant">
+<h2><span class="roman">II.</span>Root, leaf, fruit</h2>
+<p class="lead">This one is Steiner's own. In two 1924 talks to the workmen, he linked root to the brain and nerves, leaf to the chest and breathing, and blossom and fruit to the digestion. Try to get all three each day.</p>
+<div class="grid">
+<div class="card"><div class="tag">Head · Thinking</div><h4>Roots</h4><p>Carrots, beets, turnips, parsnips, celeriac. Steiner said roots get worked on in the head, and that a tea made from a root acts on head complaints. Carrots are the Waldorf favorite.</p></div>
+<div class="card"><div class="tag">Heart · Feeling</div><h4>Leaves and stems</h4><p>Spinach, kale, chard, lettuce, cabbage, herbs. The middle of the plant, linked to breathing and the chest.</p></div>
+<div class="card"><div class="tag">Hands · Will</div><h4>Flowers, fruits and seeds</h4><p>Apples, berries, tomatoes, squash, nuts, and the grains and beans too. He said these get worked on in the gut, so the head is left free.</p></div>
+</div>
+</section>
+
+<section id="home">
+<h2><span class="roman">III.</span>Bringing it home</h2>
+<p class="lead">The habits that come up most.</p>
+<div class="grid">
+<div class="card"><div class="tag">Daily</div><h4>Whole grains</h4><p>Porridge for breakfast, whole grain bread, grain soups. Cooked whole grains are the staple carbohydrate.</p></div>
+<div class="card"><div class="tag">Where you can</div><h4>Organic and biodynamic</h4><p>Steiner started biodynamic farming in 1924. Buy organic or Demeter when it's within reach, and eat what's local and in season.</p></div>
+<div class="card"><div class="tag">Plant-forward</div><h4>Mostly vegetarian</h4><p>Many Waldorf schools serve vegetarian meals. Steiner himself didn't hand out one diet for everyone, so meat, if you eat it, is a personal call. Keep it good quality and occasional.</p></div>
+<div class="card"><div class="tag">Steiner</div><h4>Go easy on potatoes</h4><p>In 1923 he told the workmen that a diet leaning on potatoes was bad for thinking. His reasoning: the tuber isn't processed in the gut, so the head ends up doing the digesting. He preferred rye and wheat, and lentils, beans and peas. Not a ban, just don't live on them.</p></div>
+<div class="card"><div class="tag">Steiner</div><h4>Salt</h4><p>He said salt isn't only for taste. It matters for thinking. Spices work in a similar way, so a little goes a long way.</p></div>
+<div class="card"><div class="tag">Steiner</div><h4>Four nutrients</h4><p>He named four: protein, fats, carbohydrates and salts. He said you need all four, and that percentages on a chart don't tell you what a food does for a person.</p></div>
+<div class="card"><div class="tag">Steiner</div><h4>Honey and milk</h4><p>In 1923 he talked about a children's home using honey stirred into warm milk for undernourished kids. He also said milk can't be rebuilt from its parts: mice fed casein, fat, sugar and salts did worse than mice fed milk.</p></div>
+<div class="card"><div class="tag">Waldorf practice</div><h4>Sweeten simply</h4><p>Honey, fruit, maple syrup or rapadura in place of refined sugar. This is common practice in Waldorf kitchens. I didn't find a Steiner source for it.</p></div>
+<div class="card"><div class="tag">Every meal</div><h4>Make it a ritual</h4><p>A blessing or verse before eating, a candle, a set table, no screens, no rushing. How you eat counts as much as what.</p></div>
+</div>
+</section>
+
+<section id="school">
+<h2><span class="roman">IV.</span>Food at school</h2>
+<p class="lead">What it looks like in a Waldorf classroom.</p>
+<div class="grid">
+<div class="card"><div class="tag">Kindergarten</div><h4>Snack</h4><p>Children help make it: kneading dough, cutting fruit, washing vegetables. A verse comes first. Typical snacks are whole grain bread with butter and honey, seasonal fruit, soup, rice porridge or millet.</p></div>
+<div class="card"><div class="tag">Grade 3 on</div><h4>Garden</h4><p>Most schools have one. From Grade 3 the children grow, harvest and cook their own food, and sometimes grind the grain.</p></div>
+<div class="card"><div class="tag">Any grade</div><h4>Bread baking</h4><p>Grind, mix, knead, wait, bake, eat together. It comes up naturally in Grade 3 with farming and crafts, but works at any age.</p></div>
+</div>
+</section>
+
+<section id="books">
+<h2><span class="roman">V.</span>Books</h2>
+<p class="lead">Start with the first two.</p>
+<div class="grid">
+<div class="card"><div class="tag">Wendy Cook</div><h4>Foodwise</h4><p>The standard anthroposophical nutrition book. Covers grains, the threefold plant, sweeteners, bread, dairy and more, with tips on menus and children's food.</p></div>
+<div class="card"><div class="tag">Wendy Cook</div><h4>The Biodynamic Food &amp; Cookbook</h4><p>Over 150 seasonal recipes, plus the thinking behind them.</p></div>
+<div class="card"><div class="tag">Rudolf Steiner</div><h4>Nutrition: Food, Health and Spiritual Development</h4><p>Steiner's own lectures on food, gathered into one volume. Heavy going, but it's the source.</p></div>
+<div class="card"><div class="tag">Practical</div><h4>Simply in Season</h4><p>Not Waldorf, but organized by season and built on local whole foods. Many Waldorf families use it.</p></div>
+<div class="card"><div class="tag">Practical</div><h4>Moosewood Cookbook</h4><p>Whole food vegetarian cooking. A longtime favorite in Waldorf kitchens, though not anthroposophical.</p></div>
+<div class="card"><div class="tag">Practical</div><h4>Nourishing Traditions</h4><p>Fermenting, sourdough, broths and traditional grain prep. Used in Waldorf circles, though it isn't Steiner-based.</p></div>
+</div>
+</section>
+
+<section id="sources">
+<h2><span class="roman">VI.</span>Where to find biodynamic food</h2>
+<p class="lead">Certifiers, farm directories and farm boxes.</p>
+<div class="grid">
+<div class="card"><div class="tag">International</div><h4>Demeter</h4><p>The biodynamic certification mark. Use the site to find certified producers in your country.</p><a class="buy" href="https://demeter.net" target="_blank" rel="noopener">demeter.net</a></div>
+<div class="card"><div class="tag">USA</div><h4>Biodynamic Association</h4><p>Farm locator, resources and education.</p><a class="buy" href="https://biodynamicassociation.org" target="_blank" rel="noopener">biodynamicassociation.org</a></div>
+<div class="card"><div class="tag">UK</div><h4>Biodynamic Association UK</h4><p>Farm directory and a guide to sourcing food.</p><a class="buy" href="https://biodynamic.org.uk" target="_blank" rel="noopener">biodynamic.org.uk</a></div>
+<div class="card"><div class="tag">Brazil</div><h4>Instituto Biodinâmico (IBD)</h4><p>The main biodynamic certifier in South America.</p><a class="buy" href="https://ibd.com.br" target="_blank" rel="noopener">ibd.com.br</a></div>
+<div class="card"><div class="tag">Local</div><h4>Biodynamic CSA</h4><p>Many biodynamic farms sell weekly vegetable boxes directly. Search "biodynamic CSA" plus your area.</p></div>
+</div>
+</section>
+
+<section id="read">
+<h2><span class="roman">VII.</span>Read Steiner yourself</h2>
+<p class="lead">The talks behind this page, free on the Rudolf Steiner Archive.</p>
+<div class="grid">
+<div class="card"><div class="tag">GA 354 · 1924</div><h4>Nutrition and Health</h4><p>Two talks to the workmen. Root, leaf and fruit, and which foods go with which part of the body.</p><a class="buy" href="https://rsarchive.org/Lectures/NutHlt_index.html" target="_blank" rel="noopener">rsarchive.org</a></div>
+<div class="card"><div class="tag">GA 350 · 22 Sept 1923</div><h4>Protein, fats, carbohydrates, salts</h4><p>The long talk that covers the four nutrients and the potato.</p><a class="buy" href="https://rsarchive.org/Lectures/GA350/English/SOL/19230922p02.html" target="_blank" rel="noopener">rsarchive.org</a></div>
+<div class="card"><div class="tag">Bees · Dec 1923</div><h4>Nine Lectures on Bees</h4><p>Lecture 4 has the honey and milk material.</p><a class="buy" href="https://rsarchive.org/Lectures/19231201a01.html" target="_blank" rel="noopener">rsarchive.org</a></div>
+<div class="card"><div class="tag">GA 347 · GA 352</div><h4>Workmen's talks on nutrition</h4><p>Two more volumes of the workmen's Q&amp;As, with talks on milk, sugar and how digestion works.</p><a class="buy" href="https://rsarchive.org/Lectures/GA347/English/SOL2024/" target="_blank" rel="noopener">GA 347</a> <a class="buy" style="margin-top:8px" href="https://rsarchive.org/Lectures/GA352/English/SOL2024/" target="_blank" rel="noopener">GA 352</a></div>
+<div class="card"><div class="tag">GA 68d · 1909</div><h4>Problems of Nutrition</h4><p>An early talk on diet, including vegetarianism.</p><a class="buy" href="https://rsarchive.org/Biodynamics/" target="_blank" rel="noopener">Biodynamics list</a></div>
+<div class="card"><div class="tag">GA 327 · 1924</div><h4>The Agriculture Course</h4><p>Where biodynamic farming starts.</p><a class="buy" href="https://rsarchive.org/Biodynamics/" target="_blank" rel="noopener">Biodynamics list</a></div>
+</div>
+</section>
+
+<footer>These are Steiner's views and Waldorf tradition, not nutrition science. Check with a doctor or dietitian about a child's diet.</footer>
+</div>
+</body>
+</html>

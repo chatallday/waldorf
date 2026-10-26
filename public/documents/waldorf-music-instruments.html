@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Waldorf Music and Instruments</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f5ede0;--warm:#efe3cf;--deep:#e8d8bd;--ink:#3b2a1a;--soft:#6b5840;--rust:#a8492a;--moss:#5a6b3f;--wool:#b8a583;--shadow:rgba(59,42,26,.08);--btn:#fff8ee;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#211a12;--warm:#2b2218;--deep:#41341f;--ink:#efe3cf;--soft:#c9b898;--rust:#e0825f;--moss:#a5b87c;--wool:#8a7558;--shadow:rgba(0,0,0,.3);--btn:#211a12;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#211a12;--warm:#2b2218;--deep:#41341f;--ink:#efe3cf;--soft:#c9b898;--rust:#e0825f;--moss:#a5b87c;--wool:#8a7558;--shadow:rgba(0,0,0,.3);--btn:#211a12;color-scheme:dark}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'EB Garamond',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.6;font-size:19px}
+.container{max-width:980px;margin:0 auto;padding:56px 24px 90px}
+header{text-align:center;margin-bottom:36px;padding-bottom:32px;border-bottom:1px solid var(--deep)}
+.eyebrow,.tag,.toc-title{font-family:'Caveat',cursive;color:var(--rust)}
+.eyebrow{font-size:24px}
+h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,6vw,56px);line-height:1.1;margin:6px 0 14px}
+.subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--soft);max-width:620px;margin:0 auto}
+.intro{max-width:700px;margin:0 auto 40px;color:var(--soft);font-size:18px}
+.intro p+p{margin-top:12px}
+.toc{background:var(--warm);border:1px solid var(--deep);border-radius:4px;padding:18px 28px;margin-bottom:48px;box-shadow:0 2px 8px var(--shadow)}
+.toc a{color:var(--ink);text-decoration:none;display:inline-block;margin:4px 18px 4px 0;font-size:17px}.toc a:hover{color:var(--rust)}
+.toc-title{font-size:22px;display:block}
+section{margin-bottom:52px;scroll-margin-top:40px}
+h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:32px;color:var(--rust);line-height:1.2}
+h2 .roman{font-style:italic;font-weight:400;color:var(--wool);margin-right:10px;font-size:26px}
+.lead{font-style:italic;color:var(--soft);margin:6px 0 16px;font-size:19px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.card{background:var(--warm);border:1px solid var(--deep);border-radius:4px;padding:18px 20px;box-shadow:0 1px 4px var(--shadow);display:flex;flex-direction:column}
+.card .tag{font-size:19px}
+.card h4{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;line-height:1.2;margin-bottom:6px}
+.card p{font-size:15.5px;color:var(--soft);margin-bottom:12px;line-height:1.5}
+.card p:last-child{margin-bottom:0}
+.buy{margin-top:auto;display:inline-block;align-self:flex-start;font-family:'Caveat',cursive;font-size:21px;color:var(--rust);text-decoration:none;border:1.5px solid var(--rust);border-radius:3px;padding:3px 12px;background:var(--btn)}
+.buy:hover{background:var(--rust);color:var(--btn)}
+.tablewrap{overflow-x:auto;border:1px solid var(--deep);border-radius:4px;box-shadow:0 1px 4px var(--shadow)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:15.5px;background:var(--warm)}
+th{font-family:'Caveat',cursive;font-size:21px;color:var(--rust);text-align:left;padding:10px 14px;background:var(--deep);font-weight:600}
+td{padding:12px 14px;border-top:1px solid var(--deep);vertical-align:top;color:var(--soft);line-height:1.5}
+td:first-child{color:var(--ink);font-weight:600;white-space:nowrap}
+td:first-child span{display:block;font-weight:400;font-style:italic;font-size:14.5px;color:var(--moss)}
+td:last-child{color:var(--ink)}
+footer{text-align:center;padding-top:30px;margin-top:56px;border-top:1px solid var(--deep);color:var(--soft);font-style:italic;font-size:16px}
+@media(max-width:600px){body{font-size:18px}.container{padding:40px 16px 70px}h2{font-size:28px}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="eyebrow">Makers · Shops · Learning</div>
+<h1>Waldorf Music and Instruments</h1>
+<p class="subtitle">"The human being is a musical being, and the making of music is essential in experiencing what it is to be fully human." — Rudolf Steiner</p>
+</header>
+
+<div class="intro">
+<p>In a Waldorf school, music isn't a separate subject. It runs through the whole day. A child who grows up in a home where people sing, play instruments and mark the day with rhythm is already well fed musically by the time school starts.</p>
+<p>You don't need a Waldorf school to do this. Most of it can be done at home.</p>
+</div>
+
+<nav class="toc"><span class="toc-title">Jump to</span>
+<a href="#ages">By age</a><a href="#home">At home</a><a href="#free">Free resources</a><a href="#makers">Makers</a><a href="#shops">Shops</a><a href="#learn">Learning</a></nav>
+
+<section id="ages">
+<h2><span class="roman">I.</span>What children play, and when</h2>
+<p class="lead">A rough guide from birth through high school.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Age / grade</th><th>What the child does</th><th>Instruments</th></tr></thead>
+<tbody>
+<tr><td>Birth to 3<span>Parent and child</span></td><td>The parent sings and the child listens. Simple lullabies in the mood of the fifth. No percussion and no busy rhythms, just the human voice. A parent's voice is the first and most important instrument a child hears.</td><td>Parent's voice · Kinder lyre played by the parent · Soft bells</td></tr>
+<tr><td>Ages 3 to 7<span>Kindergarten</span></td><td>Pentatonic songs in circle time. The teacher sings and the children join in when they're ready, never pushed. Seasonal songs, nature verses and songs for moving between activities. The teacher plays a lyre to go with the singing and settle the room. Children may ring small bells or tap simple percussion.</td><td>Kinder lyre (teacher) · Pentatonic glockenspiel · Small bells · Boomwhackers (some schools)</td></tr>
+<tr><td>Grade 1<span>Age 7</span></td><td>Each child gets their own Choroi pentatonic flute and starts to play. Songs are tied to the fairy tales and the introduction of letters. Many schools bring in the lyre. Everything is learned by imitation, with no notation yet. Improvisation games and listening are practiced. Music stays in the realm of feeling.</td><td>Choroi pentatonic flute (their own) · Pentatonic lyre · Chime bars</td></tr>
+<tr><td>Grade 2<span>Age 8</span></td><td>Flute and lyre continue. Children explore contrasts: high and low, loud and soft, fast and slow. Songs about nature, the seasons, saints and fable characters. Call and response builds listening. Songs that end on a clear home note come in. First simple ensemble playing.</td><td>Choroi pentatonic flute · Pentatonic lyre · Glockenspiel</td></tr>
+<tr><td>Grade 3<span>Age 9</span></td><td>Around the nine-year change, children switch to the recorder and diatonic music. Rounds and canons start. Most Waldorf schools begin individual violin or cello lessons this year. Notation is taught formally. Songs have a clear home note and ending.</td><td>Sopranino or soprano recorder · Violin or cello (starts) · Diatonic glockenspiel</td></tr>
+<tr><td>Grades 4 and 5<span>Ages 10 to 11</span></td><td>Recorder continues and string lessons go further. Rounds, canons and the start of two-part singing. Orchestral instruments may be added. Theory begins: scales, intervals, modes and notation. Children can now hold their own part in a group, and a class orchestra forms.</td><td>Soprano recorder (C) · Violin, cello or viola · Class orchestra</td></tr>
+<tr><td>Grades 6 to 8<span>Ages 12 to 14</span></td><td>Full choir and orchestra work. Part singing, harmony and more theory. The full recorder family (soprano, alto, tenor), orchestral strings, and sometimes woodwinds, brass and percussion. Music history is linked to the history lessons. Class choir and school concerts.</td><td>Alto and tenor recorder · Orchestral instruments · Class choir · Class orchestra</td></tr>
+<tr><td>High school<span>Ages 14 and up</span></td><td>Choral society, chamber music, world music and the folk music of cultures being studied. Composition and deeper theory. School plays and musicals often have live music. Students can choose orchestra, choir, recorder ensemble or individual study.</td><td>Individual instrument · School orchestra · Choir · Composition</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="home">
+<h2><span class="roman">II.</span>Bringing it home</h2>
+<p class="lead">Start small. Singing costs nothing.</p>
+<div class="grid">
+<div class="card"><div class="tag">All families · Ages 0+</div><h4>Start with the kinder lyre</h4><p>The kinder lyre (also called a kinder harp or pentatonic lyre) is the most useful Waldorf instrument to have at home. It's tuned to the pentatonic scale, so whatever you pluck sounds fine, and you don't need to know music. Play it quietly at bedtime or rest time, or to go with singing. Kids from about 2 can pluck it. It's the instrument most often recommended first. You can get one from Choroi, Auris, Harps of Lorien and many Waldorf suppliers.</p></div>
+<div class="card"><div class="tag">All ages · All families</div><h4>Sing every day</h4><p>The most important thing you can do is sing, even if you don't like your voice. Children don't hear the flaws. They hear that you're there and you care. Sing the songs for moving between activities. Sing the seasonal songs, the meal blessing and a lullaby. Your voice is good enough.</p></div>
+<div class="card"><div class="tag">Ages 6+ · Grade 1</div><h4>The pentatonic flute</h4><p>A Choroi pentatonic flute is the first instrument a Grade 1 child gets. It has five notes and they all go together. Kids learn by copying, not by reading music. At home, you can learn alongside your child. Simple seasonal songs, lullabies and nature tunes are doable within the first few lessons. Available from Choroi.org and Waldorf instrument suppliers, roughly €25 to €35.</p></div>
+<div class="card"><div class="tag">Ages 2+ · Kindergarten</div><h4>Pentatonic glockenspiel</h4><p>The Auris pentatonic glockenspiel is a favorite home instrument. It has six or eight bars in a wooden frame and is played with a soft mallet. A child can play it alone and never hit a wrong note. Good for toddlers exploring sound and for free play. Available from Auris (aurisinstruments.com), Bella Luna Toys and Waldorf suppliers worldwide.</p></div>
+<div class="card"><div class="tag">Ages 9+ · Grade 3</div><h4>Recorder</h4><p>The soprano recorder is the standard instrument for Grades 3 to 8. It's cheap, easy to carry and sounds lovely when played well. Mollenhauer and Moeck are the German makers of wooden recorders that Waldorf schools prefer. If you can, skip plastic. Wood has a warmer tone. A decent wooden soprano recorder runs about €20 to €40. For lessons at home, look for the Waldorf recorder songbook series from various publishers.</p></div>
+<div class="card"><div class="tag">Ages 9+ · Grade 3</div><h4>Strings</h4><p>Most Waldorf schools start violin or cello in Grade 3. Renting for the first year or two is strongly recommended over buying. String teaching in Waldorf is mostly by ear and imitation. The Suzuki method fits with this and is widely used alongside it. In the early years, 10 to 15 minutes of practice every day beats an occasional long session.</p></div>
+<div class="card"><div class="tag">Ages 2 to 10 · Home circle</div><h4>Singing games and circle time</h4><p>For young kids, the singing game is about the simplest and most complete music practice there is. Movement, song, rhythm and playing together all happen at once. Three books to look for, all from WECAN: <em>Singing Games for Families, Schools and Communities</em> (Anna Rainville and Laurie Clark), <em>Dancing As We Sing</em> (Nancy Foster) and <em>Let Us Form a Ring</em> (Nancy Foster). Between them they cover what a family needs.</p></div>
+<div class="card"><div class="tag">USA</div><h4>Harps of Lorien: kinder lyres</h4><p>Raphael Weisman has made kinder lyres for over 20 years. He's one of the most trusted North American makers of pentatonic children's lyres, and his instruments are used with the Christopherus Waldorf homeschool curriculum. Good quality at a fair price.</p><a class="buy" href="https://harpsoflorien.com" target="_blank" rel="noopener">harpsoflorien.com</a></div>
+</div>
+</section>
+
+<section id="free">
+<h2><span class="roman">III.</span>Free resources</h2>
+<p class="lead">Worth bookmarking before you buy anything.</p>
+<div class="grid">
+<div class="card"><div class="tag">Free article</div><h4>"Let There Be Music" by Andrea Lyman</h4><p>The best free overview of the Waldorf music curriculum for Grades 1 to 8. It goes grade by grade through instruments, songs, skills and the reasoning behind them. Worth reading if you're a Waldorf parent or teacher.</p><a class="buy" href="https://waldorfmusic.org/let-there-be-music-the-music-curriculum-in-the-waldorf-school-grades-1-8" target="_blank" rel="noopener">waldorfmusic.org</a></div>
+<div class="card"><div class="tag">Free</div><h4>Music curriculum at waldorf-resources.org</h4><p>Descriptions of the music curriculum for every grade from 1 through 12, high school included. A free reference for teachers and parents.</p><a class="buy" href="https://waldorf-resources.org/en/vertical-curriculum/music" target="_blank" rel="noopener">waldorf-resources.org</a></div>
+<div class="card"><div class="tag">Free</div><h4>AWME recommended songbooks</h4><p>The Association for Waldorf Music Education's list of songbooks for every grade: pentatonic, diatonic, early childhood, Grades 1 to 8, folk songs and recorder. The go-to bibliography for Waldorf music.</p><a class="buy" href="https://waldorfmusic.org/resources/recommended-songbooks" target="_blank" rel="noopener">waldorfmusic.org</a></div>
+<div class="card"><div class="tag">YouTube</div><h4>Choroi music demos</h4><p>Choroi's channel shows all their instruments being played by teachers and children: flutes, lyres and glockenspiels. A good way to hear an instrument before you buy it. Search "Choroi Waldorf music."</p></div>
+<div class="card"><div class="tag">YouTube</div><h4>Waldorf circle songs and pentatonic songs</h4><p>Lots of Waldorf teachers post circle time songs, lyre playing and seasonal music. Try searching "Waldorf circle time songs," "Waldorf pentatonic lyre" or "Waldorf kindergarten music." Sarah Baldwin (Sunday with Sarah, WECAN) is a good one to start with, along with various school music teachers.</p></div>
+</div>
+</section>
+
+<section id="makers">
+<h2><span class="roman">IV.</span>Instrument makers</h2>
+<p class="lead">Who makes what.</p>
+<div class="grid">
+<div class="card"><div class="tag">Germany</div><h4>Choroi</h4><p>The best-known Waldorf instrument maker. Developed with the Goetheanum Medical Section. Their workshops employ disabled and disadvantaged workers. Pentatonic flutes in pear or cherry wood (440 Hz and 432 Hz), plus lyres, harps and glockenspiels.</p><a class="buy" href="https://choroi.org" target="_blank" rel="noopener">choroi.org</a></div>
+<div class="card"><div class="tag">Sweden</div><h4>Auris</h4><p>Pentatonic and diatonic glockenspiels, xylophones, and children's harps and lyres, in maple and birch. Widely used in Waldorf schools.</p></div>
+<div class="card"><div class="tag">Germany</div><h4>Mollenhauer</h4><p>High-quality wooden recorders in soprano, alto and tenor. Popular in the upper grades.</p></div>
+<div class="card"><div class="tag">Germany</div><h4>Moeck</h4><p>Wooden recorders, used from Grade 3 on.</p></div>
+<div class="card"><div class="tag">Germany</div><h4>Hokema</h4><p>Kalimbas in natural cherry wood, in pentatonic tunings (B5, B9, B17).</p></div>
+<div class="card"><div class="tag">Germany</div><h4>Bartl</h4><p>Harmonicas, widely used in the lower grades.</p></div>
+</div>
+</section>
+
+<section id="shops">
+<h2><span class="roman">V.</span>Where to buy</h2>
+<p class="lead">Retailers that carry Waldorf instruments.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Shop</th><th>Country</th><th>Brands and range</th></tr></thead>
+<tbody>
+<tr><td>Acorns &amp; Twigs</td><td>USA</td><td>Choroi, Auris, Aura, Moeck, Mollenhauer. Full range, including replacement strings and mallets.</td></tr>
+<tr><td>Alder &amp; Alouette</td><td>USA</td><td>Choroi, Auris, Moeck, Mollenhauer, plus lyres, harps and flutes.</td></tr>
+<tr><td>Waldorfshop EU</td><td>Ireland / EU</td><td>Choroi, Auris, Hokema, Bartl, Decor. Very broad selection.</td></tr>
+<tr><td>The Waldorf Shop USA</td><td>USA</td><td>Pentatonic instruments, lyres and flutes.</td></tr>
+<tr><td>Bella Luna Toys</td><td>USA</td><td>Rhythm instruments for babies, plus glockenspiels, xylophones, ukuleles and kalimbas.</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="learn">
+<h2><span class="roman">VI.</span>Learning more</h2>
+<p class="lead">Training, songbooks and programs.</p>
+<div class="grid">
+<div class="card"><div class="tag">Spring Valley, New York</div><h4>Eurythmy Spring Valley</h4><p>Adult eurythmy training. Eurythmy is the movement art Rudolf Steiner developed.</p></div>
+<div class="card"><div class="tag">Homeschool</div><h4>Hearth &amp; Gnome (Kimberly Parsons)</h4><p>The Music Unfolds program for Waldorf homeschoolers.</p><a class="buy" href="https://hearthandgnome.com" target="_blank" rel="noopener">hearthandgnome.com</a></div>
+<div class="card"><div class="tag">Songbooks</div><h4>WECAN Publications</h4><p>Songs and circle games: <em>A Day Full of Song</em> (Lonsky), <em>Merrily We Sing</em> (Willwerth) and <em>Singing Games for Families</em> (Laurie Clark).</p><a class="buy" href="https://waldorfearlychildhood.org" target="_blank" rel="noopener">waldorfearlychildhood.org</a></div>
+<div class="card"><div class="tag">Songbooks</div><h4>Wynstones Press</h4><p>Song collections with stories and verses for kindergartens: <em>Spindrift</em>, <em>Gateways</em> and <em>All Year Round</em>.</p></div>
+<div class="card"><div class="tag">Teacher training</div><h4>Sunbridge Institute: Music Certificate</h4><p>A four-week certificate for Waldorf elementary music teachers.</p><a class="buy" href="https://sunbridge.edu" target="_blank" rel="noopener">sunbridge.edu</a></div>
+</div>
+</section>
+
+<footer>Prices are approximate and may have changed.</footer>
+</div>
+</body>
+</html>

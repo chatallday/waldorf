@@ -1,0 +1,97 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": [
+    "F:/Mike d drive/Mike Webs/mAIstermind.com/projects/opencode-config/INSTRUCTIONS.md"
+  ],
+  "skills": {
+    "paths": [
+      "F:/Mike d drive/Mike Webs/mAIstermind.com/projects/opencode-config/skills",
+      "C:/Users/470 G3/.agents/skills/openrouter-team-skills/skills"
+    ]
+  },
+  "mcp": {
+    "teable-tools": {
+      "type": "local",
+      "command": [
+        "node",
+        "F:/Mike d drive/Mike Webs/mAIstermind.com/projects/opencode-config/teable-mcp/server.mjs"
+      ],
+      "enabled": true
+    },
+    "memory-server": {
+      "type": "local",
+      "command": [
+        "node",
+        "F:/Mike d drive/Mike Webs/mAIstermind.com/projects/opencode-config/teable-mcp/memory-server.mjs"
+      ],
+      "enabled": true
+    }
+  },
+  "provider": {
+    "omniroute": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "OmniRoute",
+      "options": {
+        "baseURL": "http://localhost:20128/v1",
+        "apiKey": "sk-omniroute-free"
+      },
+      "models": {
+        "auto/coding": { "name": "Coding Auto (OmniRoute managed)" },
+        "auto/best-free": { "name": "Best Free (auto-fallback)" },
+        "auto/coding:free": { "name": "Coding Free (auto-fallback)" },
+        "openrouter/openrouter/free": { "name": "OpenRouter Free Models Router" },
+        "oc/deepseek-v4-flash-free": { "name": "DeepSeek V4 Flash Free" },
+        "oc/big-pickle": { "name": "Big Pickle (Free)" },
+        "oc/minimax-m3-free": { "name": "MiniMax M3 Free" },
+        "oc/nemotron-3-super-free": { "name": "Nemotron 3 Super Free" },
+        "oc/qwen3.6-plus-free": { "name": "Qwen3.6 Plus Free" }
+      }
+    },
+    "openrouter": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "OpenRouter",
+      "options": {
+        "baseURL": "https://openrouter.ai/api/v1",
+        "apiKey": "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"
+      },
+      "models": {
+        "google/gemma-4-26b-a4b-it:free": { "name": "Gemma 4 26B (Free)" },
+        "google/gemma-4-31b-it:free": { "name": "Gemma 4 31B (Free)" },
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": { "name": "Nemotron 3 Omni (Free)" },
+        "nvidia/nemotron-3-super-120b-a12b:free": { "name": "Nemotron 3 Super (Free)" },
+        "openai/gpt-4o-mini": { "name": "GPT-4o mini" },
+        "openai/gpt-5-mini": { "name": "GPT-5 mini" },
+        "openai/gpt-5-nano": { "name": "GPT-5 nano" },
+        "google/gemini-2.5-flash": { "name": "Gemini 2.5 Flash" },
+        "google/gemini-2.5-flash-lite": { "name": "Gemini 2.5 Flash-Lite" },
+        "anthropic/claude-haiku-4.5": { "name": "Claude Haiku 4.5" },
+        "anthropic/claude-sonnet-4.6": { "name": "Claude Sonnet 4.6" },
+        "deepseek/deepseek-chat-v3-0324": { "name": "DeepSeek V3.1 Chat" },
+        "deepseek/deepseek-r1": { "name": "DeepSeek R1" },
+        "moonshotai/kimi-k2.6": { "name": "Kimi K2.6" },
+        "qwen/qwen3-coder": { "name": "Qwen3 Coder" },
+        "z-ai/glm-4.5": { "name": "GLM 4.5" }
+      }
+    }
+  },
+  "model": "omniroute/auto/best-free",
+  "small_model": "omniroute/auto/best-free",
+  "agent": {
+    "build": {
+      "mode": "primary",
+      "model": "omniroute/auto/best-free",
+      "permission": {
+        "edit": "ask",
+        "bash": "ask"
+      }
+    },
+    "plan": {
+      "mode": "primary",
+      "model": "omniroute/auto/best-free",
+      "permission": {
+        "edit": "deny",
+        "bash": "deny"
+      }
+    }
+  }
+}

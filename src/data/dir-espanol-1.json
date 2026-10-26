@@ -1,0 +1,489 @@
+{
+  "songs": [
+    "Zen zen zen, abejita ven",
+    "En una casita duerme una liebrecita",
+    "Soy el gallo Tipetón",
+    "Libélula lila, libélula azul",
+    "Mariposa revoltosa",
+    "Tararí, tarará (pentatónica)",
+    "Caballito de cartón",
+    "Manzana y pera",
+    "Monte arriba, monte abajo",
+    "Los colores del arcoíris",
+    "Cinco estrellitas en el cielo",
+    "La semilla en la tierra",
+    "El abejorro (ronda con gestos)",
+    "Caracol, caracol, saca tus cuernos al sol",
+    "Lluvia, lluvia, ven a jugar",
+    "El conejito de pascua",
+    "El pajarito (juego de manos)",
+    "Flores de primavera (ronda)",
+    "El cuco ya llegó",
+    "El arroyo corre claro",
+    "La rana canta en el charco",
+    "Pascua florida (canción de fiesta)",
+    "Mariposa, ¿de qué color eres?",
+    "El gusanito de seda",
+    "Sube, sube, pequeño brote",
+    "El sol despierta (ronda matutina)",
+    "El jardín florece",
+    "Nido de pájaros (juego de dedos)",
+    "Gira, gira la rueda",
+    "El viento suave de marzo",
+    "Sembrando, sembrando (ronda agrícola)",
+    "El goteo de la lluvia (juego de dedos)",
+    "Ranita verde (canto y salto)",
+    "Mi pequeño caracol de jardín",
+    "¡Qué bonita es la primavera!",
+    "La mariquita (juego de dedos)",
+    "Los árboles florecen",
+    "Vuelo de golondrinas",
+    "Brota la flor en el campo",
+    "El arco iris (ronda con colores)",
+    "La abeja y la flor (ronda)",
+    "Hola, señor sol (saludo matinal)",
+    "Tierra mía, tierra buena",
+    "El prado verde y el cielo azul",
+    "Canción del huerto",
+    "La cigüeña ha llegado",
+    "El río corre alegre",
+    "Pequeña semilla (verso y movimiento)",
+    "Ronda de mayo",
+    "La luna de abril",
+    "Un barco navegando está (Ringurín y Ringurán)",
+    "Un niño a un árbol subió",
+    "El sol de verano (ronda)",
+    "Las olas del mar (juego de movimiento)",
+    "Fuego de San Juan",
+    "En el bosque de verano",
+    "El molino y el río",
+    "Muele muele molinero",
+    "La cigarra y el grillo",
+    "Vamos al campo (ronda campestre)",
+    "La cosecha llega (canción de la mies)",
+    "El panadero amasa (ronda de oficios)",
+    "Brilla, brilla, estrellita",
+    "La luciérnaga en la noche",
+    "El río baja cantando",
+    "El pescador y sus redes",
+    "Canción del sol de mediodía",
+    "Las vacas en el prado",
+    "El pastor y su rebaño",
+    "Los frutos del verano",
+    "Ronda del agua y el fuego",
+    "El trigo dorado (canción)",
+    "Vuela, vuela mariposa",
+    "La noche estrellada",
+    "El canto del grillo nocturno",
+    "Danza del sol naciente",
+    "Arriero, arriero, camina",
+    "La fuente de la plaza",
+    "Sandía, sandía (ronda de frutas)",
+    "El barco de papel (ronda)",
+    "La hormiguita laboriosa",
+    "El verano ya llegó (canción festiva)",
+    "Salta, salta ranita",
+    "El carro del heno",
+    "Al agua, patos",
+    "Canción del pajarito en el nido",
+    "El toro y la luna (canción popular)",
+    "El zapatero remendón (ronda de oficios)",
+    "La danza del verano",
+    "El sol se va a dormir",
+    "Ven a jugar (ronda libre)",
+    "El maestro constructor (ronda)",
+    "Canta el gallo en el alba",
+    "La oveja y su lana (juego)",
+    "Canción del campesino",
+    "La lluvia de verano",
+    "El gran árbol del bosque",
+    "La torre de piedra (juego de construcción)",
+    "Canción de despedida (fin de curso)",
+    "Ronda de San Juan (fiesta)",
+    "Estaba el enanito trabajando, rompompón",
+    "El farol de San Martín",
+    "Faroles, faroles (canción de farol)",
+    "Mi farol lleva luz (ronda de faroles)",
+    "El castaño y sus frutos",
+    "Las hojas caen del árbol",
+    "El viento de otoño",
+    "El erizo busca nueces",
+    "La vendimia (canción de la uva)",
+    "El puercoespín en el bosque",
+    "La ardilla guarda bellotas",
+    "El labriego ara la tierra",
+    "Las grullas emigran (canción)",
+    "El cometa vuela alto",
+    "Ronda de San Miguel (otoño)",
+    "El caballero y el dragón (Micael)",
+    "La niebla en el valle",
+    "El horno huele a pan",
+    "Cae la hoja amarilla",
+    "El oso se va a dormir (hibernación)",
+    "Canción de la lluvia de otoño",
+    "El pájaro que parte (migración)",
+    "El molino de viento (ronda)",
+    "La luna llena de otoño",
+    "El jardinero poda sus rosas",
+    "Ronda de la cosecha",
+    "El hongo y la seta (juego de dedos)",
+    "El gitano y su hoguera",
+    "La manzana roja (ronda de frutas)",
+    "San Martín comparte su capa",
+    "Otoño, otoño, ya llegaste",
+    "El grano y la espiga",
+    "El castañero en la plaza",
+    "El granero lleno (canción)",
+    "La calabaza del huerto",
+    "El tejedor y su telar (ronda)",
+    "El fuego en la chimenea",
+    "Las nubes se juntan",
+    "La tormenta llega (juego)",
+    "El cisne en el lago",
+    "Las ciruelas y las peras",
+    "Ronda del molino y el pan",
+    "El farolito tembloroso",
+    "La bruja del bosque (Halloween)",
+    "El fantasma bailarín",
+    "El enano del bosque trabaja",
+    "La hoguera de San Martín",
+    "El ciervo en el bosque",
+    "Canción de la nuez",
+    "El lobo y el zorro (juego)",
+    "Fru fru fri, qué frío hace aquí",
+    "El enano de invierno (con gestos)",
+    "Campana de Belén",
+    "Los pastores a Belén",
+    "Noche de paz (Navidad)",
+    "El niño del tambor",
+    "Rin, rin, rín, ya llega el Adviento",
+    "La corona de Adviento",
+    "La primera vela del Adviento",
+    "El villancico del portal",
+    "La estrella de Navidad",
+    "Los Reyes Magos (ronda)",
+    "El muñeco de nieve",
+    "Duérmete, niño (nana)",
+    "La Nochebuena se acerca",
+    "El belén de mi casita",
+    "Hacia Belén va una burra (villancico)",
+    "La canción de la nieve",
+    "Ronda de Navidad",
+    "El carpintero y su madera (Adviento)",
+    "El tren de Navidad (juego)",
+    "En el portal de Belén",
+    "El niño Jesús en la cuna",
+    "Los ángeles cantores",
+    "Enero, enero, mes de los Reyes",
+    "Vamos a Belén (ronda caminante)",
+    "La luna de invierno",
+    "El fuego de la hoguera",
+    "Cristales de hielo (juego de dedos)",
+    "El pastor con su rebaño (Navidad)",
+    "La noche más larga (solsticio)",
+    "El lobo en el frío",
+    "El oso duerme en su cueva",
+    "Las posadas (México/Latinoamérica)",
+    "Copo de nieve, copo de nieve",
+    "La fiesta de la luz (Candelaria)",
+    "El tejedor del tiempo de invierno",
+    "Villancico de los pastores",
+    "El cocinero y su olla (Adviento)",
+    "La vela y la oscuridad",
+    "El invierno cubre la tierra",
+    "El gnomo de la nieve",
+    "Ronda del año nuevo",
+    "Tres Reyes Magos de Oriente",
+    "La piñata (México)",
+    "El campanero y su campana",
+    "Cierra los ojos, la noche llega",
+    "Doce noches (Navidad)",
+    "El niño y la estrella",
+    "Silencio, silencio (nana de invierno)",
+    "Buenos días, padre sol / madre tierra",
+    "Canción de bienvenida al círculo",
+    "A la ronda de la ensalada",
+    "Con una mano nos saludamos",
+    "Hola, hola, ya estamos aquí",
+    "El despertador del sol",
+    "La tierra nos da su fruto (tischspruch)",
+    "Gracias a la tierra, gracias al sol",
+    "Guardemos, guardemos (canción de recoger)",
+    "Ya es hora de lavar (higiene)",
+    "La hora de la siesta",
+    "Canción de despedida (adiós)",
+    "Luna, lunita (nana)",
+    "Duérmete, mi niño (nana)",
+    "Estrellita, ¿dónde estás?",
+    "El ángel guardián (verso)",
+    "Vamos a amasar (hacer el pan)",
+    "El momento de comer",
+    "Canción del jardín (euritmia)",
+    "El saludo de los cuatro elementos",
+    "Al corro de la patata",
+    "El patio de mi casa (ronda)",
+    "Cucú, cantaba la rana",
+    "Tengo, tengo, tengo",
+    "Don Melitón (juego de palmas)",
+    "La tarara sí (folklore)",
+    "Que llueva, que llueva",
+    "Mambrú se fue a la guerra",
+    "La viudita del conde Laurel",
+    "Antón pirulero",
+    "Debajo de un botón",
+    "El rey de la selva (ronda)",
+    "Pin pon es un muñeco",
+    "La hormiguita (juego)",
+    "El lobo, el lobo (juego de corro)",
+    "Cinco lobitos",
+    "Aserrín, aserrán",
+    "Palmas palmitas",
+    "El señor Don Gato",
+    "Estaba la pájara pinta",
+    "La boda de la mariposa (México)",
+    "Arroz con leche",
+    "A la vibora de la mar (México)",
+    "Duérmete, mi amor (cuna latinoam.)",
+    "La ronda de los oficios"
+  ],
+  "books": [
+    {
+      "title": "Cancionero Estacional Waldorf — Otoño/Invierno",
+      "meta": "Belén (voz) · cancionero con QR de audio · 10 canciones estacionales ilustradas · publicado por Goteo (crowdfunding Waldorf español)"
+    },
+    {
+      "title": "Cancionero Estacional Waldorf — Primavera/Verano",
+      "meta": "Belén (voz) · cancionero con QR de audio · 10 canciones estacionales ilustradas"
+    },
+    {
+      "title": "Recursos Waldorf — Juegos de dedos, canciones y rondas (DVD)",
+      "meta": "K. Rodenas Giró & C. Guijarro Vargas · Editorial Pau de Damasc · 50 recursos educativos (juegos de dedos, canciones y rondas) · ordenados por las 4 estaciones · recopilados en 3 años de viaje por escuelas Waldorf"
+    },
+    {
+      "title": "IdeasWaldorf.com — Cancioneros Waldorf",
+      "meta": "ideaswaldorf.com · más de 330 canciones pentatónicas · 176 rondas · categorías: adviento, pascua, San Juan, San Martín, Micael, navidad y más · con partituras y flauta"
+    },
+    {
+      "title": "MúsicaWaldorfLatin",
+      "meta": "musicawaldorflatin.webnode.mx · canciones por estaciones, festivales, ritmo diario y ronda · canciones para cada grado · rítmica de flauta · para Latinoamérica y España"
+    },
+    {
+      "title": "Rumbo al Cambio — Juegos y Canciones para la Ronda (YouTube)",
+      "meta": "canal de YouTube · documentación de escuelas Waldorf en España y Latinoamérica · juegos de dedos, canciones y rondas por estación"
+    },
+    {
+      "title": "WaldorfInspiredSpanish.com — La Ronda",
+      "meta": "waldorfinspiredspanish.com · canciones y cuentos Waldorf en español · rondas, rimas y narraciones para niños"
+    },
+    {
+      "title": "CD Escola Waldorf Binissalem (Mallorca)",
+      "meta": "Escoleta Waldorf de Binissalem · canciones en catalán · colección de canciones del jardín de infancia"
+    },
+    {
+      "title": "DVD Recursos Waldorf — De mi casa al mundo",
+      "meta": "Raquel Rodríguez (Escuela Allegra, Madrid) · canciones pentatónicas del día a día del jardín Waldorf · para familias y educadores"
+    },
+    {
+      "title": "La educación del niño desde el punto de vista de la ciencia espiritual",
+      "meta": "Rudolf Steiner · Editorial Rudolf Steiner · obra fundacional de la pedagogía Waldorf"
+    },
+    {
+      "title": "Estudio general del ser humano — Edición Especial",
+      "meta": "Rudolf Steiner · Editorial Rudolf Steiner · las conferencias fundacionales para maestros Waldorf"
+    },
+    {
+      "title": "Conferencias sobre pedagogía Waldorf",
+      "meta": "Rudolf Steiner · Editorial Rudolf Steiner · colección de conferencias sobre educación"
+    },
+    {
+      "title": "Pedagogía Waldorf: Una educación hacia la libertad",
+      "meta": "Frans Carlgren · Editorial Rudolf Steiner · introducción completa a la pedagogía Waldorf · muy recomendado para padres"
+    },
+    {
+      "title": "Los años de oro: Reflexiones en torno al desarrollo infantil",
+      "meta": "Thomas J. Weihs · Ed. Rudolf Steiner · desarrollo infantil en base a la obra de Steiner"
+    },
+    {
+      "title": "Directrices de Pedagogía Waldorf desde el nacimiento hasta los 3 años",
+      "meta": "Editorial Rudolf Steiner · guía para los primeros años de vida"
+    },
+    {
+      "title": "Creando Tradiciones: Celebraciones de invierno, Navidad, Adviento y Reyes",
+      "meta": "Editorial Rudolf Steiner · para familias que celebran las fiestas del año al estilo Waldorf"
+    },
+    {
+      "title": "La educación preescolar según las enseñanzas de Rudolf Steiner",
+      "meta": "cantar, bailar, pintar, escuchar cuentos · análisis del trabajo manual en el jardín Waldorf"
+    },
+    {
+      "title": "El arte de contar cuentos",
+      "meta": "Nancy Mellon · reflexión sobre el cuento como herramienta educativa y de desarrollo"
+    },
+    {
+      "title": "Las etapas evolutivas del niño",
+      "meta": "Bernard Lievegoed · Ed. Rudolf Steiner · desarrollo en fases de 7 años (septenios)"
+    },
+    {
+      "title": "Profundización Meditativa de la Educación Waldorf",
+      "meta": "Editorial Rudolf Steiner · meditaciones para maestros"
+    }
+  ],
+  "cards": [
+    {
+      "tag": "Educadora Waldorf",
+      "name": "Raquel Rodríguez",
+      "author": "Escuela Libre Allegra, Madrid · Jardín de infancia 0–6 años",
+      "description": "Directora de la Escuela Waldorf Allegra (Madrid). Lleva más de 15 años como maestra Waldorf. Comparte canciones pentatónicas del día a día del jardín y ha creado recursos sonoros para familias y educadores en español."
+    },
+    {
+      "tag": "Proyecto editorial",
+      "name": "K. Rodenas Giró & C. Guijarro Vargas",
+      "author": "Editorial Pau de Damasc",
+      "description": "Autoras del DVD \"Recursos Waldorf — Juegos de dedos, canciones y rondas\", recopilado tras 3 años de viaje por escuelas Waldorf de España y Latinoamérica. 50 recursos ordenados por estaciones."
+    },
+    {
+      "tag": "Plataforma educativa",
+      "name": "IdeasWaldorf",
+      "author": "ideaswaldorf.com · comunidad en español",
+      "description": "Plataforma online con más de 330 canciones pentatónicas, 176 rondas y cientos de recursos para educadores Waldorf. Cubre adviento, pascua, San Juan, San Martín, Micael, navidad y el ritmo diario."
+    },
+    {
+      "tag": "Plataforma Latinoamérica",
+      "name": "MúsicaWaldorfLatin",
+      "author": "México / Latinoamérica",
+      "description": "Plataforma de recursos musicales para educadores Waldorf en Latinoamérica. Canciones por estaciones, festivales, rítmica de flauta, ronda y quehaceres del día, organizados por septenio y grado escolar."
+    },
+    {
+      "tag": "Documentalistas",
+      "name": "De Rumbo al Cambio",
+      "author": "España & Latinoamérica · YouTube",
+      "description": "Proyecto que visita, documenta y difunde iniciativas Waldorf y proyectos sostenibles. Su canal de YouTube incluye canciones y juegos de ronda de escuelas Waldorf, con instrucciones paso a paso."
+    },
+    {
+      "tag": "Editorial especializada",
+      "name": "Editorial Rudolf Steiner (España)",
+      "author": "editorialrudolfsteiner.com · desde 1975",
+      "description": "Principal editorial en español de obras de Rudolf Steiner y pedagogía Waldorf. Publica libros para educadores, familias y la formación de profesores."
+    },
+    {
+      "tag": "Madrid",
+      "name": "Escuela Libre Allegra",
+      "author": "Madrid, España · 0–6 años",
+      "description": "Jardín Waldorf de referencia en Madrid. Sus canciones pentatónicas y el trabajo de ronda sirven de modelo para muchas familias y educadores en habla hispana."
+    },
+    {
+      "tag": "Mallorca",
+      "name": "Escoleta Waldorf Binissalem",
+      "author": "Mallorca, España · catalán/español",
+      "description": "Conocida por su colección de canciones en catalán, ha publicado un CD con sus canciones del jardín. Modelo de integración lingüística y cultural en la pedagogía Waldorf."
+    },
+    {
+      "tag": "Cantabria",
+      "name": "La Casita del Duende Waldorf",
+      "author": "Sancibrián, Cantabria · Madre de día",
+      "description": "Centro Waldorf de madre de día. Comparte canciones, juegos de dedos y rondas por estación en su blog, con recursos para toda la comunidad."
+    },
+    {
+      "tag": "Chile",
+      "name": "Waldorf Corcolén",
+      "author": "Curicó, Chile",
+      "description": "Escuela Waldorf chilena que documenta versos, canciones y cuentos estacionales en español, incluyendo festividades del hemisferio sur adaptadas al calendario latinoamericano."
+    },
+    {
+      "tag": "Cuentos de hadas",
+      "name": "Hermanos Grimm",
+      "author": "versión original sin adaptar · en español",
+      "description": "Los cuentos de hadas de los Hermanos Grimm son la base de la narrativa en todos los jardines Waldorf. Se recomienda la versión fiel al original, sin adaptar para niños."
+    },
+    {
+      "tag": "Cuentos del mundo",
+      "name": "Para los niños del mundo",
+      "author": "IASWECE & Editorial Rudolf Steiner, 2014",
+      "description": "24 cuentos de África, Asia, Australia, Europa, América del Norte y del Sur, con recetas. Recopilados por maestros Waldorf de todo el mundo. Ideal para el jardín multicultural."
+    },
+    {
+      "tag": "Cuentos del jardín",
+      "name": "Cuentos infantiles Waldorf",
+      "author": "Jardín de infancia Micael · Ed. Rudolf Steiner",
+      "description": "Selección de cuentos elaborados por los maestros del jardín de infancia Micael. Para los niños más pequeños, pensados para repetir durante varias semanas."
+    },
+    {
+      "tag": "Ilustradora",
+      "name": "Daniela Drescher",
+      "author": "en español vía Urachhaus / librerías especializadas",
+      "description": "Sus libros ilustrados (elfos, gnomos, naturaleza) son muy usados en jardines Waldorf de habla hispana. Disponibles en español en tiendas especializadas."
+    },
+    {
+      "tag": "Clásico sueco",
+      "name": "Astrid Lindgren",
+      "author": "1907–2002 · en español",
+      "description": ""
+    },
+    {
+      "tag": "Clásico alemán",
+      "name": "Michael Ende",
+      "author": "1929–1995 · en español",
+      "description": "Muy leído en escuelas Waldorf de habla hispana. Sus obras fomentan la imaginación y la reflexión sobre el tiempo y los valores humanos."
+    },
+    {
+      "tag": "Mitología",
+      "name": "Mitos y Leyendas",
+      "author": "varios autores · lecturas Waldorf por grado",
+      "description": ""
+    },
+    {
+      "tag": "Literatura clásica",
+      "name": "Otros clásicos recomendados",
+      "author": "lecturas Waldorf en español",
+      "description": ""
+    },
+    {
+      "tag": "Editorial principal",
+      "name": "editorialrudolfsteiner.com",
+      "author": "",
+      "description": "Principal editorial en español de obras de Steiner y pedagogía Waldorf. Libros para padres, docentes y niños. Desde 1975."
+    },
+    {
+      "tag": "Editorial",
+      "name": "paudedamasc.com",
+      "author": "",
+      "description": "Editorial Pau de Damasc (España/Chile): obras inéditas en español de antroposofía, pedagogía Waldorf y recursos educativos. Incluye el DVD de rondas y canciones."
+    },
+    {
+      "tag": "Tienda Waldorf",
+      "name": "lasara.es",
+      "author": "",
+      "description": "Tienda especializada en materiales y libros Waldorf en español: cuentos, materiales escolares, juguetes y pedagogía."
+    },
+    {
+      "tag": "Tienda",
+      "name": "tribujito.com",
+      "author": "",
+      "description": "Selección de libros y cuentos Waldorf en español, especialmente de Editorial ING Edicions. Cuidada selección pedagógica."
+    },
+    {
+      "tag": "Canciones online",
+      "name": "ideaswaldorf.com",
+      "author": "",
+      "description": "Más de 330 canciones pentatónicas, rondas, partituras y recursos para la ronda. Categorías por festividad y estación."
+    },
+    {
+      "tag": "Latinoamérica",
+      "name": "musicawaldorflatin.webnode.mx",
+      "author": "",
+      "description": "Plataforma de canciones Waldorf para Latinoamérica: estaciones, festivales, rítmica de flauta, canciones por grado."
+    },
+    {
+      "tag": "Blog & recursos",
+      "name": "demicasaalmundo.com",
+      "author": "",
+      "description": "Blog de pedagogía Waldorf en español con canciones, recursos para familias y artículos sobre el ritmo del día."
+    },
+    {
+      "tag": "YouTube",
+      "name": "De Rumbo al Cambio (YouTube)",
+      "author": "",
+      "description": "Canal con juegos y canciones de la ronda, documentación de escuelas Waldorf en España y Latinoamérica."
+    }
+  ]
+}

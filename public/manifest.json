@@ -1,0 +1,18 @@
+{
+  "short_name": "Waldorf Path",
+  "name": "The Waldorf Path",
+  "description": "A Curated Directory and Resource Hub for Waldorf Living",
+  "icons": [
+    {
+      "src": "/waldorf-favicon sq cutout.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#fbf9f4",
+  "theme_color": "#7a8c6e",
+  "display": "standalone",
+  "orientation": "portrait"
+}

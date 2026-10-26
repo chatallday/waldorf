@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Waldorf Directory</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: #faf9f6; color: #2c2c2a; }
+.dir { max-width: 980px; margin: 0 auto; padding: 2rem 1.5rem; }
+.dir-header { text-align: center; padding: 2.5rem 1rem 2rem; border-bottom: 1px solid #d3d1c7; margin-bottom: 1.5rem; }
+.dir-header h1 { font-size: 30px; font-weight: normal; letter-spacing: 0.12em; color: #2c2c2a; }
+.dir-header p { font-size: 13px; color: #888780; margin-top: 8px; letter-spacing: 0.06em; }
+.nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2rem; justify-content: center; }
+.nav button { font-size: 13px; padding: 7px 16px; border-radius: 99px; border: 1px solid #b4b2a9; background: transparent; color: #5f5e5a; cursor: pointer; font-family: Georgia, serif; transition: all 0.15s; }
+.nav button:hover, .nav button.active { background: #2c2c2a; color: #faf9f6; border-color: #2c2c2a; }
+.section { display: none; }
+.section.active { display: block; }
+.sec-title { font-size: 22px; font-weight: normal; color: #2c2c2a; padding-bottom: 0.75rem; border-bottom: 1px solid #d3d1c7; letter-spacing: 0.03em; }
+.sec-sub { font-size: 13px; color: #888780; margin: 0.5rem 0 1.75rem; line-height: 1.6; }
+.divider { font-size: 11px; font-weight: bold; color: #b4b2a9; letter-spacing: 0.1em; text-transform: uppercase; margin: 2rem 0 1rem; padding-bottom: 5px; border-bottom: 1px solid #d3d1c7; }
+/* Season grid */
+.season-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 16px; margin-bottom: 1.5rem; }
+.season-block { border-radius: 10px; border: 1px solid #d3d1c7; overflow: hidden; }
+.season-head { padding: 10px 16px; font-size: 13px; font-weight: bold; letter-spacing: 0.04em; }
+.s-spring .season-head { background: #c0dd97; color: #27500a; }
+.s-summer .season-head { background: #fac775; color: #633806; }
+.s-autumn .season-head { background: #f5c4b3; color: #712b13; }
+.s-winter .season-head { background: #b5d4f4; color: #0c447c; }
+.s-daily .season-head { background: #cecbf6; color: #3c3489; }
+.s-folk .season-head { background: #9fe1cb; color: #085041; }
+.season-body { padding: 10px 16px; background: #fff; }
+.song-item { font-size: 12.5px; color: #5f5e5a; line-height: 1.85; display: flex; align-items: baseline; gap: 8px; border-bottom: 1px solid #f1efe8; }
+.song-item:last-child { border-bottom: none; }
+.song-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; margin-top: 8px; }
+.s-spring .song-dot { background: #639922; }
+.s-summer .song-dot { background: #ba7517; }
+.s-autumn .song-dot { background: #d85a30; }
+.s-winter .song-dot { background: #185fa5; }
+.s-daily .song-dot { background: #7f77dd; }
+.s-folk .song-dot { background: #1d9e75; }
+.tip { background: #f1efe8; border-radius: 8px; padding: 1rem 1.25rem; font-size: 13px; color: #5f5e5a; line-height: 1.7; margin-bottom: 2rem; font-style: italic; }
+/* Cards */
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; margin-bottom: 2rem; }
+.card { background: #fff; border: 1px solid #d3d1c7; border-radius: 10px; padding: 1.1rem 1.25rem; }
+.card-tag { font-size: 11px; padding: 3px 9px; border-radius: 99px; display: inline-block; margin-bottom: 8px; font-weight: bold; letter-spacing: 0.04em; }
+.tag-green { background: #c0dd97; color: #27500a; }
+.tag-purple { background: #cecbf6; color: #3c3489; }
+.tag-amber { background: #fac775; color: #633806; }
+.tag-coral { background: #f5c4b3; color: #712b13; }
+.tag-blue { background: #b5d4f4; color: #0c447c; }
+.tag-teal { background: #9fe1cb; color: #085041; }
+.card h3 { font-size: 16px; font-weight: normal; color: #2c2c2a; margin-bottom: 3px; }
+.card .author { font-size: 12px; color: #888780; margin-bottom: 8px; font-style: italic; }
+.card p { font-size: 13px; color: #5f5e5a; line-height: 1.6; }
+.card ul { margin-top: 8px; }
+.card ul li { font-size: 12px; color: #5f5e5a; line-height: 1.9; list-style: none; padding-left: 14px; position: relative; }
+.card ul li::before { content: '—'; position: absolute; left: 0; color: #b4b2a9; }
+/* Book list */
+.book-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 2rem; }
+.book-item { background: #fff; border: 1px solid #d3d1c7; border-radius: 8px; padding: 1rem 1.25rem; display: flex; gap: 14px; align-items: flex-start; }
+.book-icon { font-size: 15px; flex-shrink: 0; width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+.bi-g { background: #c0dd97; color: #27500a; }
+.bi-a { background: #fac775; color: #633806; }
+.bi-s { background: #9fe1cb; color: #085041; }
+.bi-p { background: #cecbf6; color: #3c3489; }
+.book-info h4 { font-size: 14px; font-weight: bold; color: #2c2c2a; }
+.book-info .meta { font-size: 12px; color: #888780; margin-top: 4px; line-height: 1.55; }
+.link-list a { font-size: 13px; color: #185fa5; display: block; line-height: 2.2; text-decoration: none; border-bottom: 1px solid #f1efe8; padding-left: 8px; }
+.link-list a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="dir">
+  <div class="dir-header">
+    <h1>THE WALDORF DIRECTORY</h1>
+    <p>Kreislieder &nbsp;·&nbsp; Reigenlieder &nbsp;·&nbsp; Liederbücher &nbsp;·&nbsp; Autoren &nbsp;·&nbsp; Kinderbücher &nbsp;·&nbsp; Fachliteratur &nbsp;·&nbsp; Bezugsquellen</p>
+  </div>
+
+  <div class="nav">
+    <button class="active" onclick="show('circle',event)">Kreislieder</button>
+    <button onclick="show('books_songs',event)">Liederbücher</button>
+    <button onclick="show('authors',event)">Reigen-Autoren</button>
+    <button onclick="show('children',event)">Kinderbücher</button>
+    <button onclick="show('adults',event)">Für Erwachsene</button>
+    <button onclick="show('where',event)">Bezugsquellen</button>
+  </div>
+
+  <!-- ═══════════════════════════════ KREISLIEDER ═══════════════════════════════ -->
+  <div id="circle" class="section active">
+    <div class="sec-title">Waldorf Kreislieder & Reigenlieder</div>
+    <p class="sec-sub">Über 120 pentatonische Lieder, Reigen und Kreislieder aus deutschen Waldorfkindergärten — geordnet nach Jahreszeit, Tageszeit und Anlass. Max. 50 Titel pro Abschnitt.</p>
+
+    <div class="season-grid">
+
+      <div class="season-block s-spring">
+        <div class="season-head">🌸 Frühling (bis zu 50)</div>
+        <div class="season-body">
+          <div class="song-item"><span class="song-dot"></span>Alle Vögel sind schon da</div>
+          <div class="song-item"><span class="song-dot"></span>Im Märzen der Bauer</div>
+          <div class="song-item"><span class="song-dot"></span>Die Weidenkätzchen</div>
+          <div class="song-item"><span class="song-dot"></span>Mutter Erde (Fingerspiel)</div>
+          <div class="song-item"><span class="song-dot"></span>Klein Häschen</div>
+          <div class="song-item"><span class="song-dot"></span>Ringelrangel Löwenzahn</div>
+          <div class="song-item"><span class="song-dot"></span>Durch den ersten Sonnenbogen</div>
+          <div class="song-item"><span class="song-dot"></span>Öffne Gott ein kleines Tor</div>
+          <div class="song-item"><span class="song-dot"></span>Rumsdidel, dumsdidel</div>
+          <div class="song-item"><span class="song-dot"></span>Widewidewenne</div>
+          <div class="song-item"><span class="song-dot"></span>Es tönen die Lieder</div>
+          <div class="song-item"><span class="song-dot"></span>Das Veilchen und der Has</div>
+          <div class="song-item"><span class="song-dot"></span>Singt ein Vogel im Märzenwald</div>
+          <div class="song-item"><span class="song-dot"></span>Komm herein</div>
+          <div class="song-item"><span class="song-dot"></span>Klein Häschen wollt spazieren gehn</div>
+          <div class="song-item"><span class="song-dot"></span>Schneeglöckchenspiel</div>
+          <div class="song-item"><span class="song-dot"></span>Das Lied vom Regenbogenfisch</div>
+          <div class="song-item"><span class="song-dot"></span>Knulle und Knolle (Ellersiek)</div>
+          <div class="song-item"><span class="song-dot"></span>Der Frost hat festes Eis gemacht</div>
+          <div class="song-item"><span class="song-dot"></span>Wir gehen heiter im Kreis</div>
+          <div class="song-item"><span class="song-dot"></span>Schmetterling und Käferlein</div>
+          <div class="song-item"><span class="song-dot"></span>Mutter Erde, wo sind die Blümelein</div>
+          <div class="song-item"><span class="song-dot"></span>Die Osterhasen</div>
+          <div class="song-item"><span class="song-dot"></span>Dornröschenspiel</div>
+          <div class="song-item"><span class="song-dot"></span>Es biegen sich die Bäume</div>
+          <div class="song-item"><span class="song-dot"></span>Regentropfen fallen nieder</div>
+          <div class="song-item"><span class="song-dot"></span>Hopsasa, der Frühling kommt</div>
+          <div class="song-item"><span class="song-dot"></span>Alle meine Entchen</div>
+          <div class="song-item"><span class="song-dot"></span>Forelle, Forelle (Reigen)</div>
+          <div class="song-item"><span class="song-dot"></span>Das Häschen und die Rübe</div>
+          <div class="song-item"><span class="song-dot"></span>Im Frühlingswald, da jubiliert</div>
+          <div class="song-item"><span class="song-dot"></span>Sonnenschein, komm herein</div>
+          <div class="song-item"><span class="song-dot"></span>Froschkönig-Reigen</div>
+          <div class="song-item"><span class="song-dot"></span>Täubchen, flieg aus</div>
+          <div class="song-item"><span class="song-dot"></span>Es war einmal ein Gärtner</div>
+          <div class="song-item"><span class="song-dot"></span>Biene, Biene summ</div>
+          <div class="song-item"><span class="song-dot"></span>Heidideldum (Frühlingsrund)</div>
+          <div class="song-item"><span class="song-dot"></span>Der Kuckuck und der Esel</div>
+          <div class="song-item"><span class="song-dot"></span>Marienkäfer flieg</div>
+          <div class="song-item"><span class="song-dot"></span>Blüht ein Blümlein im Wald</div>
+          <div class="song-item"><span class="song-dot"></span>Jetzt fahr'n wir übern See</div>
+          <div class="song-item"><span class="song-dot"></span>Hummelsummen (Bewegungslied)</div>
+          <div class="song-item"><span class="song-dot"></span>Wer hat die schönsten Schäfchen</div>
+          <div class="song-item"><span class="song-dot"></span>Schlaf, Kindlein, schlaf (Ostervers)</div>
+          <div class="song-item"><span class="song-dot"></span>Summ, summ, summ, Bienchen summ herum</div>
+          <div class="song-item"><span class="song-dot"></span>Bachelor Bächlein (Reigen)</div>
+          <div class="song-item"><span class="song-dot"></span>Kommt ein Vogel geflogen</div>
+          <div class="song-item"><span class="song-dot"></span>Kuckuck, kuckuck, ruft aus dem Wald</div>
+          <div class="song-item"><span class="song-dot"></span>Maiglöckchen und die Blümelein</div>
+          <div class="song-item"><span class="song-dot"></span>Wir wollen alle fröhlich sein</div>
+        </div>
+      </div>
+
+      <div class="season-block s-summer">
+        <div class="season-head">☀️ Sommer / Johanni (bis zu 50)</div>
+        <div class="season-body">
+          <div class="song-item"><span class="song-dot"></span>Der Sommer zieht von hinnen</div>
+          <div class="song-item"><span class="song-dot"></span>Liebes, leichtes, luftges Ding</div>
+          <div class="song-item"><span class="song-dot"></span>Fahr, mein Schifflein</div>
+          <div class="song-item"><span class="song-dot"></span>Holzschuhtanz</div>
+          <div class="song-item"><span class="song-dot"></span>Muss wandern</div>
+          <div class="song-item"><span class="song-dot"></span>Wir fahren unsern Weizen ein</div>
+          <div class="song-item"><span class="song-dot"></span>Mahle, Mühle, mahle</div>
+          <div class="song-item"><span class="song-dot"></span>Lachend kommt der Sommer</div>
+          <div class="song-item"><span class="song-dot"></span>Jetzt kommt der Sommer in das Land</div>
+          <div class="song-item"><span class="song-dot"></span>Sommer, Sommer du bist schön</div>
+          <div class="song-item"><span class="song-dot"></span>Im Sommer, im Sommer</div>
+          <div class="song-item"><span class="song-dot"></span>Herzlich tut mich erfreuen</div>
+          <div class="song-item"><span class="song-dot"></span>Wir tragen den Sommerbaum</div>
+          <div class="song-item"><span class="song-dot"></span>Glühwürmchen-Reigen</div>
+          <div class="song-item"><span class="song-dot"></span>Das Karussell dreht sich</div>
+          <div class="song-item"><span class="song-dot"></span>Die tanzende Marei</div>
+          <div class="song-item"><span class="song-dot"></span>Wandernder Springer</div>
+          <div class="song-item"><span class="song-dot"></span>In unserem Sommergarten</div>
+          <div class="song-item"><span class="song-dot"></span>Storch, Storch, steige</div>
+          <div class="song-item"><span class="song-dot"></span>Ein Sommertag, ein Sommertag</div>
+          <div class="song-item"><span class="song-dot"></span>Sonnenstern (Johanni-Lied)</div>
+          <div class="song-item"><span class="song-dot"></span>Heissa Kathreinerle</div>
+          <div class="song-item"><span class="song-dot"></span>Sommerwind, Sommerwind</div>
+          <div class="song-item"><span class="song-dot"></span>Auf kommt der Sommer</div>
+          <div class="song-item"><span class="song-dot"></span>Es klappert die Mühle am rauschenden Bach</div>
+          <div class="song-item"><span class="song-dot"></span>Guten Morgen, Herr Bäcker</div>
+          <div class="song-item"><span class="song-dot"></span>Unter dem Birnbaum</div>
+          <div class="song-item"><span class="song-dot"></span>Bunt sind schon die Wälder (Übergang)</div>
+          <div class="song-item"><span class="song-dot"></span>Im Häuschen mit fünf Stübchen</div>
+          <div class="song-item"><span class="song-dot"></span>Der Mühlenrad-Reigen</div>
+          <div class="song-item"><span class="song-dot"></span>Wasser, Erde, Feuer, Luft</div>
+          <div class="song-item"><span class="song-dot"></span>Tanzen und Springen (Sommerreigen)</div>
+          <div class="song-item"><span class="song-dot"></span>Hejo, Sonnenschein</div>
+          <div class="song-item"><span class="song-dot"></span>Johannisfeuer brennt</div>
+          <div class="song-item"><span class="song-dot"></span>Sommervogel flieg</div>
+          <div class="song-item"><span class="song-dot"></span>Es war eine Mutter (Erntelied)</div>
+          <div class="song-item"><span class="song-dot"></span>Bauernlied (Sommer)</div>
+          <div class="song-item"><span class="song-dot"></span>Das Fischlein in der Tiefe</div>
+          <div class="song-item"><span class="song-dot"></span>Hampelmann-Reigen</div>
+          <div class="song-item"><span class="song-dot"></span>Zeigt her eure Füßchen</div>
+          <div class="song-item"><span class="song-dot"></span>Wir fliegen, wir fliegen (Schmetterling)</div>
+          <div class="song-item"><span class="song-dot"></span>Steckenpferd-Turnier</div>
+          <div class="song-item"><span class="song-dot"></span>Rosenstock, Holderblüt</div>
+          <div class="song-item"><span class="song-dot"></span>Gaudeamus igitur (Schulkind-Abschied)</div>
+          <div class="song-item"><span class="song-dot"></span>Sonne, geh schlafen</div>
+          <div class="song-item"><span class="song-dot"></span>Mond ist aufgegangen</div>
+          <div class="song-item"><span class="song-dot"></span>Heio, Schatz, gute Nacht</div>
+          <div class="song-item"><span class="song-dot"></span>Kehr ein bei mir (Abendlied)</div>
+          <div class="song-item"><span class="song-dot"></span>Abends wenn die Sterne leuchten</div>
+          <div class="song-item"><span class="song-dot"></span>Guten Abend, gute Nacht</div>
+        </div>
+      </div>
+
+      <div class="season-block s-autumn">
+        <div class="season-head">🍂 Herbst / Michaeli (bis zu 50)</div>
+        <div class="season-body">
+          <div class="song-item"><span class="song-dot"></span>Spannenlanger Hansel</div>
+          <div class="song-item"><span class="song-dot"></span>Hejo, spann den Wagen an</div>
+          <div class="song-item"><span class="song-dot"></span>Mein Drachen</div>
+          <div class="song-item"><span class="song-dot"></span>Der Herbst ist da</div>
+          <div class="song-item"><span class="song-dot"></span>Ein Männlein steht im Walde</div>
+          <div class="song-item"><span class="song-dot"></span>Wenn der frische Herbstwind weht</div>
+          <div class="song-item"><span class="song-dot"></span>Wind, Wind, sause</div>
+          <div class="song-item"><span class="song-dot"></span>Der Herbst hat bunte Blätter</div>
+          <div class="song-item"><span class="song-dot"></span>Leise, leise, aufgepasst</div>
+          <div class="song-item"><span class="song-dot"></span>Falle, falle, gelbes Blatt</div>
+          <div class="song-item"><span class="song-dot"></span>Lauter kleine grüne Igel</div>
+          <div class="song-item"><span class="song-dot"></span>Ging ein Weiblein Nüsse schütteln</div>
+          <div class="song-item"><span class="song-dot"></span>Heia hussassa, der Herbst ist da</div>
+          <div class="song-item"><span class="song-dot"></span>Nüsse auf den Teller, Birnen in den Keller</div>
+          <div class="song-item"><span class="song-dot"></span>Es biegen sich die Bäume</div>
+          <div class="song-item"><span class="song-dot"></span>Sieben Schwalben</div>
+          <div class="song-item"><span class="song-dot"></span>Fort, fort, fort und fort (Vogelabschied)</div>
+          <div class="song-item"><span class="song-dot"></span>In Mutters Stübele</div>
+          <div class="song-item"><span class="song-dot"></span>Nebel, Nebel, weißer Hauch</div>
+          <div class="song-item"><span class="song-dot"></span>Blättertanz (Reigen)</div>
+          <div class="song-item"><span class="song-dot"></span>Ich geh mit meiner Laterne</div>
+          <div class="song-item"><span class="song-dot"></span>Laterne, Laterne</div>
+          <div class="song-item"><span class="song-dot"></span>Sankt Martin ritt durch Schnee und Wind</div>
+          <div class="song-item"><span class="song-dot"></span>Kommt herab, die dunkle Nacht</div>
+          <div class="song-item"><span class="song-dot"></span>Martin, Martin (Laternen-Kanon)</div>
+          <div class="song-item"><span class="song-dot"></span>Durch die Straßen auf und nieder</div>
+          <div class="song-item"><span class="song-dot"></span>Abends, wenn es dunkel wird</div>
+          <div class="song-item"><span class="song-dot"></span>Ich hab eine feine Laterne</div>
+          <div class="song-item"><span class="song-dot"></span>Brenn, Laterne</div>
+          <div class="song-item"><span class="song-dot"></span>Wenn wir zum Erntedankfest gehn</div>
+          <div class="song-item"><span class="song-dot"></span>Erntedank-Reigen</div>
+          <div class="song-item"><span class="song-dot"></span>Michaelslied (Sonnenlicht-Kanon)</div>
+          <div class="song-item"><span class="song-dot"></span>Der Ritter mit dem Drachen (Michaeli)</div>
+          <div class="song-item"><span class="song-dot"></span>Herbstwind, Herbstwind weht bestimmt</div>
+          <div class="song-item"><span class="song-dot"></span>Drachenlied</div>
+          <div class="song-item"><span class="song-dot"></span>Kastanienkinder-Reigen</div>
+          <div class="song-item"><span class="song-dot"></span>Schau, der Mond scheint hell</div>
+          <div class="song-item"><span class="song-dot"></span>Der Nussknacker</div>
+          <div class="song-item"><span class="song-dot"></span>Bunte Blätter (Herbstlied)</div>
+          <div class="song-item"><span class="song-dot"></span>Unter dem Birnbaum</div>
+          <div class="song-item"><span class="song-dot"></span>Herbstmarkt-Reigen</div>
+          <div class="song-item"><span class="song-dot"></span>Es pfeift der Wind</div>
+          <div class="song-item"><span class="song-dot"></span>Pi-Pa-Pustewind</div>
+          <div class="song-item"><span class="song-dot"></span>Die Hexe Baba Jaga (Halloweenlied)</div>
+          <div class="song-item"><span class="song-dot"></span>Hundertzwei Gespensterchen</div>
+          <div class="song-item"><span class="song-dot"></span>Da kommt ein Igel</div>
+          <div class="song-item"><span class="song-dot"></span>Schnecke und Häschen (Schossspiel)</div>
+          <div class="song-item"><span class="song-dot"></span>Herbstwind trägt die Blätter</div>
+          <div class="song-item"><span class="song-dot"></span>Erntedank im Gärtlein</div>
+          <div class="song-item"><span class="song-dot"></span>Der Mond ist aufgegangen</div>
+        </div>
+      </div>
+
+      <div class="season-block s-winter">
+        <div class="season-head">❄️ Winter / Advent / Weihnachten (bis zu 50)</div>
+        <div class="season-body">
+          <div class="song-item"><span class="song-dot"></span>Schnee, Schnee</div>
+          <div class="song-item"><span class="song-dot"></span>Zwergenlied</div>
+          <div class="song-item"><span class="song-dot"></span>Es dunkelt schon, der Wind, der weht</div>
+          <div class="song-item"><span class="song-dot"></span>Leucht, mein Lichtlein</div>
+          <div class="song-item"><span class="song-dot"></span>Licht in der Laterne</div>
+          <div class="song-item"><span class="song-dot"></span>Tief im Gärtlein</div>
+          <div class="song-item"><span class="song-dot"></span>Schneeflöckchen, Weißröckchen</div>
+          <div class="song-item"><span class="song-dot"></span>Die drei Spatzen</div>
+          <div class="song-item"><span class="song-dot"></span>Alle Jahre wieder</div>
+          <div class="song-item"><span class="song-dot"></span>Es kommt ein Schiff geladen</div>
+          <div class="song-item"><span class="song-dot"></span>Lasst uns froh und munter sein</div>
+          <div class="song-item"><span class="song-dot"></span>Maria durch ein Dornwald ging</div>
+          <div class="song-item"><span class="song-dot"></span>Ihr Kinderlein kommet</div>
+          <div class="song-item"><span class="song-dot"></span>Josef, lieber Josef mein</div>
+          <div class="song-item"><span class="song-dot"></span>O du Fröhliche</div>
+          <div class="song-item"><span class="song-dot"></span>ABC, die Katze lief im Schnee</div>
+          <div class="song-item"><span class="song-dot"></span>Winter ade</div>
+          <div class="song-item"><span class="song-dot"></span>Adventslied (Advent, Advent)</div>
+          <div class="song-item"><span class="song-dot"></span>Wir sagen euch an den lieben Advent</div>
+          <div class="song-item"><span class="song-dot"></span>Bald nun ist Weihnachtszeit</div>
+          <div class="song-item"><span class="song-dot"></span>In der Weihnachtsbäckerei</div>
+          <div class="song-item"><span class="song-dot"></span>Backe, backe Kuchen</div>
+          <div class="song-item"><span class="song-dot"></span>Nikolaus, lieber Nikolaus</div>
+          <div class="song-item"><span class="song-dot"></span>Lasst uns das Kindlein wiegen</div>
+          <div class="song-item"><span class="song-dot"></span>Stille Nacht, heilige Nacht</div>
+          <div class="song-item"><span class="song-dot"></span>Was soll das bedeuten</div>
+          <div class="song-item"><span class="song-dot"></span>Zu Bethlehem geboren</div>
+          <div class="song-item"><span class="song-dot"></span>Vom Himmel hoch, da komm ich her</div>
+          <div class="song-item"><span class="song-dot"></span>In der Weihnachtsnacht</div>
+          <div class="song-item"><span class="song-dot"></span>Der Winter kalt ist worden</div>
+          <div class="song-item"><span class="song-dot"></span>Schneegestöber-Reigen</div>
+          <div class="song-item"><span class="song-dot"></span>Winterzwerg-Reigen</div>
+          <div class="song-item"><span class="song-dot"></span>Kalt ist der Winter</div>
+          <div class="song-item"><span class="song-dot"></span>Leise rieselt der Schnee</div>
+          <div class="song-item"><span class="song-dot"></span>Nikolauslied (Lasst uns froh)</div>
+          <div class="song-item"><span class="song-dot"></span>Tannenbaum (O Tannenbaum)</div>
+          <div class="song-item"><span class="song-dot"></span>Kling, Glöckchen, klingelingeling</div>
+          <div class="song-item"><span class="song-dot"></span>Dreikönigslied</div>
+          <div class="song-item"><span class="song-dot"></span>Schlaf, Kindlein, schlaf</div>
+          <div class="song-item"><span class="song-dot"></span>Weißer Bär komm tanzen</div>
+          <div class="song-item"><span class="song-dot"></span>Eiskristall-Reigen</div>
+          <div class="song-item"><span class="song-dot"></span>Sternlein, Sternlein, Sternenkind</div>
+          <div class="song-item"><span class="song-dot"></span>In der Adventszeit</div>
+          <div class="song-item"><span class="song-dot"></span>Lichterkind-Reigen</div>
+          <div class="song-item"><span class="song-dot"></span>Nun komm, der Heiden Heiland</div>
+          <div class="song-item"><span class="song-dot"></span>Heiligste Nacht</div>
+          <div class="song-item"><span class="song-dot"></span>Das Christkindlein kommt bald</div>
+          <div class="song-item"><span class="song-dot"></span>Auld lang syne (Jahreswechsel)</div>
+          <div class="song-item"><span class="song-dot"></span>Froh zu sein bedarf es wenig</div>
+          <div class="song-item"><span class="song-dot"></span>Ich steh an deiner Krippen hier</div>
+        </div>
+      </div>
+
+      <div class="season-block s-daily">
+        <div class="season-head">🌅 Morgen, Abend & täglich</div>
+        <div class="season-body">
+          <div class="song-item"><span class="song-dot"></span>Guten Morgen, liebe Erde</div>
+          <div class="song-item"><span class="song-dot"></span>Guten Morgen, lieber Sonnenschein</div>
+          <div class="song-item"><span class="song-dot"></span>Sonne, Sonne, komm hervor</div>
+          <div class="song-item"><span class="song-dot"></span>Ei, mein Vögelein</div>
+          <div class="song-item"><span class="song-dot"></span>Schutzengel mein</div>
+          <div class="song-item"><span class="song-dot"></span>Kein Tierlein ist auf Erden</div>
+          <div class="song-item"><span class="song-dot"></span>Erde, die uns dies gebracht</div>
+          <div class="song-item"><span class="song-dot"></span>Wenn ich groß bin</div>
+          <div class="song-item"><span class="song-dot"></span>Guten Morgen, guten Morgen</div>
+          <div class="song-item"><span class="song-dot"></span>Der Mond ist aufgegangen</div>
+          <div class="song-item"><span class="song-dot"></span>Schlaf, Kindlein, schlaf</div>
+          <div class="song-item"><span class="song-dot"></span>Weißt du, wieviel Sternlein stehen</div>
+          <div class="song-item"><span class="song-dot"></span>Morgen kommt der Weihnachtsmann</div>
+          <div class="song-item"><span class="song-dot"></span>Tischspruch: Wir reichen uns die Hände</div>
+          <div class="song-item"><span class="song-dot"></span>Erde gab uns dies Geschenk</div>
+          <div class="song-item"><span class="song-dot"></span>Die Sonne, die Sonne (Tageslied)</div>
+          <div class="song-item"><span class="song-dot"></span>Nun will die Sonne scheiden</div>
+          <div class="song-item"><span class="song-dot"></span>Abend wird es wieder (Abendlied)</div>
+          <div class="song-item"><span class="song-dot"></span>Gebet vor dem Essen</div>
+          <div class="song-item"><span class="song-dot"></span>Ich bin so froh, dass ich dabei sein darf</div>
+        </div>
+      </div>
+
+      <div class="season-block s-folk">
+        <div class="season-head">🎵 Volkslieder & ganzjährige Reigen</div>
+        <div class="season-body">
+          <div class="song-item"><span class="song-dot"></span>Brüderchen, komm tanz mit mir</div>
+          <div class="song-item"><span class="song-dot"></span>Summ, summ, summ, Bienchen</div>
+          <div class="song-item"><span class="song-dot"></span>Hänsel und Gretel</div>
+          <div class="song-item"><span class="song-dot"></span>Ein Vogel wollte Hochzeit machen</div>
+          <div class="song-item"><span class="song-dot"></span>Ringel, Ringel, Reihe</div>
+          <div class="song-item"><span class="song-dot"></span>Hoppe, hoppe Reiter</div>
+          <div class="song-item"><span class="song-dot"></span>Backe, backe Kuchen</div>
+          <div class="song-item"><span class="song-dot"></span>Häschen in der Grube</div>
+          <div class="song-item"><span class="song-dot"></span>Zeigt her eure Füßchen</div>
+          <div class="song-item"><span class="song-dot"></span>Wer hat die schönsten Schäfchen</div>
+          <div class="song-item"><span class="song-dot"></span>Fuchs, du hast die Gans gestohlen</div>
+          <div class="song-item"><span class="song-dot"></span>Grüß Gott, grüß Gott</div>
+          <div class="song-item"><span class="song-dot"></span>Heut ist ein schöner Tag</div>
+          <div class="song-item"><span class="song-dot"></span>Wer will fleißige Handwerker sehn</div>
+          <div class="song-item"><span class="song-dot"></span>Hampelmann-Lied</div>
+          <div class="song-item"><span class="song-dot"></span>Schneiderlein-Reigen</div>
+          <div class="song-item"><span class="song-dot"></span>Der Handwerker-Reigen</div>
+          <div class="song-item"><span class="song-dot"></span>Marjatta-Reigen (E. Pracht)</div>
+          <div class="song-item"><span class="song-dot"></span>Parzival-Lied (Schule)</div>
+          <div class="song-item"><span class="song-dot"></span>Geisterkanon</div>
+          <div class="song-item"><span class="song-dot"></span>Bona nox (Kanon)</div>
+          <div class="song-item"><span class="song-dot"></span>Alles gut muss wandern (Kanon)</div>
+          <div class="song-item"><span class="song-dot"></span>Zwei kleine Wölfe (Kanon)</div>
+          <div class="song-item"><span class="song-dot"></span>Grüß Gott euch in der Runde</div>
+          <div class="song-item"><span class="song-dot"></span>Hab mein Wagen vollgeladen</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="tip">Alle Lieder im Waldorfkindergarten werden pentatonisch (in der Quintenstimmung) gesungen. Rudolf Steiner empfahl die Pentatonik besonders für das erste Jahrsiebt (0–7 Jahre), da sie dem Kind einen offenen, freilassenden Klangraum schenkt. Der Jahreszeitentisch begleitet jede Lied-Phase sinnbildlich.</div>
+  </div>
+
+  <!-- ═══════════════════════════════ LIEDERBÜCHER ═══════════════════════════════ -->
+  <div id="books_songs" class="section">
+    <div class="sec-title">Liederbücher & Sammlungen</div>
+    <p class="sec-sub">Die wichtigsten deutschen Liederbücher für den Waldorfkindergarten und die Waldorfschule</p>
+
+    <div class="divider">Pentatonische Lieder — Sibylle Seidel-Weidemann</div>
+    <div class="book-list">
+      <div class="book-item"><div class="book-icon bi-s">♪</div><div class="book-info"><h4>Lieder für den Kindergarten</h4><div class="meta">Sibylle Seidel-Weidemann · Verlag Freies Geistesleben · inkl. CD · 53 pentatonische Lieder · nach Tages- und Jahreszeit geordnet · Standardwerk</div></div></div>
+      <div class="book-item"><div class="book-icon bi-s">♪</div><div class="book-info"><h4>Volkslieder für den Kindergarten</h4><div class="meta">Sibylle Seidel-Weidemann · Verlag Freies Geistesleben · inkl. CD · 49 Volkslieder</div></div></div>
+    </div>
+
+    <div class="divider">Quintenstimmungslieder — Helga Oberländer (alle 4 Jahreszeiten)</div>
+    <div class="book-list">
+      <div class="book-item"><div class="book-icon bi-s">♫</div><div class="book-info"><h4>Quintenstimmungslieder Frühling</h4><div class="meta">Helga Oberländer · Verlag Freies Geistesleben · Faschingszeit bis Pfingsten · inkl. Geburtstags- und Tanzlieder</div></div></div>
+      <div class="book-item"><div class="book-icon bi-s">♫</div><div class="book-info"><h4>Quintenstimmungslieder Sommer</h4><div class="meta">Helga Oberländer · Verlag Freies Geistesleben</div></div></div>
+      <div class="book-item"><div class="book-icon bi-s">♫</div><div class="book-info"><h4>Quintenstimmungslieder Herbst</h4><div class="meta">Helga Oberländer · Verlag Freies Geistesleben</div></div></div>
+      <div class="book-item"><div class="book-icon bi-s">♫</div><div class="book-info"><h4>Quintenstimmungslieder Winter</h4><div class="meta">Helga Oberländer · Verlag Freies Geistesleben</div></div></div>
+    </div>
+
+    <div class="divider">Handgestenspiele & Reigen — Wilma Ellersiek</div>
+    <div class="book-list">
+      <div class="book-item"><div class="book-icon bi-s">☆</div><div class="book-info"><h4>Handgestenspiele, Reigen und Lieder – Frühjahr/Sommer</h4><div class="meta">Wilma Ellersiek · Verlag Freies Geistesleben · 23 Spiele und Lieder · DVD separat erhältlich</div></div></div>
+      <div class="book-item"><div class="book-icon bi-s">☆</div><div class="book-info"><h4>Handgestenspiele, Reigen und Lieder – Herbst/Winter</h4><div class="meta">Wilma Ellersiek · Verlag Freies Geistesleben</div></div></div>
+      <div class="book-item"><div class="book-icon bi-s">☆</div><div class="book-info"><h4>Handgestenspiele für die Krippe</h4><div class="meta">Wilma Ellersiek · Verlag Freies Geistesleben · für 0–3 Jahre</div></div></div>
+      <div class="book-item"><div class="book-icon bi-s">☆</div><div class="book-info"><h4>Die tanzende, spielende Hand</h4><div class="meta">Wilma Ellersiek · Verlag Freies Geistesleben · Rhythmisch-musikalische Hand- und Fingerspiele</div></div></div>
+      <div class="book-item"><div class="book-icon bi-s">☆</div><div class="book-info"><h4>Berührungs- und Handgestenspiele</h4><div class="meta">Wilma Ellersiek · Verlag Freies Geistesleben · für die Krippe und ganz kleine Kinder</div></div></div>
+    </div>
+
+    <div class="divider">Neue Liedsammlungen</div>
+    <div class="book-list">
+      <div class="book-item"><div class="book-icon bi-g">K</div><div class="book-info"><h4>Goldene Blätter im Wind — Neue Lieder für Kindergarten und Unterstufe</h4><div class="meta">Barbara Kern & Holger Kern · Edition Zwischentöne, 2022 · 72 überwiegend pentatonische Lieder · Jahreszeiten, Feste, Tiere, Humor · für Kindergarten bis Grundschule</div></div></div>
+      <div class="book-item"><div class="book-icon bi-g">K</div><div class="book-info"><h4>Quintenstimmung und Kinderlied — Aspekte zum Singen mit Kindern</h4><div class="meta">Edition Zwischentöne · Holger Kern · theoretisches Begleitwerk zur Waldorf-Musikpädagogik</div></div></div>
+      <div class="book-item"><div class="book-icon bi-p">M</div><div class="book-info"><h4>Marjatta — ein musikalisch-eurythmischer Reigen</h4><div class="meta">Edmund Pracht · 2 Hefte (Text + Noten) · Verlag Freies Geistesleben</div></div></div>
+      <div class="book-item"><div class="book-icon bi-p">J</div><div class="book-info"><h4>Singspiele und Reigen</h4><div class="meta">Suse König · für Kindergarten und Krippe</div></div></div>
+      <div class="book-item"><div class="book-icon bi-p">J</div><div class="book-info"><h4>Tanzt und singt!</h4><div class="meta">Freya Jaffke · Verlag Freies Geistesleben · Kreislieder und Singspiele</div></div></div>
+    </div>
+
+    <div class="divider">Für die Waldorfschule (Unterstufe)</div>
+    <div class="book-list">
+      <div class="book-item"><div class="book-icon bi-a">L</div><div class="book-info"><h4>Lieder für die Unterstufe</h4><div class="meta">Paul Schaub & Peter-Michael Riehm · Pädagogische Forschungsstelle Stuttgart · Klasse 1–4 · neue Melodien zu bekannten Kinderversen</div></div></div>
+      <div class="book-item"><div class="book-icon bi-a">L</div><div class="book-info"><h4>Lieder für den Schulunterricht (Kanons & Mehrstimmigkeit)</h4><div class="meta">Freies Geistesleben · für Klasse 3–8 · Kanons, Rounds und vier­stimmige Lieder</div></div></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════ AUTOREN ═══════════════════════════════ -->
+  <div id="authors" class="section">
+    <div class="sec-title">Deutsche Waldorf-Autoren für Kreislieder & Reigenlieder</div>
+    <p class="sec-sub">Autorinnen und Autoren, die Waldorf-Kreislieder, Reigenlieder, Handgestenspiele und Liedsammlungen geschaffen haben</p>
+
+    <div class="divider">Hauptautoren — Kreislieder & Handgestenspiele</div>
+    <div class="cards">
+      <div class="card">
+        <span class="card-tag tag-blue">Hauptautorin</span>
+        <h3>Wilma Ellersiek</h3>
+        <div class="author">1921–2007 · Hochschule für Musik Stuttgart</div>
+        <p>Das deutsche Äquivalent zu Lori Clark. Professorin für Rhythmik, Schauspiel und gesprochenes Wort. Schuf Handgestenspiele und Reigen zu allen Jahreszeiten — Einheit von Bewegung, Sprache und Musik.</p>
+        <ul>
+          <li>Handgestenspiele, Reigen und Lieder — Frühjahr/Sommer</li>
+          <li>Handgestenspiele, Reigen und Lieder — Herbst/Winter</li>
+          <li>Handgestenspiele für die Krippe</li>
+          <li>Die tanzende, spielende Hand</li>
+          <li>Berührungs- und Handgestenspiele</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-blue">Liedsammlerin</span>
+        <h3>Sibylle Seidel-Weidemann</h3>
+        <div class="author">Waldorflehrerin & Musikerin · Filderstadt</div>
+        <p>Hat alle Waldorfkindergärten Deutschlands befragt und die beliebtesten pentatonischen Lieder gesammelt und herausgegeben.</p>
+        <ul>
+          <li>Lieder für den Kindergarten (inkl. CD) · 53 Lieder</li>
+          <li>Volkslieder für den Kindergarten (inkl. CD) · 49 Lieder</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-blue">Quintenstimmung</span>
+        <h3>Helga Oberländer</h3>
+        <div class="author">Verlag Freies Geistesleben</div>
+        <p>Autorin der bewährten vierteiligen Quintenstimmungslieder-Reihe, die in der pädagogischen Praxis bestens erprobt ist.</p>
+        <ul>
+          <li>Quintenstimmungslieder Frühling</li>
+          <li>Quintenstimmungslieder Sommer</li>
+          <li>Quintenstimmungslieder Herbst</li>
+          <li>Quintenstimmungslieder Winter</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-teal">Neues Werk</span>
+        <h3>Barbara Kern & Holger Kern</h3>
+        <div class="author">Freie Hochschule Stuttgart · Edition Zwischentöne</div>
+        <p>Holger Kern: Prof. Dr., Musikstudium und Waldorfmusiklehrerstudium Stuttgart. Langjähriger Dozent für Musik an der Freien Hochschule und im Waldorferzieherseminar. Barbara Kern: Klassen- und Musiklehrerin an Waldorfschulen, Kurstätigkeiten in der Lehrerbildung.</p>
+        <ul>
+          <li>Goldene Blätter im Wind (2022) · 72 Lieder</li>
+          <li>Quintenstimmung und Kinderlied (Theorie)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-blue">Pädagogin</span>
+        <h3>Freya Jaffke</h3>
+        <div class="author">Langjährige Waldorfkindergärtnerin</div>
+        <p>Bekannte Waldorfpraktikerin mit zahlreichen Büchern zu Singspielen, Kreisspielen und dem Alltag im Waldorfkindergarten.</p>
+        <ul>
+          <li>Spiel mit uns!</li>
+          <li>Tanzt und singt!</li>
+          <li>Puppenspiel für und mit Kindern</li>
+          <li>Kleine Märchen und Geschichten</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-blue">Autorin</span>
+        <h3>Suse König</h3>
+        <div class="author">Waldorfpädagogin</div>
+        <p>Autorin von Singspielen und Reigen für Kindergarten und Krippe. Ihre Sammlung gehört zum Standardrepertoire vieler Waldorfkindergärten.</p>
+        <ul>
+          <li>Singspiele und Reigen</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider">Komponisten & Musikpädagogen</div>
+    <div class="cards">
+      <div class="card">
+        <span class="card-tag tag-amber">Komponist</span>
+        <h3>Julius Knierim</h3>
+        <div class="author">1919–1999 · Kassel · Waldorfpädagoge</div>
+        <p>Heilpädagoge, Musikwissenschaftler und Komponist. Entwickelte das Freie Musizieren auf der Leier und engagierte sich für die Choroi-Instrumente. Studierte Waldorfpädagogik in Stuttgart.</p>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-amber">Komponisten</span>
+        <h3>Paul Schaub & Peter-Michael Riehm</h3>
+        <div class="author">Pädagogische Forschungsstelle Stuttgart</div>
+        <p>Haben zu bekannten Gedichten und Kinderversen neue Melodien gesetzt, die sich an den musikalischen Fähigkeiten der Kinder orientieren.</p>
+        <ul>
+          <li>Lieder für die Unterstufe (Klasse 1–4)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-amber">Komponist</span>
+        <h3>Edmund Pracht</h3>
+        <div class="author">Waldorfkomponist</div>
+        <p>Schuf den bekannten "Marjatta"-Reigen — ein musikalisch-eurythmisches Werk, das in vielen Waldorfkindergärten zum Einsatz kommt.</p>
+        <ul>
+          <li>Marjatta — ein musikalisch-eurythmischer Reigen (2 Hefte)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-amber">Musikpädagoge</span>
+        <h3>Holger Kern</h3>
+        <div class="author">Prof. Dr. · Freie Hochschule Stuttgart</div>
+        <p>Musikstudium und Waldorfmusiklehrerstudium in Stuttgart. Langjährig als Musiklehrer und Dozent in der Waldorf-Lehrerbildung tätig. Zahlreiche Veröffentlichungen zur Waldorf-Musikpädagogik.</p>
+        <ul>
+          <li>Goldene Blätter im Wind (mit Barbara Kern)</li>
+          <li>Quintenstimmung und Kinderlied</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-amber">Forscherin</span>
+        <h3>Ingrid Weidenfeld</h3>
+        <div class="author">Herausgeberin · Verlag Freies Geistesleben</div>
+        <p>Herausgeberin der Ellersiek-Bücher und Mitautorin der Begleittexte. Sorgte für die Verbreitung und Systematisierung von Wilma Ellersiek's Werk.</p>
+        <ul>
+          <li>Hrsg. der Ellersiek-Reihe (Frühjahr/Sommer & Herbst/Winter)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════ KINDERBÜCHER ═══════════════════════════════ -->
+  <div id="children" class="section">
+    <div class="sec-title">Kinderbücher in der Waldorfpädagogik</div>
+    <p class="sec-sub">Bücher, die in Waldorfkindergärten und -schulen verwendet und empfohlen werden — nach Altersstufe geordnet</p>
+
+    <div class="divider">Bilderbücher & Vorlesebücher (0–6 Jahre)</div>
+    <div class="cards">
+      <div class="card"><span class="card-tag tag-purple">Illustratorin</span><h3>Daniela Drescher</h3><div class="author">geb. 1966 · Verlag Urachhaus, Stuttgart</div><p>Über 40 Bücher in 10 Sprachen. Illustriert Naturmotive, Elfen, Wichtel und Märchenfiguren. In der Waldorfszene besonders geschätzt.</p><ul><li>Pippa und Pelle (Reihe)</li><li>Giesbert in der Regentonne</li><li>Giesbert hört das Gras wachsen</li><li>Die kleine Elfe / Elfe Flirr</li><li>Aquamarinchen</li><li>100 Märchen der Brüder Grimm (ill.)</li><li>Morgenstern-Gedichte für Kinder (ill.)</li></ul></div>
+      <div class="card"><span class="card-tag tag-purple">Illustratorin</span><h3>Eva-Maria Ott-Heidmann</h3><div class="author">Verlag Freies Geistesleben</div><p>Ihre Jahreszeitenbücher und Zwergenbücher gehören zu den meistgenutzten Bilderbüchern im Waldorfkindergarten.</p><ul><li>Jahreszeitenbücher (alle 4 Jahreszeiten)</li><li>Zwergenbücher (Jahreszeitenreigen)</li></ul></div>
+      <div class="card"><span class="card-tag tag-purple">Deutsche Autorin</span><h3>Sibylle von Olfers</h3><div class="author">1881–1916 · Verlag Urachhaus</div><p>Zehn Kinderbilderbücher im Jugendstil, seit Generationen in Waldorfkindergärten beliebt.</p><ul><li>Etwas von den Wurzelkindern</li><li>Die Schneekinder</li><li>Die Schmetterlingskinder</li></ul></div>
+      <div class="card"><span class="card-tag tag-purple">Schwedische Autorin</span><h3>Elsa Beskow</h3><div class="author">1874–1953 · auf Deutsch bei Urachhaus</div><ul><li>Die Wichtelkinder</li><li>Tante Grün, Tante Braun und Tante Lila</li><li>Olles Skifahrt</li><li>Im Blaubeerwald</li><li>Die Reise der kleinen Zipfelmütze</li></ul></div>
+    </div>
+
+    <div class="divider">Klassiker für ältere Kinder (6–12 Jahre)</div>
+    <div class="cards">
+      <div class="card"><span class="card-tag tag-purple">Deutscher Autor</span><h3>Otfried Preußler</h3><div class="author">1923–2013</div><ul><li>Der kleine Wassermann (1956)</li><li>Das kleine Gespenst</li><li>Die kleine Hexe</li><li>Räuber Hotzenplotz</li><li>Der Räuber Hotzenplotz 2 & 3</li></ul></div>
+      <div class="card"><span class="card-tag tag-purple">Schwedische Autorin</span><h3>Astrid Lindgren</h3><div class="author">1907–2002</div><ul><li>Die Kinder von Bullerbü</li><li>Pippi Langstrumpf</li><li>Tomte Tummetott</li><li>Nils Holgersson</li><li>Ronja Räubertochter</li></ul></div>
+      <div class="card"><span class="card-tag tag-purple">Märchen</span><h3>Gebrüder Grimm</h3><div class="author">Originalfassung · ill. Daniela Drescher</div><p>Unbearbeitete Kinder- und Hausmärchen sind Grundlage in jedem Waldorfkindergarten und jeder Waldorfschule.</p></div>
+      <div class="card"><span class="card-tag tag-purple">Weitere Klassiker</span><h3>Weitere Titel & Autoren</h3><ul><li>Peterchens Mondfahrt – Gerdt von Bassewitz</li><li>Der kleine Häwelmann – Theodor Storm</li><li>Ein Zwergentag (Waldorf-Klassiker)</li><li>Das Licht in der Laterne</li><li>Puck, der Zwerg</li><li>Summ, Summ, Summ (Einschlafbuch)</li><li>Michael Ende: Momo</li><li>Michael Ende: Jim Knopf</li></ul></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════ ERWACHSENE ═══════════════════════════════ -->
+  <div id="adults" class="section">
+    <div class="sec-title">Fachliteratur für Erwachsene</div>
+    <p class="sec-sub">Bücher über Waldorfpädagogik für Eltern, Lehrer und Interessierte</p>
+
+    <div class="divider">Grundlagenwerke von Rudolf Steiner</div>
+    <div class="book-list">
+      <div class="book-item"><div class="book-icon bi-a">S</div><div class="book-info"><h4>Die Erziehung des Kindes vom Gesichtspunkt der Geisteswissenschaft</h4><div class="meta">Rudolf Steiner · Rudolf Steiner Verlag · zentrales Einführungswerk</div></div></div>
+      <div class="book-item"><div class="book-icon bi-a">S</div><div class="book-info"><h4>Allgemeine Menschenkunde als Grundlage der Pädagogik</h4><div class="meta">Rudolf Steiner · Steiner Verlag · die berühmten "Lehrerkurse"</div></div></div>
+      <div class="book-item"><div class="book-icon bi-a">S</div><div class="book-info"><h4>Erziehungskunst – Methodisch-Didaktisches (GA 294)</h4><div class="meta">Rudolf Steiner · Steiner Verlag</div></div></div>
+    </div>
+
+    <div class="divider">Für Eltern & Interessierte</div>
+    <div class="book-list">
+      <div class="book-item"><div class="book-icon bi-a">K</div><div class="book-info"><h4>Jedes Kind ein Könner</h4><div class="meta">Henning Kullak-Ublick · 2014 · häufigste Fragen zur Waldorfpädagogik für Eltern</div></div></div>
+      <div class="book-item"><div class="book-icon bi-a">H</div><div class="book-info"><h4>Das ist Waldorfschule! Sieben Kernpunkte einer lebendigen Pädagogik</h4><div class="meta">Wolfgang Held · 2019 · Innen- und Außenperspektive auf Waldorfschulen</div></div></div>
+      <div class="book-item"><div class="book-icon bi-a">M</div><div class="book-info"><h4>Montessori oder Waldorf? Ein Orientierungsbuch</h4><div class="meta">Seitz, Hallwachs, Pilger-Feiler · Kösel-Verlag · Orientierungsbuch für Eltern</div></div></div>
+    </div>
+
+    <div class="divider">Für Lehrer & Pädagogen</div>
+    <div class="book-list">
+      <div class="book-item"><div class="book-icon bi-a">K</div><div class="book-info"><h4>Die Waldorfpädagogik – Eine Einführung in die Pädagogik Rudolf Steiners</h4><div class="meta">Johannes Kiersch · Verlag Freies Geistesleben, 2022</div></div></div>
+      <div class="book-item"><div class="book-icon bi-a">R</div><div class="book-info"><h4>Pädagogischer Auftrag und Unterrichtsziele – vom Lehrplan der Waldorfschule</h4><div class="meta">Hrsg. Tobias Richter · 5. Auflage 2019 · Standardlehrplan</div></div></div>
+      <div class="book-item"><div class="book-icon bi-a">E</div><div class="book-info"><h4>Der Klassenlehrer an der Waldorfschule</h4><div class="meta">Helmut Eller · Verlag Freies Geistesleben, 2007</div></div></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════ BEZUGSQUELLEN ═══════════════════════════════ -->
+  <div id="where" class="section">
+    <div class="sec-title">Bezugsquellen</div>
+    <p class="sec-sub">Wo deutsche Waldorf-Bücher, Lieder und Materialien zu finden sind</p>
+    <div class="cards">
+      <div class="card"><span class="card-tag tag-green">Buchversand</span><h3>glomer.com</h3><p>Spezialisierter Waldorf-Buchversand mit großer Auswahl an Bilderbüchern, Pädagogikliteratur und Liederbüchern.</p></div>
+      <div class="card"><span class="card-tag tag-green">Vollsortiment</span><h3>waldorfshop.eu</h3><p>Bücher, CDs, Liederbücher, Materialien und Spielzeug für Waldorfkindergarten und -schule.</p></div>
+      <div class="card"><span class="card-tag tag-green">Verlag</span><h3>urachhaus.de</h3><p>Hauptverlag für Waldorf-Kinderbücher: Daniela Drescher, Elsa Beskow, Sibylle von Olfers.</p></div>
+      <div class="card"><span class="card-tag tag-green">Verlag</span><h3>geistesleben.de</h3><p>Verlag Freies Geistesleben: Ellersiek, Seidel-Weidemann, Oberländer, Jaffke, Knierim u.v.m.</p></div>
+      <div class="card"><span class="card-tag tag-coral">Kostenlos online</span><h3>waldorf-ideen-pool.de</h3><p>Gratis Jahreszeitenlieder, Reigen, Fingerspiele und Unterrichtsmaterialien.</p></div>
+      <div class="card"><span class="card-tag tag-amber">Fachliteratur</span><h3>rudolfsteinerbuchhandlung.de</h3><p>Anthroposophie, Waldorfpädagogik und Steiner-Grundlagenwerke.</p></div>
+    </div>
+    <div class="divider">Musik online</div>
+    <div class="link-list">
+      <a href="https://open.spotify.com/playlist/45AS48IgNhdo23EMxWTGEx" target="_blank">Spotify: Waldorf Inspired Circle Time Songs — 238 Lieder</a>
+      <a href="https://open.spotify.com/playlist/5dDwocm5RCLOkBzVhrZZg3" target="_blank">Spotify: Waldorf Inspired Spring Circle Songs — 74 Frühlingslieder</a>
+      <a href="https://www.waldorf-ideen-pool.de/Schule/uebergreifend/rhythmischer-teil/singen/jahreszeitenlieder" target="_blank">waldorf-ideen-pool.de: Jahreszeitenlieder kostenlos</a>
+    </div>
+  </div>
+</div>
+
+<script>
+function show(id, e) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  e.target.classList.add('active');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doll Making in Waldorf Education — A Through-the-Ages Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f5ede0;
+    --paper-warm: #efe3cf;
+    --paper-deep: #e8d8bd;
+    --ink: #3b2a1a;
+    --ink-soft: #6b5840;
+    --ink-faint: #8a7558;
+    --rust: #a8492a;
+    --moss: #5a6b3f;
+    --wool: #b8a583;
+    --thread: #c8865f;
+    --shadow: rgba(59, 42, 26, 0.08);
+    --shadow-deep: rgba(59, 42, 26, 0.15);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 19px;
+    background-image:
+      radial-gradient(circle at 10% 20%, rgba(168, 73, 42, 0.04) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(90, 107, 63, 0.04) 0%, transparent 40%);
+    min-height: 100vh;
+  }
+  body::before {
+    content: ''; position: fixed; inset: 0;
+    pointer-events: none; opacity: 0.4; z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.23 0 0 0 0 0.16 0 0 0 0 0.1 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .container {
+    max-width: 820px; margin: 0 auto;
+    padding: 60px 32px 100px;
+    position: relative; z-index: 1;
+  }
+  header {
+    text-align: center; margin-bottom: 64px;
+    padding-bottom: 40px; border-bottom: 1px solid var(--paper-deep);
+    position: relative;
+  }
+  header::after {
+    content: '✦'; position: absolute; bottom: -12px; left: 50%;
+    transform: translateX(-50%); background: var(--paper);
+    color: var(--wool); padding: 0 16px; font-size: 16px;
+  }
+  .eyebrow {
+    font-family: 'Caveat', cursive; font-size: 24px;
+    color: var(--rust); margin-bottom: 8px;
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 500;
+    font-size: clamp(40px, 6vw, 60px); line-height: 1.1;
+    color: var(--ink); margin-bottom: 16px;
+  }
+  .subtitle {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 22px; color: var(--ink-soft);
+    max-width: 600px; margin: 0 auto;
+  }
+  .toc {
+    background: var(--paper-warm); border: 1px solid var(--paper-deep);
+    border-radius: 4px; padding: 28px 36px;
+    margin-bottom: 64px; box-shadow: 0 2px 8px var(--shadow);
+  }
+  .toc-title {
+    font-family: 'Caveat', cursive; font-size: 22px;
+    color: var(--rust); margin-bottom: 12px;
+  }
+  .toc ol { list-style: none; counter-reset: toc-counter; }
+  .toc li {
+    counter-increment: toc-counter;
+    padding: 6px 0; border-bottom: 1px dotted var(--paper-deep);
+    display: flex; align-items: baseline;
+  }
+  .toc li:last-child { border-bottom: none; }
+  .toc li::before {
+    content: counter(toc-counter, upper-roman) ".";
+    color: var(--rust); font-weight: 600;
+    margin-right: 12px; min-width: 32px;
+    font-family: 'Cormorant Garamond', serif; font-size: 18px;
+  }
+  .toc a { color: var(--ink); text-decoration: none; flex: 1; font-size: 18px; }
+  .toc a:hover { color: var(--rust); }
+  section { margin-bottom: 72px; scroll-margin-top: 40px; }
+  h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: 36px; color: var(--rust);
+    margin-bottom: 20px; line-height: 1.2;
+  }
+  h2 .roman {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-weight: 400; color: var(--wool);
+    margin-right: 14px; font-size: 28px;
+  }
+  h3 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-style: italic; font-size: 24px;
+    color: var(--moss); margin-top: 32px; margin-bottom: 12px;
+  }
+  p { margin-bottom: 16px; color: var(--ink); }
+  p.lead {
+    font-size: 21px; font-style: italic;
+    color: var(--ink-soft); line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  em { color: var(--ink-soft); }
+  strong { color: var(--ink); font-weight: 600; }
+
+  /* Quick reference box */
+  .quick-ref {
+    background: rgba(168, 73, 42, 0.05);
+    border-left: 3px solid var(--rust);
+    border-radius: 0 4px 4px 0;
+    padding: 22px 28px;
+    margin: 26px 0;
+  }
+  .quick-ref h4 {
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    color: var(--rust);
+    margin-bottom: 10px;
+  }
+  .quick-ref ul { list-style: none; margin: 0; }
+  .quick-ref li {
+    padding: 5px 0;
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    border-bottom: 1px dotted var(--paper-deep);
+  }
+  .quick-ref li:last-child { border-bottom: none; }
+  .quick-ref strong {
+    color: var(--moss);
+    font-weight: 600;
+    display: inline-block;
+    min-width: 130px;
+  }
+
+  /* Doll-type blocks */
+  .doll-block {
+    background: var(--paper-warm);
+    border: 1px solid var(--paper-deep);
+    border-radius: 4px;
+    padding: 26px 30px;
+    margin: 22px 0 30px;
+    box-shadow: 0 1px 4px var(--shadow);
+  }
+  .doll-block .age-label {
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    color: var(--rust);
+    margin-bottom: 4px;
+  }
+  .doll-block h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.25;
+  }
+  .doll-block .sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--moss);
+    font-size: 17px;
+    margin: 16px 0 6px;
+  }
+  .doll-block p {
+    font-size: 16.5px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+  .doll-block ul {
+    list-style: none;
+    margin: 8px 0 14px;
+  }
+  .doll-block ul li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 6px;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .doll-block ul li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--thread);
+    top: 2px;
+    font-size: 13px;
+  }
+
+  /* Tender callout */
+  .tender {
+    background: rgba(90, 107, 63, 0.06);
+    border: 1px dashed var(--moss);
+    border-radius: 3px;
+    padding: 18px 24px;
+    margin: 22px 0;
+    font-size: 16.5px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .tender strong {
+    color: var(--moss);
+    font-family: 'Caveat', cursive;
+    font-size: 19px;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  ul.gentle { list-style: none; margin: 16px 0 24px; }
+  ul.gentle li {
+    position: relative; padding-left: 28px;
+    margin-bottom: 12px; font-size: 17px; line-height: 1.6;
+  }
+  ul.gentle li::before {
+    content: '✦'; position: absolute; left: 6px;
+    color: var(--thread); top: 4px; font-size: 14px;
+  }
+
+  /* Pull quote */
+  .pull-quote {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 24px; line-height: 1.4; color: var(--moss);
+    text-align: center; padding: 32px 24px; margin: 40px 0;
+    position: relative;
+    border-top: 1px solid var(--paper-deep);
+    border-bottom: 1px solid var(--paper-deep);
+  }
+  .pull-quote::before {
+    content: '"'; font-size: 80px; color: var(--wool);
+    position: absolute; top: -8px; left: 24px; opacity: 0.4;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  footer {
+    text-align: center; padding-top: 40px; margin-top: 80px;
+    border-top: 1px solid var(--paper-deep);
+    color: var(--ink-faint); font-style: italic; font-size: 17px;
+  }
+  footer .ornament { color: var(--wool); margin: 0 12px; }
+
+  @media (max-width: 600px) {
+    body { font-size: 18px; }
+    .container { padding: 40px 22px 80px; }
+    .toc { padding: 22px 24px; }
+    h1 { font-size: 38px; }
+    h2 { font-size: 30px; }
+    h3 { font-size: 22px; }
+    .pull-quote { font-size: 20px; padding: 24px 16px; }
+  }
+
+  section, header, .toc {
+    animation: fadeUp 0.8s ease-out backwards;
+  }
+  header { animation-delay: 0s; }
+  .toc { animation-delay: 0.15s; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <div class="eyebrow">~ a section of the Waldorf Path Directory ~</div>
+    <h1>Doll Making</h1>
+    <p class="subtitle">The handmade companion of childhood — through every age, in soft wool and warm cotton, with a face that listens</p>
+  </header>
+
+  <nav class="toc" aria-label="Table of contents">
+    <div class="toc-title">In this section</div>
+    <ol>
+      <li><a href="#why">Why the Waldorf Doll Matters</a></li>
+      <li><a href="#what">What Makes a Doll "Waldorf"</a></li>
+      <li><a href="#ages">Dolls Through the Ages of Childhood</a></li>
+      <li><a href="#first">The First Doll — Blanket Doll for Babies</a></li>
+      <li><a href="#cuddle">The Toddler Years — Cuddle Doll &amp; Heavy Baby</a></li>
+      <li><a href="#early">The Early Years — Bunting &amp; First Limbed Dolls</a></li>
+      <li><a href="#classic">The Classic Waldorf Doll — Ages 5 to 9</a></li>
+      <li><a href="#school">The School Years — Class 7 Doll Making</a></li>
+      <li><a href="#materials">Materials &amp; Suppliers — A Buying Guide</a></li>
+      <li><a href="#books">Patterns, Books &amp; Where to Learn</a></li>
+      <li><a href="#home">If You Don't Make Your Own</a></li>
+    </ol>
+  </nav>
+
+  <section id="why">
+    <h2><span class="roman">I.</span>Why the Waldorf Doll Matters</h2>
+
+    <p class="lead">In Waldorf early childhood, the doll is regarded as one of the most important companions a child can have. Not a toy in the modern sense, not a decoration, not a thing to be collected — but a small, soft, deeply loved being who travels with the child through the years of becoming a self.</p>
+
+    <p>A Waldorf doll is made by hand, from natural materials, with a simple face and a soft body. The face is intentionally minimal — usually just two small stitched dots for eyes and a single curve for a mouth. This is not because the doll-maker has not finished; it is because the doll is designed to receive the child's imagination. A doll with a fixed expression can be happy or sad only as its painted face declares; a doll with the simplest of features can be happy, sad, tired, joyful, sleeping, weeping, laughing — whatever the child needs it to be on a given afternoon.</p>
+
+    <p>The natural materials matter too. A doll stuffed with wool warms in the child's arms; a doll covered in cotton knit has skin that feels something like real skin; a doll with mohair locks has hair the child can stroke and braid. The senses are nourished. The doll, in being held, returns a quiet warmth to the child holding it.</p>
+
+    <h3>What play with a doll actually does</h3>
+
+    <p>Watching a young child play with a doll, one sees something profound: the child practices being a parent, being kind, being responsible for another. They feed the doll, bathe it, put it to sleep, scold it gently when it is naughty, comfort it when it is sad. In the doll's small person, the child rehearses every aspect of caring for another being. They are not just playing; they are quietly becoming.</p>
+
+    <p>The Waldorf early-childhood teacher Kate Hammond writes that the busy work of looking after dolls "is serious work for the child, requiring the caring 'parent' to be vigilant." It is play with weight and importance. And the doll, by being simple and soft, makes itself available to this work in a way a plastic doll never can.</p>
+  </section>
+
+  <section id="what">
+    <h2><span class="roman">II.</span>What Makes a Doll "Waldorf"</h2>
+
+    <p class="lead">The Waldorf doll has a distinctive set of qualities that come down through almost a century of practice, traced to the educator Freya Jaffke and the early kindergarten teachers of the first Waldorf schools.</p>
+
+    <div class="quick-ref">
+      <h4>The seven defining qualities</h4>
+      <ul>
+        <li><strong>Natural materials:</strong> sheep's wool stuffing, cotton tricot skin, mohair or wool yarn hair</li>
+        <li><strong>Simple face:</strong> two stitched dots for eyes, a small curve or two for the mouth — and nothing more</li>
+        <li><strong>Hand-made:</strong> sewn by hand or by simple machine, often by a parent, grandparent, or teacher</li>
+        <li><strong>Weighted by wool:</strong> the wool stuffing gives the doll a real body-weight, like a sleeping baby</li>
+        <li><strong>Warmth:</strong> wool stuffing actually warms in the child's arms — synthetic stuffing does not</li>
+        <li><strong>Mendable:</strong> hand-stitched seams can be repaired across the years; the doll can grow old with the child</li>
+        <li><strong>Open expression:</strong> the simple face holds the child's imagination rather than dictating to it</li>
+      </ul>
+    </div>
+
+    <p>These are not arbitrary aesthetic choices. Each one is rooted in the Waldorf view of what early childhood is and what the child needs. Natural materials nourish the developing senses. Simple faces give the imagination room to work. Weight invites real care. Wool warms; the warmth is part of the gift.</p>
+
+    <div class="tender">
+      <strong>What a Waldorf doll is not</strong>
+      A Waldorf doll is not a "doll with a sweet face stitched onto it." It is not made from polyester fleece or synthetic stuffing. It is not designed to be displayed; it is designed to be loved, dragged through the garden, taken to bed every night for ten years, mended, and eventually handed down. If the doll is too precious to be loved hard, it has missed its purpose.
+    </div>
+  </section>
+
+  <section id="ages">
+    <h2><span class="roman">III.</span>Dolls Through the Ages of Childhood</h2>
+
+    <p class="lead">In Waldorf early-childhood teaching, different forms of doll meet different ages. The simplest forms are right for the youngest babies; more developed forms come later. This developmental sequence comes down through Freya Jaffke, Maricristin Sealey, and the kindergarten tradition.</p>
+
+    <div class="quick-ref">
+      <h4>The arc of the doll's body, through the years</h4>
+      <ul>
+        <li><strong>Birth–2 years:</strong> Blanket doll — formed head, soft cloth body with knotted corners</li>
+        <li><strong>2–3 years:</strong> Cuddle doll, bunting doll, or "heavy baby" weighted with millet</li>
+        <li><strong>3–5 years:</strong> Bunting doll with simple body, perhaps the first limbed doll</li>
+        <li><strong>5–9 years:</strong> The classic Waldorf doll — formed head, body, arms, legs; mohair hair; a small wardrobe</li>
+        <li><strong>Class 7 (12–13):</strong> The child themselves makes a Waldorf doll in school handwork</li>
+      </ul>
+    </div>
+
+    <p>What follows is a closer look at each stage — and the doll that meets it.</p>
+  </section>
+
+  <section id="first">
+    <h2><span class="roman">IV.</span>The First Doll — Blanket Doll for Babies</h2>
+
+    <div class="doll-block">
+      <div class="age-label">For ages 0–2</div>
+      <h4>The Blanket Doll (also called Towel Doll or Knotty Doll)</h4>
+
+      <p>A baby's first doll is essentially a soft cloth with a small formed head. The body is unformed — a square or rectangle of soft cotton flannel or muslin, with the four corners knotted to suggest hands and feet. The head is made of wool stuffing wrapped in cotton tricot, with two tiny stitched dots for eyes.</p>
+
+      <p class="sub">Why this form for a baby</p>
+      <p>A baby cannot yet hold a doll with limbs. Their hands are still learning to grasp. The blanket doll is soft enough to be slept against, light enough to be lifted, and the knotted corners give little hands something to find and clutch. The face — small, simple, smiling — invites the baby's natural fascination with the human face. The knotted ends are safe to suck on as the baby teethes.</p>
+
+      <p class="sub">What goes into one</p>
+      <ul>
+        <li>A small wool head, about 5–6 cm across, wrapped in cotton tricot</li>
+        <li>A square of soft cotton flannel, muslin, or interlock — roughly 25 × 25 cm</li>
+        <li>The four corners gathered and tied or sewn to form simple "hands" and "feet"</li>
+        <li>The head sewn into one side of the square; the cloth becomes the body</li>
+        <li>Often a small hood or pixie cap stitched into the head, giving the doll a gentle silhouette</li>
+      </ul>
+
+      <p class="sub">Approximate finished size</p>
+      <p>20–25 cm long. Small enough to lie on the baby's chest, soft enough to be slept on.</p>
+    </div>
+  </section>
+
+  <section id="cuddle">
+    <h2><span class="roman">V.</span>The Toddler Years — Cuddle Doll &amp; Heavy Baby</h2>
+
+    <div class="doll-block">
+      <div class="age-label">For ages 2–3</div>
+      <h4>The Cuddle Doll (also called Bunting Doll)</h4>
+
+      <p>By two or three years old, the child can grasp the concept of a doll as a small being. They want to hold it, rock it, feed it, put it to bed. The cuddle doll meets this newly clear relationship.</p>
+
+      <p>The cuddle doll has a more formed head than the blanket doll — still simple, still wool-stuffed, still with the gentle minimal face — and a pillow-like body that is squashy, warm, and easy to hold. There are no separate limbs yet. The doll looks something like a baby in a bunting suit; in fact in many traditions the cuddle doll <em>is</em> a baby in a bunting, with a knotted cap on its head and small mittens or boots sewn onto the four corners of the body.</p>
+
+      <p class="sub">Approximate finished size</p>
+      <p>30–35 cm long. Big enough to be a proper companion, small enough for a small child to carry.</p>
+    </div>
+
+    <div class="doll-block">
+      <div class="age-label">For ages 2–4, kindergarten use</div>
+      <h4>The Heavy Baby — millet-weighted doll</h4>
+
+      <p>A particular form of doll, much loved in Waldorf kindergartens, is the <strong>Heavy Baby</strong>. This is a cuddle-style doll weighted to around 2–3 kg (about 5 lb) with organic millet sewn into the body. The weight is intentional: it gives the child the felt experience of holding something with real bodily presence, like a real sleeping baby.</p>
+
+      <p>Picking up a Heavy Baby takes effort. Carrying it from one corner of the room to another is genuine work. Putting it to bed and tucking it in becomes a meaningful act. The very weight of the doll asks the child for tenderness; it cannot be flung carelessly across the room without effort, and the child quickly learns to handle it with the care a real baby would deserve.</p>
+
+      <p class="sub">What goes into one</p>
+      <ul>
+        <li>The standard doll head and body, but the body cavity is filled with <strong>organic millet</strong> (sometimes mixed with lavender for scent and a gentle calming quality) rather than wool alone</li>
+        <li>A double layer of cotton tricot or interlock around the millet to keep it from spilling</li>
+        <li>Often dressed in a simple cotton nightgown or romper</li>
+      </ul>
+
+      <p class="sub">A note on safety</p>
+      <p>Heavy Babies should always be made well, with the millet contained in an inner casing so the grain cannot leak out and become a choking hazard. Most kindergarten teachers make these themselves rather than buying them; if you buy one, ensure the construction is robust.</p>
+    </div>
+  </section>
+
+  <section id="early">
+    <h2><span class="roman">VI.</span>The Early Years — Bunting &amp; First Limbed Dolls</h2>
+
+    <div class="doll-block">
+      <div class="age-label">For ages 3–5</div>
+      <h4>The Bunting Doll with simple limbs</h4>
+
+      <p>As the child grows toward four or five, the doll begins to develop a body. The first limbed dolls have very simple limbs — short, soft stubs of arms and legs sewn onto a small body, with feet that don't quite stand and hands that don't quite grasp. The doll is now recognisably a small person, but still soft and forgiving, still rounded.</p>
+
+      <p class="sub">The form</p>
+      <ul>
+        <li>A formed wool head with a clear neck</li>
+        <li>A pillow body, smaller and more proportional than the cuddle doll's</li>
+        <li>Four short limbs sewn on at the shoulders and hips</li>
+        <li>A simple cotton nightgown or romper as the doll's clothing</li>
+        <li>Hair may be added at this stage — short stitched yarn hair, or a small mohair wig</li>
+      </ul>
+
+      <p class="sub">Approximate finished size</p>
+      <p>30–40 cm. The doll now sits naturally in the child's lap.</p>
+    </div>
+  </section>
+
+  <section id="classic">
+    <h2><span class="roman">VII.</span>The Classic Waldorf Doll — Ages 5 to 9</h2>
+
+    <div class="doll-block">
+      <div class="age-label">For ages 5–9</div>
+      <h4>The Full Waldorf Doll</h4>
+
+      <p>Around age five, when the child enters Waldorf kindergarten's final year or first grade, the classic Waldorf doll arrives. This is the doll most people picture when they hear the phrase "Waldorf doll" — a soft, weighted figure of 35–45 cm, with a properly formed head, a real body, sitting hips and shoulders, arms and legs that hang properly, hair that can be braided or styled, and a small wardrobe of removable clothing.</p>
+
+      <p class="sub">The form</p>
+      <ul>
+        <li><strong>Head:</strong> wool-stuffed, covered in cotton tricot, with two stitched eyes and a small mouth. Sometimes the face is needle-felted to give subtle contours of nose and cheeks</li>
+        <li><strong>Body:</strong> properly shaped torso with a defined neck, shoulders, and hips</li>
+        <li><strong>Arms and legs:</strong> jointed by stitching at shoulders and hips so the doll can sit, lie, or be held in many positions</li>
+        <li><strong>Hands and feet:</strong> stitched-in fingers (usually just thumb-and-fingers grouped) and shaped feet that can wear small shoes</li>
+        <li><strong>Hair:</strong> usually a mohair wig, sewn or crocheted, in the child's preferred colour. Mohair is the most beautiful but expensive; bouclé yarn (such as DollyMo) is a practical alternative; cotton or bamboo yarn for vegan families</li>
+        <li><strong>Clothing:</strong> a small wardrobe — a dress or trousers, an undershirt, perhaps a knitted jumper or hat, small leather shoes or felt slippers</li>
+      </ul>
+
+      <p class="sub">Approximate finished size</p>
+      <p>35–45 cm (about 15–18 inches). The most-made size is 38 cm / 15 inches.</p>
+
+      <p class="sub">The making of it</p>
+      <p>This is the doll that takes a parent or grandparent fifteen to thirty hours to make, depending on skill. It is often given as a birthday or Christmas gift, sometimes made at a parent doll-making group at the school. Many Waldorf schools host annual doll-making workshops for parents, where over two or three weekends together, a small group of mothers and fathers each makes a doll for their child — with patterns, guidance, shared tea, and the company of others doing the same patient work.</p>
+
+      <p>The classic Waldorf doll, well made, lasts decades. It is mended, re-stuffed when needed, given new clothes when its old ones wear out, and often handed down to a younger sibling or eventually to the child's own children.</p>
+    </div>
+  </section>
+
+  <section id="school">
+    <h2><span class="roman">VIII.</span>The School Years — Class 7 Doll Making</h2>
+
+    <div class="doll-block">
+      <div class="age-label">For ages 12–13 (Class 7)</div>
+      <h4>The child becomes the doll-maker</h4>
+
+      <p>In the Waldorf handwork curriculum, <strong>Class 7</strong> is the year of doll-making. Children at age twelve or thirteen now have the hand-sewing skills (built up through six years of handwork, embroidery, and knitting) and the patience to take on the substantial project of making their own Waldorf-style doll.</p>
+
+      <p class="sub">The Class 7 doll project</p>
+      <p>Over the course of a school year, each child makes a doll roughly 30–40 cm tall, using doll tricot fabric, wool stuffing, and yarn hair. They learn to:</p>
+      <ul>
+        <li>Form the head — the trickiest part — using wool, tricot, and strong thread</li>
+        <li>Embroider the simple facial features</li>
+        <li>Cut and sew the body using paper patterns</li>
+        <li>Attach the limbs with strong joining stitches</li>
+        <li>Make a small wardrobe of clothing for the finished doll</li>
+        <li>Sometimes attach hair with mohair locks or yarn wefts</li>
+      </ul>
+
+      <p>The doll is often the child's first major work of figurative handcraft — different in feel from the earlier years of knitting and embroidery, because the result is a small, recognisable person. Many students keep their Class 7 doll for life. Some give it as a gift to a younger sibling; some keep it on a shelf as the small companion of their adolescence.</p>
+
+      <p>For homeschoolers wishing to honour the Class 7 handwork tradition, this doll-making project is the natural one to take on. See the patterns and books in the next sections for guidance.</p>
+    </div>
+  </section>
+
+  <section id="materials">
+    <h2><span class="roman">IX.</span>Materials &amp; Suppliers — A Buying Guide</h2>
+
+    <p class="lead">For anyone making a doll at home — parent, grandparent, homeschooler, or the curious adult crafter — here is what you need and where to find it. The Waldorf doll-making palette is short. Quality matters enormously.</p>
+
+    <div class="quick-ref">
+      <h4>The basic doll-making kit</h4>
+      <ul>
+        <li><strong>Doll tricot fabric:</strong> 50 × 50 cm of stretchy cotton interlock (the doll's "skin")</li>
+        <li><strong>Wool stuffing:</strong> 150–300 g of carded wool fleece</li>
+        <li><strong>Tubular gauze:</strong> 1-inch tubular cotton stockinette for the head</li>
+        <li><strong>Strong doll thread:</strong> waxed cotton or button-and-craft thread</li>
+        <li><strong>Sewing thread:</strong> matching the tricot colour</li>
+        <li><strong>Embroidery floss:</strong> for eyes and mouth</li>
+        <li><strong>Mohair or yarn for hair</strong></li>
+        <li><strong>Needles:</strong> doll needle (10 cm long), regular sewing needles, embroidery needle</li>
+        <li><strong>Optional:</strong> organic millet (for a Heavy Baby), lavender, sewing machine</li>
+      </ul>
+    </div>
+
+    <h3>The materials in detail</h3>
+
+    <div class="doll-block">
+      <h4>Doll tricot — the "skin"</h4>
+      <p>The single most important material in Waldorf doll-making is the <strong>doll tricot</strong> — a specially-woven stretchy cotton interlock fabric that makes the doll's skin. Regular cotton knit or t-shirt fabric will not give you the right result; doll tricot is denser, more elastic, and designed to take the firm stuffing without losing shape.</p>
+      <ul>
+        <li><strong>Brands:</strong> <em>De Witte Engel</em> (Netherlands, the European standard), <em>Laib Yala</em> (also widely used), and <em>WaldorfiaHago</em> (newer; available on Etsy)</li>
+        <li><strong>Weight:</strong> "heavy weight" for the body, sometimes "light weight" for delicate features</li>
+        <li><strong>Skin tone:</strong> available in many tones, from very pale through medium to deep brown — a doll's skin can match the child's, the world's, or imagination's</li>
+        <li><strong>Quantity:</strong> 50 × 50 cm for a 38 cm doll, ~100 × 25 cm for a 15-inch doll</li>
+        <li><strong>Suppliers:</strong> A Child's Dream, Bella Luna Toys, Magic Cabin (US); Myriad Natural Toys (UK); Sami Dolls (international online shop); De Witte Engel direct (Netherlands)</li>
+        <li><strong>Approximate cost:</strong> $15–25 for enough fabric for a single doll</li>
+      </ul>
+    </div>
+
+    <div class="doll-block">
+      <h4>Wool stuffing</h4>
+      <p>The body of a Waldorf doll is stuffed firmly with <strong>carded wool fleece</strong>. The wool gives the doll its weight, its warmth, and its ability to hold the firm shape that good doll-making requires.</p>
+      <ul>
+        <li><strong>Type:</strong> carded wool batting or roving — unspun, long-fibre wool</li>
+        <li><strong>Quantity:</strong> 150–300 g for a 38 cm doll (more for a larger or weighted doll)</li>
+        <li><strong>Suppliers:</strong> A Child's Dream (Waldorf-standard stuffing), Acorns &amp; Twigs, Bella Luna Toys, West Earl Woolen Mill (Pennsylvania, recommended by doll-makers for fair-priced bulk batting). In the UK, World of Wool and Myriad Natural Toys. Filges in Germany for European makers</li>
+        <li><strong>Plant-based alternatives:</strong> for vegan or wool-allergic families, corn fibre, eucalyptus fibre, or cotton fibre can be used. Sami Dolls and some specialist online shops carry these</li>
+      </ul>
+    </div>
+
+    <div class="doll-block">
+      <h4>Tubular cotton gauze (for the head)</h4>
+      <p>The head of the doll is built up inside a tube of 1-inch cotton tubular gauze (sometimes called stockinette). This is the medical-style bandage you can find in pharmacies or, more reliably in the right diameter, from Waldorf suppliers.</p>
+      <ul>
+        <li><strong>Width:</strong> 1 inch for most doll sizes; larger for larger dolls</li>
+        <li><strong>Quantity:</strong> 30–40 cm length per doll</li>
+        <li><strong>Suppliers:</strong> A Child's Dream stocks the Waldorf-standard tubular gauze. Pharmacies sell similar bandage, but the doll-grade is more consistent</li>
+      </ul>
+    </div>
+
+    <div class="doll-block">
+      <h4>Hair — mohair, yarn, or wefts</h4>
+      <p>The doll's hair is one of the most expressive parts and arguably the part that most defines the finished doll's character.</p>
+      <ul>
+        <li><strong>Mohair locks:</strong> unspun curly locks of young goat fleece, plant-dyed or natural; the most beautiful option. Suppliers: A Child's Dream, Living Felt, Etsy makers</li>
+        <li><strong>Mohair wefts:</strong> machine-sewn strips of mohair that can be stitched onto the head as a wig; faster than working with loose locks. Available on Etsy (KinsWonders is widely recommended), Sami Dolls, and specialist doll suppliers</li>
+        <li><strong>Bouclé yarn:</strong> looped, curly yarn that mimics hair texture at lower cost. <em>DollyMo</em> is a popular brand created by doll-makers, designed specifically for doll hair</li>
+        <li><strong>Cotton or bamboo yarn:</strong> for vegan dolls, or for a different look — straight, smooth, often plant-dyed</li>
+        <li><strong>Quantity:</strong> 30–60 g of yarn or 50–100 g of mohair for a single doll</li>
+      </ul>
+    </div>
+
+    <div class="doll-block">
+      <h4>Thread, needles, and small tools</h4>
+      <ul>
+        <li><strong>Strong doll-making thread:</strong> waxed cotton, button-and-craft thread, or specialist doll thread. TECO is a recommended brand. This is the thread used for tying off the head and joining the limbs — it must not break under tension</li>
+        <li><strong>Regular sewing thread:</strong> Gütermann or Mara 100, in skin tone</li>
+        <li><strong>Embroidery floss:</strong> DMC stranded cotton for eyes and mouth — usually two strands of a deep brown, soft blue, or whatever feels right for the face</li>
+        <li><strong>Doll needle:</strong> a long needle (10–15 cm) for taking thread through the wool-filled head. Essential</li>
+        <li><strong>Regular sewing needles, embroidery needles, pins, sharp scissors</strong></li>
+        <li><strong>Hemostat or turning tool:</strong> for turning small limbs right-side out after stitching</li>
+        <li><strong>Stuffing stick:</strong> a chopstick or wooden dowel works perfectly</li>
+        <li><strong>Air-erasable fabric marker:</strong> for marking where features will go without leaving permanent ink</li>
+      </ul>
+    </div>
+
+    <h3>Where to source materials — at a glance</h3>
+
+    <h4>Waldorf-specific suppliers (the first stop)</h4>
+    <ul class="gentle">
+      <li><strong>A Child's Dream</strong> (<em>achildsdream.com</em>) — US. Carries doll tricot, wool stuffing, tubular gauze, mohair, doll-making patterns. The most comprehensive single source for Waldorf doll-making in North America</li>
+      <li><strong>Bella Luna Toys</strong> (<em>bellalunatoys.com</em>) — US. Doll tricot, mohair, wool stuffing, embroidery threads. Excellent video tutorials</li>
+      <li><strong>Magic Cabin</strong> (<em>magiccabin.com</em>) — North America. Doll-making supplies in the Waldorf tradition</li>
+      <li><strong>Acorns &amp; Twigs</strong> (<em>acornsandtwigs.com</em>) — US. Waldorf craft supplies including doll materials</li>
+      <li><strong>Myriad Natural Toys</strong> (<em>myriadnaturaltoys.com</em>) — UK. Doll tricot, wool, mohair, and Waldorf doll-making patterns</li>
+      <li><strong>Conscious Craft</strong> (<em>consciouscraft.uk</em>) — UK. Selected doll-making supplies</li>
+      <li><strong>Filges</strong> (<em>filges.de</em>) — Germany. The canonical European source for natural-fibre craft materials</li>
+    </ul>
+
+    <h4>Specialist doll-making shops</h4>
+    <ul class="gentle">
+      <li><strong>De Witte Engel</strong> (<em>dewitteengel.nl</em>) — Netherlands. The manufacturer of the most-used Waldorf doll tricot; ships internationally</li>
+      <li><strong>Sami Dolls</strong> (<em>samidolls.com</em>) — international online shop. Doll tricot, wool stuffing, plant-based stuffing, mohair wefts, free patterns and video tutorials</li>
+      <li><strong>Ildila</strong> — UK / Etsy. Specialist Waldorf-inspired doll patterns and tutorials (the 14-inch, 15-inch, and 13.5-inch baby doll tutorials are particularly well-reviewed)</li>
+      <li><strong>Dearlittledoll.com</strong> — Russia / international. Detailed advanced doll patterns including 18-inch sculpted-face dolls</li>
+      <li><strong>Kelly Casanova's Weaving Lessons blog</strong> — Australia. Free softie doll patterns and tutorials, beginner-friendly</li>
+    </ul>
+
+    <h4>For mohair specifically</h4>
+    <ul class="gentle">
+      <li><strong>KinsWonders</strong> (Etsy) — widely recommended for mohair wefts at fair prices</li>
+      <li><strong>Living Felt</strong> — US. Naturally dyed mohair locks</li>
+      <li><strong>Etsy "doll mohair"</strong> — many small makers selling plant-dyed mohair in beautiful natural tones</li>
+    </ul>
+
+    <h4>For silks and dyes (clothing, hair ribbons)</h4>
+    <ul class="gentle">
+      <li><strong>Dharma Trading Company</strong> (<em>dharmatrading.com</em>) — US, ships internationally. Undyed silks for doll clothing and fabric dyes. The same source recommended in our puppetry and festivals guides</li>
+    </ul>
+  </section>
+
+  <section id="books">
+    <h2><span class="roman">X.</span>Patterns, Books &amp; Where to Learn</h2>
+
+    <p class="lead">A small library and a short list of where to learn doll-making properly.</p>
+
+    <h3>The essential books</h3>
+    <ul class="gentle">
+      <li><strong>Maricristin Sealey — <em>Kinder Dolls: A Waldorf Doll-Making Handbook</em></strong>. The single most-cited Waldorf doll-making book. Detailed patterns, clear instructions, in the authentic Waldorf tradition. If you read one book on the subject, read this one</li>
+      <li><strong>Sunnhild Reinckens — <em>Making Dolls</em></strong>. A beloved classic in the German Waldorf doll-making tradition, with simple, clear patterns for dolls of every age</li>
+      <li><strong>Karin Neuschütz — <em>The Doll Book: Soft Dolls and Creative Free Play</em></strong>. Patterns and developmental philosophy; widely loved</li>
+      <li><strong>Freya Jaffke — <em>Toymaking with Children</em></strong>. Not exclusively about dolls, but includes blanket dolls, simple dolls, and the developmental rationale for each</li>
+      <li><strong>Christel Dhom — <em>Making Magical Fairy-Tale Puppets</em></strong>. The puppetry book mentioned in our puppetry guide; many of the techniques (heads, simple bodies, hair) translate to doll-making</li>
+      <li><strong>Stephanie Cooper, Christine Fynes-Clinton &amp; Marije Rowling — <em>The Children's Year</em></strong>. Seasonal craft projects including a number of simple dolls and small figures</li>
+    </ul>
+
+    <h3>Patterns and online tutorials</h3>
+    <ul class="gentle">
+      <li><strong>Sami Dolls free patterns</strong> (<em>samidolls.com/en/free-patterns</em>) — beautifully illustrated PDF patterns with full video tutorials. Excellent for beginners</li>
+      <li><strong>Ildila tutorials</strong> (Etsy) — paid PDF tutorials with 150+ pages of illustrated guidance; the 14-inch beginner doll is particularly recommended</li>
+      <li><strong>Kelly Casanova's softie doll tutorial</strong> (<em>kellycasanovaweavinglessons.com</em>) — free, multi-part tutorial; one of the most accessible online resources for first-time doll-makers</li>
+      <li><strong>A Child's Dream patterns</strong> — Waldorf-standard doll patterns by experienced doll-makers</li>
+      <li><strong>Dearlittledoll.com</strong> — paid patterns for more advanced makers, including sculpted-face dolls</li>
+      <li><strong>Etsy "Waldorf doll pattern"</strong> — a wide range of patterns from independent makers worldwide</li>
+    </ul>
+
+    <h3>In-person workshops</h3>
+    <p>Doll-making is genuinely better learned in person if you can find a workshop. Look for:</p>
+    <ul class="gentle">
+      <li><strong>Your local Waldorf school</strong> — many run annual doll-making workshops for parents in the autumn or winter, sometimes spanning two or three weekends. These are often the warmest, most rewarding way to learn</li>
+      <li><strong>Waldorf teacher training programmes</strong> — many include short doll-making modules open to non-teachers</li>
+      <li><strong>Local craft guilds and fibre-art schools</strong> — increasingly carry Waldorf doll-making classes</li>
+      <li><strong>Online courses</strong> — Sami Dolls and Ildila both run paid online classes; several Etsy makers offer live workshops</li>
+    </ul>
+
+    <div class="tender">
+      <strong>If your first doll is imperfect</strong>
+      Almost every Waldorf doll-maker remembers their first doll as something that turned out a little lumpy, a little odd, with a face that wasn't quite right. This is part of the tradition. The first doll is a learning piece. The child often loves it especially because they can see — even at three or four — that their grown-up made this with effort. Imperfect, hand-made, slightly wonky dolls are sometimes the most-loved of all. Don't aim for perfection; aim for warmth.
+    </div>
+  </section>
+
+  <section id="home">
+    <h2><span class="roman">XI.</span>If You Don't Make Your Own</h2>
+
+    <p class="lead">Not every family has the time, hand-skill, or inclination to make a doll from scratch. There is no shame in this. Many beautiful Waldorf dolls are made by professional doll-makers and can be bought directly.</p>
+
+    <h3>Where to buy a finished Waldorf doll</h3>
+
+    <ul class="gentle">
+      <li><strong>Etsy — "Waldorf doll"</strong> — the largest single gathering of independent Waldorf doll-makers in the world. Quality varies, so look for shops with strong reviews, clear photos, and detailed material descriptions. Expect to pay between $150 and $500+ for a well-made handmade Waldorf doll, depending on size and complexity</li>
+      <li><strong>Nova Natural Toys &amp; Crafts</strong> (<em>novanatural.com</em>) — US. Carries handmade Waldorf dolls from established makers</li>
+      <li><strong>Bella Luna Toys</strong> (<em>bellalunatoys.com</em>) — US. Selected handmade Waldorf dolls</li>
+      <li><strong>Palumba</strong> (<em>palumba.com</em>) — US. Waldorf-inspired toys including some dolls</li>
+      <li><strong>Specialist makers:</strong> Holli's Dollies, Bamboletta (Canada, now retired but a benchmark for quality), and many individual European doll-makers with their own websites</li>
+      <li><strong>Your local Waldorf school's annual fair</strong> — almost certainly the best place to buy. Parents and teachers often sell handmade dolls at autumn or advent fairs, and these are made with love, often at fair prices, with the school as the beneficiary</li>
+    </ul>
+
+    <h3>What to look for</h3>
+    <ul class="gentle">
+      <li><strong>Natural materials throughout:</strong> wool stuffing, cotton tricot skin, mohair or wool yarn hair. Polyester filling is a sign of a non-authentic doll</li>
+      <li><strong>Simple face:</strong> minimal stitched features, not painted, not embroidered with elaborate detail</li>
+      <li><strong>Solid construction:</strong> firm head, well-stitched seams, secure limbs. Pick the doll up; it should feel substantial</li>
+      <li><strong>Honest description from the maker:</strong> the doll should be described as handmade with named materials, not just "Waldorf-style"</li>
+    </ul>
+
+    <div class="pull-quote">
+      The doll is not bought, in the deepest sense — it is given. By the parent who made it, by the maker who sewed it with care, by the grandparent who passed it down. What is bought, in the end, is the love that went into it.
+    </div>
+  </section>
+
+  <footer>
+    <span class="ornament">✦</span>
+    A section of <em>The Waldorf Path Directory</em>
+    <span class="ornament">✦</span>
+  </footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eurythmy in Waldorf Education — A Through-the-Grades Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f5ede0;
+    --paper-warm: #efe3cf;
+    --paper-deep: #e8d8bd;
+    --ink: #3b2a1a;
+    --ink-soft: #6b5840;
+    --ink-faint: #8a7558;
+    --rust: #a8492a;
+    --moss: #5a6b3f;
+    --wool: #b8a583;
+    --thread: #c8865f;
+    --shadow: rgba(59, 42, 26, 0.08);
+    --shadow-deep: rgba(59, 42, 26, 0.15);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 19px;
+    background-image:
+      radial-gradient(circle at 10% 20%, rgba(168, 73, 42, 0.04) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(90, 107, 63, 0.04) 0%, transparent 40%);
+    min-height: 100vh;
+  }
+  body::before {
+    content: ''; position: fixed; inset: 0;
+    pointer-events: none; opacity: 0.4; z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.23 0 0 0 0 0.16 0 0 0 0 0.1 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .container {
+    max-width: 820px; margin: 0 auto;
+    padding: 60px 32px 100px;
+    position: relative; z-index: 1;
+  }
+  header {
+    text-align: center; margin-bottom: 64px;
+    padding-bottom: 40px; border-bottom: 1px solid var(--paper-deep);
+    position: relative;
+  }
+  header::after {
+    content: '✦'; position: absolute; bottom: -12px; left: 50%;
+    transform: translateX(-50%); background: var(--paper);
+    color: var(--wool); padding: 0 16px; font-size: 16px;
+  }
+  .eyebrow {
+    font-family: 'Caveat', cursive; font-size: 24px;
+    color: var(--rust); margin-bottom: 8px;
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 500;
+    font-size: clamp(40px, 6vw, 60px); line-height: 1.1;
+    color: var(--ink); margin-bottom: 16px;
+  }
+  .subtitle {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 22px; color: var(--ink-soft);
+    max-width: 600px; margin: 0 auto;
+  }
+  .toc {
+    background: var(--paper-warm); border: 1px solid var(--paper-deep);
+    border-radius: 4px; padding: 28px 36px;
+    margin-bottom: 64px; box-shadow: 0 2px 8px var(--shadow);
+  }
+  .toc-title {
+    font-family: 'Caveat', cursive; font-size: 22px;
+    color: var(--rust); margin-bottom: 12px;
+  }
+  .toc ol { list-style: none; counter-reset: toc-counter; }
+  .toc li {
+    counter-increment: toc-counter;
+    padding: 6px 0; border-bottom: 1px dotted var(--paper-deep);
+    display: flex; align-items: baseline;
+  }
+  .toc li:last-child { border-bottom: none; }
+  .toc li::before {
+    content: counter(toc-counter, upper-roman) ".";
+    color: var(--rust); font-weight: 600;
+    margin-right: 12px; min-width: 32px;
+    font-family: 'Cormorant Garamond', serif; font-size: 18px;
+  }
+  .toc a { color: var(--ink); text-decoration: none; flex: 1; font-size: 18px; }
+  .toc a:hover { color: var(--rust); }
+  section { margin-bottom: 72px; scroll-margin-top: 40px; }
+  h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: 36px; color: var(--rust);
+    margin-bottom: 20px; line-height: 1.2;
+  }
+  h2 .roman {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-weight: 400; color: var(--wool);
+    margin-right: 14px; font-size: 28px;
+  }
+  h3 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-style: italic; font-size: 24px;
+    color: var(--moss); margin-top: 32px; margin-bottom: 12px;
+  }
+  p { margin-bottom: 16px; color: var(--ink); }
+  p.lead {
+    font-size: 21px; font-style: italic;
+    color: var(--ink-soft); line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  em { color: var(--ink-soft); }
+  strong { color: var(--ink); font-weight: 600; }
+
+  /* Arc overview box */
+  .arc {
+    background: rgba(168, 73, 42, 0.05);
+    border-left: 3px solid var(--rust);
+    border-radius: 0 4px 4px 0;
+    padding: 22px 28px;
+    margin: 26px 0;
+  }
+  .arc h4 {
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    color: var(--rust);
+    margin-bottom: 10px;
+  }
+  .arc ul { list-style: none; margin: 0; }
+  .arc li {
+    padding: 5px 0;
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    border-bottom: 1px dotted var(--paper-deep);
+  }
+  .arc li:last-child { border-bottom: none; }
+  .arc strong {
+    color: var(--moss);
+    font-weight: 600;
+    display: inline-block;
+    min-width: 130px;
+  }
+
+  /* Per-grade blocks */
+  .grade-block {
+    background: var(--paper-warm);
+    border: 1px solid var(--paper-deep);
+    border-radius: 4px;
+    padding: 26px 30px;
+    margin: 22px 0 30px;
+    box-shadow: 0 1px 4px var(--shadow);
+  }
+  .grade-block .grade-label {
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    color: var(--rust);
+    margin-bottom: 4px;
+  }
+  .grade-block h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.25;
+  }
+  .grade-block .sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--moss);
+    font-size: 17px;
+    margin: 16px 0 6px;
+  }
+  .grade-block p {
+    font-size: 16.5px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+  .grade-block ul {
+    list-style: none;
+    margin: 8px 0 14px;
+  }
+  .grade-block ul li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 6px;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .grade-block ul li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--thread);
+    top: 2px;
+    font-size: 13px;
+  }
+
+  /* Tender callout */
+  .tender {
+    background: rgba(90, 107, 63, 0.06);
+    border: 1px dashed var(--moss);
+    border-radius: 3px;
+    padding: 18px 24px;
+    margin: 22px 0;
+    font-size: 16.5px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .tender strong {
+    color: var(--moss);
+    font-family: 'Caveat', cursive;
+    font-size: 19px;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* Gentle lists */
+  ul.gentle { list-style: none; margin: 16px 0 24px; }
+  ul.gentle li {
+    position: relative; padding-left: 28px;
+    margin-bottom: 12px; font-size: 17px; line-height: 1.6;
+  }
+  ul.gentle li::before {
+    content: '✦'; position: absolute; left: 6px;
+    color: var(--thread); top: 4px; font-size: 14px;
+  }
+
+  /* Pull quote */
+  .pull-quote {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 24px; line-height: 1.4; color: var(--moss);
+    text-align: center; padding: 32px 24px; margin: 40px 0;
+    position: relative;
+    border-top: 1px solid var(--paper-deep);
+    border-bottom: 1px solid var(--paper-deep);
+  }
+  .pull-quote::before {
+    content: '"'; font-size: 80px; color: var(--wool);
+    position: absolute; top: -8px; left: 24px; opacity: 0.4;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  footer {
+    text-align: center; padding-top: 40px; margin-top: 80px;
+    border-top: 1px solid var(--paper-deep);
+    color: var(--ink-faint); font-style: italic; font-size: 17px;
+  }
+  footer .ornament { color: var(--wool); margin: 0 12px; }
+
+  @media (max-width: 600px) {
+    body { font-size: 18px; }
+    .container { padding: 40px 22px 80px; }
+    .toc { padding: 22px 24px; }
+    h1 { font-size: 38px; }
+    h2 { font-size: 30px; }
+    h3 { font-size: 22px; }
+    .pull-quote { font-size: 20px; padding: 24px 16px; }
+  }
+
+  section, header, .toc {
+    animation: fadeUp 0.8s ease-out backwards;
+  }
+  header { animation-delay: 0s; }
+  .toc { animation-delay: 0.15s; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <div class="eyebrow">~ a section of the Waldorf Path Directory ~</div>
+    <h1>Eurythmy</h1>
+    <p class="subtitle">The art that makes speech and music visible — the moving meditation at the heart of every Waldorf school day</p>
+  </header>
+
+  <nav class="toc" aria-label="Table of contents">
+    <div class="toc-title">In this section</div>
+    <ol>
+      <li><a href="#what">What Eurythmy Is</a></li>
+      <li><a href="#why">Why It Belongs in the Curriculum</a></li>
+      <li><a href="#arc">The Arc Through the Grades</a></li>
+      <li><a href="#early">Kindergarten — Eurythmy Within the Day</a></li>
+      <li><a href="#lower">Classes 1–3 — Circles, Sounds &amp; the World as One</a></li>
+      <li><a href="#middle">Classes 4–6 — Form, Geometry &amp; the Self in Space</a></li>
+      <li><a href="#upper-grades">Classes 7–8 — Polarity &amp; the Inwardness of Movement</a></li>
+      <li><a href="#highschool">Classes 9–12 — Eurythmy as Art and Self-Knowledge</a></li>
+      <li><a href="#therapy">Eurythmy Therapy — The Healing Branch</a></li>
+      <li><a href="#parents">For Parents — Watching, Understanding, Helping</a></li>
+      <li><a href="#books">Books, Performers &amp; Where to Learn More</a></li>
+    </ol>
+  </nav>
+
+  <section id="what">
+    <h2><span class="roman">I.</span>What Eurythmy Is</h2>
+
+    <p class="lead">Eurythmy is a movement art developed by Rudolf Steiner in the early twentieth century, in which the body becomes the visible instrument of speech and music. Every sound of the spoken word, every interval of a musical scale, has its own gesture — and the eurythmist moves through these gestures so that what is normally only heard becomes also seen.</p>
+
+    <p>The word itself comes from Greek roots — <em>eu-rhythmia</em>, meaning "harmonious rhythm" or "beautiful flow." It is not dance in the modern sense; the steps and gestures are not invented for expression but are drawn from a specific vocabulary of movement that Steiner developed between 1912 and 1924 in collaboration with his wife Marie Steiner-von Sivers and the young Lory Maier-Smits. The first public eurythmy performance was given in 1913; the form has been developing ever since.</p>
+
+    <p>In a Waldorf school, eurythmy is required from kindergarten through Class 12. Children of every age, every term, every year, step into a large open room — usually with a wooden floor, often called the "eurythmy room" — and move through carefully chosen forms, accompanied by spoken poetry, sung verse, or live piano music. It is one of the most distinctive subjects in the entire Waldorf curriculum, and one of the hardest to explain in writing — because, as Steiner himself often said, eurythmy must be <em>seen</em> to be understood.</p>
+
+    <h3>What it looks like</h3>
+
+    <p>A class of children in eurythmy is quiet, focused, and full of motion. They walk in circles, weave through one another, stand in lines, hold copper rods, move their arms in deliberate gestures, step lightly to the rhythm of a poem the teacher recites. Sometimes the whole class moves together as one body; sometimes individual children take turns in the centre while the others form a frame. The atmosphere is unmistakably <em>focused</em> — neither the bustle of a gym class nor the silence of a meditation room, but something gentler than the first and warmer than the second.</p>
+
+    <p>Performances of eurythmy, when staged for an audience, are striking. The performers wear flowing silk tunics in chosen colours, often with veils that catch the light. The choreography is precise — every step, every gesture has meaning — and yet the overall impression is of a great flowing, watery, living movement that seems to come out of the speech or music itself.</p>
+  </section>
+
+  <section id="why">
+    <h2><span class="roman">II.</span>Why It Belongs in the Curriculum</h2>
+
+    <p class="lead">Steiner introduced eurythmy into the very first Waldorf school in 1919 and asked that it be taught from kindergarten through high school. He considered it indispensable — "no school should be without it." A century later, every authentic Waldorf school still teaches eurythmy as a core subject. The reasons are worth understanding.</p>
+
+    <h3>The integration of head, heart, and hand</h3>
+
+    <p>Waldorf education aims to address the whole child — thinking, feeling, and willing; head, heart, and hand. Most subjects emphasise one or another of these. Mathematics is thinking; painting is feeling; handwork is willing. Eurythmy is the rare subject that integrates all three. To move a eurythmy form well, the child must <em>think</em> the form, <em>feel</em> the gesture, and <em>will</em> the body to carry it out — simultaneously. This integrative quality is one reason eurythmy is sometimes called "the soul of the Waldorf school."</p>
+
+    <h3>What it teaches that nothing else does</h3>
+    <ul class="gentle">
+      <li><strong>Listening with the body.</strong> The child does not hear the poem and then move; the child hears <em>and</em> moves at once. This double attention strengthens listening in a way that purely seated work cannot</li>
+      <li><strong>Spatial awareness and form sense.</strong> Eurythmy forms — figure-eights, spirals, geometric patterns — are walked on the floor; the children develop a deep felt understanding of geometry long before they study it</li>
+      <li><strong>Moving with others.</strong> Much of eurythmy is done in groups. The child learns to hold their own position while remaining aware of fifteen other moving bodies; an extraordinary social-spatial discipline</li>
+      <li><strong>Crossing the midline.</strong> Many eurythmy gestures involve one arm crossing in front of the body to the opposite side — what occupational therapists call "midline crossing." This kind of movement supports the building of neural connections between the two hemispheres of the brain</li>
+      <li><strong>Inner balance.</strong> Eurythmy gives the child a daily small experience of inner stillness within outer motion. In a screen-saturated, attention-fragmented world, this is no small thing</li>
+    </ul>
+
+    <h3>The educational benefits as observed in schools</h3>
+
+    <p>Beyond the philosophical reasons, eurythmy teachers describe practical effects they see week after week: the shy child slowly stepping forward, the loud child learning to wait, the impulsive child learning to move with intention, the slow child finding their rhythm in the group. As one well-known Waldorf eurythmy teacher put it: "Eurythmy both requires and develops focus and goodwill."</p>
+  </section>
+
+  <section id="arc">
+    <h2><span class="roman">III.</span>The Arc Through the Grades</h2>
+
+    <p class="lead">Like every other Waldorf subject, eurythmy meets the child differently at every developmental stage. The same vocabulary of gestures is used throughout — but how the children encounter them, what they understand, and what they accomplish changes profoundly from one year to the next.</p>
+
+    <div class="arc">
+      <h4>The full progression at a glance</h4>
+      <ul>
+        <li><strong>Kindergarten:</strong> woven into the day — gentle imitation, story-led movement</li>
+        <li><strong>Class 1:</strong> the circle as one body; the first sound gestures</li>
+        <li><strong>Class 2:</strong> simple forms, polarities (straight and curved), nature themes</li>
+        <li><strong>Class 3:</strong> the diatonic introduced; mirroring; the world begins to differentiate</li>
+        <li><strong>Class 4:</strong> more complex forms; small group work; copper rods introduced</li>
+        <li><strong>Class 5:</strong> geometric forms; the "rod exercises" deepen; melody and harmony in tone-eurythmy</li>
+        <li><strong>Class 6:</strong> divisions of the circle; precise geometric eurythmy</li>
+        <li><strong>Class 7:</strong> polarity made conscious; major and minor; light and dark</li>
+        <li><strong>Class 8:</strong> the class eurythmy performance; mature group work</li>
+        <li><strong>Classes 9–12:</strong> eurythmy as art; poetry of substance; complex musical works</li>
+      </ul>
+    </div>
+
+    <p>The traditional Waldorf indication is for <em>one period of eurythmy per week through Class 3, and two periods per week from Class 4 through Class 12</em>. By the time a student graduates, they will have had at least 350 eurythmy lessons across their twelve years of school — a quiet accumulation that goes mostly unnoticed but works deeply.</p>
+  </section>
+
+  <section id="early">
+    <h2><span class="roman">IV.</span>Kindergarten — Eurythmy Within the Day</h2>
+
+    <p class="lead">In the Waldorf kindergarten, eurythmy is not yet a formal subject. It is woven into the day so gently that the children scarcely notice it as separate from anything else.</p>
+
+    <p>A trained eurythmist visits the kindergarten once a week, or the teacher includes small eurythmy-like elements in the daily circle. The children imitate the gestures of the teacher — a tree growing, a bird flying, a flower opening. There are no technical terms, no formal vocabulary; just movement, story, song, and the gentle imitation that is the natural mode of learning for the young child.</p>
+
+    <p>The work at this stage is overwhelmingly <em>imitative</em>. The teacher moves with feeling; the child moves alongside. The teacher walks a small spiral in the room; the children follow. The teacher's arms become wings; so do the children's. There is no instruction in the modern sense — no "now do this, now do that" — only a kind of moving story that the children join.</p>
+
+    <h3>What is being built</h3>
+    <p>What looks like simple play is in fact the foundation for everything that follows. The children are learning, through their bodies, that <em>movement carries meaning</em> — that gesture and feeling and sound belong together. This is a deep early lesson that the rest of their eurythmy years will rest on.</p>
+  </section>
+
+  <section id="lower">
+    <h2><span class="roman">V.</span>Classes 1–3 — Circles, Sounds &amp; the World as One</h2>
+
+    <p class="lead">In the first three grades, eurythmy is dominated by one beautiful image: the circle. The class moves as a single body, weaving in and out of the circle, walking it, opening and closing it, breathing with it.</p>
+
+    <div class="grade-block">
+      <div class="grade-label">Class 1 (age 6–7)</div>
+      <h4>The circle as one body; the first sound gestures</h4>
+      <p>The first-grade child still lives largely in the world of imitation and dreaming wholeness. The eurythmy lesson honours this: the class moves almost entirely as a single circle, holding hands or following the teacher in a line that becomes a circle, a spiral, a figure-eight. The poems and songs that accompany the movement are simple, image-rich, and rhythmic — fairy tales, nature verses, simple folk songs.</p>
+      <p class="sub">What is introduced</p>
+      <ul>
+        <li>Walking the basic forms — the circle, the straight line, the lemniscate (figure-eight)</li>
+        <li>The first vowel and consonant gestures — usually beginning with <em>A</em> (an opening, wonder gesture) and <em>O</em> (a wrapping, embracing gesture)</li>
+        <li>Light running and walking exercises that develop rhythm and balance</li>
+        <li>Hand and arm gestures imitated from the teacher's movements</li>
+      </ul>
+      <p>Music in Class 1 eurythmy is in the mood of the fifth — quiet, hovering, without a strong beat — to match what the children are doing in their music lessons.</p>
+    </div>
+
+    <div class="grade-block">
+      <div class="grade-label">Class 2 (age 7–8)</div>
+      <h4>Polarities — straight and curved, fast and slow</h4>
+      <p>In Class 2, the simple unity of the first year begins to differentiate. The children meet the great polarities of movement — straight and curved, fast and slow, strong and gentle. Forms grow slightly more complex. The class still moves largely as a whole, but small variations now appear: some children may walk a straight line while others walk a curve, and at the right moment the two patterns meet.</p>
+      <p>Themes follow the second-grade main lesson curriculum — animal fables, the lives of saints, simple legends. The eurythmy gestures bring these stories into the body: the curve of a lamb's gentleness, the straight stride of a saint walking out into the world, the spiral of a snail.</p>
+    </div>
+
+    <div class="grade-block">
+      <div class="grade-label">Class 3 (age 8–9)</div>
+      <h4>The nine-year change — mirroring and the world made many</h4>
+      <p>Class 3, with the nine-year change, brings a profound shift. The child becomes newly aware of themselves as separate from the world — and the eurythmy lesson meets this with new forms that honour the separation while still gently holding the class together.</p>
+      <p class="sub">What is introduced</p>
+      <ul>
+        <li><strong>Mirroring:</strong> two children face each other and one mirrors the other's movements — a beautiful exercise in attention to another being</li>
+        <li><strong>Differentiated parts:</strong> the class divides into two or three groups, each walking a different form, the patterns weaving across one another</li>
+        <li><strong>The first work with named sounds:</strong> the children begin to know that <em>L</em> is the flowing gesture, <em>R</em> is the rolling gesture, <em>M</em> is the gathering gesture; a kind of vocabulary is being learned</li>
+        <li><strong>Diatonic music:</strong> as the music curriculum moves from pentatonic to diatonic, so does the music used in eurythmy</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="middle">
+    <h2><span class="roman">VI.</span>Classes 4–6 — Form, Geometry &amp; the Self in Space</h2>
+
+    <p class="lead">From Class 4 onward, eurythmy meets twice a week rather than once, and the work becomes substantially more refined. The middle grades are the years of geometric eurythmy — of precise forms walked on the floor, of small group choreographies, and of the famous copper rods.</p>
+
+    <div class="grade-block">
+      <div class="grade-label">Class 4 (age 9–10)</div>
+      <h4>The copper rods arrive; small group work begins</h4>
+      <p>Class 4 is famous in Waldorf eurythmy for the introduction of the <strong>copper rods</strong>. These are not really copper but usually solid wooden dowels, sometimes copper-plated or simply varnished, about 80–100cm long, used in pairs by each child. The rods are held in both hands and used in a series of exercises — tossed lightly into the air and caught, passed from one hand to the other, rolled along the floor, swung through the air in patterns.</p>
+      <p>The rod exercises are not exactly eurythmy in the strict sense — they are <em>preparation</em> exercises that build precision, coordination, spatial awareness, and the ability to feel one's body and one's neighbour's body simultaneously. Children love them, and the class often becomes one of the most-anticipated lessons of the week.</p>
+      <p class="sub">Other developments</p>
+      <ul>
+        <li>Forms become more complex — the class may now walk a four-part interlocking pattern</li>
+        <li>The first proper <em>geometric forms</em> — pentagons, triangles, hexagons — are walked</li>
+        <li>Rhythmic exercises become more demanding; the children practice walking in 3/4, 4/4, and other time signatures</li>
+      </ul>
+    </div>
+
+    <div class="grade-block">
+      <div class="grade-label">Class 5 (age 10–11)</div>
+      <h4>Tone-eurythmy and the golden age of childhood</h4>
+      <p>Class 5 is sometimes called the "golden age of childhood" — the children are physically graceful, emotionally balanced, and capable of substantial new work. Eurythmy meets them with the deepening of <strong>tone-eurythmy</strong> (the eurythmy of music) alongside the speech-eurythmy they have been doing all along.</p>
+      <p>In tone-eurythmy, the children learn that each interval of a musical scale has its own gesture — the second is a gentle reach, the third a fuller opening, the fifth an expansive gesture, the octave a great reaching round. They walk forms to musical pieces in the way they have learned to walk forms to poetry.</p>
+      <p>Group choreography becomes more refined. The teacher may now choreograph small pieces — six children walking a precise interweaving pattern, two children in mirror movement at the centre while the rest form a frame.</p>
+    </div>
+
+    <div class="grade-block">
+      <div class="grade-label">Class 6 (age 11–12)</div>
+      <h4>Divisions of the circle — precision and geometry</h4>
+      <p>Class 6 is famous in eurythmy for the <strong>divisions of the circle</strong> — exquisitely precise geometric forms walked on the floor by the whole class, in which each child must occupy exactly the right point of a hexagon, pentagon, or other figure, and the whole class together creates a visible geometric image as they move.</p>
+      <p>These forms tie directly to the Class 6 main lesson study of geometry. The geometric figure the children draw with compass and ruler in their main lesson book is the same figure they walk in eurythmy that week. Maths becomes a body experience; the body experience becomes maths.</p>
+      <p>The question implicit in this work, often quoted by Waldorf eurythmists: <em>How do I move as a part of a whole, strongly and dynamically, and also make my dynamic self align with fifteen other dynamic selves?</em></p>
+    </div>
+  </section>
+
+  <section id="upper-grades">
+    <h2><span class="roman">VII.</span>Classes 7–8 — Polarity &amp; the Inwardness of Movement</h2>
+
+    <p class="lead">The middle-school years bring a new inwardness to eurythmy. The adolescent in early formation needs movement that meets their inner experience — the awakening of strong feelings, the swing between extremes, the need for both expression and self-control.</p>
+
+    <div class="grade-block">
+      <div class="grade-label">Class 7 (age 12–13)</div>
+      <h4>Polarity made conscious — major and minor, light and dark</h4>
+      <p>Class 7 eurythmy deliberately works with <em>polarity</em>. Children explore movements of contraction and expansion, lightness and weight, major and minor moods in music, joy and sorrow in poetry. Steiner taught that the early adolescent needs to feel these polarities consciously in their body — to know in their bones that opposites exist, that they can move through both, that life is not all one tone.</p>
+      <p>The poetry chosen for Class 7 reflects this: ballads with strong contrasts, dramatic monologues, poetry with rhythmic intensity. Music chosen for tone-eurythmy may move between major and minor, fast and slow, loud and soft, in deliberate dramatic shape.</p>
+    </div>
+
+    <div class="grade-block">
+      <div class="grade-label">Class 8 (age 13–14)</div>
+      <h4>The Class 8 eurythmy performance</h4>
+      <p>By Class 8, the children are capable of substantial choreographed work. Many Waldorf schools mark the end of Class 8 with a <strong>Class 8 eurythmy performance</strong> — a piece performed for parents and the school community, sometimes lasting twenty minutes or more, with carefully choreographed group work to a substantial poem or piece of music.</p>
+      <p>This is often the children's first chance to wear simple eurythmy tunics — flowing knee-length silk garments in chosen colours that catch the light and the movement. The performance is taken seriously: weeks of rehearsal, careful choreography, full attention. For many students, it is their first experience of performing a sustained artistic work to an audience.</p>
+    </div>
+  </section>
+
+  <section id="highschool">
+    <h2><span class="roman">VIII.</span>Classes 9–12 — Eurythmy as Art and Self-Knowledge</h2>
+
+    <p class="lead">In the Waldorf high school, eurythmy becomes increasingly an art — a discipline taken up consciously by young people who can now understand what they are doing and why. The forms become more demanding; the poetry deeper; the inner work more apparent.</p>
+
+    <h3>What changes in the upper school</h3>
+
+    <p>The high-school eurythmy lesson works with poetry of substance — Goethe, Schiller, Shakespeare, Rilke, Whitman, contemporary verse — and with music that is more complex, sometimes including the work of Bach, Beethoven, Brahms, and twentieth-century composers. The choreography is no longer simply educational; it is <em>artistic</em>.</p>
+
+    <p>Students learn what Steiner called the <em>tone-figures</em> and <em>speech-figures</em> — particular forms of movement that express not just the literal sound but the inner gesture of musical phrases and poetic lines. They study what their gesture <em>looks like</em> from outside, work with mirrors, refine their own movement consciously. There are also exquisite <strong>silent eurythmy forms</strong> given by Steiner — forms walked without speech or music, in which only the inner experience of the mover and the spatial geometry remain. These are typically introduced in the upper school as an exercise in self-knowledge.</p>
+
+    <h3>The senior project and the graduation performance</h3>
+
+    <p>In many Waldorf high schools, the Class 12 students prepare a <strong>graduation eurythmy performance</strong> as part of their final year. The piece is substantial — a complete poem or musical work, fully choreographed, performed in costume to an audience of the school community. Some students take a leading role; some sing the piece if it has a vocal part; some help with costuming and staging. The performance is the culmination of twelve years of weekly eurythmy work, and it is often quietly moving for everyone present.</p>
+
+    <div class="pull-quote">
+      The language of movement and form is the language of the spirit, or that in us which wills to connect with the world, make it better, more beautiful, more just, simply more.
+    </div>
+  </section>
+
+  <section id="therapy">
+    <h2><span class="roman">IX.</span>Eurythmy Therapy — The Healing Branch</h2>
+
+    <p class="lead">Alongside the pedagogical eurythmy taught in Waldorf schools, there is a second branch of the art: <em>eurythmy therapy</em>, sometimes called curative eurythmy. This is part of anthroposophical medicine, used in clinics and by trained eurythmy therapists working under the prescription of an anthroposophical physician.</p>
+
+    <p>Eurythmy therapy was developed by Rudolf Steiner together with the physicians Ita Wegman and Margarethe Hauschka, beginning in the early 1920s. It uses a modified vocabulary of eurythmy movements — held longer, repeated, emphasised — to address specific conditions. The therapeutic approach rests on the idea that each speech sound has a relationship to physiological processes in the human organism: the vowel <em>A</em> works on a certain quality of the body, the consonant <em>L</em> on another, and so on.</p>
+
+    <p>Eurythmy therapy is used for a wide range of conditions including circulatory and rhythmic-system imbalances, sleep difficulties, anxiety and depression, developmental challenges in children, and post-illness rehabilitation. Sessions typically last 30–45 minutes, are given individually or in small groups, and are repeated over a period of weeks or months. Some peer-reviewed research — notably from the University of Witten/Herdecke in Germany — has shown measurable effects on heart rate variability and other physiological markers, though the broader scientific evidence base remains limited.</p>
+
+    <div class="tender">
+      <strong>An honest note</strong>
+      Eurythmy therapy lives within the anthroposophical medical tradition and is most often offered in clinics that share that framework. For families curious about it, the best path is to consult an anthroposophical physician — they can discuss whether it might be useful for a particular situation. Within mainstream medicine, it is not yet widely recognised, and a reader should approach the therapeutic claims with the same balanced openness they would bring to any complementary or integrative therapy.
+    </div>
+  </section>
+
+  <section id="parents">
+    <h2><span class="roman">X.</span>For Parents — Watching, Understanding, Helping</h2>
+
+    <p class="lead">For parents new to Waldorf education, eurythmy can be the single most puzzling subject on the curriculum. Here is some practical guidance for understanding and supporting your child's eurythmy work.</p>
+
+    <h3>Attend the performances</h3>
+    <p>Most Waldorf schools hold eurythmy performances at least once or twice a year, often at the end of an extended block or as part of seasonal festivals. <em>Go.</em> Watching eurythmy is the only way to understand it. A description on the page (such as this one) can only ever give a partial sense; the form lives in the seeing.</p>
+
+    <h3>Be patient with your own first impression</h3>
+    <p>Many parents find their first eurythmy performance bewildering. The forms can look strange; the gestures unfamiliar; the whole effect oddly slow. This is normal. After a few performances — and especially after you have seen your own child move — something usually shifts. The forms begin to feel coherent. The gestures begin to <em>mean</em> something. The art begins to disclose itself.</p>
+
+    <h3>Don't ask your child to "show you" at home</h3>
+    <p>Eurythmy is not a performance art the way ballet or gymnastics is. Asking a six-year-old to demonstrate "what they did in eurythmy today" usually produces self-conscious confusion. The work belongs to the eurythmy lesson; it does not need to be carried home and rehearsed. Let it live there.</p>
+
+    <h3>Soft shoes — sometimes none at all</h3>
+    <p>Most schools require <strong>eurythmy shoes</strong> — thin-soled, soft, flexible shoes that allow the foot to feel the floor. These are sold by Waldorf supply shops and traditional eurythmy supply houses. Some schools allow children to go barefoot in the warmer months, or use simple soft slippers. Your child's teacher will tell you what is needed.</p>
+
+    <h3>Comfortable, flowing clothing</h3>
+    <p>Restrictive clothing — tight jeans, stiff school uniforms, anything that binds at the waist or the joints — makes eurythmy difficult or impossible to do well. Most schools ask for soft, comfortable clothing on eurythmy days: leggings, loose trousers, a tunic or long t-shirt that allows the arms to move freely. For formal performances, the school usually provides the silk tunics.</p>
+
+    <h3>Trust the process</h3>
+    <p>The benefits of eurythmy unfold slowly and are often invisible to a parent year by year. The child becomes more coordinated, more focused, more aware of others in space, more inwardly composed — but these qualities arrive so gradually that they can be hard to spot. Many parents only see what eurythmy has done for their child when they look back at the end of Class 8 or Class 12, and realise that something quietly substantial was happening all along.</p>
+  </section>
+
+  <section id="books">
+    <h2><span class="roman">XI.</span>Books, Performers &amp; Where to Learn More</h2>
+
+    <p class="lead">A small library and a short list of where to encounter eurythmy beyond your child's school.</p>
+
+    <h3>Books on eurythmy for parents and teachers</h3>
+    <ul class="gentle">
+      <li><strong>Rudolf Steiner — <em>Eurythmy as Visible Speech</em></strong>. The foundational lectures (1924), given to the first eurythmists. Dense, rewarding, the original source</li>
+      <li><strong>Rudolf Steiner — <em>Eurythmy as Visible Singing</em></strong>. The parallel lectures on tone-eurythmy, also from 1924</li>
+      <li><strong>Marjorie Raffe, Cecil Harwood &amp; Marguerite Lundgren — <em>Eurythmy and the Impulse of Dance</em></strong>. A clear historical and philosophical introduction; one of the most accessible books in the field</li>
+      <li><strong>Werner Barfod — <em>The Eurythmy Figures: Foundation and Practice</em></strong>. A practical and pedagogical reference</li>
+      <li><strong>Michael Tapp — <em>Forming and Transforming</em></strong>. An introduction to eurythmy for those who have never seen it</li>
+      <li><strong>Magdalene Siegloch — <em>How the New Art of Eurythmy Began</em></strong>. The early history of eurythmy and the work of Lory Maier-Smits, the first eurythmist</li>
+      <li><strong>Reinhild Brass — <em>Music From Inside Out</em></strong>. Substantial reflections on the place of eurythmy and music in education</li>
+    </ul>
+
+    <h3>Eurythmy ensembles and performers</h3>
+    <ul class="gentle">
+      <li><strong>Eurythmeum Stuttgart</strong> — Germany. The professional ensemble closest to the original tradition; tours internationally</li>
+      <li><strong>The Goetheanum Eurythmy Ensemble</strong> — Dornach, Switzerland. The official ensemble of the Goetheanum, the world centre of anthroposophy</li>
+      <li><strong>Eurythmy Spring Valley</strong> — New York, US. The main eurythmy training school and performing ensemble in North America</li>
+      <li><strong>The London Eurythmy School and Ensemble</strong> — UK</li>
+      <li><strong>Many Waldorf schools have eurythmists in residence</strong> who perform occasionally for school communities and the wider public — worth attending if the opportunity arises</li>
+    </ul>
+
+    <h3>Eurythmy training schools</h3>
+    <p>For adults considering taking up eurythmy seriously — whether as a profession or as a personal practice — full eurythmy training is typically a four- or five-year programme, intensive and demanding. The major training schools include:</p>
+    <ul class="gentle">
+      <li><strong>Eurythmy Spring Valley</strong> (New York, US) — the main North American training</li>
+      <li><strong>The Eurythmeum CH</strong> (Aesch, Switzerland)</li>
+      <li><strong>The Eurythmeum Stuttgart</strong> (Germany)</li>
+      <li><strong>The London School of Eurythmy</strong> (UK)</li>
+      <li><strong>Numerous smaller schools</strong> across Europe, the Americas, Australia, and Asia — searchable through <em>eurythmy.org</em> and the international eurythmy association directories</li>
+    </ul>
+
+    <h3>Eurythmy therapy</h3>
+    <p>Eurythmy therapy training is typically a postgraduate programme — taken after the four-year eurythmy training plus medical study. It is recognised by the Medical Section at the Goetheanum and offered through several anthroposophical clinics in Europe. For families seeking eurythmy therapy, the path begins with an anthroposophical physician.</p>
+
+    <h3>Supplies and clothing</h3>
+    <ul class="gentle">
+      <li><strong>Eurythmy shoes:</strong> available from <em>Mercurius International</em>, <em>A Child's Dream</em>, <em>Bella Luna Toys</em>, and specialist German makers such as <em>Schuhmacherei Berens</em></li>
+      <li><strong>Copper rods (Class 4 onward):</strong> usually supplied by the school; rarely needed at home. If wanted, available through <em>Mercurius</em> and other Waldorf wholesalers</li>
+      <li><strong>Silk for tunics:</strong> for performance costumes, schools generally use plant-dyed habotai silk — see the puppetry guide for sources (Dharma Trading, Sarah's Silks, etc.)</li>
+    </ul>
+
+    <h3>Organisations</h3>
+    <ul class="gentle">
+      <li><strong>The Section for Performing Arts at the Goetheanum</strong> — Dornach, Switzerland. The world centre for eurythmy as a performing art</li>
+      <li><strong>The Medical Section at the Goetheanum</strong> — the home of eurythmy therapy training and certification</li>
+      <li><strong>The International Forum for Eurythmy</strong> (<em>eurythmy4you.com</em> and related networks) — connections between eurythmists worldwide</li>
+      <li><strong>The Association for a Healing Education</strong> and similar Waldorf curative-education networks — for those interested in the therapeutic side</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span class="ornament">✦</span>
+    A section of <em>The Waldorf Path Directory</em>
+    <span class="ornament">✦</span>
+  </footer>
+
+</div>
+
+</body>
+</html>

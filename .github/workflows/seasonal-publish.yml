@@ -1,0 +1,25 @@
+name: Publish Daily Seasonal Rhythm
+
+on:
+  schedule:
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+
+jobs:
+  publish-rhythm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - run: node scripts/publish-seasonal.js
+        env:
+          TEABLE_API_KEY: ${{ secrets.TEABLE_API_KEY }}
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add public/daily-rhythm.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-publish daily rhythm [skip ci]" && git push)

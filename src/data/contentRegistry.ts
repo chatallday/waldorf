@@ -1,0 +1,178 @@
+export interface ContentArticle {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  filePath: string;
+  contentType: 'article' | 'resource' | 'pdf';
+  topicTags: string[];
+  language?: string;
+  grade?: string;
+  author?: string;
+}
+
+const ARTICLE_FILES: ContentArticle[] = [
+  { id: 'main-lesson-overview', title: 'The Main Lesson', description: 'Comprehensive overview of the Waldorf main lesson structure across all grades.', category: 'Curriculum', filePath: '/documents/main-lesson-overview_1.html', contentType: 'article', topicTags: ['main lesson', 'curriculum', 'overview', 'grades'], grade: 'All Grades' },
+  { id: 'main-lesson-class-1', title: 'Class 1 Main Lessons', description: 'Main lesson content and guidance for Class 1 in Waldorf education.', category: 'Curriculum', filePath: '/documents/Main lesson 1 .html', contentType: 'article', topicTags: ['main lesson', 'class 1', 'grade 1', 'curriculum'], grade: 'Class 1' },
+  { id: 'main-lesson-class-2', title: 'Class 2 Main Lessons', description: 'Main lesson content and guidance for Class 2 in Waldorf education.', category: 'Curriculum', filePath: '/documents/Main lesson 2 .html', contentType: 'article', topicTags: ['main lesson', 'class 2', 'grade 2', 'curriculum'], grade: 'Class 2' },
+  { id: 'main-lesson-class-3', title: 'Class 3 Main Lessons', description: 'Main lesson content and guidance for Class 3.', category: 'Curriculum', filePath: '/documents/Main lesson 3 .html', contentType: 'article', topicTags: ['main lesson', 'class 3', 'grade 3', 'curriculum'], grade: 'Class 3' },
+  { id: 'main-lesson-class-4', title: 'Class 4 Main Lessons', description: 'Main lesson content and guidance for Class 4 in Waldorf education.', category: 'Curriculum', filePath: '/documents/Main lesson 4 .html', contentType: 'article', topicTags: ['main lesson', 'class 4', 'grade 4', 'curriculum'], grade: 'Class 4' },
+  { id: 'main-lesson-class-5', title: 'Class 5 Main Lessons', description: 'Main lesson content and guidance for Class 5 in Waldorf education.', category: 'Curriculum', filePath: '/documents/Main lesson 5 .html', contentType: 'article', topicTags: ['main lesson', 'class 5', 'grade 5', 'curriculum'], grade: 'Class 5' },
+  { id: 'main-lesson-class-6', title: 'Class 6 Main Lessons', description: 'Main lesson content and guidance for Class 6 in Waldorf education.', category: 'Curriculum', filePath: '/documents/Main lesson 6 .html', contentType: 'article', topicTags: ['main lesson', 'class 6', 'grade 6', 'curriculum'], grade: 'Class 6' },
+  { id: 'main-lesson-class-7', title: 'Class 7 Main Lessons', description: 'Main lesson content for Class 7 — history, sciences, and artistic work.', category: 'Curriculum', filePath: '/documents/Main lesson 7 .html', contentType: 'article', topicTags: ['main lesson', 'class 7', 'grade 7', 'curriculum', 'history', 'science'], grade: 'Class 7' },
+  { id: 'main-lesson-class-8', title: 'Class 8 Main Lessons', description: 'Main lesson content for Class 8 — revolutions, world history, and sciences.', category: 'Curriculum', filePath: '/documents/Main lesson 8 .html', contentType: 'article', topicTags: ['main lesson', 'class 8', 'grade 8', 'curriculum', 'history', 'science'], grade: 'Class 8' },
+  { id: 'class-8-project', title: 'The Class 8 Project', description: 'Guide to the Class 8 capstone project in Waldorf schools.', category: 'Curriculum', filePath: '/documents/class-8-project_1.html', contentType: 'article', topicTags: ['class 8', 'project', 'capstone', 'grade 8'], grade: 'Class 8' },
+  { id: 'class-12-senior-project', title: 'The Class 12 Senior Project', description: 'Comprehensive guide to the Waldorf Class 12 senior project.', category: 'Curriculum', filePath: '/documents/class-12-senior-project.html', contentType: 'article', topicTags: ['class 12', 'senior project', 'capstone', 'grade 12'], grade: 'Class 12' },
+  { id: 'class-plays-by-grade', title: 'Class Plays by Grade', description: 'Recommended class plays and theatrical works for each Waldorf grade.', category: 'Curriculum', filePath: '/documents/class-plays-by-grade-list_1.html', contentType: 'article', topicTags: ['plays', 'theatre', 'drama', 'class plays', 'grades'], grade: 'All Grades' },
+  { id: 'handwork', title: 'Handwork in Waldorf Education', description: 'The handwork curriculum across the grades — knitting, sewing, and tactile craft progressions.', category: 'Handwork', filePath: '/documents/Handwork in Waldorf Education.html', contentType: 'article', topicTags: ['handwork', 'craft', 'curriculum', 'knitting', 'sewing'], grade: 'All Grades' },
+  { id: 'doll-making', title: 'Doll Making in Waldorf Education', description: 'The art of doll making in Waldorf education — materials, methods, and the through-the-ages guide.', category: 'Handwork', filePath: '/documents/doll-making-in-waldorf-education_2.html', contentType: 'article', topicTags: ['dolls', 'doll making', 'craft', 'handwork', 'waldorf doll'], grade: 'All Grades' },
+  { id: 'blacksmithing', title: 'Blacksmithing in Waldorf Education', description: 'Fire, force, and the will that bends iron in the upper school.', category: 'Hands', filePath: '/documents/blacksmithing-in-waldorf-education.html', contentType: 'article', topicTags: ['blacksmithing', 'forge', 'metals', 'upper school'], grade: 'Grades 9-12' },
+  { id: 'choir-singing', title: 'Choir & Singing Through the Grades', description: 'From the mood of the fifth in kindergarten to four-part high school harmony.', category: 'Music', filePath: '/documents/choir-singing-in-waldorf-education.html', contentType: 'article', topicTags: ['choir', 'singing', 'music', 'harmony', 'grades'], grade: 'All Grades' },
+  { id: 'eurythmy', title: 'Eurythmy in Waldorf Education', description: 'The art of eurythmy — movement, speech, and music across the Waldorf grades.', category: 'Music', filePath: '/documents/eurythmy-in-waldorf-education_1.html', contentType: 'article', topicTags: ['eurythmy', 'movement', 'music', 'speech', 'art'], grade: 'All Grades' },
+  { id: 'orchestra', title: 'Orchestra and Instrumental Music in Waldorf Education', description: 'Building the Waldorf orchestra program — instruments, ensemble work, and the through-the-grades guide.', category: 'Music', filePath: '/documents/orchestra-instrumental-music-in-waldorf-education_3.html', contentType: 'article', topicTags: ['orchestra', 'music', 'instruments', 'strings', 'program'], grade: 'Grades 4-12' },
+  { id: 'puppetry', title: 'Puppetry in Waldorf Education', description: 'The art of puppetry and marionette play in Waldorf schools.', category: 'Handwork', filePath: '/documents/puppetry-in-waldorf-education_2.html', contentType: 'article', topicTags: ['puppetry', 'puppets', 'marionette', 'storytelling', 'theatre'], grade: 'All Grades' },
+  { id: 'festivals', title: 'Festivals in Waldorf Education', description: 'How seasonal and celestial festivals anchor the Waldorf school year.', category: 'Festivals', filePath: '/documents/festivals-in-waldorf-education.html', contentType: 'article', topicTags: ['festivals', 'seasonal', 'celebrations', 'year', 'hemispheres'], grade: 'All Grades' },
+  { id: 'form-drawing', title: 'Form Drawing in Waldorf Education', description: 'The art and practice of form drawing across the Waldorf grades.', category: 'Curriculum', filePath: '/documents/form-drawing-in-waldorf-education_1.html', contentType: 'article', topicTags: ['form drawing', 'drawing', 'art', 'curriculum'], grade: 'Grades 1-5' },
+  { id: 'foreign-language', title: 'Foreign Language Teaching in Waldorf Education', description: 'Approaches to foreign language instruction in Waldorf schools.', category: 'Curriculum', filePath: '/documents/foreign-language-teaching-in-waldorf_1.html', contentType: 'article', topicTags: ['foreign language', 'german', 'french', 'spanish', 'teaching', 'mandarin'], grade: 'All Grades' },
+  { id: 'special-needs', title: 'Special Needs and Neurodivergence in Waldorf Education', description: 'Understanding special needs and neurodivergence within Waldorf education.', category: 'Development', filePath: '/documents/special-needs-neurodivergence-in-waldorf.html', contentType: 'article', topicTags: ['special needs', 'neurodivergence', 'inclusion', 'curative', 'support', 'camphill'], grade: 'All Grades' },
+  { id: 'writing-tools-cursive', title: 'From Crayon to Fountain Pen — Writing Tools and Cursive', description: 'The Waldorf approach to writing tools, handwriting, and cursive instruction.', category: 'Curriculum', filePath: '/documents/writing-tools-and-cursive-in-waldorf_1.html', contentType: 'article', topicTags: ['writing', 'cursive', 'handwriting', 'tools', 'curriculum', 'fountain pen'], grade: 'Grades 1-5' },
+  { id: 'veil-painting', title: 'Veil Painting in Waldorf Education', description: 'Building transparent layers of colour, Collot d’Herbois tradition, and lazure.', category: 'Arts & Crafts', filePath: '/documents/veil-painting-in-waldorf-education.html', contentType: 'article', topicTags: ['veil painting', 'painting', 'colour', 'lazure', 'collot d herbois'], grade: 'All Grades' },
+  { id: 'storytelling-living-word', title: 'The Living Word — Storytelling in Waldorf', description: 'The art of storytelling as a core pedagogical tool in Waldorf education.', category: 'Curriculum', filePath: '/documents/the-living-word-storytelling.html', contentType: 'article', topicTags: ['storytelling', 'living word', 'oral tradition', 'pedagogy'], grade: 'All Grades' },
+  { id: 'is-waldorf-for-us', title: 'Is Waldorf for Our Family?', description: 'A guide for families considering Waldorf education for their children.', category: 'Parenting', filePath: '/documents/is-waldorf-for-our-family_1.html', contentType: 'article', topicTags: ['waldorf', 'family', 'choosing school', 'parenting', 'guide'], grade: 'All Grades' },
+  { id: 'nutrition', title: 'Nourishing the Waldorf Family', description: 'Holistic nutrition principles in the Waldorf context.', category: 'Nutrition', filePath: '/documents/nutrition-in-waldorf-education.html', contentType: 'article', topicTags: ['nutrition', 'food', 'health', 'holistic', 'biodynamic', 'grains'], grade: 'All Grades' },
+  { id: 'audiobook-podcast-list', title: 'Waldorf Audiobooks and Story Podcasts', description: 'Curated list of audiobooks and podcasts for Waldorf families and educators.', category: 'Resources', filePath: '/documents/waldorf-audiobook-and-podcast-list_1.html', contentType: 'article', topicTags: ['audiobooks', 'podcasts', 'listening', 'resources'], grade: 'All Grades' },
+  { id: 'waldorf-fonts', title: 'The Baar Fonts — Anthroposophical Typefaces by Lutz Baar', description: 'Waldorf fonts created by Lutz Baar for educational use.', category: 'Resources', filePath: '/documents/waldorf-fonts-lutz-baar_5.html', contentType: 'article', topicTags: ['fonts', 'typography', 'lutz baar', 'resources', 'design'], grade: 'All Grades' },
+  { id: 'aprons-totes', title: 'Aprons and Tote Bags', description: 'Guide to aprons, totes, and practical items for Waldorf classrooms and homes.', category: 'Resources', filePath: '/documents/aprons-and-totes-shop_2.html', contentType: 'article', topicTags: ['aprons', 'totes', 'shop', 'classroom', 'practical'], grade: 'All Grades' },
+  { id: 'four-temperaments', title: 'The Four Temperaments in Waldorf Education', description: 'Understanding the four temperaments — choleric, sanguine, phlegmatic, melancholic — in Waldorf pedagogy.', category: 'Curriculum', filePath: '/documents/The Four Temperaments in Waldorf Education.html', contentType: 'article', topicTags: ['temperaments', 'psychology', 'waldorf', 'curriculum'], grade: 'All Grades' },
+  { id: 'waldorf-reading-guide', title: 'Waldorf Reading Guide Full', description: 'Complete reading guide for Waldorf education across all grades and subjects.', category: 'Curriculum', filePath: '/documents/Waldorf Reading Guide Full.html', contentType: 'article', topicTags: ['reading', 'guide', 'waldorf', 'curriculum', 'literature'], grade: 'All Grades' },
+  { id: 'waldorf-music-instruments', title: 'Waldorf Music Instruments', description: 'Guide to musical instruments used in Waldorf education — pentatonic flute, lyre, harp, and more.', category: 'Music', filePath: '/documents/waldorf-music-instruments.html', contentType: 'article', topicTags: ['music', 'instruments', 'pentatonic', 'lyre', 'harp', 'waldorf'], grade: 'All Grades' },
+  { id: 'toys-art-supplies', title: 'Toys, Art Supplies & Creative Play', description: 'Comprehensive guide to Waldorf toys, art supplies, and creative play materials.', category: 'Handwork', filePath: '/documents/Toys_Art_Supplies_and_Creative_Play.html', contentType: 'article', topicTags: ['toys', 'art supplies', 'creative play', 'handwork', 'materials'], grade: 'All Grades' },
+  { id: 'waldorf-nutrition-food', title: 'Waldorf Nutrition & Food', description: 'Nutrition principles, grain of the day, and food philosophy in Waldorf education.', category: 'Nutrition', filePath: '/documents/waldorf-nutrition-food.html', contentType: 'article', topicTags: ['nutrition', 'food', 'grains', 'biodynamic', 'waldorf'], grade: 'All Grades' },
+];
+
+const RESOURCE_FILES: ContentArticle[] = [
+  { id: 'pdf-handwork-checklist', title: 'Waldorf Handwork Checklist', description: 'Complete handwork skills checklist for all Waldorf grades.', category: 'Handwork', filePath: '/documents/Waldorf_Handwork_Checklist_2.pdf', contentType: 'pdf', topicTags: ['handwork', 'checklist', 'skills', 'pdf'], grade: 'All Grades' },
+  { id: 'pdf-handwork-supplies', title: 'Waldorf Handwork Supplies by Grade', description: 'Handwork supplies and materials list organized by grade level.', category: 'Handwork', filePath: '/documents/Waldorf_Handwork_Supplies_by_Grade.pdf', contentType: 'pdf', topicTags: ['handwork', 'supplies', 'materials', 'grades', 'pdf'], grade: 'All Grades' },
+  { id: 'pdf-grain-meal-plan', title: 'Waldorf Grain of the Day Meal Plan', description: 'Weekly meal plan based on the Waldorf grain of the day rhythm.', category: 'Nutrition', filePath: '/documents/Waldorf_Grain_of_the_Day_Meal_Plan.pdf', contentType: 'pdf', topicTags: ['nutrition', 'meal plan', 'grain', 'rhythm', 'pdf'], grade: 'All Grades' },
+  { id: 'pdf-goetheanum', title: 'Goetheanum and the Steiner Waldorf Movement', description: 'Overview of the Goetheanum and its role in the Steiner Waldorf movement.', category: 'Schools', filePath: '/documents/Goetheanum_Steiner_Waldorf.pdf', contentType: 'pdf', topicTags: ['goetheanum', 'steiner', 'waldorf', 'movement', 'pdf'], grade: 'All Grades' },
+  { id: 'pdf-public-schools-usa', title: 'Public Waldorf Schools USA', description: 'Directory of public Waldorf schools in the United States (not worldwide).', category: 'Schools', filePath: '/documents/Public-Waldorf-Schools-Worldwide.pdf', contentType: 'pdf', topicTags: ['schools', 'public', 'waldorf', 'usa', 'directory', 'pdf'], grade: 'All Grades' },
+  { id: 'pdf-steiner-competition', title: 'Steiner Competition Overview', description: 'Information about the Steiner competition and related educational initiatives.', category: 'Development', filePath: '/documents/steiner_competition.pdf', contentType: 'pdf', topicTags: ['steiner', 'competition', 'education', 'initiatives', 'pdf'], grade: 'All Grades' },
+  { id: 'pdf-wegman-steiner', title: 'Wegman and Steiner — Collaborative Works', description: 'Documentation of the collaborative work between Ita Wegman and Rudolf Steiner.', category: 'Development', filePath: '/documents/Wegman_and_Steiner.pdf', contentType: 'pdf', topicTags: ['wegman', 'steiner', 'collaboration', 'anthroposophy', 'pdf'], grade: 'All Grades' },
+  { id: 'pdf-toy-furniture-makers', title: 'Waldorf Toy & Furniture Makers Worldwide', description: 'Global directory of Waldorf toy and solid wood furniture manufacturers.', category: 'Resources', filePath: '/documents/Waldorf_Toy_Furniture_Makers_Worldwide.pdf', contentType: 'pdf', topicTags: ['toys', 'furniture', 'directory', 'makers', 'pdf'], grade: 'All Grades' },
+  { id: 'pdf-wood-furniture-makers', title: 'Wood Furniture Makers for Waldorf Education Worldwide', description: 'Solid wood furniture manufacturers and distributors serving Waldorf schools.', category: 'Resources', filePath: '/documents/Waldorf_Wood_Furniture_Makers_Worldwide.pdf', contentType: 'pdf', topicTags: ['furniture', 'wood', 'schools', 'directory', 'pdf'], grade: 'All Grades' },
+  { id: 'pdf-doll-makers', title: 'High-End Waldorf Doll Makers Directory', description: 'Directory of high-end Instagram Waldorf doll artisans.', category: 'Handwork', filePath: '/documents/waldorf_doll_makers.pdf', contentType: 'pdf', topicTags: ['dolls', 'doll makers', 'artisans', 'pdf'], grade: 'All Grades' },
+  { id: 'pdf-anthroposophical-medicine', title: 'Anthroposophical Medicine', description: 'Overview of anthroposophical medicine principles and practices.', category: 'Head', filePath: '/documents/Anthroposophical_Medicine.pdf', contentType: 'pdf', topicTags: ['anthroposophical medicine', 'health', 'therapy', 'pdf'], grade: 'All Grades' },
+  { id: 'pdf-instagram-recommendations', title: 'Instagram Recommendations', description: 'Curated Instagram accounts for Waldorf inspiration and resources.', category: 'Resources', filePath: '/documents/Instagram_Recommendations_1.pdf', contentType: 'pdf', topicTags: ['instagram', 'social media', 'resources', 'pdf'], grade: 'All Grades' },
+  { id: 'pdf-waldorf-boarding-schools', title: 'Waldorf Boarding Schools', description: 'Directory of Waldorf boarding schools worldwide.', category: 'Schools', filePath: '/documents/Waldorf_Boarding_Schools.pdf', contentType: 'pdf', topicTags: ['boarding schools', 'waldorf', 'schools', 'directory', 'pdf'], grade: 'All Grades' },
+  { id: 'pdf-africa-resources', title: 'Africa Resources', description: 'Waldorf education resources and initiatives in Africa.', category: 'Global', filePath: '/documents/Africa_Resources.pdf', contentType: 'pdf', topicTags: ['africa', 'waldorf', 'resources', 'international', 'pdf'], grade: 'All Grades' },
+  { id: 'pdf-calendar-soul', title: 'Calendar of the Soul', description: 'Rudolf Steiner\'s Calendar of the Soul verses for the year.', category: 'Lifestyle', filePath: '/documents/Calendar_of_the_Soul.pdf', contentType: 'pdf', topicTags: ['calendar', 'soul', 'verses', 'steiner', 'pdf'], grade: 'All Grades' },
+  { id: 'pdf-biodynamic-agriculture', title: 'Biodynamic Agriculture', description: 'Principles and practices of biodynamic agriculture in the Waldorf context.', category: 'Nutrition', filePath: '/documents/Biodynamic_Agriculture.pdf', contentType: 'pdf', topicTags: ['biodynamic', 'agriculture', 'farming', 'gardening', 'pdf'], grade: 'All Grades' },
+  
+  // Natural Dyeing Resources
+  { id: 'maiwa', title: 'Maiwa', description: 'Natural dyes, textiles, and artisan supplies from around the world.', category: 'Natural Dyeing', filePath: 'https://maiwa.com/', contentType: 'resource', topicTags: ['natural dyes', 'textiles', 'supplies', 'workshops'], grade: 'All Grades' },
+  { id: 'botanical-colors', title: 'Botanical Colors', description: 'Natural dye extracts, mordants, and educational resources for natural dyeing.', category: 'Natural Dyeing', filePath: 'https://botanicalcolors.com/', contentType: 'resource', topicTags: ['natural dyes', 'mordants', 'workshops', 'education'], grade: 'All Grades' },
+  { id: 'my-dye-garden-studio', title: 'My Dye Garden Studio', description: 'Natural dye kits, seeds, and garden-to-color workshops.', category: 'Natural Dyeing', filePath: 'https://www.mydyegardenstudio.com/', contentType: 'resource', topicTags: ['natural dyes', 'dye garden', 'kits', 'workshops'], grade: 'All Grades' },
+  
+  // New Natural Dyeing Book Resources
+  { id: 'studio-formulas-natural-dyes', title: 'The Studio Formulas Set for The Art and Science of Natural Dyes', description: 'Author: Joy Boutrup and Catharine Ellis. The Studio Formulas Set for The Art and Science of Natural Dyes.', category: 'Natural Dyeing', filePath: 'https://schifferbooks.com/collections/dyeing/products/the-art-and-science-of-natural-dyes', contentType: 'resource', topicTags: ['natural dyes', 'studio formulas', 'art science', 'dyes'], grade: 'All Grades' },
+  { id: 'my-dye-garden-studio-book', title: 'My Dye Garden Studio', description: 'Author: Nicole Nicola. A guide to growing and using your own dye garden.', category: 'Natural Dyeing', filePath: 'https://www.amazon.com/s?k=%22My+Dye+Garden+Studio%22+Nicole+Nicola', contentType: 'resource', topicTags: ['natural dyes', 'dye garden', 'plants', 'gardening'], grade: 'All Grades' },
+  { id: 'first-steps-natural-dyeing', title: 'First Steps in Natural Dyeing', description: 'Author: Joan Almon. An introduction to natural dyeing techniques for beginners.', category: 'Natural Dyeing', filePath: 'https://www.amazon.com/s?k=%22First+Steps+in+Natural+Dyeing%22+Joan+Almon', contentType: 'resource', topicTags: ['natural dyes', 'beginner', 'techniques'], grade: 'All Grades' },
+  { id: 'craft-natural-dyeing', title: 'The Craft of Natural Dyeing', description: 'Author: Jenny Dean. Classic guide to natural dyeing techniques and recipes.', category: 'Natural Dyeing', filePath: 'https://www.jennydean.co.uk/publications/', contentType: 'resource', topicTags: ['natural dyes', 'craft', 'techniques', 'jenny dean'], grade: 'All Grades' },
+  { id: 'wild-color', title: 'Wild Color', description: 'Author: Jenny Dean. The complete guide to making and using natural dyes.', category: 'Natural Dyeing', filePath: 'https://www.jennydean.co.uk/publications/', contentType: 'resource', topicTags: ['natural dyes', 'wild color', 'jenny dean', 'reference'], grade: 'All Grades' },
+  { id: 'natural-dyeing-jackie-crook', title: 'Natural Dyeing', description: 'Author: Jackie Crook. Practical guide to natural dyeing methods.', category: 'Natural Dyeing', filePath: 'https://www.amazon.com/s?k=%22Natural+Dyeing%22+Jackie+Crook', contentType: 'resource', topicTags: ['natural dyes', 'jackie crook', 'techniques'], grade: 'All Grades' },
+  { id: 'dyers-garden', title: "A Dyer's Garden", description: "Author: Rita Buchanan. Growing and using plants for natural dyes.", category: 'Natural Dyeing', filePath: 'https://www.amazon.com/s?k=%22A+Dyer%27s+Garden%22+Rita+Buchanan', contentType: 'resource', topicTags: ['natural dyes', 'dye garden', 'plants', 'rita buchanan'], grade: 'All Grades' },
+  { id: 'modern-natural-dyer', title: 'The Modern Natural Dyer', description: 'Author: Kristine Vejar. A comprehensive guide to modern natural dyeing techniques.', category: 'Natural Dyeing', filePath: 'https://www.abramsbooks.com/product/modern-natural-dyer_9781613129869/', contentType: 'resource', topicTags: ['natural dyes', 'modern', 'kristine vejar', 'comprehensive'], grade: 'All Grades' },
+  
+  // New Wool & Handwork Supplies & Chalkboard Art Guides
+  { id: 'wool-buying-guide', title: 'Wool & Handwork Supplies — A Waldorf Buying Guide', description: 'A comprehensive buying guide for wool and handwork supplies for Waldorf education.', category: 'Hands', filePath: '/documents/Wool & Handwork Supplies - A Waldorf Buying Guide.html', contentType: 'resource', topicTags: ['wool', 'handwork', 'supplies', 'buying guide', 'waldorf'], grade: 'All Grades' },
+  { id: 'chalkboard-art', title: 'Waldorf Chalkboard Art', description: 'A guide to Waldorf chalkboard art techniques and inspiration.', category: 'Hands', filePath: '/documents/Waldorf Chalkboard Art.html', contentType: 'resource', topicTags: ['chalkboard art', 'art', 'waldorf', 'chalkboard', 'drawing'], grade: 'All Grades' },
+ 
+  // Publisher Resources
+  { id: 'anthroposophic-press', title: 'Anthroposophic Press / Steiner Books', description: 'The primary US publisher of Rudolf Steiner books and anthroposophical literature.', category: 'Publishers', filePath: 'https://steinerbooks.org', contentType: 'resource', topicTags: ['steiner books', 'anthroposophy', 'publisher', 'usa'], grade: 'All Grades' },
+  { id: 'hawthorn-press', title: 'Hawthorn Press', description: 'Waldorf curriculum, crafts, early childhood resources.', category: 'Publishers', filePath: 'https://www.hawthornpress.com', contentType: 'resource', topicTags: ['waldorf curriculum', 'crafts', 'early childhood', 'publisher', 'uk'], grade: 'All Grades' },
+  { id: 'waldorf-publications', title: 'Waldorf Publications (AWSNA)', description: 'Waldorf curriculum, teacher resources, and educational titles; WECAN titles also featured. USA focus.', category: 'Publishers', filePath: 'https://www.waldorfpublications.org/', contentType: 'resource', topicTags: ['waldorf curriculum', 'teacher resources', 'awsna', 'publisher', 'usa'], grade: 'All Grades' },
+  { id: 'wecan-publications', title: 'WECAN Publications', description: 'Early childhood resources, songs, verses, seasonal materials, and kindergarten resources.', category: 'Publishers', filePath: 'https://www.waldorfpublications.org/collections/wecan-publications', contentType: 'resource', topicTags: ['early childhood', 'songs', 'verses', 'seasonal', 'kindergarten', 'wecan'], grade: 'Early Childhood' },
+  { id: 'wynstones-press', title: 'Wynstones Press', description: 'Songs, stories, verses, poetry, and seasonal resources, including classic Wynstones collections.', category: 'Publishers', filePath: 'https://www.wynstonespress.com/', contentType: 'resource', topicTags: ['songs', 'stories', 'verses', 'poetry', 'seasonal', 'publisher', 'uk'], grade: 'All Grades' },
+  { id: 'rudolf-steiner-press', title: 'Rudolf Steiner Press', description: 'Books by Rudolf Steiner and related authors.', category: 'Publishers', filePath: 'https://www.rudolfsteinerpress.com/', contentType: 'resource', topicTags: ['steiner', 'anthroposophy', 'publisher', 'uk'], grade: 'All Grades' },
+  { id: 'lindisfarne-books', title: 'Lindisfarne Books (SteinerBooks imprint)', description: 'Anthroposophy, spiritual and cultural studies, and curative education-related titles.', category: 'Publishers', filePath: 'https://steinerbooks.org/collections/lindisfarne', contentType: 'resource', topicTags: ['anthroposophy', 'spiritual studies', 'curative education', 'lindisfarne'], grade: 'All Grades' },
+  { id: 'michaelmas-press', title: 'Michaelmas Press', description: 'Waldorf education, parenting, history, and cultural resources.', category: 'Publishers', filePath: 'https://michaelmaspress.com/', contentType: 'resource', topicTags: ['waldorf education', 'parenting', 'history', 'cultural', 'publisher', 'usa'], grade: 'All Grades' },
+  { id: 'jamie-york-press', title: 'Jamie York Press', description: 'Waldorf mathematics curriculum and resources for Grades 1–12.', category: 'Publishers', filePath: 'https://www.jamieyorkpress.com/', contentType: 'resource', topicTags: ['mathematics', 'waldorf curriculum', 'grades 1-12', 'publisher', 'usa'], grade: 'Grades 1-12' },
+  { id: 'rudolf-steiner-archive', title: 'Rudolf Steiner Archive', description: 'All lectures and articles by Rudolf Steiner.', category: 'Publishers', filePath: 'https://rsarchive.org', contentType: 'resource', topicTags: ['steiner', 'lectures', 'articles', 'archive', 'free'], grade: 'All Grades' },
+ 
+  // International Publishers
+  { id: 'editora-antroposofica', title: 'Editora Antroposófica', description: 'The leading Brazilian publisher of anthroposophical and Waldorf books in Portuguese.', category: 'Publishers', filePath: 'http://editora.com.br', contentType: 'resource', topicTags: ['portuguese', 'brazil', 'anthroposophy', 'waldorf', 'publisher', 'brazil'], grade: 'All Grades' },
+  { id: 'antroposofica-ar', title: 'Editora Antroposófica Argentina', description: 'Primary Argentine publisher and bookshop for anthroposophical and Waldorf books in Spanish.', category: 'Publishers', filePath: 'http://antroposofica.com.ar', contentType: 'resource', topicTags: ['spanish', 'argentina', 'anthroposophy', 'waldorf', 'publisher', 'argentina'], grade: 'All Grades' },
+  { id: 'editorial-rudolf-steiner', title: 'Editorial Rudolf Steiner', description: 'The longest-running Spanish-language anthroposophical publisher. Steiner\'s foundational works in Spanish — serves the entire Spanish-speaking world.', category: 'Publishers', filePath: 'https://editorialrudolfsteiner.com', contentType: 'resource', topicTags: ['spanish', 'steiner', 'anthroposophy', 'publisher', 'spain', 'latin america'], grade: 'All Grades' },
+  { id: 'paud-edamasc', title: 'Paudé Damac', description: 'Major Spanish/Catalan publisher of Waldorf pedagogy, anthroposophy, Goethean science, curative education and children\'s stories.', category: 'Publishers', filePath: 'https://paudedamasc.com', contentType: 'resource', topicTags: ['spanish', 'catalan', 'waldorf pedagogy', 'anthroposophy', 'goethean science', 'curative education', 'publisher', 'spain'], grade: 'All Grades' },
+ 
+  // Costume Suppliers
+  { id: 'fairy-finery', title: 'Fairy Finery', description: 'Whimsical fairy-inspired clothing and costumes for imaginative play, including designs suited to children who enjoy fantasy and nature-themed dress-up.', category: 'Costumes', filePath: 'https://www.fairyfinery.com/', contentType: 'resource', topicTags: ['costumes', 'dress-up', 'fairy', 'imaginative play', 'nature-themed'], grade: 'All Grades' },
+  { id: 'bella-luna-toys', title: 'Bella Luna Toys — Dress-Up & Costumes', description: 'A Waldorf-inspired toy retailer offering dress-up items that encourage storytelling, imaginative movement, and open-ended play.', category: 'Costumes', filePath: 'https://www.bellalunatoys.com/collections/dress-ups-costumes', contentType: 'resource', topicTags: ['costumes', 'dress-up', 'waldorf toys', 'storytelling', 'imaginative play'], grade: 'All Grades' },
+  { id: 'jack-be-nimble-kids', title: 'Jack Be Nimble Kids', description: 'A children\'s clothing and accessories retailer. Explore its bestsellers for everyday pieces that may also work for simple, comfortable dress-up.', category: 'Costumes', filePath: 'https://jackbenimblekids.com/collections/best-sellers', contentType: 'resource', topicTags: ['clothing', 'dress-up', 'children', 'accessories'], grade: 'All Grades' },
+  { id: 'sarahs-silks', title: 'Sarah\'s Silks — Dress-Up Costumes', description: 'Specializes in silk play materials, such as flowing play silks and dress-up accessories, ideal for creating capes, skirts, wings, and imaginative characters.', category: 'Costumes', filePath: 'https://www.sarahssilks.com/collections/dress-up-costumes', contentType: 'resource', topicTags: ['silks', 'dress-up', 'costumes', 'play silks', 'imaginative play'], grade: 'All Grades' },
+  { id: 'sofee-lenee', title: 'Sofee & Lenee', description: 'A source for European children\'s clothing made from natural fibers. Check the current collection and individual product descriptions for fiber content.', category: 'Costumes', filePath: 'http://www.sofeeandlenee.com/', contentType: 'resource', topicTags: ['clothing', 'natural fibers', 'european', 'children', 'dress-up'], grade: 'All Grades' },
+  { id: 'waldorf-shop-costumes', title: 'The Waldorf Shop — Clothing & Costumes', description: 'A Waldorf-focused retailer featuring imaginative-play clothing and accessories such as fairy costumes, capes, wings, and themed dress-up items.', category: 'Costumes', filePath: 'https://waldorfshop.net/collections/clothing-costumes', contentType: 'resource', topicTags: ['costumes', 'dress-up', 'waldorf shop', 'fairy costumes', 'capes', 'wings'], grade: 'All Grades' },
+  { id: 'poems-for-buttercup', title: 'Poems for Buttercup — Celebration Crowns', description: 'Decorative children\'s crowns for birthdays, festivals, and imaginative play, with a range of playful themes.', category: 'Costumes', filePath: 'https://poemsforbuttercup-co-nz.myshopify.com/collections/ready-to-ship-crowns', contentType: 'resource', topicTags: ['crowns', 'birthdays', 'festivals', 'imaginative play', 'new zealand'], grade: 'All Grades' },
+  { id: 'tree-hollow-toys', title: 'Tree Hollow Toys — Dress-Up', description: 'A retailer of dress-up accessories and imaginative-play materials. Review individual listings to confirm the materials used.', category: 'Costumes', filePath: 'https://treehollowtoys.com/collections/dress-up', contentType: 'resource', topicTags: ['dress-up', 'accessories', 'imaginative play', 'toys'], grade: 'All Grades' },
+  { id: 'waldorfshop-europe', title: 'Waldorfshop Europe — Dress-Up & Make-Up', description: 'A specialist Waldorf retailer with dress-up and role-play items for children and school or kindergarten settings. Note: A Waldorf-oriented retailer does not necessarily sell only natural-fiber products. Check each item\'s fiber composition and material details before purchasing, especially for school use.', category: 'Costumes', filePath: 'https://www.waldorfshop.eu/en/toys-games/role-toys/dress-up-make-up', contentType: 'resource', topicTags: ['costumes', 'dress-up', 'role-play', 'waldorf', 'europe', 'make-up'], grade: 'All Grades' },
+];
+
+export function getAllArticles(): ContentArticle[] {
+  return ARTICLE_FILES;
+}
+
+export function getArticlesByCategory(category: string): ContentArticle[] {
+  if (!category || category === 'All') return getAllArticles();
+  return getAllArticles().filter(a => a.category === category);
+}
+
+export function getArticleById(id: string): ContentArticle | undefined {
+  return getAllArticles().find(a => a.id === id);
+}
+
+export function getAllResources(): ContentArticle[] {
+  return RESOURCE_FILES;
+}
+
+export function getLocalResources(): WaldorfResourceCompat[] {
+  return getAllResources().map(r => ({
+    id: r.id,
+    title: r.title,
+    description: r.description,
+    category: r.category,
+    grade: r.grade || 'All Grades',
+    fileLink: r.filePath,
+    isFree: true,
+    contentType: r.contentType,
+    topicTags: r.topicTags,
+    language: r.language,
+  }));
+}
+
+export function getLocalArticles(): WaldorfResourceCompat[] {
+  return getAllArticles().map(a => ({
+    id: a.id,
+    title: a.title,
+    description: a.description,
+    category: a.category,
+    grade: a.grade || 'All Grades',
+    fileLink: a.filePath,
+    isFree: true,
+    contentType: 'article' as const,
+    topicTags: a.topicTags,
+    language: a.language,
+  }));
+}
+
+export interface WaldorfResourceCompat {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  grade: string;
+  fileLink: string;
+  isFree: boolean;
+  contentType: string;
+  topicTags: string[];
+  language?: string;
+}
