@@ -297,7 +297,7 @@ return React.createElement('div', { className: 'space-y-3' },
             React.createElement('div', { className: 'flex-1 min-w-0' },
               React.createElement('div', { className: 'flex items-center justify-between gap-2 mb-1' },
                 React.createElement('h4', { className: 'font-semibold text-ink font-serif text-base line-clamp-2' }, item.title),
-                React.createElement('span', { className: 'text-[10px] font-bold px-2 py-0.5 rounded-full bg-sage-pale text-sage shrink-0' }, item.category)
+                React.createElement('span', { className: 'hidden sm:inline-flex text-[10px] font-bold px-2 py-0.5 rounded-full bg-sage-pale text-sage shrink-0' }, item.category)
               ),
               item.description && React.createElement('p', { className: 'text-sm text-ink-soft/70 line-clamp-2 mb-2' }, item.description),
               React.createElement('div', { className: 'flex items-center gap-3 text-[11px] text-ink-soft/60 flex-wrap' },
