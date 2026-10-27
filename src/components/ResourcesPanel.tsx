@@ -160,8 +160,11 @@ export function ResourcesPanel() {
       painting: ['watercolor', 'watercolour', 'malen', 'art', 'drawing'],
       grade: ['class', 'level', 'standard', 'stufe', 'klasse'],
       verses: ['poem', 'verse', 'gedicht', 'rhyme', 'saying'],
-      woodwork: ['wood', 'woodworking', 'whittling', 'carving', 'holz'],
+      woodwork: ['wood', 'woodworking', 'whittling', 'carving', 'holz', 'tools', 'tool'],
       dolls: ['doll', 'puppet', 'marionette', 'puppe', 'puppetry'],
+      tools: ['woodwork', 'carving', 'whittling', 'tools', 'tool', 'woodworking'],
+      '6th grade': ['grade 6', 'class 6', 'sixth grade', 'sixth class'],
+      'grade 6': ['6th grade', 'class 6', 'sixth grade', 'sixth class'],
     };
     return allItems.filter(item => {
       let found = item.title.toLowerCase().includes(s) ||
@@ -240,10 +243,11 @@ export function ResourcesPanel() {
   } else if (selectedCategoryId) {
     displayItems = getItemsForCategory(selectedCategoryId);
   } else {
-    const categoryIds = currentCategories.map(c => c.id);
+    // Get all category tags from current tab's categories
+    const allCategoryTags = currentCategories.flatMap(c => c.categories.map(cc => cc.toLowerCase()));
     displayItems = searchFilteredItems.filter(item => {
       const itemCats = [item.category, ...(item.topicTags || [])].map(c => c.toLowerCase());
-      return itemCats.some(c => categoryIds.some(id => c.includes(id.toLowerCase()) || id.toLowerCase().includes(c)));
+      return itemCats.some(c => allCategoryTags.includes(c));
     });
   }
 

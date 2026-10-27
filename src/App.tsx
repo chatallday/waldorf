@@ -373,20 +373,24 @@ export default function App() {
       <header className="relative bg-gradient-to-b from-sage-strong via-sage to-sage-light text-white pb-8">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-sage-light rounded-full opacity-10 blur-xl translate-x-20 -translate-y-20" />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-sage-strong/90 via-sage/50 to-transparent" />
         </div>
         <div className="w-full relative">
-          <img src="/waldorf-path-cover-19oct26.jpeg" alt="The Waldorf Path" className="w-full h-auto block" />
+          <img src="/waldorf-path-cover-19oct26.jpeg" alt="The Waldorf Path" className="w-full h-auto block opacity-60" />
         </div>
-        <div className="max-w-2xl mx-auto px-6 text-center mt-4 relative z-10">
-          <div className="mt-4 mb-4 px-2">
-            <GlobalSearchBar onNavigate={handleGlobalNavigate} />
-          </div>
-          
-          <div className="flex items-center justify-center gap-3 mt-2 flex-wrap">
-            <button onClick={() => setShowSplash(true)}
-              className="px-4 py-1.5 bg-transparent border border-white/20 hover:border-white/40 rounded-full text-white/80 hover:text-white font-serif text-sm cursor-pointer tracking-wider transition-colors">
-              🌅 Today's Daily Gift
-            </button>
+        <div className="max-w-2xl mx-auto px-6 text-center relative z-10 pt-16 pb-8">
+          {/* Steiner Bio in Header */}
+          <div className="font-serif text-base text-white/90 leading-relaxed space-y-3 text-left max-w-3xl mx-auto">
+            <p className="font-bold text-white">
+              <strong className="text-white">Rudolf Steiner (1861–1925)</strong> — philosopher, scientist, artist, and founder of Waldorf education. He completed a doctorate in philosophy, edited Goethe's scientific writings, and lectured over 6,000 times across Europe.
+            </p>
+            <p>
+              On <strong className="text-white">7 September 1919</strong>, Steiner opened the first Waldorf school in Stuttgart at the request of Emil Molt for the children of his factory workers. It was radical: no distinction between rich and poor, art woven through every lesson, teachers with freedom to teach.
+            </p>
+            <p>
+              Today there are over <strong className="text-white">1,200 Waldorf schools</strong> and <strong className="text-white">2,000 kindergartens</strong> worldwide, carrying forward Steiner's vision of education that nurtures the whole child — head, heart, and hands.
+            </p>
           </div>
         </div>
       </header>
@@ -403,21 +407,6 @@ export default function App() {
         <AnimatePresence mode="wait">
           {activeView === 'home' && (
             <motion.div key="home" initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -15 }} className="space-y-6">
-              {/* Steiner Intro Text - Home Page Only */}
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 mb-6 text-left max-w-3xl mx-auto">
-                <div className="font-serif text-base text-white/90 leading-relaxed space-y-3">
-                  <p className="font-bold text-white">
-                    <strong className="text-white">Rudolf Steiner (1861–1925)</strong> — philosopher, scientist, artist, and founder of Waldorf education. He completed a doctorate in philosophy, edited Goethe's scientific writings, and lectured over 6,000 times across Europe.
-                  </p>
-                  <p>
-                    On <strong className="text-white">7 September 1919</strong>, Steiner opened the first Waldorf school in Stuttgart at the request of Emil Molt for the children of his factory workers. It was radical: no distinction between rich and poor, art woven through every lesson, teachers with freedom to teach.
-                  </p>
-                  <p>
-                    Today there are over <strong className="text-white">1,200 Waldorf schools</strong> and <strong className="text-white">2,000 kindergartens</strong> worldwide, carrying forward Steiner's vision of education that nurtures the whole child — head, heart, and hands.
-                  </p>
-                </div>
-              </div>
-
               {/* Featured Mentors Scrolling */}
 {featuredMentors.length > 0 && (
                 <div className="watercolor-card p-4 bg-white/70 overflow-hidden relative">
