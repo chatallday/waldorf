@@ -15,7 +15,7 @@ const ProfilePanel = React.lazy(() => import('./components/ProfilePanel').then(m
 const ResourcesPanel = React.lazy(() => import('./components/ResourcesPanel').then(m => ({ default: m.ResourcesPanel })));
 import { getVerseOfTheDay, getMentors, submitSponsorInquiry, logSponsorPayment } from './services/workflowService';
 import { Mentor } from './data/mentors';
-import { getCurrentCOTSIndex } from './data/dailyData';
+import { getCurrentCOTSIndex, DAILY_DATA, SPLASH_VERSES, COTS_VERSES } from './data/dailyData';
 
 // Local ErrorBoundary for ResourcesPanel to prevent app-wide crashes
 class ResourcesErrorBoundary extends React.Component {
