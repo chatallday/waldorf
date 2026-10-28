@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import type { ReactNode } from "react";
 import { motion, useScroll, useTransform, AnimatePresence, useSpring, useMotionValue } from "motion/react";
 import { X, ArrowRight, ChevronDown, Waves, Bike, UtensilsCrossed, Trees, VolumeX, Globe, Moon, Lock, HeartPulse, Ban, Wind, Building2, Home, Eye, Sparkles, Store, Wrench, Film, Clock, Clapperboard } from "lucide-react";
 import gsap from "gsap";
@@ -202,7 +203,7 @@ export default function QRCasasCinematic({ onEnter, onDismissForever, onClose }:
     </div>
   );
 }
-export function QRCasasIntroGate({ children }: { children: React.ReactNode }) {
+export function QRCasasIntroGate({ children }: { children: ReactNode }) {
   const [show, setShow] = useState<boolean>(() => { if (typeof window === "undefined") return true; try { if (localStorage.getItem(STORAGE_KEY_DONT_SHOW) === "1") return false; if (localStorage.getItem(STORAGE_KEY) === "1") return false; const p = new URLSearchParams(window.location.search); if (p.get("intro") === "0") return false; if (p.get("intro") === "1") return true; const path = window.location.pathname; if (path.includes("qrcasas")) return true; return true; } catch { return true; } });
   useEffect(() => { const onKey = (e: KeyboardEvent) => { if (e.key === "Escape" && show) setShow(false); }; window.addEventListener("keydown", onKey); return () => window.removeEventListener("keydown", onKey); }, [show]);
   useEffect(() => { const h = () => setShow(true); window.addEventListener("qrcasas:show-intro" as any, h); return () => window.removeEventListener("qrcasas:show-intro" as any, h); }, []);

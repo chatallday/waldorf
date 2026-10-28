@@ -18,10 +18,18 @@ import { Mentor } from './data/mentors';
 import { getCurrentCOTSIndex, DAILY_DATA, SPLASH_VERSES, COTS_VERSES } from './data/dailyData';
 
 // Local ErrorBoundary for ResourcesPanel to prevent app-wide crashes
-class ResourcesErrorBoundary extends React.Component {
-  state = { hasError: false, error: null };
-  static getDerivedStateFromError(error) { return { hasError: true, error }; }
-  componentDidCatch(error, errorInfo) {
+interface ResourcesErrorBoundaryProps {
+  children: React.ReactNode;
+}
+interface ResourcesErrorBoundaryState {
+  hasError: boolean;
+  error: Error | null;
+}
+class ResourcesErrorBoundary extends React.Component<ResourcesErrorBoundaryProps, ResourcesErrorBoundaryState> {
+  public props!: ResourcesErrorBoundaryProps;
+  state: ResourcesErrorBoundaryState = { hasError: false, error: null };
+  static getDerivedStateFromError(error: Error) { return { hasError: true, error }; }
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     console.error('ResourcesPanel error:', error, errorInfo);
   }
   render() {

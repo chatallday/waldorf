@@ -420,7 +420,7 @@ export function EnhancedDirectory({ recommendedTags, initialSelectedMentorId, on
               <path d="M50 30 C40 30 32 38 32 48 C32 60 50 74 50 74 C50 74 68 60 68 48 C68 38 60 30 50 30 Z" fill="none" stroke="#7a8c6e" strokeWidth="2.5" />
               <circle cx="50" cy="48" r="6" fill="#7a8c6e" />
             </svg>
-          ) : mentor.status === 'Pending' || mentor.status === 'Unclaimed' || !mentor.subscriptionActive ? (
+          ) : mentor.status === 'Pending' || !mentor.subscriptionActive ? (
             <svg viewBox="0 0 100 100" className="w-full h-full bg-[#fdfaf2] p-1.5 text-sage" aria-hidden="true">
               <defs>
                 <radialGradient id="waterGrad2" cx="50%" cy="50%" r="50%">

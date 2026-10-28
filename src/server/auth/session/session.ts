@@ -139,19 +139,6 @@ export async function validateSession(sessionId: string): Promise<SessionData | 
 const SESSION_TTL_DAYS = 30;
 const SESSION_COOKIE_NAME = 'pv_session';
 
-export async function validateSession(sessionId: string): Promise<{
-  valid: boolean;
-  sessionData?: {
-    userId: string;
-    email: string;
-    role: string;
-    isSuperadmin: boolean;
-  };
-} {
-  // TODO: Implement session validation with Teable
-  return { valid: false };
-}
-
 export async function getSessionFromCookie(cookieHeader: string | null): Promise<{
   sessionId: string;
   userId: string;
@@ -185,7 +172,7 @@ async function hashSessionIdFromCookie(sessionId: string): Promise<string> {
 const SESSION_TTL_DAYS = 30;
 const SESSION_COOKIE_NAME = 'pv_session';
 
-export async function validateSession(sessionId: string): Promise<{
+interface ValidateSessionResult {
   valid: boolean;
   sessionData?: {
     userId: string;
@@ -193,7 +180,9 @@ export async function validateSession(sessionId: string): Promise<{
     role: string;
     isSuperadmin: boolean;
   };
-} {
+}
+
+export async function validateSession(sessionId: string): Promise<ValidateSessionResult> {
   // TODO: Implement session validation with Teable
   return { valid: false };
 }

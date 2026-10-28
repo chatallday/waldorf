@@ -253,11 +253,11 @@ export function MentorPanel({ recommendedTags, initialSelectedMentorId, onClearI
     try {
       const isPro = currentUser?.subscriptionActive === true;
       const res = await sendMentorInquiry(selectedMentor.id, selectedMentor.name, senderName, senderEmail, messageText, isPro);
-      if (res && res.routed) {
+      if (res && res.success) {
         setRoutedData({
           routed: true,
-          name: res.routedToName,
-          specialties: res.routedToSpecialties
+          name: selectedMentor.name,
+          specialties: selectedMentor.specialties?.slice(0, 2) || []
         });
       } else {
         setRoutedData(null);

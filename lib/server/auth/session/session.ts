@@ -149,14 +149,6 @@ async function hashIp(ip: string): Promise<string> {
   return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
-export function generateSessionId(): string {
-  const array = new Uint32Array(2);
-  crypto.getRandomValues(array);
-  return Array.from(array)
-    .map(n => n.toString(16).padStart(8, '0'))
-    .join('');
-}
-
 const SESSION_TTL_DAYS = 30;
 const SESSION_COOKIE_NAME = 'pv_session';
 
@@ -206,8 +198,5 @@ export async function getSessionFromCookie(cookieHeader: string | null): Promise
   // TODO: Implement session validation with Teable
   return null;
 }
-
-const SESSION_TTL_DAYS = 30;
-const SESSION_COOKIE_NAME = 'pv_session';
 
 export { SESSION_TTL_DAYS, SESSION_COOKIE_NAME };
