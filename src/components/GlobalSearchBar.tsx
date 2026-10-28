@@ -41,7 +41,7 @@ export function GlobalSearchBar({ onNavigate }: GlobalSearchBarProps) {
   // Indexed caches
   const [mentors, setMentors] = useState<Mentor[]>([]);
   const [documents, setDocuments] = useState<Document[]>([]);
-  const [resources, setResources] = useState<{id: string; title: string; category: string; grade: string}[]>([]);
+  const [resources, setResources] = useState<{id: string; title: string; category: string; grade: string; topicTags?: string[]; searchAliases?: string[]}[]>([]);
   const [initialized, setInitialized] = useState(false);
 
   useEffect(() => {
@@ -54,7 +54,7 @@ export function GlobalSearchBar({ onNavigate }: GlobalSearchBarProps) {
         try {
           const { getResources } = await import('../services/workflowService');
           const teableResources = await getResources();
-          setResources(teableResources.map(r => ({ id: r.id, title: r.title, category: r.category, grade: r.grade })));
+          setResources(teableResources.map(r => ({ id: r.id, title: r.title, category: r.category, grade: r.grade, topicTags: r.topicTags, searchAliases: r.searchAliases })));
         } catch {}
         setInitialized(true);
       } catch {
@@ -510,6 +510,47 @@ export function GlobalSearchBar({ onNavigate }: GlobalSearchBarProps) {
       }
     };
 
+    // Special search for resources with higher weight on topicTags and searchAliases
+    const searchResources = (items: any[]) => {
+      for (const item of items) {
+        let score = 0;
+        const title = (item.title || '').toLowerCase();
+        const category = (item.category || '').toLowerCase();
+        const grade = (item.grade || '').toLowerCase();
+        const tags = (item.topicTags || []).join(' ').toLowerCase();
+        const aliases = (item.searchAliases || []).join(' ').toLowerCase();
+        
+        // Check exact matches in tags/aliases first (highest priority)
+        words.forEach(w => {
+          if (tags.includes(w)) score += 10;  // Highest weight for topic tags
+          if (aliases.includes(w)) score += 8; // High weight for search aliases
+          if (title.includes(w)) score += 5;   // Title matches
+          if (category.includes(w)) score += 3;
+          if (grade.includes(w)) score += 2;
+        });
+        
+        // Expanded/synonym matches (lower weight)
+        expanded.forEach(w => {
+          if (tags.includes(w)) score += 5;
+          if (aliases.includes(w)) score += 4;
+          if (title.includes(w)) score += 2;
+          if (category.includes(w)) score += 1;
+        });
+        
+        if (score >= 3) {
+          allResults.push({
+            type: 'resource' as const,
+            id: `teable-res-${item.id}`,
+            title: item.title,
+            subtitle: `${item.category} · ${item.grade}`,
+            snippet: '',
+            navigateTo: 'directory' as const,
+            navigateData: undefined,
+          });
+        }
+      }
+    };
+
     searchSource(HANDWORK_CURRICULUM,
       hw => `${hw.grade} ${hw.ageRange} ${hw.coreSkills.join(' ')} ${hw.typicalFirstProject}`,
       hw => ({ type: 'living_handwork' as const, id: `hw-${hw.grade}`, title: `${hw.grade} · ${hw.ageRange}`, subtitle: hw.coreSkills.slice(0, 3).join(', '), snippet: hw.typicalFirstProject, navigateTo: 'directory' as const, navigateData: 'curriculum' }));
@@ -525,9 +566,7 @@ export function GlobalSearchBar({ onNavigate }: GlobalSearchBarProps) {
     searchSource(SPLASH_VERSES,
       v => `${v.title} ${v.moment} ${v.text}`,
       v => ({ type: 'daily_verse' as const, id: `verse-${v.title.replace(/\s+/g, '-').toLowerCase()}`, title: v.title, subtitle: v.moment, snippet: v.text.substring(0, 120), navigateTo: 'home' as const, navigateData: undefined }));
-    searchSource(resources,
-      res => `${res.title} ${res.category} ${res.grade}`,
-      res => ({ type: 'resource' as const, id: `teable-res-${res.id}`, title: res.title, subtitle: `${res.category} · ${res.grade}`, snippet: '', navigateTo: 'directory' as const, navigateData: undefined }));
+    searchResources(resources);
 
     // Deduplicate
     const seen = new Set<string>();

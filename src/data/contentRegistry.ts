@@ -6,6 +6,7 @@ export interface ContentArticle {
   filePath: string;
   contentType: 'article' | 'resource' | 'pdf';
   topicTags: string[];
+  searchAliases?: string[];
   language?: string;
   grade?: string;
   author?: string;
@@ -165,6 +166,7 @@ export function getLocalResources(): WaldorfResourceCompat[] {
     isFree: true,
     contentType: r.contentType,
     topicTags: r.topicTags,
+    searchAliases: r.searchAliases || [],
     language: r.language,
   }));
 }
@@ -180,6 +182,7 @@ export function getLocalArticles(): WaldorfResourceCompat[] {
     isFree: true,
     contentType: 'article' as const,
     topicTags: a.topicTags,
+    searchAliases: a.searchAliases || [],
     language: a.language,
   }));
 }
@@ -194,5 +197,6 @@ export interface WaldorfResourceCompat {
   isFree: boolean;
   contentType: string;
   topicTags: string[];
+  searchAliases?: string[];
   language?: string;
 }

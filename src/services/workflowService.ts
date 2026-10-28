@@ -285,6 +285,7 @@ export interface WaldorfResource {
   contentType?: string;
   description?: string;
   topicTags?: string[];
+  searchAliases?: string[];
   language?: string;
   country?: string;
 }
@@ -305,6 +306,7 @@ export async function getResources(): Promise<WaldorfResource[]> {
         contentType: rec.fields.Content_Type || 'resource',
         description: rec.fields.Description || '',
         topicTags: parseTagList(rec.fields.Topic_Tags),
+        searchAliases: parseTagList(rec.fields.Search_Aliases),
         language: rec.fields.Language || 'English',
         country: rec.fields.Country || '',
       }));
@@ -314,7 +316,7 @@ export async function getResources(): Promise<WaldorfResource[]> {
       return [...teableResources, ...local.map(r => ({
         id: r.id, title: r.title, category: r.category, grade: r.grade,
         fileLink: r.fileLink, isFree: r.isFree, contentType: r.contentType,
-        description: r.description, topicTags: r.topicTags, language: r.language,
+        description: r.description, topicTags: r.topicTags, searchAliases: r.searchAliases, language: r.language,
       }))];
     } catch {
       return teableResources;
@@ -326,7 +328,7 @@ export async function getResources(): Promise<WaldorfResource[]> {
       return getLocalResources().map(r => ({
         id: r.id, title: r.title, category: r.category, grade: r.grade,
         fileLink: r.fileLink, isFree: r.isFree, contentType: r.contentType,
-        description: r.description, topicTags: r.topicTags, language: r.language,
+        description: r.description, topicTags: r.topicTags, searchAliases: r.searchAliases, language: r.language,
       }));
     } catch {
       return [];

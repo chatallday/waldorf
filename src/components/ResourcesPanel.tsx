@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { getResources, getArticles, WaldorfResource } from '../services/workflowService';
-import { ExternalLink, BookOpen, FileText, Search, File as FileIcon, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
+import { ExternalLink, BookOpen, FileText, Search, File as FileIcon, ChevronLeft, ChevronRight, ChevronDown, X } from 'lucide-react';
 import { ArticleViewer } from './ArticleViewer';
 
 type ResourceTab = 'head' | 'heart' | 'hands' | 'hospitals' | 'articles' | 'publishers' | 'costumes';
@@ -107,6 +107,7 @@ export function ResourcesPanel() {
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(null);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [expandedTabs, setExpandedTabs] = useState<Record<ResourceTab, boolean>>({ head: false, heart: false, hands: false, hospitals: false, articles: false });
   const [viewingArticle, setViewingArticle] = useState<WaldorfResource | null>(null);
   const [page, setPage] = useState(0);
@@ -135,6 +136,16 @@ export function ResourcesPanel() {
   }
 
   const allItems = useMemo(() => [...resources, ...articles], [resources, articles]);
+
+  // Collect all unique tags from resources for filter pills
+  const allAvailableTags = useMemo(() => {
+    const tags = new Set<string>();
+    allItems.forEach(item => {
+      (item.topicTags || []).forEach(t => tags.add(t));
+      (item.searchAliases || []).forEach(a => tags.add(a));
+    });
+    return Array.from(tags).sort();
+  }, [allItems]);
 
   const categoryMap = useMemo(() => {
     const map: Record<string, ResourceCategory> = {};
@@ -170,7 +181,8 @@ export function ResourcesPanel() {
       let found = item.title.toLowerCase().includes(s) ||
         item.category.toLowerCase().includes(s) ||
         (item.description || '').toLowerCase().includes(s) ||
-        (item.topicTags || []).some(t => t.toLowerCase().includes(s));
+        (item.topicTags || []).some(t => t.toLowerCase().includes(s)) ||
+        (item.searchAliases || []).some(a => a.toLowerCase().includes(s));
       if (!found) {
         for (const [word, syns] of Object.entries(synonyms)) {
           if (s.includes(word) || word.includes(s)) {
@@ -178,14 +190,16 @@ export function ResourcesPanel() {
               item.title.toLowerCase().includes(syn) ||
               item.category.toLowerCase().includes(syn) ||
               (item.description || '').toLowerCase().includes(syn) ||
-              (item.topicTags || []).some(t => t.toLowerCase().includes(syn))
+              (item.topicTags || []).some(t => t.toLowerCase().includes(syn)) ||
+              (item.searchAliases || []).some(a => a.toLowerCase().includes(syn))
             );
             if (found) break;
           }
           if (syns.some(syn => s.includes(syn) || syn.includes(s))) {
             found = item.title.toLowerCase().includes(word) ||
               item.category.toLowerCase().includes(word) ||
-              (item.topicTags || []).some(t => t.toLowerCase().includes(word));
+              (item.topicTags || []).some(t => t.toLowerCase().includes(word)) ||
+              (item.searchAliases || []).some(a => a.toLowerCase().includes(word));
             if (found) break;
           }
         }
@@ -237,6 +251,7 @@ export function ResourcesPanel() {
   const currentCategories = currentTabData?.categories || [];
   const currentWorldLists = currentTabData?.worldLists || [];
   
+  // Build display items with category and tag filtering
   let displayItems: WaldorfResource[] = [];
   if (activeTab === 'articles') {
     displayItems = articles;
@@ -250,9 +265,50 @@ export function ResourcesPanel() {
       return itemCats.some(c => allCategoryTags.includes(c));
     });
   }
+  
+  // Apply tag filter (faceted filtering) - strict filter on selected tags
+  if (selectedTags.length > 0) {
+    const selectedTagsLower = selectedTags.map(t => t.toLowerCase());
+    displayItems = displayItems.filter(item => {
+      const itemTags = [...(item.topicTags || []), ...(item.searchAliases || [])].map(t => t.toLowerCase());
+      return selectedTagsLower.every(tag => itemTags.includes(tag));
+    });
+  }
 
   const paginatedItems = displayItems.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
   const totalPages = Math.ceil(displayItems.length / PAGE_SIZE);
+
+  // Filter bar component
+  const filterBar = (selectedTags.length > 0 || allAvailableTags.length > 0)
+    ? React.createElement('div', { className: 'mb-4' },
+        selectedTags.length > 0 && React.createElement('div', { className: 'flex flex-wrap gap-2 mb-2' },
+          React.createElement('span', { className: 'text-xs font-medium text-ink-soft/60 mr-2 self-center' }, 'Active filters:'),
+          selectedTags.map((tag, idx) => React.createElement('span', {
+            key: idx,
+            className: 'inline-flex items-center gap-1 px-3 py-1 text-xs font-medium rounded-full bg-sage text-white'
+          },
+            tag,
+            React.createElement('button', {
+              onClick: () => setSelectedTags(prev => prev.filter(t => t !== tag)),
+              className: 'ml-1 p-0.5 rounded-full hover:bg-white/30 transition-colors',
+              'aria-label': `Remove filter: ${tag}`
+            }, React.createElement(X, { size: 10 }))
+          )),
+          React.createElement('button', {
+            onClick: () => setSelectedTags([]),
+            className: 'ml-2 px-3 py-1 text-xs font-medium text-ink-soft/60 hover:text-sage transition-colors'
+          }, 'Clear all')
+        ),
+        allAvailableTags.length > 0 && selectedTags.length === 0 && React.createElement('div', { className: 'flex flex-wrap gap-1.5' },
+          React.createElement('span', { className: 'text-xs font-medium text-ink-soft/60 mr-2 self-center' }, 'Filter by tag:'),
+          allAvailableTags.slice(0, 12).map((tag, idx) => React.createElement('button', {
+            key: idx,
+            onClick: () => setSelectedTags(prev => [...prev, tag]),
+            className: 'px-3 py-1 text-xs font-medium rounded-full bg-white/60 border border-border text-ink hover:bg-sage-pale hover:border-sage hover:text-sage transition-all whitespace-nowrap'
+          }, tag))
+        )
+      )
+    : null;
 
   const handleItemClick = (item: WaldorfResource) => {
     if (item.contentType === 'article' && item.fileLink.endsWith('.html')) {
@@ -275,9 +331,18 @@ export function ResourcesPanel() {
       );
     }
 
+  // Helper to get matched tags for display
+  const getMatchedTags = (item: WaldorfResource) => {
+    const query = searchQuery.toLowerCase().trim();
+    const allTags = [...(item.topicTags || []), ...(item.searchAliases || [])];
+    if (!query) return allTags.slice(0, 4); // Show first 4 tags when no search
+    return allTags.filter(tag => tag.toLowerCase().includes(query)).slice(0, 4);
+  };
+
 return React.createElement('div', { className: 'space-y-3' },
       paginatedItems.map((item, index) => {
         const catMeta = categoryMap[item.category] || { bgColor: '#f5f5f5', color: '#666', icon: '' };
+        const matchedTags = getMatchedTags(item);
         return React.createElement('div', {
           key: item.id,
           className: 'group bg-white/60 border border-border rounded-xl p-4 hover:bg-white/80 hover:shadow-sm transition-all cursor-pointer',
@@ -300,6 +365,14 @@ return React.createElement('div', { className: 'space-y-3' },
                 React.createElement('span', { className: 'hidden sm:inline-flex text-[10px] font-bold px-2 py-0.5 rounded-full bg-sage-pale text-sage shrink-0' }, item.category)
               ),
               item.description && React.createElement('p', { className: 'text-sm text-ink-soft/70 line-clamp-2 mb-2' }, item.description),
+              // Tag badges
+              matchedTags.length > 0 && React.createElement('div', { className: 'flex flex-wrap gap-1.5 mb-2' },
+                matchedTags.map((tag, idx) => React.createElement('span', {
+                  key: idx,
+                  className: 'inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-medium rounded-full bg-sage-pale/80 text-sage border border-sage/20',
+                  title: item.topicTags?.includes(tag) ? 'Topic tag' : 'Search alias'
+                }, tag))
+              ),
               React.createElement('div', { className: 'flex items-center gap-3 text-[11px] text-ink-soft/60 flex-wrap' },
                 item.grade && React.createElement('span', { className: 'flex items-center gap-1' }, React.createElement(BookOpen, { size: 10 }), item.grade),
                 item.language && item.language !== 'English' && React.createElement('span', { className: 'flex items-center gap-1' }, React.createElement(FileText, { size: 10 }), item.language),
@@ -406,6 +479,25 @@ return React.createElement('div', { className: 'space-y-3' },
           className: 'w-full pl-8 pr-3 py-1.5 bg-white border border-border rounded-xl outline-none focus:border-sage transition-colors text-sm' }
         )
       ),
+
+      React.createElement('div', { className: 'flex flex-wrap gap-2 mb-4' },
+        TABS.map(tab => 
+          React.createElement('button', {
+            key: tab.tab,
+            onClick: () => { setActiveTab(tab.tab); setSelectedCategoryId(null); },
+            className: 'flex items-center gap-2 px-4 py-2 rounded-xl transition-all cursor-pointer whitespace-nowrap text-sm font-medium ' +
+              (activeTab === tab.tab
+                ? 'text-white shadow-sm'
+                : 'bg-white/60 border border-border text-ink hover:bg-white/80 hover:shadow-sm'),
+            style: activeTab === tab.tab ? { backgroundColor: tab.color } : undefined
+          },
+            React.createElement('span', { className: 'text-lg' }, tab.icon),
+            React.createElement('span', null, tab.shortLabel)
+          )
+        )
+      ),
+
+      filterBar,
 
       React.createElement('div', { className: 'flex flex-wrap gap-2 mb-4' },
         TABS.map(tab => 
