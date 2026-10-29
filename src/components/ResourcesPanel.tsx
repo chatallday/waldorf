@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { getResources, getArticles, WaldorfResource } from '../services/workflowService';
-import { ExternalLink, BookOpen, FileText, Search, File as FileIcon, ChevronLeft, ChevronRight, ChevronDown, X } from 'lucide-react';
+import { ExternalLink, BookOpen, FileText, Search, File as FileIcon, ChevronLeft, ChevronRight, ChevronDown, X, Filter, Grid, List } from 'lucide-react';
 import { ArticleViewer } from './ArticleViewer';
 
-type ResourceTab = 'head' | 'heart' | 'hands' | 'hospitals' | 'articles' | 'publishers' | 'costumes';
+type ResourceTab = 'all' | 'head' | 'heart' | 'hands' | 'eurythmy' | 'music-singing' | 'storytelling-puppetry' | 'festivals-celebrations' | 'form-drawing' | 'beekeeping' | 'gardening-nature' | 'cooking-baking' | 'homeschool-curricula' | 'coops-playgroups' | 'main-lesson-guides' | 'natural-toys-dolls' | 'books-reading-lists' | 'felting-wool' | 'beeswax-candles' | 'sewing-doll-making' | 'movement-games' | 'anthroposophic-medicine' | 'art-music-therapy' | 'teacher-training' | 'camps-retreats' | 'conferences-talks' | 'biodynamic-farms' | 'rhythm-parenting' | 'seasonal-nature-tables' | 'lantern-making' | 'puppet-theatres' | 'block-crayons-supplies' | 'watercolor-paints' | 'community-groups' | 'festival-recipes' | 'hospitals' | 'articles' | 'publishers' | 'costumes';
 
 interface ResourceCategory {
   id: string;
@@ -16,99 +16,120 @@ interface ResourceCategory {
   externalUrl?: string;
 }
 
-const WORLD_LISTS = [
+const WORLD_LISTS: ResourceCategory[] = [
   { id: 'waldorf-world-list', label: 'Waldorf World List', icon: '📋', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['World Lists', 'Directories'], externalUrl: 'https://www.freunde-waldorf.de/en/waldorf-worldwide/waldorf-education/waldorf-world-list/', isExternalLink: true },
   { id: 'iaswece-world-list', label: 'IASWECE World List', icon: '🌍', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['World Lists', 'Directories'], externalUrl: 'https://iaswece.org/world-list/', isExternalLink: true },
 ];
 
-const HEAD_CATEGORIES: ResourceCategory[] = [
-  { id: 'adult-ed', label: 'Adult Education & Training', icon: '🎓', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Adult Education', 'Training'] },
-  { id: 'mustread', label: 'Must-Read Books', icon: '📖', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Must-Read Books', 'Books', 'Publications'] },
-  { id: 'books', label: 'Books & Publications', icon: '📚', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Books', 'Publications', 'Reading'] },
-  { id: 'reading', label: "Children's Reading Guide", icon: '📖', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Reading', 'Children'] },
-  { id: 'schools', label: 'Schools & Kindergartens', icon: '🏫', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Schools', 'Kindergartens', 'Education'] },
-  { id: 'homeschool', label: 'Homeschooling', icon: '🏠', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Homeschooling', 'Home Education'] },
-  { id: 'temperaments', label: 'Four Temperaments', icon: '⚖️', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Temperaments', 'Psychology'] },
-  { id: 'lifecycle', label: 'Lifecycle & Development', icon: '🌱', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Development', 'Lifecycle', 'Child Development'] },
-  { id: 'calendar', label: 'Calendar of the Soul', icon: '📅', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Calendar', 'Soul', 'Verses'] },
-  { id: 'health', label: 'Health & Doctors', icon: '🏥', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Health', 'Doctors', 'Medical'] },
-  { id: 'nutrition', label: 'Nutrition & Food', icon: '🌾', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Nutrition', 'Food', 'Diet'] },
-  { id: 'planetary', label: 'Planetary Week', icon: '🪐', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Planetary', 'Week', 'Rhythms'] },
-  { id: 'curative', label: 'Special Needs & Curative', icon: '💚', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Special Needs', 'Curative', 'Therapy'] },
-  { id: 'germany', label: 'Germany', icon: '🇩🇪', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Germany', 'German'] },
-  { id: 'global', label: 'Global — S. America & Africa', icon: '🌍', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Global', 'South America', 'Africa', 'International'] },
+// HEAD PILLAR - Thinking & Knowledge
+const HEAD_SUB_CATEGORIES: ResourceCategory[] = [
+  { id: 'main-lesson-guides', label: 'Main-Lesson Guides', icon: '📚', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Main Lesson', 'Guides', 'Curriculum', 'Teaching'] },
+  { id: 'form-drawing', label: 'Form Drawing', icon: '🎨', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Form Drawing', 'Drawing', 'Art'] },
+  { id: 'homeschool-curricula', label: 'Homeschool Curricula', icon: '🏠', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Homeschooling', 'Curriculum', 'Home Education'] },
+  { id: 'books-reading-lists', label: 'Books & Reading Lists', icon: '📖', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Books', 'Reading Lists', 'Literature', 'Recommendations'] },
+  { id: 'teacher-training', label: 'Teacher Training', icon: '🎓', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Teacher Training', 'Education', 'Waldorf Training'] },
+  { id: 'conferences-talks', label: 'Conferences & Talks', icon: '🎤', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Conferences', 'Talks', 'Workshops', 'Events'] },
+  { id: 'watercolor-paints', label: 'Watercolor & Paints', icon: '🎨', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Watercolor', 'Paints', 'Art Supplies', 'Wet-on-Wet'] },
+  { id: 'community-groups', label: 'Community Groups', icon: '👥', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Community', 'Groups', 'Social', 'Networking'] },
 ];
 
-const HEART_CATEGORIES: ResourceCategory[] = [
-  { id: 'seasons', label: 'Seasons & Festivals', icon: '🌸', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Seasons', 'Festivals', 'Celebrations'] },
-  { id: 'verses', label: 'Verses', icon: '📜', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Verses', 'Poetry', 'Poems'] },
-  { id: 'fingergames', label: 'Finger Games', icon: '👋', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Finger Games', 'Rhymes', 'Hand Games'] },
-  { id: 'songs', label: 'Songs', icon: '🎵', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Songs', 'Singing', 'Music'] },
-  { id: 'music', label: 'Music & Instruments', icon: '🎶', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Music', 'Instruments', 'Piano', 'Pentatonic', 'Flute'] },
-  { id: 'dolls', label: 'Dolls & Dollhouses', icon: '🪆', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Dolls', 'Dollhouses', 'Puppets', 'Toys'] },
-  { id: 'chalkboard', label: 'Chalkboard Art', icon: '🎨', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Chalkboard Art', 'Drawing', 'Art'] },
-  { id: 'camps', label: 'Summer Camps', icon: '🏕️', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Summer Camps', 'Camps', 'Outdoor'] },
-  { id: 'community', label: 'Community & Makers', icon: '🤝', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Community', 'Makers', 'Crafts'] },
+// HEART PILLAR - Feeling & Soul Life
+const HEART_SUB_CATEGORIES: ResourceCategory[] = [
+  { id: 'eurythmy', label: 'Eurythmy', icon: '💃', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Eurythmy', 'Movement'] },
+  { id: 'music-singing', label: 'Music & Singing', icon: '🎵', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Music', 'Singing', 'Instruments', 'Pentatonic'] },
+  { id: 'storytelling-puppetry', label: 'Storytelling & Puppetry', icon: '📖', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Storytelling', 'Puppetry', 'Stories', 'Puppets'] },
+  { id: 'festivals-celebrations', label: 'Festivals & Celebrations', icon: '🌸', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Festivals', 'Celebrations', 'Seasonal', 'Holidays'] },
+  { id: 'cooking-baking', label: 'Cooking & Baking', icon: '🍞', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Cooking', 'Baking', 'Recipes', 'Food'] },
+  { id: 'beeswax-candles', label: 'Beeswax & Candles', icon: '🕯️', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Beeswax', 'Candles', 'Candle Making'] },
+  { id: 'movement-games', label: 'Movement & Games', icon: '🏃', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Movement', 'Games', 'Physical Education', 'Play'] },
+  { id: 'art-music-therapy', label: 'Art & Music Therapy', icon: '🎨', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Art Therapy', 'Music Therapy', 'Therapeutic Arts'] },
+  { id: 'rhythm-parenting', label: 'Rhythm & Parenting', icon: '🌿', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Rhythm', 'Parenting', 'Family', 'Daily Rhythm'] },
+  { id: 'seasonal-nature-tables', label: 'Seasonal Nature Tables', icon: '🍂', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Nature Tables', 'Seasonal', 'Nature', 'Display'] },
+  { id: 'lantern-making', label: 'Lantern-Making', icon: '🏮', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Lantern Making', 'Crafts', 'Festivals', 'Martinmas'] },
+  { id: 'puppet-theatres', label: 'Puppet Theatres', icon: '🎭', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Puppet Theatre', 'Puppetry', 'Theatre', 'Performance'] },
+  { id: 'festival-recipes', label: 'Festival Recipes', icon: '🍎', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Festival Recipes', 'Recipes', 'Cooking', 'Seasonal Food'] },
 ];
 
-const HANDS_CATEGORIES: ResourceCategory[] = [
-  { id: 'baby', label: 'Baby Care', icon: '👶', color: '#3a6b3e', bgColor: '#e8ede4', categories: ['Baby Care', 'Infant', 'Early Childhood'] },
-  { id: 'clothing', label: 'Clothing & Dress-Up', icon: '👗', color: '#3a6b3e', bgColor: '#e8ede4', categories: ['Clothing', 'Dress-Up', 'Costumes', 'Fashion'] },
-  { id: 'toys', label: 'Toys & Art Supplies', icon: '🧸', color: '#3a6b3e', bgColor: '#e8ede4', categories: ['Toys', 'Art Supplies', 'Materials', 'Crafts'] },
-  { id: 'handwork', label: 'Handwork Curriculum', icon: '🧶', color: '#3a6b3e', bgColor: '#e8ede4', categories: ['Handwork', 'Curriculum', 'Knitting', 'Crochet', 'Weaving'] },
-  { id: 'wool', label: 'Wool & Handwork Supplies', icon: '🐑', color: '#3a6b3e', bgColor: '#e8ede4', categories: ['Wool', 'Handwork Supplies', 'Yarn', 'Fiber'] },
-  { id: 'wool-buying-guide', label: 'Wool & Handwork Supplies — Buying Guide', icon: '🐑', color: '#3a6b3e', bgColor: '#e8ede4', categories: ['Wool & Handwork Supplies - A Waldorf Buying Guide'] },
-  { id: 'woodwork', label: 'Woodwork', icon: '🪵', color: '#3a6b3e', bgColor: '#e8ede4', categories: ['Woodwork', 'Wood Carving', 'Carpentry'] },
-  { id: 'biodynamic', label: 'Biodynamic Agriculture', icon: '🌾', color: '#3a6b3e', bgColor: '#e8ede4', categories: ['Biodynamic', 'Agriculture', 'Farming', 'Gardening'] },
-  { id: 'secondhand', label: 'Second Hand', icon: '♻️', color: '#3a6b3e', bgColor: '#e8ede4', categories: ['Second Hand', 'Resale', 'Thrift', 'Used'] },
-  { id: 'naturaldye', label: 'Natural Dyeing', icon: '🌿', color: '#3a6b3e', bgColor: '#e8ede4', categories: ['Natural Dyeing', 'Dye Plants', 'Colors', 'Textiles'] },
-  { id: 'chalkboard-art', label: 'Waldorf Chalkboard Art', icon: '🎨', color: '#3a6b3e', bgColor: '#e8ede4', categories: ['Waldorf Chalkboard Art'] },
-  // Costume suppliers also in Hands
-  { id: 'bella-luna-toys-hands', label: 'Bella Luna Toys — Dress-Up & Toys', icon: '🧚', color: '#3a6b3e', bgColor: '#e8ede4', categories: ['Costumes'] },
-  { id: 'waldorfshop-europe-hands', label: 'Waldorfshop Europe — Dress-Up & Toys', icon: '🎭', color: '#3a6b3e', bgColor: '#e8ede4', categories: ['Costumes'] },
+// HANDS PILLAR - Doing & Making
+const HANDS_SUB_CATEGORIES: ResourceCategory[] = [
+  { id: 'beekeeping', label: 'Beekeeping', icon: '🐝', color: '#3a6b3e', bgColor: '#e8ede4', categories: ['Beekeeping', 'Bees', 'Honey'] },
+  { id: 'gardening-nature', label: 'Gardening & Nature', icon: '🌱', color: '#3a6b3e', bgColor: '#e8ede4', categories: ['Gardening', 'Nature', 'Plants', 'Outdoor'] },
+  { id: 'coops-playgroups', label: 'Co-ops & Playgroups', icon: '🤝', color: '#3a6b3e', bgColor: '#e8ede4', categories: ['Co-ops', 'Playgroups', 'Community', 'Social'] },
+  { id: 'natural-toys-dolls', label: 'Natural Toys & Dolls', icon: '🧸', color: '#3a6b3e', bgColor: '#e8ede4', categories: ['Natural Toys', 'Dolls', 'Toys', 'Wooden Toys'] },
+  { id: 'felting-wool', label: 'Felting & Wool', icon: '🐑', color: '#3a6b3e', bgColor: '#e8ede4', categories: ['Felting', 'Wool', 'Fiber Arts', 'Handwork'] },
+  { id: 'sewing-doll-making', label: 'Sewing & Doll-Making', icon: '🪡', color: '#3a6b3e', bgColor: '#e8ede4', categories: ['Sewing', 'Doll Making', 'Handwork', 'Crafts'] },
+  { id: 'camps-retreats', label: 'Camps & Retreats', icon: '🏕️', color: '#3a6b3e', bgColor: '#e8ede4', categories: ['Camps', 'Retreats', 'Outdoor', 'Summer'] },
+  { id: 'biodynamic-farms', label: 'Biodynamic Farms', icon: '🌾', color: '#3a6b3e', bgColor: '#e8ede4', categories: ['Biodynamic', 'Farms', 'Agriculture', 'Farming'] },
+  { id: 'block-crayons-supplies', label: 'Block Crayons & Supplies', icon: '🖍️', color: '#3a6b3e', bgColor: '#e8ede4', categories: ['Block Crayons', 'Supplies', 'Art Materials', 'Stockmar'] },
 ];
 
-const HOSPITALS_CATEGORIES: ResourceCategory[] = [
-  { id: 'hospitals', label: 'Anthroposophical Hospitals', icon: '🏥', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Hospitals', 'Anthroposophical Medicine', 'Hospitals'] },
-  { id: 'doctors', label: 'Anthroposophical Doctors', icon: '👨‍⚕️', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Doctors', 'Physicians', 'Practitioners'] },
-  { id: 'pharmacies', label: 'Anthroposophical Pharmacies', icon: '💊', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Pharmacies', 'Remedies', 'Medicines'] },
+const ALL_SUB_CATEGORIES = [...HEAD_SUB_CATEGORIES, ...HEART_SUB_CATEGORIES, ...HANDS_SUB_CATEGORIES];
+
+const ANTHROPOSOPHIC_MEDICINE_CATEGORIES: ResourceCategory[] = [
+  { id: 'anthro-hospitals', label: 'Hospitals', icon: '🏥', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Anthroposophic Hospitals', 'Hospitals'] },
+  { id: 'anthro-doctors', label: 'Doctors', icon: '👨‍⚕️', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Anthroposophic Doctors', 'Physicians', 'Practitioners'] },
+  { id: 'anthro-pharmacies', label: 'Pharmacies', icon: '💊', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Anthroposophic Pharmacies', 'Remedies', 'Medicines'] },
+  { id: 'anthro-dentists', label: 'Dentists', icon: '🦷', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Anthroposophic Dentists', 'Dental'] },
+  { id: 'anthro-osteopaths', label: 'Osteopaths', icon: '🦴', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Osteopaths', 'Osteopathy'] },
+  { id: 'anthro-therapies', label: 'Therapies', icon: '🌿', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Therapies', 'Anthroposophic Therapy', 'Healing'] },
 ];
 
 const PUBLISHER_CATEGORIES: ResourceCategory[] = [
-  { id: 'rudolf-steiner-archive', label: 'Rudolf Steiner Archive (rsarchive.org)', icon: '📚', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Publishers'] },
+  { id: 'anthroposophic-press', label: 'Anthroposophic Press / Steiner Books', icon: '📚', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Publishers'], externalUrl: 'https://steinerbooks.org', isExternalLink: true },
+  { id: 'hawthorn-press', label: 'Hawthorn Press', icon: '📚', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Publishers'], externalUrl: 'https://www.hawthornpress.com', isExternalLink: true },
+  { id: 'waldorf-publications', label: 'Waldorf Publications (AWSNA)', icon: '📚', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Publishers'], externalUrl: 'https://www.waldorfpublications.org/', isExternalLink: true },
+  { id: 'wecan-publications', label: 'WECAN Publications', icon: '📚', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Publishers'], externalUrl: 'https://www.waldorfpublications.org/collections/wecan-publications', isExternalLink: true },
+  { id: 'wynstones-press', label: 'Wynstones Press', icon: '📚', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Publishers'], externalUrl: 'https://www.wynstonespress.com/', isExternalLink: true },
+  { id: 'rudolf-steiner-press', label: 'Rudolf Steiner Press', icon: '📚', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Publishers'], externalUrl: 'https://www.rudolfsteinerpress.com/', isExternalLink: true },
+  { id: 'lindisfarne-books', label: 'Lindisfarne Books (SteinerBooks imprint)', icon: '📚', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Publishers'], externalUrl: 'https://steinerbooks.org/collections/lindisfarne', isExternalLink: true },
+  { id: 'michaelmas-press', label: 'Michaelmas Press', icon: '📚', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Publishers'], externalUrl: 'https://michaelmaspress.com/', isExternalLink: true },
+  { id: 'jamie-york-press', label: 'Jamie York Press', icon: '📚', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Publishers'], externalUrl: 'https://www.jamieyorkpress.com/', isExternalLink: true },
+  { id: 'rudolf-steiner-archive', label: 'Rudolf Steiner Archive (rsarchive.org)', icon: '📚', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Publishers'], externalUrl: 'https://rsarchive.org', isExternalLink: true },
+  { id: 'editora-antroposofica', label: 'Editora Antroposófica (Brazil)', icon: '📚', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Publishers'], externalUrl: 'http://editora.com.br', isExternalLink: true },
+  { id: 'antroposofica-ar', label: 'Editora Antroposófica Argentina', icon: '📚', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Publishers'], externalUrl: 'http://antroposofica.com.ar', isExternalLink: true },
+  { id: 'editorial-rudolf-steiner', label: 'Editorial Rudolf Steiner (Spain/LatAm)', icon: '📚', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Publishers'], externalUrl: 'https://editorialrudolfsteiner.com', isExternalLink: true },
+  { id: 'paud-edamasc', label: 'Paudé Damac (Spain/Catalan)', icon: '📚', color: '#2c4a6e', bgColor: '#dce8f5', categories: ['Publishers'], externalUrl: 'https://paudedamasc.com', isExternalLink: true },
 ];
 
 const COSTUME_CATEGORIES: ResourceCategory[] = [
-  { id: 'fairy-finery', label: 'Fairy Finery', icon: '🧚', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Costumes'] },
-  { id: 'bella-luna-toys', label: 'Bella Luna Toys — Dress-Up', icon: '🧚', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Costumes'] },
-  { id: 'jack-be-nimble-kids', label: 'Jack Be Nimble Kids', icon: '👗', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Costumes'] },
-  { id: 'sarahs-silks', label: "Sarah's Silks — Dress-Up", icon: '🧚', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Costumes'] },
-  { id: 'sofee-lenee', label: 'Sofee & Lenee', icon: '👗', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Costumes'] },
-  { id: 'waldorf-shop-costumes', label: 'The Waldorf Shop — Clothing & Costumes', icon: '🧚', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Costumes'] },
-  { id: 'poems-for-buttercup', label: 'Poems for Buttercup — Crowns', icon: '👑', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Costumes'] },
-  { id: 'tree-hollow-toys', label: 'Tree Hollow Toys — Dress-Up', icon: '🎭', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Costumes'] },
-  { id: 'waldorfshop-europe', label: 'Waldorfshop Europe — Dress-Up & Make-Up', icon: '🎭', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Costumes'] },
+  { id: 'fairy-finery', label: 'Fairy Finery', icon: '🧚', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Costumes'], externalUrl: 'https://www.fairyfinery.com/', isExternalLink: true },
+  { id: 'bella-luna-toys', label: 'Bella Luna Toys — Dress-Up & Costumes', icon: '🧚', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Costumes'], externalUrl: 'https://www.bellalunatoys.com/collections/dress-ups-costumes', isExternalLink: true },
+  { id: 'jack-be-nimble-kids', label: 'Jack Be Nimble Kids', icon: '👗', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Costumes'], externalUrl: 'https://jackbenimblekids.com/collections/best-sellers', isExternalLink: true },
+  { id: 'sarahs-silks', label: "Sarah's Silks — Dress-Up Costumes", icon: '🧚', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Costumes'], externalUrl: 'https://www.sarahssilks.com/collections/dress-up-costumes', isExternalLink: true },
+  { id: 'sofee-lenee', label: 'Sofee & Lenee', icon: '👗', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Costumes'], externalUrl: 'http://www.sofeeandlenee.com/', isExternalLink: true },
+  { id: 'waldorf-shop-costumes', label: 'The Waldorf Shop — Clothing & Costumes', icon: '🧚', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Costumes'], externalUrl: 'https://waldorfshop.net/collections/clothing-costumes', isExternalLink: true },
+  { id: 'poems-for-buttercup', label: 'Poems for Buttercup — Celebration Crowns', icon: '👑', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Costumes'], externalUrl: 'https://poemsforbuttercup-co-nz.myshopify.com/collections/ready-to-ship-crowns', isExternalLink: true },
+  { id: 'tree-hollow-toys', label: 'Tree Hollow Toys — Dress-Up', icon: '🎭', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Costumes'], externalUrl: 'https://treehollowtoys.com/collections/dress-up', isExternalLink: true },
+  { id: 'waldorfshop-europe', label: 'Waldorfshop Europe — Dress-Up & Make-Up', icon: '🎭', color: '#7a4f1a', bgColor: '#fdf0d0', categories: ['Costumes'], externalUrl: 'https://www.waldorfshop.eu/en/toys-games/role-toys/dress-up-make-up', isExternalLink: true },
 ];
 
-const TABS = [
-  { tab: 'head' as ResourceTab, label: 'Head — Thinking & Knowledge', shortLabel: 'Head', icon: '☀️', color: '#2c4a6e', categories: HEAD_CATEGORIES, worldLists: WORLD_LISTS },
-  { tab: 'heart' as ResourceTab, label: 'Heart — Feeling & Soul Life', shortLabel: 'Heart', icon: '💛', color: '#7a4f1a', categories: HEART_CATEGORIES, worldLists: [] },
-  { tab: 'hands' as ResourceTab, label: 'Hands — Doing & Making', shortLabel: 'Hands', icon: '🙌', color: '#3a6b3e', categories: HANDS_CATEGORIES, worldLists: [] },
-  { tab: 'hospitals' as ResourceTab, label: 'Anthroposophical Hospitals, Doctors & Pharmacies', shortLabel: 'Hospitals', icon: '🏥', color: '#2c4a6e', categories: HOSPITALS_CATEGORIES, worldLists: [] },
-  { tab: 'publishers' as ResourceTab, label: 'Publishers', shortLabel: 'Publishers', icon: '📚', color: '#2c4a6e', categories: PUBLISHER_CATEGORIES, worldLists: [] },
-  { tab: 'costumes' as ResourceTab, label: 'Costumes', shortLabel: 'Costumes', icon: '🎭', color: '#7a4f1a', categories: COSTUME_CATEGORIES, worldLists: [] },
-  { tab: 'articles' as ResourceTab, label: 'Articles', shortLabel: 'Articles', icon: '📄', color: '#2c4a6e', categories: [], worldLists: [] },
+const SPECIAL_TABS: { tab: ResourceTab; label: string; shortLabel: string; icon: string; color: string; categories: ResourceCategory[]; worldLists: ResourceCategory[] }[] = [
+  { tab: 'hospitals', label: 'Anthroposophic Medicine', shortLabel: 'Anthro Medicine', icon: '🏥', color: '#2c4a6e', categories: ANTHROPOSOPHIC_MEDICINE_CATEGORIES, worldLists: [] },
+  { tab: 'publishers', label: 'Publishers', shortLabel: 'Publishers', icon: '📚', color: '#2c4a6e', categories: PUBLISHER_CATEGORIES, worldLists: [] },
+  { tab: 'costumes', label: 'Costumes', shortLabel: 'Costumes', icon: '🎭', color: '#7a4f1a', categories: COSTUME_CATEGORIES, worldLists: [] },
+  { tab: 'articles', label: 'Articles', shortLabel: 'Articles', icon: '📄', color: '#2c4a6e', categories: [], worldLists: [] },
 ];
 
-export function ResourcesPanel() {
-  const [activeTab, setActiveTab] = useState<ResourceTab>('head');
+const ALL_TABS = [
+  { tab: 'all' as ResourceTab, label: 'All Resources', shortLabel: 'All', icon: '📦', color: '#6b8e5a', categories: ALL_SUB_CATEGORIES, worldLists: WORLD_LISTS },
+  { tab: 'head' as ResourceTab, label: 'Head — Thinking & Knowledge', shortLabel: 'Head', icon: '☀️', color: '#2c4a6e', categories: HEAD_SUB_CATEGORIES, worldLists: [] },
+  { tab: 'heart' as ResourceTab, label: 'Heart — Feeling & Soul Life', shortLabel: 'Heart', icon: '💛', color: '#7a4f1a', categories: HEART_SUB_CATEGORIES, worldLists: [] },
+  { tab: 'hands' as ResourceTab, label: 'Hands — Doing & Making', shortLabel: 'Hands', icon: '🙌', color: '#3a6b3e', categories: HANDS_SUB_CATEGORIES, worldLists: [] },
+  ...ALL_SUB_CATEGORIES.map(cat => ({ tab: cat.id as ResourceTab, label: cat.label, shortLabel: cat.label, icon: cat.icon, color: cat.color, categories: [cat], worldLists: [] })),
+  ...SPECIAL_TABS,
+];
+
+export function ResourcesPanel({ onNavigate }: { onNavigate?: (view: 'directory' | 'documents', data?: any) => void }) {
+  const [activeTab, setActiveTab] = useState<ResourceTab>('all');
   const [resources, setResources] = useState<WaldorfResource[]>([]);
   const [articles, setArticles] = useState<WaldorfResource[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(null);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [expandedTabs, setExpandedTabs] = useState<Record<ResourceTab, boolean>>({ head: false, heart: false, hands: false, hospitals: false, articles: false });
+  const [expandedTabs, setExpandedTabs] = useState<Record<ResourceTab, boolean>>(
+    Object.fromEntries(ALL_TABS.map(t => [t.tab, false])) as Record<ResourceTab, boolean>
+  );
   const [viewingArticle, setViewingArticle] = useState<WaldorfResource | null>(null);
   const [page, setPage] = useState(0);
   const PAGE_SIZE = 20;
@@ -126,6 +147,9 @@ export function ResourcesPanel() {
   }, []);
 
   if (viewingArticle) {
+    if (onNavigate) {
+      onNavigate('documents', { filePath: viewingArticle.fileLink, title: viewingArticle.title });
+    }
     return (
       React.createElement(ArticleViewer, {
         filePath: viewingArticle.fileLink,
@@ -149,7 +173,7 @@ export function ResourcesPanel() {
 
   const categoryMap = useMemo(() => {
     const map: Record<string, ResourceCategory> = {};
-    TABS.forEach(group => {
+    ALL_TABS.forEach(group => {
       group.categories.forEach(cat => {
         map[cat.id] = cat;
       });
@@ -222,7 +246,7 @@ export function ResourcesPanel() {
   };
 
   const getGroupForCategory = (categoryId: string) => {
-    for (const group of TABS) {
+    for (const group of ALL_TABS) {
       if (group.categories.some(c => c.id === categoryId)) return group;
       if (group.worldLists?.some(w => w.id === categoryId)) return group;
     }
@@ -247,7 +271,7 @@ export function ResourcesPanel() {
     setPage(0);
   };
 
-  const currentTabData = TABS.find(g => g.tab === activeTab);
+  const currentTabData = ALL_TABS.find(g => g.tab === activeTab);
   const currentCategories = currentTabData?.categories || [];
   const currentWorldLists = currentTabData?.worldLists || [];
   
@@ -312,7 +336,11 @@ export function ResourcesPanel() {
 
   const handleItemClick = (item: WaldorfResource) => {
     if (item.contentType === 'article' && item.fileLink.endsWith('.html')) {
-      setViewingArticle(item);
+      if (onNavigate) {
+        onNavigate('documents', { filePath: item.fileLink, title: item.title });
+      } else {
+        setViewingArticle(item);
+      }
     } else if (item.contentType === 'pdf' || item.fileLink.endsWith('.pdf')) {
       window.open(item.fileLink, '_blank');
     } else {
@@ -393,7 +421,7 @@ return React.createElement('div', { className: 'space-y-3' },
     });
     
     const isExpanded = expandedTabs[tabKey];
-    const tabData = TABS.find(t => t.tab === tabKey);
+    const tabData = ALL_TABS.find(t => t.tab === tabKey);
 
     return React.createElement('div', { className: 'mb-4' },
       React.createElement('button', {
@@ -463,25 +491,33 @@ return React.createElement('div', { className: 'space-y-3' },
     );
   };
 
-  return React.createElement('div', { className: 'flex flex-col bg-white/10 h-full' },
+return React.createElement('div', { className: 'flex flex-col bg-white/10 h-full' },
+    
+    React.createElement('section', { className: 'bg-sage-strong py-6' },
+      React.createElement('div', { className: 'max-w-2xl mx-auto px-6' },
+        React.createElement('div', { className: 'relative' },
+          React.createElement(Search, { size: 14, className: 'absolute left-3 top-1/2 -translate-y-1/2 text-white/60' }),
+          React.createElement('input', { 
+            type: 'text', 
+            placeholder: 'Search Wiki — Eurythmy, Festivals, Beekeeping, Handwork...',
+            value: searchQuery, 
+            onChange: e => setSearchQuery(e.target.value),
+            className: 'w-full pl-10 pr-3 py-3 bg-white/10 border border-white/20 rounded-xl outline-none focus:border-gold focus:bg-white/15 transition-colors text-white placeholder-white/50 text-base' 
+          })
+        )
+      )
+    ),
+
     React.createElement('div', { className: 'p-4 sm:p-5 border-b border-border bg-white/40 shrink-0' },
       React.createElement('div', { className: 'flex items-start justify-between gap-4 mb-3' },
         React.createElement('div', null,
           React.createElement('h2', { className: 'text-2xl font-serif text-ink mb-0.5 font-semibold' }, 'Waldorf Resources'),
-          React.createElement('p', { className: 'text-xs sm:text-sm text-ink-soft italic' }, 'Curated links, guides, articles and tools — organized by Head, Heart & Hands')
+          React.createElement('p', { className: 'text-xs sm:text-sm text-ink-soft italic' }, 'Curated links, guides, articles and tools — organized by category')
         ),
-      ),
-      
-      React.createElement('div', { className: 'relative mb-3' },
-        React.createElement(Search, { size: 14, className: 'absolute left-3 top-1/2 -translate-y-1/2 text-ink-soft' }),
-        React.createElement('input', { type: 'text', placeholder: 'Search all resources...',
-          value: searchQuery, onChange: e => setSearchQuery(e.target.value),
-          className: 'w-full pl-8 pr-3 py-1.5 bg-white border border-border rounded-xl outline-none focus:border-sage transition-colors text-sm' }
-        )
       ),
 
       React.createElement('div', { className: 'flex flex-wrap gap-2 mb-4' },
-        TABS.map(tab => 
+        ALL_TABS.map(tab => 
           React.createElement('button', {
             key: tab.tab,
             onClick: () => { setActiveTab(tab.tab); setSelectedCategoryId(null); },
@@ -498,23 +534,6 @@ return React.createElement('div', { className: 'space-y-3' },
       ),
 
       filterBar,
-
-      React.createElement('div', { className: 'flex flex-wrap gap-2 mb-4' },
-        TABS.map(tab => 
-          React.createElement('button', {
-            key: tab.tab,
-            onClick: () => { setActiveTab(tab.tab); setSelectedCategoryId(null); },
-            className: 'flex items-center gap-2 px-4 py-2 rounded-xl transition-all cursor-pointer whitespace-nowrap text-sm font-medium ' +
-              (activeTab === tab.tab
-                ? 'text-white shadow-sm'
-                : 'bg-white/60 border border-border text-ink hover:bg-white/80 hover:shadow-sm'),
-            style: activeTab === tab.tab ? { backgroundColor: tab.color } : undefined
-          },
-            React.createElement('span', { className: 'text-lg' }, tab.icon),
-            React.createElement('span', null, tab.shortLabel)
-          )
-        )
-      ),
     ),
 
     React.createElement('div', { className: 'flex-1 overflow-y-auto p-4 sm:p-5' },
@@ -522,11 +541,17 @@ return React.createElement('div', { className: 'space-y-3' },
         React.createElement('div', { className: 'flex flex-col items-center justify-center py-20 text-sage italic font-serif' }, 'Loading resources...')
       ) : (
         React.createElement(React.Fragment, null,
-          renderCategoryGrid(currentCategories, activeTab),
-          
-          renderWorldLists(currentWorldLists),
-          
-          renderResultsView(),
+          (() => {
+            const currentTabData = ALL_TABS.find(g => g.tab === activeTab);
+            const currentCategories = currentTabData?.categories || [];
+            const currentWorldLists = currentTabData?.worldLists || [];
+            
+            return React.createElement(React.Fragment, null,
+              renderCategoryGrid(currentCategories, activeTab),
+              renderWorldLists(currentWorldLists),
+              renderResultsView(),
+            );
+          })(),
           
           React.createElement('div', { className: 'flex flex-col items-center gap-3 mt-4 pt-4 border-t border-border' },
             React.createElement('div', { className: 'flex items-center gap-3' },

@@ -10,6 +10,7 @@ import { showSuccess, showError } from './utils/toastUtils';
 import { Leaf, Search, BookOpen, User as UserIcon, Sparkles, X, CreditCard, ArrowUp } from 'lucide-react';
 import { GlobalSearchBar } from './components/GlobalSearchBar';
 import { AboutModalContent } from './components/AboutModalContent';
+import { ArticleViewer } from './components/ArticleViewer';
 const EnhancedDirectory = React.lazy(() => import('./components/EnhancedDirectory').then(m => ({ default: m.EnhancedDirectory })));
 const ProfilePanel = React.lazy(() => import('./components/ProfilePanel').then(m => ({ default: m.ProfilePanel })));
 const ResourcesPanel = React.lazy(() => import('./components/ResourcesPanel').then(m => ({ default: m.ResourcesPanel })));
@@ -59,7 +60,7 @@ const DEFAULT_DISCLAIMER = `Disclaimer\n\nThe Waldorf Path is an independent edu
 
 const DEFAULT_ABOUT = `About Us\n\nThe Waldorf Path was woven together by three women — Romy, a certified early-childhood Waldorf educator; Elody, a soon-to-be Waldorf handwork teacher; and Nina, a mother whose three children grew up in the warmth of the Waldorf home and school. We come from different paths and different places, but we cherish the same deep conviction: that the wisdom living in Waldorf education deserves to be found, loved, and carried forward by as many families as possible.\n\nOur Mission\nThe Directory is our gift to your Waldorf path.`;
 
-type NavTab = 'home' | 'directory' | 'resources' | 'profile';
+type NavTab = 'home' | 'directory' | 'resources' | 'profile' | 'documents' | 'coming-soon';
 
 const HEAD_PILLS = [
   { id: 'adult-ed', label: 'Adult Education & Training' },
@@ -154,10 +155,228 @@ const DEFAULT_SPONSORS = [
   { name: "Waldorf Modern UK", description: "International teacher seminars and drama courses.", logoUrl: "https://i.pravatar.cc/100?u=WaldorfModern", link: "https://waldorfmodern.uk" }
 ];
 
+// ── 3D Interactive Three Pillar Section Component ──
+function ThreePillarSection() {
+  const [openModal, setOpenModal] = React.useState<'head' | 'heart' | 'hands' | null>(null);
+
+  const pillars = [
+    {
+      id: 'head' as const,
+      label: 'HEAD',
+      subtitle: 'Thinking',
+      color: '#dce8f5',
+      borderColor: '#2c4a6e',
+      textColor: '#2c4a6e',
+      icon: '☀️',
+      content: `Head — Thinking & Knowledge\n\nIn Waldorf education, the "head" represents the realm of thinking, cognition, and intellectual development. This capacity unfolds gradually, reaching its fullest expression in the high school years (ages 14–21).\n\nThe head is not merely a vessel for information. In the Waldorf approach, thinking is cultivated as a living, mobile activity — not static memorization. Through main lessons, mathematics, sciences, and humanities, students learn to think critically, form independent judgments, and understand complex relationships.\n\nKey aspects:\n• Conceptual clarity and logical reasoning\n• Scientific observation and inquiry\n• Historical consciousness and context\n• Mathematical and geometric thinking\n• Language arts and literary analysis\n• Critical thinking and discernment\n\nThe goal is not to fill the head with facts, but to awaken the capacity for clear, independent, and creative thinking — a thinking that can meet the world with understanding and purpose.`
+    },
+    {
+      id: 'heart' as const,
+      label: 'HEART',
+      subtitle: 'Feeling',
+      color: '#fdf0d0',
+      borderColor: '#7a4f1a',
+      textColor: '#7a4f1a',
+      icon: '💛',
+      content: `Heart — Feeling & Soul Life\n\nThe "heart" in Waldorf education encompasses the entire realm of feeling, social life, and artistic experience. This capacity blossoms during the middle childhood years (ages 7–14), when the child lives strongly in the world of images, rhythms, and relationships.\n\nFeeling is not mere emotion — it is the bridge between the inner world and the outer world. Through art, music, storytelling, festivals, and social interactions, the child's feeling life is educated and refined.\n\nKey aspects:\n• Artistic expression — painting, drawing, modeling\n• Music — singing, recorder, lyre, choir\n• Speech and drama — recitation, class plays\n• Seasonal festivals and rhythms\n• Social development — cooperation, empathy\n• Moral imagination through stories and biographies\n\nThe educated heart becomes an organ of perception — able to sense beauty, truth, and goodness, and to meet others with genuine warmth and understanding.`
+    },
+    {
+      id: 'hands' as const,
+      label: 'HANDS',
+      subtitle: 'Willing',
+      color: '#e8ede4',
+      borderColor: '#3a6b3e',
+      textColor: '#3a6b3e',
+      icon: '🙌',
+      content: `Hands — Willing & Doing\n\nThe "hands" represent the realm of will, action, and practical doing. This capacity is most active in early childhood (ages 0–7), when the child learns entirely through imitation and movement, and continues to develop through the grades via handwork, crafts, and practical arts.\n\nWill is not forced compliance — it is the inner capacity to initiate, persist, and complete. Through purposeful work, the child develops not only skills but character: patience, perseverance, care, and the quiet confidence that comes from making something real.\n\nKey aspects:\n• Handwork — knitting, crochet, sewing, embroidery\n• Woodwork — carving, joinery, tool use\n• Gardening and farming — biodynamic practices\n• Cooking, baking, and nutrition\n• Form drawing and geometric construction\n• Eurythmy and purposeful movement\n• Building, crafting, making\n\nThe educated will becomes a force for good in the world — capable of turning intention into reality, idea into deed, vision into form.`
+    }
+  ];
+
+  return (
+    <div className="space-y-8">
+      {/* Section Title */}
+      <div className="text-center mb-4">
+        <p className="text-[10px] font-bold uppercase tracking-widest text-sage mb-2">The Three Pillars of Waldorf Education</p>
+        <h2 className="text-2xl md:text-3xl font-serif text-ink font-semibold">Head · Heart · Hands</h2>
+        <p className="text-sm text-ink-soft italic mt-2 max-w-xl mx-auto">Three faculties. One integrated education. Hover to explore each realm.</p>
+      </div>
+
+      {/* Three Buttons Row */}
+      <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
+        {pillars.map((pillar) => (
+          <motion.button
+            key={pillar.id}
+            onClick={() => setOpenModal(pillar.id)}
+            whileHover={{ scale: 1.05, y: -8, rotateX: [0, 5, -5, 0], rotateY: [0, -5, 5, 0] }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            className="relative group w-full md:w-64 h-40 md:h-48 rounded-2xl overflow-hidden cursor-pointer shadow-xl"
+            style={{
+              background: `linear-gradient(145deg, ${pillar.color} 0%, ${pillar.color}DD 100%)`,
+              border: `2px solid ${pillar.borderColor}`,
+              boxShadow: `0 10px 40px ${pillar.borderColor}33, inset 0 1px 0 rgba(255,255,255,0.3)`
+            }}
+            aria-label={`Explore ${pillar.label} — ${pillar.subtitle}`}
+          >
+            {/* 3D Watercolour Wash Effect */}
+            <motion.div
+              animate={{ x: [0, 10, -10, 0], y: [0, -10, 10, 0] }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute inset-0 opacity-30"
+              style={{
+                background: `radial-gradient(ellipse at 30% 30%, ${pillar.borderColor}40 0%, transparent 60%),
+                           radial-gradient(ellipse at 70% 70%, ${pillar.borderColor}30 0%, transparent 50%)`
+              }}
+            />
+            {/* Subtle Paper Texture */}
+            <div className="absolute inset-0 opacity-10" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`
+            }} />
+            
+            <div className="relative z-10 flex flex-col items-center justify-center h-full p-6 text-center">
+              <span className="text-3xl md:text-4xl mb-2" aria-hidden="true">{pillar.icon}</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: pillar.textColor }}>{pillar.subtitle}</span>
+              <span className="text-xl md:text-2xl font-serif font-bold" style={{ color: pillar.textColor }}>{pillar.label}</span>
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileHover={{ opacity: 1, y: 0 }}
+                className="mt-3 text-xs font-medium uppercase tracking-wider"
+                style={{ color: pillar.textColor }}
+              >
+                Click to explore →
+              </motion.div>
+            </div>
+            
+            {/* Glow on hover */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileHover={{ opacity: 0.15, scale: 1.2 }}
+              className="absolute inset-0 rounded-2xl"
+              style={{ background: `radial-gradient(circle at center, ${pillar.borderColor} 0%, transparent 70%)` }}
+            />
+          </motion.button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ── Coming Soon Landing Page Component ──
+function ComingSoonPage() {
+  const [email, setEmail] = React.useState('');
+  const [submitted, setSubmitted] = React.useState(false);
+  const [error, setError] = React.useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+    
+    if (!email || !email.includes('@')) {
+      setError('Please enter a valid email address');
+      return;
+    }
+
+    try {
+      // In production, this would call your backend/API
+      // await fetch('/api/coming-soon', { method: 'POST', body: JSON.stringify({ email }) });
+      console.log('Coming soon signup:', email);
+      setSubmitted(true);
+      setEmail('');
+    } catch {
+      setError('Something went wrong. Please try again.');
+    }
+  };
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-sage-pale via-mist to-sage-light p-6">
+      <div className="w-full max-w-md">
+        {/* Logo/Brand */}
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center justify-center w-24 h-24 rounded-2xl mx-auto mb-6" style={{ background: 'linear-gradient(135deg, #7a8c6e 0%, #5a6b4e 100%)' }}>
+            <span className="text-3xl" aria-hidden="true">🌿</span>
+          </div>
+          <h1 className="text-3xl md:text-4xl font-serif text-ink font-semibold mb-2">The Waldorf Path</h1>
+          <p className="text-ink-soft italic">Something beautiful is growing...</p>
+        </div>
+
+        {/* Coming Soon Card */}
+        <div className="bg-white/80 backdrop-blur-xl border border-border/50 rounded-2xl p-8 shadow-xl">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-sage-pale text-sage rounded-full text-sm font-bold uppercase tracking-wider mb-4">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sage opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-sage"></span>
+              </span>
+              Coming Soon
+            </div>
+            <h2 className="text-2xl font-serif text-ink font-semibold mb-3">We're Preparing Something Special</h2>
+            <p className="text-ink-soft leading-relaxed">
+              A new way to experience Waldorf education is taking shape. 
+              Be the first to know when we launch.
+            </p>
+          </div>
+
+          {!submitted ? (
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label htmlFor="email" className="sr-only">Email address</label>
+                <input
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  className="w-full px-5 py-3.5 bg-white border border-border rounded-xl outline-none focus:border-sage focus:ring-2 focus:ring-sage/10 transition-all text-ink placeholder-ink-soft/50"
+                  autoComplete="email"
+                  required
+                />
+              </div>
+              {error && (
+                <p className="text-sm text-coral text-center">{error}</p>
+              )}
+              <button
+                type="submit"
+                className="w-full py-3.5 bg-sage text-white font-bold rounded-xl hover:opacity-90 transition-opacity shadow-md focus:outline-none focus:ring-2 focus:ring-sage/50 focus:ring-offset-2"
+              >
+                Notify Me
+              </button>
+              <p className="text-xs text-ink-soft/60 text-center">We respect your privacy. No spam, ever.</p>
+            </form>
+          ) : (
+            <div className="text-center py-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-600 mx-auto mb-4">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+              </div>
+              <h3 className="text-xl font-serif text-ink font-semibold mb-2">You're on the List!</h3>
+              <p className="text-ink-soft mb-6">We'll notify you as soon as The Waldorf Path launches.</p>
+              <button
+                onClick={() => setSubmitted(false)}
+                className="text-sm text-sage font-bold hover:text-sage-dark underline"
+              >
+                Different email?
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* Footer Links */}
+        <div className="flex justify-center gap-6 mt-8 text-xs text-ink-soft/60">
+          <a href="#" className="hover:text-sage transition-colors">Privacy</a>
+          <span>•</span>
+          <a href="#" className="hover:text-sage transition-colors">Terms</a>
+          <span>•</span>
+          <a href="#" className="hover:text-sage transition-colors">Contact</a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   const [recommendedTags, setRecommendedTags] = React.useState<string[]>([]);
   const [activeView, setActiveView] = React.useState<NavTab>('home');
   const [selectedMentorId, setSelectedMentorId] = React.useState<string | null>(null);
+  const [selectedDocument, setSelectedDocument] = React.useState<{ filePath: string; title: string } | null>(null);
   const [verse, setVerse] = React.useState<{title: string, content: string, season: string} | null>(null);
   const [featuredMentors, setFeaturedMentors] = React.useState<Mentor[]>([]);
 
@@ -207,6 +426,10 @@ export default function App() {
       setSelectedMentorId(data.mentorId);
       setRecommendedTags([]);
       setActiveView('directory');
+    } else if (view === 'documents' && data?.filePath) {
+      setSelectedDocument({ filePath: data.filePath, title: data.title || 'Article' });
+      setRecommendedTags([]);
+      setActiveView('documents');
     } else {
       setRecommendedTags([]);
       setActiveView(view);
@@ -241,13 +464,17 @@ export default function App() {
     return () => { window.removeEventListener('storage', syncSettings); clearInterval(interval); };
   }, []);
 
-   React.useEffect(() => {
-     const params = new URLSearchParams(window.location.search);
-     if (params.get('mentorId') || params.get('id')) {
-       setActiveView('directory');
-       setSelectedMentorId(params.get('mentorId') || params.get('id'));
-     }
-     // Handle Stripe success redirect
+React.useEffect(() => {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('mentorId') || params.get('id')) {
+        setActiveView('directory');
+        setSelectedMentorId(params.get('mentorId') || params.get('id'));
+      }
+      // Handle Coming Soon page via URL parameter
+      if (params.get('coming-soon') === 'true' || params.get('view') === 'coming-soon') {
+        setActiveView('coming-soon');
+      }
+      // Handle Stripe success redirect
      const sessionId = params.get('session_id');
      if (sessionId) {
        // Call the API to verify the session and update account/mentor
@@ -378,38 +605,56 @@ export default function App() {
         )}
       </AnimatePresence>
 
-{/* ── HEADER ── */}
-      <header className="relative bg-gradient-to-b from-sage-strong via-sage to-sage-light text-white pb-8">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-sage-light rounded-full opacity-10 blur-xl translate-x-20 -translate-y-20" />
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-t from-sage-strong/90 via-sage/50 to-transparent" />
-        </div>
-        <div className="w-full relative">
-          <img src="/waldorf-path-cover-19oct26.jpeg" alt="The Waldorf Path" className="w-full h-auto block opacity-60" />
-        </div>
-        <div className="max-w-2xl mx-auto px-6 text-center relative z-10 pt-16 pb-8">
-          {/* Steiner Bio in Header */}
-          <div className="font-serif text-base text-white/90 leading-relaxed space-y-3 text-left max-w-3xl mx-auto">
-            <p className="font-bold text-white">
-              <strong className="text-white">Rudolf Steiner (1861–1925)</strong> — philosopher, scientist, artist, and founder of Waldorf education. He completed a doctorate in philosophy, edited Goethe's scientific writings, and lectured over 6,000 times across Europe.
-            </p>
-            <p>
-              On <strong className="text-white">7 September 1919</strong>, Steiner opened the first Waldorf school in Stuttgart at the request of Emil Molt for the children of his factory workers. It was radical: no distinction between rich and poor, art woven through every lesson, teachers with freedom to teach.
-            </p>
-            <p>
-              Today there are over <strong className="text-white">1,200 Waldorf schools</strong> and <strong className="text-white">2,000 kindergartens</strong> worldwide, carrying forward Steiner's vision of education that nurtures the whole child — head, heart, and hands.
-            </p>
+{/* ── HOMEPAGE HEADER WITH FULL COVER ── */}
+      {activeView === 'home' && (
+        <header className="relative bg-gradient-to-b from-sage-strong via-sage to-sage-light text-white pb-8">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-sage-light rounded-full opacity-10 blur-xl translate-x-20 -translate-y-20" />
           </div>
-        </div>
-      </header>
+          <div className="w-full relative">
+            <img src="/waldorf-path-cover-19oct26.jpeg" alt="The Waldorf Path" className="w-full h-auto block" />
+          </div>
+          <div className="max-w-2xl mx-auto px-6 text-center relative z-10 pt-16 pb-8">
+            {/* Steiner Bio in Header - Homepage Only */}
+            <div className="font-serif text-base text-white/90 leading-relaxed space-y-3 text-left max-w-3xl mx-auto">
+              <p className="font-bold text-white">
+                <strong className="text-white">Rudolf Steiner (1861–1925)</strong> — philosopher, scientist, artist, and founder of Waldorf education. He completed a doctorate in philosophy, edited Goethe's scientific writings, and lectured over 6,000 times across Europe.
+              </p>
+              <p>
+                On <strong className="text-white">7 September 1919</strong>, Steiner opened the first Waldorf school in Stuttgart at the request of Emil Molt for the children of his factory workers. It was radical: no distinction between rich and poor, art woven through every lesson, teachers with freedom to teach.
+              </p>
+              <p>
+                Today there are over <strong className="text-white">1,200 Waldorf schools</strong> and <strong className="text-white">2,000 kindergartens</strong> worldwide, carrying forward Steiner's vision of education that nurtures the whole child — head, heart, and hands.
+              </p>
+            </div>
+          </div>
+        </header>
+      )}
 
-      {/* ── WIKI SEARCH SECTION (Dark Green) ── */}
-      <section className="bg-sage-strong py-6">
-        <div className="max-w-2xl mx-auto px-6">
-          <GlobalSearchBar onNavigate={handleGlobalNavigate} />
-        </div>
-      </section>
+      {/* ── NON-HOME TABS: HALFCOVER IMAGE ── */}
+      {activeView !== 'home' && (
+        <header className="relative bg-gradient-to-b from-sage-strong via-sage to-sage-light text-white pb-8">
+          <div className="w-full relative">
+            <img src="/The Waldorf Path cover crop 29oct26.jpeg" alt="The Waldorf Path" className="w-full h-auto block" />
+          </div>
+        </header>
+      )}
+
+      {/* ── WIKI SEARCH SECTION (Dark Green) - Homepage Only ── */}
+      {activeView === 'home' && (
+        <section className="bg-sage-strong py-6">
+          <div className="max-w-2xl mx-auto px-6">
+            <GlobalSearchBar onNavigate={handleGlobalNavigate} />
+          </div>
+        </section>
+      )}
+
+      {/* ── 3D INTERACTIVE HEAD/HEART/HANDS SECTION - Homepage Only ── */}
+      {activeView === 'home' && (
+        <section className="py-12 px-6 max-w-2xl mx-auto">
+          <ThreePillarSection />
+        </section>
+      )}
 
       {/* ── MAIN CONTENT ── */}
       <main className="pt-2 md:pt-8 pb-40 px-3 md:px-6 max-w-2xl mx-auto w-full flex-1">
@@ -505,7 +750,7 @@ export default function App() {
               className="watercolor-card overflow-hidden flex flex-col" style={{ minHeight: 'calc(100vh - 220px)' }}>
               <React.Suspense fallback={<div className="flex items-center justify-center py-20 text-sage italic font-serif">Loading resources...</div>}>
                 <ResourcesErrorBoundary>
-                  <ResourcesPanel />
+                  <ResourcesPanel onNavigate={handleGlobalNavigate} />
                 </ResourcesErrorBoundary>
               </React.Suspense>
             </motion.div>
@@ -517,6 +762,26 @@ export default function App() {
               <React.Suspense fallback={<div className="flex items-center justify-center py-20 text-sage italic font-serif">Loading profile...</div>}>
                 <ProfilePanel />
               </React.Suspense>
+            </motion.div>
+          )}
+
+          {activeView === 'documents' && selectedDocument && (
+            <motion.div key="documents" initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -15 }}
+              className="watercolor-card flex flex-col" style={{ minHeight: 'calc(100vh - 220px)' }}>
+              <React.Suspense fallback={<div className="flex items-center justify-center py-20 text-sage italic font-serif">Loading article...</div>}>
+                <ArticleViewer
+                  filePath={selectedDocument.filePath}
+                  title={selectedDocument.title}
+                  onBack={() => setSelectedDocument(null)}
+                />
+              </React.Suspense>
+            </motion.div>
+          )}
+
+          {activeView === 'coming-soon' && (
+            <motion.div key="coming-soon" initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -15 }}
+              className="w-full h-full">
+              <ComingSoonPage />
             </motion.div>
           )}
 </AnimatePresence>

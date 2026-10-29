@@ -19,7 +19,7 @@ export interface SearchResult {
   subtitle: string;
   snippet: string;
   tag?: string;
-  navigateTo: 'directory' | 'documents' | 'home';
+  navigateTo: 'directory' | 'documents' | 'home' | 'external';
   navigateData?: any;
   fromAI?: boolean;
 }
@@ -119,7 +119,7 @@ export function GlobalSearchBar({ onNavigate }: GlobalSearchBarProps) {
           subtitle: doc.tags.slice(0, 3).map(t => `#${t}`).join(' '),
           snippet: (doc.content || '').substring(0, 150),
           navigateTo: 'documents',
-          navigateData: doc.id,
+          navigateData: doc.url,
           fromAI: true,
         });
         seen.add(key);
@@ -299,7 +299,7 @@ export function GlobalSearchBar({ onNavigate }: GlobalSearchBarProps) {
         allResults.push({
           type: 'document', id: doc.id, title: doc.title,
           subtitle: doc.tags.slice(0, 3).map(t => `#${t}`).join(' '),
-          snippet: (doc.content || '').substring(0, 150), navigateTo: 'documents', navigateData: doc.id,
+          snippet: (doc.content || '').substring(0, 150), navigateTo: 'documents', navigateData: doc.url,
         });
       }
     }
@@ -492,7 +492,7 @@ export function GlobalSearchBar({ onNavigate }: GlobalSearchBarProps) {
         allResults.push({
           type: 'document', id: doc.id, title: doc.title,
           subtitle: doc.tags.slice(0, 3).map(t => `#${t}`).join(' '),
-          snippet: (doc.content || '').substring(0, 150), navigateTo: 'documents', navigateData: doc.id,
+          snippet: (doc.content || '').substring(0, 150), navigateTo: 'documents', navigateData: doc.url,
         });
       }
     }
@@ -519,6 +519,7 @@ export function GlobalSearchBar({ onNavigate }: GlobalSearchBarProps) {
         const grade = (item.grade || '').toLowerCase();
         const tags = (item.topicTags || []).join(' ').toLowerCase();
         const aliases = (item.searchAliases || []).join(' ').toLowerCase();
+        const fileLink = item.fileLink || '';
         
         // Check exact matches in tags/aliases first (highest priority)
         words.forEach(w => {
@@ -538,14 +539,26 @@ export function GlobalSearchBar({ onNavigate }: GlobalSearchBarProps) {
         });
         
         if (score >= 3) {
+          // Determine navigation type based on fileLink
+          let navigateTo: 'directory' | 'documents' | 'external' = 'directory';
+          let navigateData: any = undefined;
+          
+          if (fileLink.startsWith('http')) {
+            navigateTo = 'external';
+            navigateData = fileLink;
+          } else if (fileLink.endsWith('.html')) {
+            navigateTo = 'documents';
+            navigateData = fileLink;
+          }
+          
           allResults.push({
             type: 'resource' as const,
             id: `teable-res-${item.id}`,
             title: item.title,
             subtitle: `${item.category} · ${item.grade}`,
             snippet: '',
-            navigateTo: 'directory' as const,
-            navigateData: undefined,
+            navigateTo,
+            navigateData,
           });
         }
       }
@@ -661,7 +674,9 @@ export function GlobalSearchBar({ onNavigate }: GlobalSearchBarProps) {
     if (result.navigateTo === 'directory' && result.navigateData) {
       onNavigate('directory', { mentorId: result.navigateData });
     } else if (result.navigateTo === 'documents' && result.navigateData) {
-      onNavigate('directory', { mentorId: result.navigateData });
+      onNavigate('documents', { filePath: result.navigateData, title: result.title });
+    } else if (result.navigateTo === 'external' && result.navigateData) {
+      window.open(result.navigateData, '_blank', 'noopener,noreferrer');
     } else {
       onNavigate('directory');
     }
