@@ -155,16 +155,6 @@ export function ResourcesPanel({ onNavigate }: { onNavigate?: (view: 'directory'
 
   const allItems = useMemo(() => [...resources, ...articles], [resources, articles]);
 
-  // Collect all unique tags from resources for filter pills
-  const allAvailableTags = useMemo(() => {
-    const tags = new Set<string>();
-    allItems.forEach(item => {
-      (item.topicTags || []).forEach(t => tags.add(t));
-      (item.searchAliases || []).forEach(a => tags.add(a));
-    });
-    return Array.from(tags).sort();
-  }, [allItems]);
-
   const searchFilteredItems = useMemo(() => {
     if (!searchQuery.trim()) return allItems;
     const s = searchQuery.toLowerCase().trim();
@@ -258,8 +248,17 @@ export function ResourcesPanel({ onNavigate }: { onNavigate?: (view: 'directory'
     setPage(0);
   };
 
-  // Filter bar component
-  const filterBar = (selectedTags.length > 0 || allAvailableTags.length > 0)
+  // Filter bar component - show tags only from currently visible items
+  const visibleTags = useMemo(() => {
+    const tags = new Set<string>();
+    tagFilteredItems.forEach(item => {
+      (item.topicTags || []).forEach(t => tags.add(t));
+      (item.searchAliases || []).forEach(a => tags.add(a));
+    });
+    return Array.from(tags).sort();
+  }, [tagFilteredItems]);
+
+  const filterBar = (selectedTags.length > 0 || visibleTags.length > 0)
     ? React.createElement('div', { className: 'mb-4' },
         selectedTags.length > 0 && React.createElement('div', { className: 'flex flex-wrap gap-2 mb-2' },
           React.createElement('span', { className: 'text-xs font-medium text-ink-soft/60 mr-2 self-center' }, 'Active filters:'),
@@ -279,7 +278,7 @@ export function ResourcesPanel({ onNavigate }: { onNavigate?: (view: 'directory'
             className: 'ml-2 px-3 py-1 text-xs font-medium text-ink-soft/60 hover:text-sage transition-colors'
           }, 'Clear all')
         ),
-        allAvailableTags.length > 0 && selectedTags.length === 0 && React.createElement('div', { className: 'mb-2' },
+        visibleTags.length > 0 && selectedTags.length === 0 && React.createElement('div', { className: 'mb-2' },
           React.createElement('label', { className: 'text-xs font-medium text-ink-soft/60 mr-2', htmlFor: 'tag-filter' }, 'Filter by tag:'),
           React.createElement('select', {
             id: 'tag-filter',
@@ -288,7 +287,7 @@ export function ResourcesPanel({ onNavigate }: { onNavigate?: (view: 'directory'
             className: 'ml-2 px-3 py-1.5 text-xs font-medium rounded-xl bg-white/60 border border-border text-ink hover:bg-sage-pale hover:border-sage focus:outline-none focus:border-sage transition-all'
           },
             React.createElement('option', { value: '', disabled: true }, 'Select a tag...'),
-            allAvailableTags.map((tag, idx) => React.createElement('option', { key: idx, value: tag }, tag))
+            visibleTags.map((tag, idx) => React.createElement('option', { key: idx, value: tag }, tag))
           )
         )
       )

@@ -199,71 +199,111 @@ The will is cultivated through doing and through meaningful, practical work. Bak
   ];
 
   return (
-    <div className="space-y-8">
-      {/* Section Title */}
-      <div className="text-center mb-4">
-        <p className="text-[10px] font-bold uppercase tracking-widest text-sage mb-2">The Three Pillars of Waldorf Education</p>
-        <h2 className="text-2xl md:text-3xl font-serif text-ink font-semibold">Head · Heart · Hands</h2>
-        <p className="text-sm text-ink-soft italic mt-2 max-w-xl mx-auto">Three faculties. One integrated education. Click to explore each realm.</p>
+    <>
+      <div className="space-y-8">
+        {/* Section Title */}
+        <div className="text-center mb-4">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-sage mb-2">The Three Pillars of Waldorf Education</p>
+          <h2 className="text-2xl md:text-3xl font-serif text-ink font-semibold">Head · Heart · Hands</h2>
+          <p className="text-sm text-ink-soft italic mt-2 max-w-xl mx-auto">Three faculties. One integrated education. Click to explore each realm.</p>
+        </div>
+
+        {/* Three Buttons Row */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
+          {pillars.map((pillar) => (
+            <motion.button
+              key={pillar.id}
+              onClick={() => setOpenModal(pillar.id)}
+              whileHover={{ scale: 1.05, y: -8, rotateX: [0, 5, -5, 0], rotateY: [0, -5, 5, 0] }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="relative group w-full md:w-64 h-40 md:h-48 rounded-2xl overflow-hidden cursor-pointer shadow-xl"
+              style={{
+                background: `linear-gradient(145deg, ${pillar.color} 0%, ${pillar.color}DD 100%)`,
+                border: `2px solid ${pillar.borderColor}`,
+                boxShadow: `0 10px 40px ${pillar.borderColor}33, inset 0 1px 0 rgba(255,255,255,0.3)`
+              }}
+              aria-label={`Explore ${pillar.label} — ${pillar.subtitle}`}
+            >
+              {/* 3D Watercolour Wash Effect */}
+              <motion.div
+                animate={{ x: [0, 10, -10, 0], y: [0, -10, 10, 0] }}
+                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute inset-0 opacity-30"
+                style={{
+                  background: `radial-gradient(ellipse at 30% 30%, ${pillar.borderColor}40 0%, transparent 60%),
+                             radial-gradient(ellipse at 70% 70%, ${pillar.borderColor}30 0%, transparent 50%)`
+                }}
+              />
+              {/* Subtle Paper Texture */}
+              <div className="absolute inset-0 opacity-10" style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`
+              }} />
+              
+              <div className="relative z-10 flex flex-col items-center justify-center h-full p-6 text-center">
+                <span className="text-3xl md:text-4xl mb-2" aria-hidden="true">{pillar.icon}</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: pillar.textColor }}>{pillar.subtitle}</span>
+                <span className="text-xl md:text-2xl font-serif font-bold" style={{ color: pillar.textColor }}>{pillar.label}</span>
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileHover={{ opacity: 1, y: 0 }}
+                  className="mt-3 text-xs font-medium uppercase tracking-wider"
+                  style={{ color: pillar.textColor }}
+                >
+                  Click to explore →
+                </motion.div>
+              </div>
+              
+              {/* Glow on hover */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileHover={{ opacity: 0.15, scale: 1.2 }}
+                className="absolute inset-0 rounded-2xl"
+                style={{ background: `radial-gradient(circle at center, ${pillar.borderColor} 0%, transparent 70%)` }}
+              />
+            </motion.button>
+          ))}
+        </div>
       </div>
 
-      {/* Three Buttons Row */}
-      <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
-        {pillars.map((pillar) => (
-          <motion.button
-            key={pillar.id}
-            onClick={() => setOpenModal(pillar.id)}
-            whileHover={{ scale: 1.05, y: -8, rotateX: [0, 5, -5, 0], rotateY: [0, -5, 5, 0] }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="relative group w-full md:w-64 h-40 md:h-48 rounded-2xl overflow-hidden cursor-pointer shadow-xl"
-            style={{
-              background: `linear-gradient(145deg, ${pillar.color} 0%, ${pillar.color}DD 100%)`,
-              border: `2px solid ${pillar.borderColor}`,
-              boxShadow: `0 10px 40px ${pillar.borderColor}33, inset 0 1px 0 rgba(255,255,255,0.3)`
-            }}
-            aria-label={`Explore ${pillar.label} — ${pillar.subtitle}`}
+      {/* Modal */}
+      <AnimatePresence>
+        {openModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm"
+            onClick={() => setOpenModal(null)}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="pillar-modal-title"
           >
-            {/* 3D Watercolour Wash Effect */}
-            <motion.div
-              animate={{ x: [0, 10, -10, 0], y: [0, -10, 10, 0] }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute inset-0 opacity-30"
-              style={{
-                background: `radial-gradient(ellipse at 30% 30%, ${pillar.borderColor}40 0%, transparent 60%),
-                           radial-gradient(ellipse at 70% 70%, ${pillar.borderColor}30 0%, transparent 50%)`
-              }}
-            />
-            {/* Subtle Paper Texture */}
-            <div className="absolute inset-0 opacity-10" style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`
-            }} />
-            
-            <div className="relative z-10 flex flex-col items-center justify-center h-full p-6 text-center">
-              <span className="text-3xl md:text-4xl mb-2" aria-hidden="true">{pillar.icon}</span>
-              <span className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: pillar.textColor }}>{pillar.subtitle}</span>
-              <span className="text-xl md:text-2xl font-serif font-bold" style={{ color: pillar.textColor }}>{pillar.label}</span>
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileHover={{ opacity: 1, y: 0 }}
-                className="mt-3 text-xs font-medium uppercase tracking-wider"
-                style={{ color: pillar.textColor }}
+            <div
+              className="relative max-w-2xl w-full max-h-[85vh] overflow-y-auto rounded-2xl shadow-2xl p-8"
+              style={{ backgroundColor: pillars.find(p => p.id === openModal)?.color || '#fff' }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setOpenModal(null)}
+                className="absolute top-4 right-4 p-1 rounded-full hover:bg-black/10 transition-colors text-ink-soft"
+                aria-label="Close modal"
               >
-                Click to explore →
-              </motion.div>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+              <div className="prose prose-invert max-w-none">
+                <h2 className="text-2xl md:text-3xl font-serif font-semibold mb-4" style={{ color: pillars.find(p => p.id === openModal)?.textColor }}>
+                  {pillars.find(p => p.id === openModal)?.label} — {pillars.find(p => p.id === openModal)?.subtitle}
+                </h2>
+                <div className="whitespace-pre-wrap text-base leading-relaxed text-ink-soft" style={{ color: pillars.find(p => p.id === openModal)?.textColor }}>
+                  {pillars.find(p => p.id === openModal)?.content}
+                </div>
+              </div>
             </div>
-            
-            {/* Glow on hover */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileHover={{ opacity: 0.15, scale: 1.2 }}
-              className="absolute inset-0 rounded-2xl"
-              style={{ background: `radial-gradient(circle at center, ${pillar.borderColor} 0%, transparent 70%)` }}
-            />
-          </motion.button>
-        ))}
-      </div>
-    </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
 
