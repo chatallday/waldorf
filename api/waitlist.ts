@@ -1,7 +1,6 @@
 // api/waitlist.ts - Vercel Serverless Function for Waitlist Submissions
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { Resend } from 'resend';
-import { teableClient } from '../../lib/server/teable/client';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
