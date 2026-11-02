@@ -1,0 +1,187 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>The Twelve Senses</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: single centered column, Roman-numbered sections, sense/virtue cards in a wrapping two-column grid, then a section of four arcs. */
+:root{--paper:#f5ede0;--warm:#efe3cf;--deep:#e8d8bd;--ink:#3b2a1a;--soft:#6b5840;--rust:#a8492a;--moss:#5a6b3f;--wool:#b8a583;--thread:#c8865f;--shadow:rgba(59,42,26,.08);
+--c-yellow:#d9a82b;--c-red:#c23a32;--c-purple:#8a3a86;--c-indigo:#4b3f9c;--c-green:#7aa24a;--c-dgreen:#2f5a3a;--c-blue:#2f86d6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#211a12;--warm:#2b2218;--deep:#41341f;--ink:#efe3cf;--soft:#c9b898;--rust:#e0825f;--moss:#a5b87c;--wool:#8a7558;--thread:#d99a73;--shadow:rgba(0,0,0,.3);
+--c-yellow:#e8bd4a;--c-red:#e2605a;--c-purple:#c46fc0;--c-indigo:#8e84e0;--c-green:#9bc46a;--c-dgreen:#5f9a70;--c-blue:#5aa8f0;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#211a12;--warm:#2b2218;--deep:#41341f;--ink:#efe3cf;--soft:#c9b898;--rust:#e0825f;--moss:#a5b87c;--wool:#8a7558;--thread:#d99a73;--shadow:rgba(0,0,0,.3);
+--c-yellow:#e8bd4a;--c-red:#e2605a;--c-purple:#c46fc0;--c-indigo:#8e84e0;--c-green:#9bc46a;--c-dgreen:#5f9a70;--c-blue:#5aa8f0;color-scheme:dark}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'EB Garamond',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:19px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.container{max-width:820px;margin:0 auto;padding-block:56px 90px;padding-inline:12px}
+header{text-align:center;margin-bottom:56px;padding-bottom:36px;border-bottom:1px solid var(--deep);position:relative}
+header::after{content:'✦';position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);background:var(--paper);color:var(--wool);padding:0 16px;font-size:16px}
+.eyebrow{font-family:'Caveat',cursive;font-size:24px;color:var(--rust)}
+h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(36px,6vw,58px);line-height:1.1;margin:6px 0 14px;text-wrap:balance}
+.subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--soft);max-width:600px;margin:0 auto}
+.toc{background:var(--warm);border:1px solid var(--deep);border-radius:4px;padding:24px 32px;margin-bottom:56px;box-shadow:0 2px 8px var(--shadow)}
+.toc-title,.tender strong{font-family:'Caveat',cursive;color:var(--rust);font-size:22px}
+.toc ol{list-style:none;counter-reset:t}
+.toc li{counter-increment:t;padding:6px 0;border-bottom:1px dotted var(--deep);display:flex;align-items:baseline}
+.toc li:last-child{border:none}
+.toc li::before{content:counter(t,upper-roman) ".";color:var(--rust);font-weight:600;margin-right:12px;min-width:32px;font-family:'Cormorant Garamond',serif}
+.toc a{color:var(--ink);text-decoration:none;font-size:18px}.toc a:hover,.toc a:focus-visible{color:var(--rust)}
+a:focus-visible{outline:2px solid var(--rust);outline-offset:3px}
+section{margin-bottom:64px;scroll-margin-top:40px}
+h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:34px;color:var(--rust);margin-bottom:18px;line-height:1.2;text-wrap:balance}
+h2 .roman{font-style:italic;font-weight:400;color:var(--wool);margin-right:12px;font-size:27px}
+p{margin-bottom:16px}p.lead{font-size:21px;font-style:italic;color:var(--soft)}
+.tender{background:color-mix(in srgb,var(--moss) 8%,transparent);border:1px dashed var(--moss);border-radius:3px;padding:18px 24px;margin:22px 0;font-size:17px;color:var(--soft);line-height:1.6}
+.tender strong{display:block;color:var(--moss);margin-bottom:4px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:18px 0}
+.card{background:var(--warm);border:1px solid var(--deep);border-radius:4px;padding:20px 24px;box-shadow:0 1px 4px var(--shadow);min-width:0}
+.card .tag{font-family:'Caveat',cursive;font-size:20px;color:var(--rust);line-height:1.2;margin-bottom:2px}
+.card h4{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:23px;line-height:1.25;margin-bottom:8px;display:flex;align-items:baseline;gap:10px}
+.dot{flex:none;width:11px;height:11px;border-radius:50%;background:var(--dot);position:relative;top:-1px;box-shadow:0 0 0 2px var(--warm),0 0 0 3px var(--dot)}
+.card p{font-size:17px;color:var(--soft);margin-bottom:0}
+.card .virtue{color:var(--moss);font-style:italic}
+.y{--dot:var(--c-yellow)}.r{--dot:var(--c-red)}.p{--dot:var(--c-purple)}.i{--dot:var(--c-indigo)}.g{--dot:var(--c-green)}.d{--dot:var(--c-dgreen)}.b{--dot:var(--c-blue)}
+.arc{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:6px 16px}
+.arc .end{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;line-height:1.3}
+.arc .end small{display:block;font-family:'EB Garamond',serif;font-weight:400;font-style:italic;font-size:15.5px;color:var(--moss)}
+.arc .end.low{text-align:right}
+.arc .line{width:clamp(48px,14vw,120px);height:3px;border-radius:2px;background:var(--dot)}
+.arc-name{grid-column:1/-1}
+.key{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 24px;list-style:none;margin:14px 0 22px}
+.key li{font-size:17px;color:var(--soft);display:flex;align-items:baseline;gap:10px}
+.chart-wrap{overflow-x:auto;background:var(--warm);border:1px solid var(--deep);border-radius:4px;padding:16px;box-shadow:0 1px 4px var(--shadow)}
+.chart{display:block;width:100%;min-width:560px;height:auto}
+.chart text{font-family:'EB Garamond',Georgia,serif;fill:var(--ink)}
+.chart .ctitle{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:30px;letter-spacing:.06em}
+.chart .csub{font-style:italic;font-size:17px;fill:var(--soft)}
+.chart .chead{font-family:'Caveat',cursive;font-size:24px;fill:var(--rust)}
+.chart .cgroup{font-family:'Caveat',cursive;font-size:21px;fill:var(--moss)}
+.chart .cs,.chart .cv{font-weight:600;font-size:17px;letter-spacing:.05em;fill:var(--dot)}
+.chart .cdiv{stroke:var(--wool);stroke-width:1.5;stroke-dasharray:5 4}
+.chart .carc{fill:none;stroke:var(--dot);stroke-width:4;stroke-linecap:round;opacity:.9}
+footer{text-align:center;padding-top:36px;margin-top:70px;border-top:1px solid var(--deep);color:var(--soft);font-style:italic;font-size:17px}
+@media(max-width:640px){.grid{grid-template-columns:minmax(0,1fr)}.arc{grid-template-columns:minmax(0,1fr);justify-items:start}.arc .end.low{text-align:left}.arc .line{width:56px}}
+@media(max-width:600px){body{font-size:18px}.container{padding-block:40px 70px;padding-inline:4px}h2{font-size:29px}.toc{padding:20px 22px}}
+</style>
+
+<div class="container">
+<header>
+<div class="eyebrow">Sense and virtue</div>
+<h1>The Twelve Senses</h1>
+</header>
+
+<nav class="toc"><div class="toc-title">On this page</div><ol>
+<li><a href="#chart">The chart</a></li>
+<li><a href="#higher">The higher, spiritual and social senses</a></li>
+<li><a href="#middle">The middle, feeling senses</a></li>
+<li><a href="#lower">The foundational, bodily senses</a></li>
+<li><a href="#arcs">The four arcs</a></li>
+<li><a href="#colors">Color key</a></li>
+</ol></nav>
+
+<section id="chart">
+<h2><span class="roman">I.</span>The chart</h2>
+<p>The whole picture in one place. The sections below explain each part.</p>
+<div class="chart-wrap">
+<svg class="chart" viewBox="0 0 800 940" role="img" aria-labelledby="chart-t chart-d" xmlns="http://www.w3.org/2000/svg">
+<title id="chart-t">The Twelve Senses chart</title>
+<desc id="chart-d">Twelve senses in three groups, each paired with a virtue. Four colored arcs connect Love to Equanimity and Justice, Devotion to Compassion and Tactfulness, Progress to Tolerance, Patience and Reverence, and Faithfulness to Trust and Selflessness.</desc>
+
+<text class="ctitle" x="380" y="40" text-anchor="middle">THE TWELVE SENSES</text>
+<text class="chead" x="40" y="104">Sensory Realm</text>
+<text class="chead" x="420" y="104">Virtue</text>
+
+<text class="cgroup" x="230" y="134" text-anchor="middle">“Higher” / Spiritual / Social Senses</text>
+<g class="i"><text class="cs" x="40" y="172">SENSING THE “I-BEING”</text><text class="cs" x="40" y="194">OF THE OTHER</text><text class="cv" x="420" y="172">FAITHFULNESS</text></g>
+<g class="p"><text class="cs" x="40" y="244">THOUGHT</text><text class="cv" x="420" y="244">PROGRESS</text></g>
+<g class="r"><text class="cs" x="40" y="290">WORD</text><text class="cv" x="420" y="290">DEVOTION</text></g>
+<g class="y"><text class="cs" x="40" y="336">HEARING</text><text class="cv" x="420" y="336">LOVE</text></g>
+<line class="cdiv" x1="130" y1="366" x2="530" y2="366"/>
+
+<text class="cgroup" x="230" y="396" text-anchor="middle">“Middle” / Feeling Senses that inform about the World</text>
+<g class="y"><text class="cs" x="40" y="440">WARMTH</text><text class="cv" x="420" y="440">DISCERNMENT</text></g>
+<g class="g"><text class="cs" x="40" y="486">SIGHT</text><text class="cv" x="420" y="486">COURAGE</text></g>
+<g class="d"><text class="cs" x="40" y="532">TASTE</text><text class="cv" x="420" y="532">SPEAKING TRUTH</text></g>
+<g class="b"><text class="cs" x="40" y="578">SMELL</text><text class="cv" x="420" y="578">PATIENCE, HUMILITY</text></g>
+<line class="cdiv" x1="130" y1="610" x2="530" y2="610"/>
+
+<text class="cgroup" x="230" y="640" text-anchor="middle">Foundational / “Lower” / Bodily Senses</text>
+<g class="y"><text class="cs" x="40" y="688">BALANCE</text><text class="cv" x="420" y="688">EQUANIMITY</text><text class="cv" x="420" y="710">JUSTICE</text></g>
+<g class="r"><text class="cs" x="40" y="758">SELF-MOVEMENT</text><text class="cv" x="420" y="758">COMPASSION</text><text class="cv" x="420" y="780">TACTFULNESS</text></g>
+<g class="p"><text class="cs" x="40" y="828">LIFE / WELL-BEING</text><text class="cv" x="420" y="828">TOLERANCE</text><text class="cv" x="420" y="850">PATIENCE</text><text class="cv" x="420" y="872">REVERENCE</text></g>
+<g class="i"><text class="cs" x="40" y="916">TOUCH</text><text class="cv" x="420" y="900">TRUST</text><text class="cv" x="420" y="922">SELFLESSNESS</text></g>
+
+<path class="carc y" d="M600 331 C700 331 700 700 600 700"/>
+<path class="carc r" d="M600 285 C740 285 740 770 600 770"/>
+<path class="carc p" d="M600 239 C780 239 780 845 600 845"/>
+<path class="carc i" d="M600 167 C820 167 820 910 600 910"/>
+</svg>
+</div>
+</section>
+
+<section id="higher">
+<h2><span class="roman">II.</span>The higher, spiritual and social senses</h2>
+<p class="lead">The senses that meet another person.</p>
+<div class="grid">
+<div class="card i"><div class="tag">Sensory realm</div><h4><span class="dot"></span>Sensing the “I-Being” of the Other</h4><p class="virtue">Virtue: Faithfulness</p></div>
+<div class="card p"><div class="tag">Sensory realm</div><h4><span class="dot"></span>Thought</h4><p class="virtue">Virtue: Progress</p></div>
+<div class="card r"><div class="tag">Sensory realm</div><h4><span class="dot"></span>Word</h4><p class="virtue">Virtue: Devotion</p></div>
+<div class="card y"><div class="tag">Sensory realm</div><h4><span class="dot"></span>Hearing</h4><p class="virtue">Virtue: Love</p></div>
+</div>
+</section>
+
+<section id="middle">
+<h2><span class="roman">III.</span>The middle, feeling senses</h2>
+<p class="lead">The senses that inform us about the world.</p>
+<div class="grid">
+<div class="card y"><div class="tag">Sensory realm</div><h4><span class="dot"></span>Warmth</h4><p class="virtue">Virtue: Discernment</p></div>
+<div class="card g"><div class="tag">Sensory realm</div><h4><span class="dot"></span>Sight</h4><p class="virtue">Virtue: Courage</p></div>
+<div class="card d"><div class="tag">Sensory realm</div><h4><span class="dot"></span>Taste</h4><p class="virtue">Virtue: Speaking Truth</p></div>
+<div class="card b"><div class="tag">Sensory realm</div><h4><span class="dot"></span>Smell</h4><p class="virtue">Virtue: Patience, Humility</p></div>
+</div>
+</section>
+
+<section id="lower">
+<h2><span class="roman">IV.</span>The foundational, bodily senses</h2>
+<p class="lead">The senses that ground us in the body.</p>
+<div class="grid">
+<div class="card y"><div class="tag">Sensory realm</div><h4><span class="dot"></span>Balance</h4><p class="virtue">Virtue: Equanimity, Justice</p></div>
+<div class="card r"><div class="tag">Sensory realm</div><h4><span class="dot"></span>Self-Movement</h4><p class="virtue">Virtue: Compassion, Tactfulness</p></div>
+<div class="card p"><div class="tag">Sensory realm</div><h4><span class="dot"></span>Life / Well-Being</h4><p class="virtue">Virtue: Tolerance, Patience, Reverence</p></div>
+<div class="card i"><div class="tag">Sensory realm</div><h4><span class="dot"></span>Touch</h4><p class="virtue">Virtue: Trust, Selflessness</p></div>
+</div>
+</section>
+
+<section id="arcs">
+<h2><span class="roman">V.</span>The four arcs</h2>
+<p>On the chart, a colored arc runs from the virtue of a higher sense down to the virtue of a bodily sense. Each higher quality has its root in a bodily one.</p>
+<div class="card y" style="margin-bottom:16px"><div class="arc">
+<div class="end">Love<small>Hearing</small></div><div class="line"></div><div class="end low">Equanimity, Justice<small>Balance</small></div></div></div>
+<div class="card r" style="margin-bottom:16px"><div class="arc">
+<div class="end">Devotion<small>Word</small></div><div class="line"></div><div class="end low">Compassion, Tactfulness<small>Self-Movement</small></div></div></div>
+<div class="card p" style="margin-bottom:16px"><div class="arc">
+<div class="end">Progress<small>Thought</small></div><div class="line"></div><div class="end low">Tolerance, Patience, Reverence<small>Life / Well-Being</small></div></div></div>
+<div class="card i"><div class="arc">
+<div class="end">Faithfulness<small>Sensing the “I-Being” of the Other</small></div><div class="line"></div><div class="end low">Trust, Selflessness<small>Touch</small></div></div></div>
+<div class="tender"><strong>Reading the arcs</strong>The yellow arc is the shortest and the blue arc is the widest. It starts at Faithfulness at the top and ends at Trust and Selflessness at the bottom.</div>
+</section>
+
+<section id="colors">
+<h2><span class="roman">VI.</span>Color key</h2>
+<p>These are the colors each sense is written in on the original chart.</p>
+<ul class="key">
+<li class="y"><span class="dot"></span>Yellow: Hearing, Warmth, Balance</li>
+<li class="r"><span class="dot"></span>Red: Word, Self-Movement</li>
+<li class="p"><span class="dot"></span>Purple: Thought, Life / Well-Being</li>
+<li class="i"><span class="dot"></span>Indigo: I-Being of the Other, Touch</li>
+<li class="g"><span class="dot"></span>Light green: Sight</li>
+<li class="d"><span class="dot"></span>Dark green: Taste</li>
+<li class="b"><span class="dot"></span>Blue: Smell</li>
+</ul>
+</section>
+
+<footer>✦ <span>The twelve senses and their virtues</span> ✦</footer>
+</div>
+
+</body></html>

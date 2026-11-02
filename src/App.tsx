@@ -640,14 +640,12 @@ React.useEffect(() => {
         </header>
       )}
 
-      {/* ── WIKI SEARCH SECTION (Dark Green) - Homepage Only ── */}
-      {activeView === 'home' && (
-        <section className="bg-sage-strong py-6">
-          <div className="max-w-2xl mx-auto px-6">
-            <GlobalSearchBar onNavigate={handleGlobalNavigate} />
-          </div>
-        </section>
-      )}
+      {/* ── WIKI SEARCH SECTION (Dark Green) - All Tabs ── */}
+      <section className="bg-sage-strong py-6">
+        <div className="max-w-2xl mx-auto px-6">
+          <GlobalSearchBar onNavigate={handleGlobalNavigate} />
+        </div>
+      </section>
 
       {/* ── 3D INTERACTIVE HEAD/HEART/HANDS SECTION - Homepage Only ── */}
       {activeView === 'home' && (

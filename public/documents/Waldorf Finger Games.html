@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Waldorf Finger Games</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f5ede0;--warm:#efe3cf;--deep:#e8d8bd;--ink:#3b2a1a;--soft:#6b5840;--rust:#a8492a;--moss:#5a6b3f;--wool:#b8a583;--thread:#c8865f;--shadow:rgba(59,42,26,.08);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#211a12;--warm:#2b2218;--deep:#41341f;--ink:#efe3cf;--soft:#c9b898;--rust:#e0825f;--moss:#a5b87c;--wool:#8a7558;--thread:#d99a73;--shadow:rgba(0,0,0,.3);color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#211a12;--warm:#2b2218;--deep:#41341f;--ink:#efe3cf;--soft:#c9b898;--rust:#e0825f;--moss:#a5b87c;--wool:#8a7558;--thread:#d99a73;--shadow:rgba(0,0,0,.3);color-scheme:dark}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'EB Garamond',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:19px}
+.container{max-width:820px;margin:0 auto;padding:56px 28px 90px}
+header{text-align:center;margin-bottom:56px;padding-bottom:36px;border-bottom:1px solid var(--deep);position:relative}
+header::after{content:'✦';position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);background:var(--paper);color:var(--wool);padding:0 16px;font-size:16px}
+.eyebrow{font-family:'Caveat',cursive;font-size:24px;color:var(--rust)}
+h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(36px,6vw,58px);line-height:1.1;margin:6px 0 14px}
+.subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--soft);max-width:600px;margin:0 auto}
+.toc{background:var(--warm);border:1px solid var(--deep);border-radius:4px;padding:24px 32px;margin-bottom:56px;box-shadow:0 2px 8px var(--shadow)}
+.toc-title,.quick h4,.tender strong{font-family:'Caveat',cursive;color:var(--rust);font-size:22px}
+.toc ol{list-style:none;counter-reset:t}
+.toc li{counter-increment:t;padding:6px 0;border-bottom:1px dotted var(--deep);display:flex;align-items:baseline}
+.toc li:last-child{border:none}
+.toc li::before{content:counter(t,upper-roman) ".";color:var(--rust);font-weight:600;margin-right:12px;min-width:32px;font-family:'Cormorant Garamond',serif}
+.toc a{color:var(--ink);text-decoration:none;font-size:18px}.toc a:hover{color:var(--rust)}
+section{margin-bottom:64px;scroll-margin-top:40px}
+h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:34px;color:var(--rust);margin-bottom:18px;line-height:1.2}
+h2 .roman{font-style:italic;font-weight:400;color:var(--wool);margin-right:12px;font-size:27px}
+h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:23px;color:var(--moss);margin:28px 0 10px}
+p{margin-bottom:16px}p.lead{font-size:21px;font-style:italic;color:var(--soft)}
+.tender{background:color-mix(in srgb,var(--moss) 8%,transparent);border:1px dashed var(--moss);border-radius:3px;padding:18px 24px;margin:22px 0;font-size:17px;color:var(--soft);line-height:1.6}
+.tender strong{display:block;color:var(--moss);margin-bottom:4px}
+.card{background:var(--warm);border:1px solid var(--deep);border-radius:4px;padding:22px 26px;margin:18px 0;box-shadow:0 1px 4px var(--shadow)}
+.card .tag{font-family:'Caveat',cursive;font-size:20px;color:var(--rust)}
+.card h4{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:22px;margin-bottom:8px}
+.card p{font-size:16.5px;color:var(--soft);margin-bottom:8px}
+.card .meta{font-size:15.5px;color:var(--moss);font-style:italic}
+.verse{font-family:'Cormorant Garamond',serif;font-size:20px;line-height:1.6;color:var(--ink);margin:10px 0 8px}
+.verse em{display:block;font-family:'EB Garamond',serif;font-size:15.5px;color:var(--moss)}
+ul.gentle{list-style:none;margin:14px 0 22px}
+ul.gentle li{position:relative;padding-left:28px;margin-bottom:10px;font-size:17px;line-height:1.6;color:var(--soft)}
+ul.gentle li::before{content:'✦';position:absolute;left:6px;color:var(--thread);top:3px;font-size:14px}
+footer{text-align:center;padding-top:36px;margin-top:70px;border-top:1px solid var(--deep);color:var(--soft);font-style:italic;font-size:17px}
+@media(max-width:600px){body{font-size:18px}.container{padding:40px 20px 70px}h2{font-size:29px}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="eyebrow">Early childhood · Hand and voice</div>
+<h1>Waldorf Finger Games</h1>
+<p class="subtitle">What they are, why we play them, which books to buy, and where to learn more</p>
+</header>
+
+<nav class="toc"><div class="toc-title">In this guide</div><ol>
+<li><a href="#what">What finger games are</a></li>
+<li><a href="#why">Why they matter</a></li>
+<li><a href="#teach">How to share one with a child</a></li>
+<li><a href="#ellersiek">The Ellersiek books</a></li>
+<li><a href="#other">Other collections</a></li>
+<li><a href="#trainers">Trainers and workshops</a></li>
+<li><a href="#free">Free resources online</a></li>
+<li><a href="#verses">A few verses to start with</a></li>
+</ol></nav>
+
+<section id="what">
+<h2><span class="roman">I.</span>What finger games are</h2>
+<p class="lead">A short verse or song, a few hand movements, and an adult who is paying attention.</p>
+<p>You may also hear them called finger plays, hand gesture games or gesture plays. People have played them with small children in every culture we know of, and they are some of the oldest things we do with young children.</p>
+<p>In Waldorf early childhood work they are not there to fill a gap in the morning. Steiner is quoted as saying that nimble fingers become nimble thinking later in life, and Waldorf teachers take that seriously. The games are part of how a child gets ready for reading, writing, number work and getting along with other people.</p>
+<p>Wilma Ellersiek (1921–2007) taught music, speech and dance at the Stuttgart State Academy for Music and Performing Arts. In her later years she studied what rhythm, movement and language do for a young child, and the gesture games she wrote came out of that work. Most Waldorf kindergartens that use gesture games today are using hers.</p>
+</section>
+
+<section id="why">
+<h2><span class="roman">II.</span>Why they matter</h2>
+<div class="card"><div class="tag">Ages 2–9</div><h4>Small hands get strong</h4>
+<p>A finger that can point, tap, weave and gesture on purpose is closer to holding a pencil, a knitting needle or a bow. The muscles are the same ones.</p></div>
+<div class="card"><div class="tag">Ages 0–7</div><h4>Both sides of the body work together</h4>
+<p>Many games use both hands at once, or pass a movement from the left hand to the right and across the middle of the body. That crossing is the same coordination a child will need later to read and write.</p></div>
+<div class="card"><div class="tag">All ages</div><h4>Words stay when the body helps</h4>
+<p>Rhyme, repetition and movement together are very good for learning language. The child who has climbed a spider up the drainpipe with their fingers is not going to forget the word drainpipe.</p></div>
+<div class="card"><div class="tag">Ages 2–8</div><h4>A steady beat</h4>
+<p>Keeping a beat with the fingers while speaking a verse trains a child to hold time inside. Music, maths and playing along with other people all lean on that.</p></div>
+<div class="card"><div class="tag">Ages 3–7</div><h4>Numbers you can feel</h4>
+<p>"One little finger, two little fingers" teaches counting before anyone mentions arithmetic. The numbers are right there at the end of the child's arms.</p></div>
+<div class="card"><div class="tag">Birth–age 5</div><h4>Being close</h4>
+<p>For the youngest children this matters most. An adult sits down, sings, touches a hand and has no other place to be. Ellersiek's <em>Giving Love, Bringing Joy</em> is built around touch games between parent and baby for this reason.</p></div>
+</section>
+
+<section id="teach">
+<h2><span class="roman">III.</span>How to share one with a child</h2>
+<ul class="gentle">
+<li>Learn the verse well enough that you can play it without looking at the page.</li>
+<li>Do the whole game yourself, slowly and with your full attention. The child only watches.</li>
+<li>Do it again. Children join in when they are ready, and some take weeks. Don't ask them to show you.</li>
+<li>Play the same verse every day for a good while. The repeating is the point. It is how the words and the movement settle into the body.</li>
+<li>Keep your voice warm and plain. A big performance voice and big gestures get in the way.</li>
+<li>Say it clearly and let the rhythm do the work. The child's hands will follow.</li>
+</ul>
+<div class="tender"><strong>If you feel awkward</strong>Almost everyone does at first. Pick one short verse, say it out loud a few times in the car or the kitchen, and try it on your child when you have a quiet few minutes. It gets easier quickly.</div>
+</section>
+
+<section id="ellersiek">
+<h2><span class="roman">IV.</span>The Ellersiek books</h2>
+<p>All published by WECAN and translated by Lyn and Kundry Willwerth. Each one has a companion CD. They are available from waldorfearlychildhood.org/store.</p>
+<div class="card"><div class="tag">⭐ Start here</div><h4>Giving Love, Bringing Joy</h4>
+<p>Hand gesture games and lullabies in the Mood of the Fifth (WECAN, 2003). For the youngest children, from birth on. It has touch games for parent and baby, lullabies, and games for lying down. The book describes its aim as helping children build a caring relationship with plants, animals, people and things through loving contact.</p>
+<p class="meta">ISBN 978-0-9796232-6-4</p></div>
+<div class="card"><div class="tag">⭐ Autumn and winter</div><h4>Gesture Games for Autumn and Winter</h4>
+<p>32 songs and gesture games for kindergarten and the lower grades, with autumn and winter nature themes. Margret Costanini's introduction explains the thinking behind teaching by example and imitation.</p>
+<p class="meta">ISBN 978-0-9722238-9-8</p></div>
+<div class="card"><div class="tag">⭐ Spring and summer</div><h4>Gesture Games for Spring and Summer</h4>
+<p>32 more, this time from spring and summer (WECAN, 2005). It includes craft directions and a short biography of Ellersiek. You can buy it together with the autumn and winter book as a discounted set with CD.</p>
+<p class="meta">ISBN 978-0-9722238-0-5</p></div>
+<div class="card"><div class="tag">⭐ Moving more</div><h4>Dancing Hand, Trotting Pony</h4>
+<p>Finger plays plus bigger movement games, including animal movements and circle games. Suits kindergarten through the lower grades.</p></div>
+<div class="card"><div class="tag">⭐ The last volume</div><h4>Gnomes and Giants, Pixies and Elves</h4>
+<p>Ellersiek did not finish this one. Her colleagues completed it after her death, including Lynn St Pierre, who trained with Kundry Willwerth in Stuttgart (WECAN, 2014). It is full of imaginative gesture play about gnomes, giants, pixies and elves.</p></div>
+<div class="tender"><strong>Buying tip</strong>There is a four-book set with Giving Love Bringing Joy, both Gesture Games books and Dancing Hand Trotting Pony. If you work with young children, or you plan to use these for years at home, the set costs less than buying them one at a time.</div>
+</section>
+
+<section id="other">
+<h2><span class="roman">V.</span>Other collections</h2>
+<div class="card"><div class="tag">Waldorf Publications</div><h4>Finger Plays</h4>
+<p>56 finger games for children from about 3, compiled by Mercury Press, with the verses and the finger movements printed side by side. It was the top seller on the Waldorf Publications list as of 2024. It is cheap, easy to use and a good first book.</p></div>
+<div class="card"><div class="tag">WECAN</div><h4>A Lifetime of Joy, by Bronja Zahlingen</h4>
+<p>Circle games, finger games, songs, verses and puppet plays in one book. A lot of Waldorf kindergartens around the world keep a copy.</p></div>
+</section>
+
+<section id="trainers">
+<h2><span class="roman">VI.</span>Trainers and workshops</h2>
+<div class="card"><div class="tag">⭐ USA / international</div><h4>Lynn St Pierre</h4>
+<p>Works in the Ellersiek tradition and is also a Spacial Dynamics teacher trainer. She apprenticed with Kundry Willwerth and was a member of the Stuttgart Hand Gesture Working Circle. She co-wrote <em>Gnomes and Giants, Pixies and Elves</em> and teaches touch, hand gesture and large movement play at Waldorf teacher training centres, conferences and schools. She is on the faculty of Dancing Hands &amp; Frolicking Voices, a two-year intensive run each year with Laurie Clark.</p>
+<p class="meta">dancinghandsfrolickingvoices.org</p></div>
+<div class="card"><div class="tag">⭐ Chestnut Ridge, New York</div><h4>Sunbridge Institute: Movement and Singing in the Ellersiek Tradition</h4>
+<p>A summer course taught by Lynn St Pierre. You spend the time doing finger plays, circle games, singing in the Mood of the Fifth and speaking verse, and you go home able to use it with children right away.</p>
+<p class="meta">sunbridge.edu/event/movement-singing-ellersiek-tradition</p></div>
+<div class="card"><div class="tag">Remembered</div><h4>Kundry Willwerth (1932–2017)</h4>
+<p>A Waldorf kindergarten teacher for more than 30 years, and one of the founders of the Stuttgart Hand Gesture Working Circle. She translated and edited the Ellersiek books into English and taught workshops in North America, Europe, Brazil and Australia. Hundreds of teachers have trained with her or with people she trained.</p></div>
+</section>
+
+<section id="free">
+<h2><span class="roman">VII.</span>Free resources online</h2>
+<ul class="gentle">
+<li><strong>Lavender's Blue Homeschool:</strong> seasonal finger games on video, with clear notes on what each one does for a child. lavendersbluehomeschool.com/blogs/magic-fingerplays</li>
+<li><strong>Soul Blossom Kids:</strong> Waldorf-inspired finger plays and hand games with videos, including spring and summer fairy games. soulblossomkids.com</li>
+<li><strong>tiptoes-lightly.net:</strong> Reg Down's site has dozens of finger verses, action verses and seasonal poems. One of the fullest free Waldorf early years sites around.</li>
+<li><strong>Cedarwood Waldorf School:</strong> a free collection of fingerplays and gesture verses sorted by season. cedarwoodschool.org/buttercup/song-verse</li>
+<li><strong>YouTube:</strong> many Waldorf teachers post their finger games. Try searching "Waldorf finger plays", "Waldorf gesture games" or "Ellersiek finger games". The Lambkin and Fairy fingerplay videos are good ones to start with and come with teaching notes.</li>
+</ul>
+</section>
+
+<section id="verses">
+<h2><span class="roman">VIII.</span>A few verses to start with</h2>
+<p>These are short and I wrote them for this guide. Change the words to suit your own place and season.</p>
+
+<div class="card"><div class="tag">Autumn</div><h4>The Falling Leaf</h4>
+<div class="verse">Little leaf up on the bough,<br>Wiggle, wiggle, wiggle now.<br>Wind comes whispering, soft and low,<br>Down, down, down you go.<br>Rest upon the earth so deep,<br>Sleep, little leaf, and softly sleep.
+<em>Hold a hand high with the fingers spread. Wiggle them, sway, then flutter the hand down into the other palm and cover it.</em></div></div>
+
+<div class="card"><div class="tag">Winter</div><h4>The Little Candle</h4>
+<div class="verse">One small candle, bright and still,<br>Warms the winter, warms the hill.<br>Two small hands curve round the light,<br>Keep it safe through the long night.
+<em>One finger up as the flame. Sway it gently, then cup both hands around it.</em></div></div>
+
+<div class="card"><div class="tag">Spring</div><h4>The Waking Seed</h4>
+<div class="verse">Seed lies sleeping in the ground,<br>Not a sound, not a sound.<br>Rain comes tapping, pitter-pat,<br>Sun shines warm, and then, and that...<br>Up comes one green finger tall,<br>Then a leaf, and then they all!
+<em>Start with a closed fist in your lap. Tap it with the other hand's fingers, then let one finger rise slowly and open the whole hand like a flower.</em></div></div>
+
+<div class="card"><div class="tag">Summer</div><h4>The Butterfly</h4>
+<div class="verse">Butterfly, butterfly, wings of gold,<br>Dancing in the sun's warm hold.<br>Over the daisies, over the bee,<br>Over the buttercups, over me.<br>Landing softly on my knee,<br>Butterfly, butterfly, can you see me?
+<em>Cross the wrists, link the thumbs and flutter the fingers slowly. Float from side to side, then rest on the knee.</em></div></div>
+
+<div class="card"><div class="tag">For babies</div><h4>Little Fingers Walking</h4>
+<div class="verse">Little feet walk, walk, walk,<br>Up the arm and round the neck,<br>Tickle, tickle, one, two, three,<br>Little baby, you and me.
+<em>Walk two fingers up the baby's arm and tickle softly under the chin. Stop if the baby turns away.</em></div></div>
+</section>
+
+<footer>✦ <span>Finger games for the home and the kindergarten</span> ✦</footer>
+</div>
+</body>
+</html>

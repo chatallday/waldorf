@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Touch and Body Awareness</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f5ede0;--warm:#efe3cf;--deep:#e8d8bd;--ink:#3b2a1a;--soft:#6b5840;--rust:#a8492a;--moss:#5a6b3f;--wool:#b8a583;--thread:#c8865f;--shadow:rgba(59,42,26,.08);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#211a12;--warm:#2b2218;--deep:#41341f;--ink:#efe3cf;--soft:#c9b898;--rust:#e0825f;--moss:#a5b87c;--wool:#8a7558;--thread:#d99a73;--shadow:rgba(0,0,0,.3);color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#211a12;--warm:#2b2218;--deep:#41341f;--ink:#efe3cf;--soft:#c9b898;--rust:#e0825f;--moss:#a5b87c;--wool:#8a7558;--thread:#d99a73;--shadow:rgba(0,0,0,.3);color-scheme:dark}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'EB Garamond',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:19px}
+.container{max-width:820px;margin:0 auto;padding:56px 28px 90px}
+header{text-align:center;margin-bottom:56px;padding-bottom:36px;border-bottom:1px solid var(--deep);position:relative}
+header::after{content:'✦';position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);background:var(--paper);color:var(--wool);padding:0 16px;font-size:16px}
+.eyebrow{font-family:'Caveat',cursive;font-size:24px;color:var(--rust)}
+h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,6vw,54px);line-height:1.1;margin:6px 0 14px}
+.subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--soft);max-width:600px;margin:0 auto}
+section{margin-bottom:56px}
+h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:32px;color:var(--rust);margin-bottom:18px;line-height:1.2}
+h2 .roman{font-style:italic;font-weight:400;color:var(--wool);margin-right:12px;font-size:26px}
+h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:23px;color:var(--moss);margin:26px 0 10px}
+p{margin-bottom:16px}
+.card{background:var(--warm);border:1px solid var(--deep);border-radius:4px;padding:20px 26px;margin:14px 0;box-shadow:0 1px 4px var(--shadow)}
+ul.gentle{list-style:none;margin:6px 0}
+ul.gentle li{position:relative;padding-left:28px;margin-bottom:8px;font-size:17.5px;line-height:1.55;color:var(--soft)}
+ul.gentle li::before{content:'✦';position:absolute;left:6px;color:var(--thread);top:3px;font-size:14px}
+footer{text-align:center;padding-top:36px;margin-top:60px;border-top:1px solid var(--deep);color:var(--soft);font-style:italic;font-size:17px}
+@media(max-width:600px){body{font-size:18px}.container{padding:40px 20px 70px}h2{font-size:28px}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="eyebrow">Touch · Proprioception</div>
+<h1>Touch and Body Awareness</h1>
+<p class="subtitle">What to notice when a child struggles with the sense of touch or the sense of the body in space</p>
+</header>
+
+<section>
+<h2><span class="roman">I.</span>The sense of touch</h2>
+<p>Touch tells us where we stop and the rest of the world begins. A child learns the edges of their own body this way, and learns which things and which people are outside it. Rudolf Steiner put the weight on exactly this: touch is about boundaries.</p>
+
+<h3>A child who is very sensitive to touch may</h3>
+<div class="card"><ul class="gentle">
+<li>Be extremely ticklish</li>
+<li>Pull away from touch, wipe off a kiss, or react strongly to a light or surprise touch</li>
+<li>Push other children away in a group to keep from being crowded</li>
+<li>Hate being sticky or dirty and stay out of messy play like kneading dough, painting, the sandbox, or anything slimy or squishy</li>
+<li>Be bothered by stiff or scratchy clothes, tags, or the seams in socks</li>
+<li>Stick to loose, soft clothing</li>
+<li>Wear long sleeves and pants in summer, or refuse them when the weather calls for them</li>
+<li>Dislike swimming, baths, hair washing, and face washing</li>
+<li>Fight haircuts, brushing hair, and nail trimming</li>
+<li>Be a picky eater, avoiding certain textures or wanting every food at the same temperature, all hot or all cold</li>
+<li>Hold a pencil in an unusual way, with the thumb tip off the pencil</li>
+</ul></div>
+
+<h3>A child who is less sensitive to touch may</h3>
+<div class="card"><ul class="gentle">
+<li>Keep touching people and things</li>
+<li>Barely notice touch unless it is strong</li>
+<li>Not feel the temperature indoors or out</li>
+<li>Eat messily and not notice food around the mouth or nose</li>
+<li>Hurt other children or animals without understanding that it caused pain</li>
+<li>Chew on things like fingernails, pencils, hair, or cuffs and collars</li>
+<li>Not notice that something has been dropped</li>
+<li>Have a weak sense of the body and need firm pressure to know where they were touched</li>
+<li>Not mind twisted or uncomfortable clothes, or shoes on the wrong feet</li>
+<li>Stand too close to others and run into social trouble because they don’t sense personal space</li>
+</ul></div>
+</section>
+
+<section>
+<h2><span class="roman">II.</span>The sense of body position</h2>
+<p>Proprioception is the sense of where your body parts are in relation to each other. Sensors in the joints quietly report where the limbs are, without us thinking about it. From this a child builds an inner map of the body. Steiner called it the sense of self-movement.</p>
+
+<h3>A child who struggles to read signals from muscles and joints may</h3>
+<div class="card"><ul class="gentle">
+<li>Also have trouble with touch and balance</li>
+<li>Want to be swaddled, held, or wrapped up tight, and ask for hard hugs</li>
+<li>Need a lot of closeness and physical contact, and seem clingy</li>
+<li>Have a hard time with everyday tasks like getting dressed when they can’t watch their hands</li>
+<li>Press too hard on toys, hair clips, and tools until they break, spill drinks by gripping the glass too forcefully, or tear a chip bag open with too much force</li>
+<li>Seem stiff and clumsy in big movements, and trip or fall often</li>
+<li>Have little awareness of their own body</li>
+<li>Stomp their feet while walking, sit on their feet, stretch their limbs, crack their knuckles, or pull on their fingers</li>
+<li>Have trouble falling asleep and staying asleep</li>
+<li>Fall out of bed, or off a chair at school</li>
+<li>Twist and tug at clothes, stretch a T-shirt over the knees, or chew on sleeves and collars</li>
+</ul></div>
+</section>
+
+<footer>✦ <span>Adapted from notes by Nancy Blanning, Sound Circle EC Training, 2025</span> ✦</footer>
+</div>
+</body>
+</html>

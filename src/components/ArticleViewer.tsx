@@ -7,8 +7,23 @@ interface ArticleViewerProps {
   onBack: () => void;
 }
 
-function ArticleContent({ html, rawHtml, useIframe, title }: { html: string | null; rawHtml: string | null; useIframe: boolean; title: string }) {
-  // Separate component to isolate dangerouslySetInnerHTML errors
+function isPdfPath(path: string): boolean {
+  return path.toLowerCase().endsWith('.pdf');
+}
+
+function ArticleContent({ html, rawHtml, useIframe, title, isPdf, pdfUrl }: { html: string | null; rawHtml: string | null; useIframe: boolean; title: string; isPdf: boolean; pdfUrl: string }) {
+  // For PDFs, always use iframe with direct URL
+  if (isPdf) {
+    return (
+      <iframe
+        src={pdfUrl}
+        className="w-full h-full border-none"
+        title={title}
+      />
+    );
+  }
+
+  // For HTML content
   if (useIframe && rawHtml) {
     return (
       <iframe
@@ -32,10 +47,18 @@ export function ArticleViewer({ filePath, title, onBack }: ArticleViewerProps) {
   const [rawHtml, setRawHtml] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [useIframe, setUseIframe] = useState(true); // Default to iframe for safety
+  const [useIframe, setUseIframe] = useState(true);
   const [retryKey, setRetryKey] = useState(0);
+  
+  const isPdf = isPdfPath(filePath);
 
   useEffect(() => {
+    // For PDFs, skip fetching and parsing - use iframe directly
+    if (isPdf) {
+      setLoading(false);
+      return;
+    }
+
     setLoading(true);
     setError(null);
     setHtml(null);
@@ -85,7 +108,7 @@ export function ArticleViewer({ filePath, title, onBack }: ArticleViewerProps) {
         setError(err.message);
         setLoading(false);
       });
-  }, [filePath, retryKey]);
+  }, [filePath, retryKey, isPdf]);
 
   if (loading) {
     return (
@@ -125,14 +148,16 @@ export function ArticleViewer({ filePath, title, onBack }: ArticleViewerProps) {
           </button>
           <span className="text-sm font-semibold text-ink truncate">{title}</span>
           <div className="ml-auto">
-            <button onClick={() => setUseIframe(!useIframe)}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-bold text-sage hover:bg-sage-pale/50 rounded-xl transition-colors cursor-pointer">
-              {useIframe ? (
-                <> <Minimize2 size={16} /> Simple View </ >
-              ) : (
-                <> <Maximize2 size={16} /> Full-Page View </ >
-              )}
-            </button>
+            {!isPdf && (
+              <button onClick={() => setUseIframe(!useIframe)}
+                className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-bold text-sage hover:bg-sage-pale/50 rounded-xl transition-colors cursor-pointer">
+                {useIframe ? (
+                  <> <Minimize2 size={16} /> Simple View </ >
+                ) : (
+                  <> <Maximize2 size={16} /> Full-Page View </ >
+                )}
+              </button>
+            )}
           </div>
         </div>
       </div>
@@ -141,7 +166,9 @@ export function ArticleViewer({ filePath, title, onBack }: ArticleViewerProps) {
           html={html} 
           rawHtml={rawHtml} 
           useIframe={useIframe} 
-          title={title} 
+          title={title}
+          isPdf={isPdf}
+          pdfUrl={filePath}
         />
       </div>
     </div>
