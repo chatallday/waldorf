@@ -468,6 +468,7 @@ export default function App() {
   };
 
   const handleGlobalNavigate = (view: NavTab, data?: any) => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     if (view === 'directory' && data?.mentorId) {
       setSelectedMentorId(data.mentorId);
       setRecommendedTags([]);
@@ -853,13 +854,13 @@ React.useEffect(() => {
 
 {/* ── BOTTOM NAV ── */}
       <nav className="fixed bottom-0 left-0 w-full bg-white/80 backdrop-blur-xl shadow-[0_-10px_35px_rgba(122,140,110,0.1)] flex flex-row justify-around items-center px-2 pb-5 pt-2 z-50 rounded-t-[24px] border-t border-border/50" role="navigation" aria-label="Bottom navigation">
-        {[
+{[
           { id: 'home' as NavTab, label: 'Home', icon: Leaf },
           { id: 'directory' as NavTab, label: 'Directory', icon: Search },
           { id: 'resources' as NavTab, label: 'Resources', icon: BookOpen },
           { id: 'profile' as NavTab, label: 'Profile', icon: UserIcon }
         ].map(({ id, label, icon: Icon }) => (
-          <button key={id} onClick={() => { setRecommendedTags([]); setActiveView(id); }}
+          <button key={id} onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setRecommendedTags([]); setActiveView(id); }}
             className={`flex flex-col items-center justify-center min-w-[56px] py-1 transition-all duration-300 rounded-xl ${
               activeView === id ? 'bg-sage-pale text-sage scale-105 shadow-sm font-semibold' : 'text-ink-soft hover:text-sage'
             }`}
@@ -869,7 +870,7 @@ React.useEffect(() => {
             <span className="text-[8px] font-bold mt-0.5 uppercase tracking-wider whitespace-nowrap">{label}</span>
           </button>
         ))}
-</nav>
+      </nav>
 
       {/* ── FOOTER ── */}
       <footer className="mt-12 py-6 border-t border-border/20 text-center text-xs text-ink-soft space-y-3">
