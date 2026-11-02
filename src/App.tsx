@@ -168,7 +168,9 @@ function ThreePillarSection() {
       borderColor: '#2c4a6e',
       textColor: '#2c4a6e',
       icon: '☀️',
-      content: `Head — Thinking & Knowledge\n\nIn Waldorf education, the "head" represents the realm of thinking, cognition, and intellectual development. This capacity unfolds gradually, reaching its fullest expression in the high school years (ages 14–21).\n\nThe head is not merely a vessel for information. In the Waldorf approach, thinking is cultivated as a living, mobile activity — not static memorization. Through main lessons, mathematics, sciences, and humanities, students learn to think critically, form independent judgments, and understand complex relationships.\n\nKey aspects:\n• Conceptual clarity and logical reasoning\n• Scientific observation and inquiry\n• Historical consciousness and context\n• Mathematical and geometric thinking\n• Language arts and literary analysis\n• Critical thinking and discernment\n\nThe goal is not to fill the head with facts, but to awaken the capacity for clear, independent, and creative thinking — a thinking that can meet the world with understanding and purpose.`
+      content: `HEAD — THINKING
+
+Waldorf education seeks to awaken the child's thinking through imagination, stories, wonder, and the discovery of the world. Learning is not simply about filling a child's mind with facts, but about encouraging curiosity, asking why things are the way they are, and developing a genuine understanding of the world. The aim is not just to know, but to understand.`
     },
     {
       id: 'heart' as const,
@@ -178,7 +180,9 @@ function ThreePillarSection() {
       borderColor: '#7a4f1a',
       textColor: '#7a4f1a',
       icon: '💛',
-      content: `Heart — Feeling & Soul Life\n\nThe "heart" in Waldorf education encompasses the entire realm of feeling, social life, and artistic experience. This capacity blossoms during the middle childhood years (ages 7–14), when the child lives strongly in the world of images, rhythms, and relationships.\n\nFeeling is not mere emotion — it is the bridge between the inner world and the outer world. Through art, music, storytelling, festivals, and social interactions, the child's feeling life is educated and refined.\n\nKey aspects:\n• Artistic expression — painting, drawing, modeling\n• Music — singing, recorder, lyre, choir\n• Speech and drama — recitation, class plays\n• Seasonal festivals and rhythms\n• Social development — cooperation, empathy\n• Moral imagination through stories and biographies\n\nThe educated heart becomes an organ of perception — able to sense beauty, truth, and goodness, and to meet others with genuine warmth and understanding.`
+      content: `HEART — FEELING
+
+The feeling life is nurtured through music, painting, storytelling, drama, and the beauty of the natural world. Art gives children a way to experience life more deeply, to develop a sense for beauty, and to meet the world with interest and care. Through these experiences, children gradually develop empathy, reverence, wonder and a sense of responsibility toward others.`
     },
     {
       id: 'hands' as const,
@@ -188,7 +192,9 @@ function ThreePillarSection() {
       borderColor: '#3a6b3e',
       textColor: '#3a6b3e',
       icon: '🙌',
-      content: `Hands — Willing & Doing\n\nThe "hands" represent the realm of will, action, and practical doing. This capacity is most active in early childhood (ages 0–7), when the child learns entirely through imitation and movement, and continues to develop through the grades via handwork, crafts, and practical arts.\n\nWill is not forced compliance — it is the inner capacity to initiate, persist, and complete. Through purposeful work, the child develops not only skills but character: patience, perseverance, care, and the quiet confidence that comes from making something real.\n\nKey aspects:\n• Handwork — knitting, crochet, sewing, embroidery\n• Woodwork — carving, joinery, tool use\n• Gardening and farming — biodynamic practices\n• Cooking, baking, and nutrition\n• Form drawing and geometric construction\n• Eurythmy and purposeful movement\n• Building, crafting, making\n\nThe educated will becomes a force for good in the world — capable of turning intention into reality, idea into deed, vision into form.`
+      content: `HANDS — WILLING
+
+The will is cultivated through doing and through meaningful, practical work. Baking bread, tending a garden, working with wood, knitting, building, and caring for the classroom give children the opportunity to engage with the world in a hands-on way. Through everyday tasks and practical activities, children learn to take responsibility, develop useful life skills, and experience the satisfaction of creating something with their own hands. They learn patience by staying with a task, perseverance by working through difficulties, and confidence by seeing something through to completion.`
     }
   ];
 
@@ -198,7 +204,7 @@ function ThreePillarSection() {
       <div className="text-center mb-4">
         <p className="text-[10px] font-bold uppercase tracking-widest text-sage mb-2">The Three Pillars of Waldorf Education</p>
         <h2 className="text-2xl md:text-3xl font-serif text-ink font-semibold">Head · Heart · Hands</h2>
-        <p className="text-sm text-ink-soft italic mt-2 max-w-xl mx-auto">Three faculties. One integrated education. Hover to explore each realm.</p>
+        <p className="text-sm text-ink-soft italic mt-2 max-w-xl mx-auto">Three faculties. One integrated education. Click to explore each realm.</p>
       </div>
 
       {/* Three Buttons Row */}

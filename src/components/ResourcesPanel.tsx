@@ -279,13 +279,17 @@ export function ResourcesPanel({ onNavigate }: { onNavigate?: (view: 'directory'
             className: 'ml-2 px-3 py-1 text-xs font-medium text-ink-soft/60 hover:text-sage transition-colors'
           }, 'Clear all')
         ),
-        allAvailableTags.length > 0 && selectedTags.length === 0 && React.createElement('div', { className: 'flex flex-wrap gap-1.5 overflow-x-auto pb-2' },
-          React.createElement('span', { className: 'text-xs font-medium text-ink-soft/60 mr-2 self-center shrink-0' }, 'Filter by tag:'),
-          allAvailableTags.map((tag, idx) => React.createElement('button', {
-            key: idx,
-            onClick: () => setSelectedTags(prev => [...prev, tag]),
-            className: 'px-3 py-1 text-xs font-medium rounded-full bg-white/60 border border-border text-ink hover:bg-sage-pale hover:border-sage hover:text-sage transition-all whitespace-nowrap shrink-0'
-          }, tag))
+        allAvailableTags.length > 0 && selectedTags.length === 0 && React.createElement('div', { className: 'mb-2' },
+          React.createElement('label', { className: 'text-xs font-medium text-ink-soft/60 mr-2', htmlFor: 'tag-filter' }, 'Filter by tag:'),
+          React.createElement('select', {
+            id: 'tag-filter',
+            value: '',
+            onChange: (e) => { if (e.target.value) setSelectedTags(prev => [...prev, e.target.value]); e.target.value = ''; },
+            className: 'ml-2 px-3 py-1.5 text-xs font-medium rounded-xl bg-white/60 border border-border text-ink hover:bg-sage-pale hover:border-sage focus:outline-none focus:border-sage transition-all'
+          },
+            React.createElement('option', { value: '', disabled: true }, 'Select a tag...'),
+            allAvailableTags.map((tag, idx) => React.createElement('option', { key: idx, value: tag }, tag))
+          )
         )
       )
     : null;
