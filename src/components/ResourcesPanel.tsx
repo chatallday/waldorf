@@ -7,37 +7,37 @@ import { InstagramHandlesViewer } from './InstagramHandlesViewer';
 // 23 Definitive Categories - Alphabetical Order
 const DEFINITIVE_CATEGORIES = [
   // Head/Thinking categories (blue tones)
-  { id: 'adult-education-training', label: 'Adult Education and Training', pillar: 'head' as const, color: '#2c4a6e', bgColor: '#dce8f5', icon: '🎓' },
-  { id: 'anthroposophic-medicine', label: 'Anthroposophic Medicine', pillar: 'head' as const, color: '#2c4a6e', bgColor: '#dce8f5', icon: '🏥' },
-  { id: 'books-reading-lists', label: 'Books & Reading Lists', pillar: 'head' as const, color: '#2c4a6e', bgColor: '#dce8f5', icon: '📖' },
-  { id: 'children-reading-guides', label: 'Children Reading Guides', pillar: 'head' as const, color: '#2c4a6e', bgColor: '#dce8f5', icon: '📚' },
-  { id: 'curriculums', label: 'Curriculums', pillar: 'head' as const, color: '#2c4a6e', bgColor: '#dce8f5', icon: '📚' },
-  { id: 'four-temperaments', label: 'Four Temperaments', pillar: 'head' as const, color: '#2c4a6e', bgColor: '#dce8f5', icon: '⚖️' },
-  { id: 'global-resources', label: 'Global Resources', pillar: 'head' as const, color: '#2c4a6e', bgColor: '#dce8f5', icon: '🌍' },
-  { id: 'must-read-books', label: 'Must Read Books', pillar: 'head' as const, color: '#2c4a6e', bgColor: '#dce8f5', icon: '📖' },
+  { id: 'adult-education-training', label: 'Adult Education and Training', pillar: 'head' as const, color: '#2c4a6e', bgColor: '#dce8f5', icon: '' },
+  { id: 'anthroposophic-medicine', label: 'Anthroposophic Medicine', pillar: 'head' as const, color: '#2c4a6e', bgColor: '#dce8f5', icon: '' },
+  { id: 'books-reading-lists', label: 'Books & Reading Lists', pillar: 'head' as const, color: '#2c4a6e', bgColor: '#dce8f5', icon: '' },
+  { id: 'children-reading-guides', label: 'Children Reading Guides', pillar: 'head' as const, color: '#2c4a6e', bgColor: '#dce8f5', icon: '' },
+  { id: 'curriculums', label: 'Curriculums', pillar: 'head' as const, color: '#2c4a6e', bgColor: '#dce8f5', icon: '' },
+  { id: 'four-temperaments', label: 'Four Temperaments', pillar: 'head' as const, color: '#2c4a6e', bgColor: '#dce8f5', icon: '' },
+  { id: 'global-resources', label: 'Global Resources', pillar: 'head' as const, color: '#2c4a6e', bgColor: '#dce8f5', icon: '' },
+  { id: 'must-read-books', label: 'Must Read Books', pillar: 'head' as const, color: '#2c4a6e', bgColor: '#dce8f5', icon: '' },
   
   // Heart/Feeling categories (gold/amber tones)
-  { id: 'community-makers', label: 'Community and Makers', pillar: 'heart' as const, color: '#7a4f1a', bgColor: '#fdf0d0', icon: '👥' },
-  { id: 'eurythmy', label: 'Eurythmy', pillar: 'heart' as const, color: '#7a4f1a', bgColor: '#fdf0d0', icon: '💃' },
-  { id: 'festivals-celebrations', label: 'Festivals and Celebrations', pillar: 'heart' as const, color: '#7a4f1a', bgColor: '#fdf0d0', icon: '🌸' },
-  { id: 'music-instruments', label: 'Music and Instruments', pillar: 'heart' as const, color: '#7a4f1a', bgColor: '#fdf0d0', icon: '🎵' },
-  { id: 'seasons-nature-tables', label: 'Seasons and Nature Tables', pillar: 'heart' as const, color: '#7a4f1a', bgColor: '#fdf0d0', icon: '🍂' },
-  { id: 'storytelling-puppetry', label: 'Storytelling and Puppetry', pillar: 'heart' as const, color: '#7a4f1a', bgColor: '#fdf0d0', icon: '📖' },
+  { id: 'community-makers', label: 'Community and Makers', pillar: 'heart' as const, color: '#7a4f1a', bgColor: '#fdf0d0', icon: '' },
+  { id: 'eurythmy', label: 'Eurythmy', pillar: 'heart' as const, color: '#7a4f1a', bgColor: '#fdf0d0', icon: '' },
+  { id: 'festivals-celebrations', label: 'Festivals and Celebrations', pillar: 'heart' as const, color: '#7a4f1a', bgColor: '#fdf0d0', icon: '' },
+  { id: 'music-instruments', label: 'Music and Instruments', pillar: 'heart' as const, color: '#7a4f1a', bgColor: '#fdf0d0', icon: '' },
+  { id: 'seasons-nature-tables', label: 'Seasons and Nature Tables', pillar: 'heart' as const, color: '#7a4f1a', bgColor: '#fdf0d0', icon: '' },
+  { id: 'storytelling-puppetry', label: 'Storytelling and Puppetry', pillar: 'heart' as const, color: '#7a4f1a', bgColor: '#fdf0d0', icon: '' },
   
   // Hands/Willing categories (green tones)
-  { id: 'anthroposophic-medicine', label: 'Anthroposophic Medicine', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '🏥' },
-  { id: 'art-supplies', label: 'Art Suppliers', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '🎨' },
-  { id: 'baby-care', label: 'Baby Care', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '👶' },
-  { id: 'camps-retreats', label: 'Camps and Retreats', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '🏕️' },
-  { id: 'clothing-dress-up', label: 'Clothing and Dress Up', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '👗' },
-  { id: 'doll-making', label: 'Doll Making', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '🧸' },
-  { id: 'eurythmy', label: 'Eurythmy', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '💃' },
-  { id: 'handwork', label: 'Handwork', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '🧶' },
-  { id: 'lifecycle-development', label: 'Lifecycle and Development', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '🌱' },
-  { id: 'music-instruments', label: 'Music and Instruments', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '🎵' },
-  { id: 'nutrition-food', label: 'Nutrition and Food', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '🍎' },
-  { id: 'toys-furniture-suppliers', label: 'Toys & Furniture Suppliers', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '🧸' },
-  { id: 'woodwork', label: 'Woodwork', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '🪵' },
+  { id: 'anthroposophic-medicine', label: 'Anthroposophic Medicine', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '' },
+  { id: 'art-supplies', label: 'Art Suppliers', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '' },
+  { id: 'baby-care', label: 'Baby Care', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '' },
+  { id: 'camps-retreats', label: 'Camps and Retreats', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '' },
+  { id: 'clothing-dress-up', label: 'Clothing and Dress Up', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '' },
+  { id: 'doll-making', label: 'Doll Making', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '' },
+  { id: 'eurythmy', label: 'Eurythmy', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '' },
+  { id: 'handwork', label: 'Handwork', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '' },
+  { id: 'lifecycle-development', label: 'Lifecycle and Development', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '' },
+  { id: 'music-instruments', label: 'Music and Instruments', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '' },
+  { id: 'nutrition-food', label: 'Nutrition and Food', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '' },
+  { id: 'toys-furniture-suppliers', label: 'Toys & Furniture Suppliers', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '' },
+  { id: 'woodwork', label: 'Woodwork', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '' },
 ];
 
 // Map category ID to search tags for filtering
@@ -64,9 +64,9 @@ const CATEGORY_SEARCH_TAGS: Record<string, string[]> = {
 
 // Keep existing special categories for Publishers, Costumes, Articles
 const SPECIAL_CATEGORIES = [
-  { id: 'publishers', label: 'Publishers', pillar: 'head' as const, color: '#2c4a6e', bgColor: '#dce8f5', icon: '📚', isSpecial: true },
-  { id: 'costumes', label: 'Costumes', pillar: 'heart' as const, color: '#7a4f1a', bgColor: '#fdf0d0', icon: '🎭', isSpecial: true },
-  { id: 'articles', label: 'Articles', pillar: 'head' as const, color: '#2c4a6e', bgColor: '#dce8f5', icon: '📄', isSpecial: true },
+  { id: 'publishers', label: 'Publishers', pillar: 'head' as const, color: '#2c4a6e', bgColor: '#dce8f5', icon: '', isSpecial: true },
+  { id: 'costumes', label: 'Costumes', pillar: 'heart' as const, color: '#7a4f1a', bgColor: '#fdf0d0', icon: '', isSpecial: true },
+  { id: 'articles', label: 'Articles', pillar: 'head' as const, color: '#2c4a6e', bgColor: '#dce8f5', icon: '', isSpecial: true },
 ];
 
 const ALL_CATEGORIES = [...DEFINITIVE_CATEGORIES, ...SPECIAL_CATEGORIES];
@@ -412,7 +412,6 @@ export function ResourcesPanel({ onNavigate }: { onNavigate?: (view: 'directory'
     return React.createElement(React.Fragment, null,
       React.createElement('div', { className: 'mt-8 mb-4' },
         React.createElement('h3', { className: 'text-lg font-serif text-ink font-semibold flex items-center gap-2' },
-          React.createElement('span', { className: 'text-lg' }, '📄'),
           'All / General Articles'
         ),
         React.createElement('p', { className: 'text-xs text-ink-soft/60 mt-1' }, 

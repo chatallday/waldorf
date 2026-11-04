@@ -12,17 +12,18 @@ function isPdfPath(path: string): boolean {
 }
 
 function ArticleContent({ html, rawHtml, useIframe, title, isPdf, pdfUrl }: { html: string | null; rawHtml: string | null; useIframe: boolean; title: string; isPdf: boolean; pdfUrl: string }) {
-  // For PDFs, always use iframe with direct URL
+  // For PDFs, always use iframe with direct URL - full screen
   if (isPdf) {
     return (
       <iframe
         src={pdfUrl}
         className="w-full h-full border-none"
         title={title}
+        style={{ minHeight: 'calc(100vh - 140px)' }}
       />
     );
   }
-
+  
   // For HTML content
   if (useIframe && rawHtml) {
     return (

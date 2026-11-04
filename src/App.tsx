@@ -167,7 +167,7 @@ function ThreePillarSection() {
       color: '#dce8f5',
       borderColor: '#2c4a6e',
       textColor: '#2c4a6e',
-      icon: '☀️',
+      icon: '',
       content: `HEAD — THINKING
 
 Waldorf education seeks to awaken the child's thinking through imagination, stories, wonder, and the discovery of the world. Learning is not simply about filling a child's mind with facts, but about encouraging curiosity, asking why things are the way they are, and developing a genuine understanding of the world. The aim is not just to know, but to understand.`
@@ -179,7 +179,7 @@ Waldorf education seeks to awaken the child's thinking through imagination, stor
       color: '#fdf0d0',
       borderColor: '#7a4f1a',
       textColor: '#7a4f1a',
-      icon: '💛',
+      icon: '',
       content: `HEART — FEELING
 
 The feeling life is nurtured through music, painting, storytelling, drama, and the beauty of the natural world. Art gives children a way to experience life more deeply, to develop a sense for beauty, and to meet the world with interest and care. Through these experiences, children gradually develop empathy, reverence, wonder and a sense of responsibility toward others.`
@@ -191,7 +191,7 @@ The feeling life is nurtured through music, painting, storytelling, drama, and t
       color: '#e8ede4',
       borderColor: '#3a6b3e',
       textColor: '#3a6b3e',
-      icon: '🙌',
+      icon: '',
       content: `HANDS — WILLING
 
 The will is cultivated through doing and through meaningful, practical work. Baking bread, tending a garden, working with wood, knitting, building, and caring for the classroom give children the opportunity to engage with the world in a hands-on way. Through everyday tasks and practical activities, children learn to take responsibility, develop useful life skills, and experience the satisfaction of creating something with their own hands. They learn patience by staying with a task, perseverance by working through difficulties, and confidence by seeing something through to completion.`
@@ -339,7 +339,7 @@ function ComingSoonPage() {
         {/* Logo/Brand */}
         <div className="text-center mb-10">
           <div className="inline-flex items-center justify-center w-24 h-24 rounded-2xl mx-auto mb-6" style={{ background: 'linear-gradient(135deg, #7a8c6e 0%, #5a6b4e 100%)' }}>
-            <span className="text-3xl" aria-hidden="true">🌿</span>
+            <span className="text-3xl" aria-hidden="true">🍃</span>
           </div>
           <h1 className="text-3xl md:text-4xl font-serif text-ink font-semibold mb-2">The Waldorf Path</h1>
           <p className="text-ink-soft italic">Something beautiful is growing...</p>
@@ -426,7 +426,7 @@ export default function App() {
   const [verse, setVerse] = React.useState<{title: string, content: string, season: string} | null>(null);
   const [featuredMentors, setFeaturedMentors] = React.useState<Mentor[]>([]);
 
-  const [showSplash, setShowSplash] = React.useState(false);
+  const [showSplash, setShowSplash] = React.useState(true);
   const [cotsIndex, setCotsIndex] = React.useState(getCurrentCOTSIndex());
   const [showBackToTop, setShowBackToTop] = React.useState(false);
 
@@ -615,7 +615,7 @@ React.useEffect(() => {
               <div className="h-[6px] w-full" style={{ backgroundColor: dailyGift.colourHex }} />
               <div className="p-8">
                 <div className="text-[12px] font-bold tracking-[0.18em] uppercase text-sage mb-2 flex items-center gap-1">
-                  <span aria-hidden="true">🌿</span> <span id="splash-title">The Waldorf Path — Daily Gift</span>
+                  <span aria-hidden="true">🍃</span> <span id="splash-title">The Waldorf Path — Daily Gift</span>
                 </div>
                 <div className="font-serif text-2xl font-medium text-ink mb-6">
                   <span className="italic font-semibold">{dailyGift.day}</span> · {dateStr}
@@ -623,8 +623,8 @@ React.useEffect(() => {
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6" id="splash-desc">
                   {[
                     { icon: dailyGift.planetIcon, label: 'Planet', value: dailyGift.planet },
-                    { icon: '🎨', label: 'Colour', value: dailyGift.colour },
-                    { icon: '🌾', label: 'Grain', value: dailyGift.grain },
+                    { icon: '', label: 'Colour', value: dailyGift.colour },
+                    { icon: '', label: 'Grain', value: dailyGift.grain },
                     { icon: dailyGift.activityIcon, label: 'Activity', value: dailyGift.activity },
                   ].map((item, i) => (
                     <div key={i} className="border border-border/40 rounded-xl p-3 text-center" style={{ backgroundColor: dailyGift.colourBg }}>
@@ -635,11 +635,11 @@ React.useEffect(() => {
                   ))}
                 </div>
                 <div className="border-t border-border/40 my-5" />
-                <div className="text-[11px] font-bold tracking-[0.14em] uppercase text-ink-soft mb-2">📜 Today's Waldorf Verse</div>
+                <div className="text-[11px] font-bold tracking-[0.14em] uppercase text-ink-soft mb-2">Today's Waldorf Verse</div>
                 <div className="text-sm font-semibold text-earth mb-2">{splashVerse.moment}</div>
                 <div className="font-serif text-lg italic leading-relaxed text-ink p-4 bg-earth-pale/40 border-l-3 border-gold rounded-r-lg mb-4 whitespace-pre-line text-left">{splashVerse.text}</div>
                 <div className="border-t border-border/40 my-5" />
-                <div className="text-[11px] font-bold tracking-[0.14em] uppercase text-ink-soft mb-2">🌀 This Week's Calendar of the Soul</div>
+                <div className="text-[11px] font-bold tracking-[0.14em] uppercase text-ink-soft mb-2">This Week's Calendar of the Soul</div>
                 <div className="text-sm font-semibold text-earth mb-2">{currentCotsVerse.title} · Verse {currentCotsVerse.num} of 52</div>
                 <div className="font-serif text-[17px] italic leading-relaxed text-ink p-4 bg-sage-pale/40 border-l-3 border-sage rounded-r-lg mb-6 whitespace-pre-line text-left">{currentCotsVerse.english}</div>
                 <button onClick={() => setShowSplash(false)}
@@ -812,7 +812,7 @@ React.useEffect(() => {
 
           {activeView === 'documents' && selectedDocument && (
             <motion.div key="documents" initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -15 }}
-              className="watercolor-card flex flex-col" style={{ minHeight: 'calc(100vh - 220px)' }}>
+              className="watercolor-card flex flex-col" style={{ height: 'calc(100vh - 220px)', minHeight: 'calc(100vh - 220px)' }}>
               <React.Suspense fallback={<div className="flex items-center justify-center py-20 text-sage italic font-serif">Loading article...</div>}>
                 <ArticleViewer
                   filePath={selectedDocument.filePath}
