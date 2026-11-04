@@ -19,6 +19,7 @@ const DEFINITIVE_CATEGORIES = [
   // Heart/Feeling categories (gold/amber tones)
   { id: 'community-makers', label: 'Community and Makers', pillar: 'heart' as const, color: '#7a4f1a', bgColor: '#fdf0d0', icon: '' },
   { id: 'eurythmy', label: 'Eurythmy', pillar: 'heart' as const, color: '#7a4f1a', bgColor: '#fdf0d0', icon: '' },
+  { id: 'waldorf-finger-games', label: 'Waldorf Finger Games', pillar: 'heart' as const, color: '#7a4f1a', bgColor: '#fdf0d0', icon: '' },
   { id: 'festivals-celebrations', label: 'Festivals and Celebrations', pillar: 'heart' as const, color: '#7a4f1a', bgColor: '#fdf0d0', icon: '' },
   { id: 'music-instruments', label: 'Music and Instruments', pillar: 'heart' as const, color: '#7a4f1a', bgColor: '#fdf0d0', icon: '' },
   { id: 'seasons-nature-tables', label: 'Seasons and Nature Tables', pillar: 'heart' as const, color: '#7a4f1a', bgColor: '#fdf0d0', icon: '' },
@@ -31,7 +32,6 @@ const DEFINITIVE_CATEGORIES = [
   { id: 'camps-retreats', label: 'Camps and Retreats', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '' },
   { id: 'clothing-dress-up', label: 'Clothing and Dress Up', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '' },
   { id: 'doll-making', label: 'Doll Making', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '' },
-  { id: 'eurythmy', label: 'Eurythmy', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '' },
   { id: 'handwork', label: 'Handwork', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '' },
   { id: 'lifecycle-development', label: 'Lifecycle and Development', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '' },
   { id: 'music-instruments', label: 'Music and Instruments', pillar: 'hands' as const, color: '#3a6b3e', bgColor: '#e8ede4', icon: '' },
@@ -62,10 +62,9 @@ const CATEGORY_SEARCH_TAGS: Record<string, string[]> = {
   'woodwork': ['Woodwork', 'Woodworking', 'Carpentry', 'Crafts'],
 };
 
-// Keep existing special categories for Publishers, Costumes, Articles
+// Keep existing special categories for Publishers, Articles
 const SPECIAL_CATEGORIES = [
   { id: 'publishers', label: 'Publishers', pillar: 'head' as const, color: '#2c4a6e', bgColor: '#dce8f5', icon: '', isSpecial: true },
-  { id: 'costumes', label: 'Costumes', pillar: 'heart' as const, color: '#7a4f1a', bgColor: '#fdf0d0', icon: '', isSpecial: true },
   { id: 'articles', label: 'Articles', pillar: 'head' as const, color: '#2c4a6e', bgColor: '#dce8f5', icon: '', isSpecial: true },
 ];
 
