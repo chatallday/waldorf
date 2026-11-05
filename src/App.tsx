@@ -615,7 +615,7 @@ React.useEffect(() => {
               <div className="h-[6px] w-full" style={{ backgroundColor: dailyGift.colourHex }} />
               <div className="p-8">
                 <div className="text-[12px] font-bold tracking-[0.18em] uppercase text-sage mb-2 flex items-center gap-1">
-                  <span aria-hidden="true">🍃</span> <span id="splash-title">The Waldorf Path — Daily Gift</span>
+                  <span aria-hidden="true">✦</span> <span id="splash-title">The Waldorf Path — Daily Gift</span>
                 </div>
                 <div className="font-serif text-2xl font-medium text-ink mb-6">
                   <span className="italic font-semibold">{dailyGift.day}</span> · {dateStr}

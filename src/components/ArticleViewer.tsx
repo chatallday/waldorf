@@ -17,9 +17,9 @@ function ArticleContent({ html, rawHtml, useIframe, title, isPdf, pdfUrl }: { ht
     return (
       <iframe
         src={pdfUrl}
-        className="w-full h-full border-none"
+        className="w-full h-full border-none flex-1"
         title={title}
-        style={{ minHeight: 'calc(100vh - 140px)' }}
+        style={{ minHeight: 0 }}
       />
     );
   }
@@ -162,7 +162,7 @@ export function ArticleViewer({ filePath, title, onBack }: ArticleViewerProps) {
           </div>
         </div>
       </div>
-      <div className="flex-1 overflow-y-auto">
+      <div className={`flex-1 ${isPdf ? 'min-h-0' : 'overflow-y-auto'}`}>
         <ArticleContent 
           html={html} 
           rawHtml={rawHtml} 

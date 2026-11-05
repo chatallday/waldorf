@@ -29,15 +29,15 @@ export function AboutModalContent() {
         <div style={{ fontFamily: "'Antropos','Cormorant Garamond',serif", fontSize: '20px', color: '#2a3a2a', marginBottom: '20px', letterSpacing: '0.03em' }}>The Heart of Waldorf Education</div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
           <div className="bg-[#edf2f8] border-t-3 border-[#1a3050] rounded-lg p-5">
-            <div style={{ fontFamily: "'Antropos','Cormorant Garamond',serif", fontSize: '16px', color: '#1a3050', marginBottom: '8px' }}>☀️ Head — Thinking</div>
+            <div style={{ fontFamily: "'Antropos','Cormorant Garamond',serif", fontSize: '16px', color: '#1a3050', marginBottom: '8px' }}>✦ Head — Thinking</div>
             <div style={{ fontFamily: "'Cormorant Garamond',Georgia,serif", fontSize: '13px', color: '#4a4a40', lineHeight: '1.8' }}>Education of the mind — not with dry facts alone, but through imagination, story, wonder and inquiry. The child's thinking is kindled, not stuffed. Knowledge earned through experience stays forever.</div>
           </div>
           <div className="bg-[#fdf5e8] border-t-3 border-[#5a3000] rounded-lg p-5">
-            <div style={{ fontFamily: "'Antropos','Cormorant Garamond',serif", fontSize: '16px', color: '#5a3000', marginBottom: '8px' }}>💛 Heart — Feeling</div>
+            <div style={{ fontFamily: "'Antropos','Cormorant Garamond',serif", fontSize: '16px', color: '#5a3000', marginBottom: '8px' }}>✦ Heart — Feeling</div>
             <div style={{ fontFamily: "'Cormorant Garamond',Georgia,serif", fontSize: '13px', color: '#4a4a40', lineHeight: '1.8' }}>Education of the feeling life — through music, painting, drama, storytelling, the arts and the beauty of the natural world. A child whose feeling life is nourished grows into an adult with empathy, reverence and moral courage.</div>
           </div>
           <div className="bg-[#eef4ef] border-t-3 border-[#1a4a20] rounded-lg p-5">
-            <div style={{ fontFamily: "'Antropos','Cormorant Garamond',serif", fontSize: '16px', color: '#1a4a20', marginBottom: '8px' }}>🙌 Hands — Willing</div>
+            <div style={{ fontFamily: "'Antropos','Cormorant Garamond',serif", fontSize: '16px', color: '#1a4a20', marginBottom: '8px' }}>✦ Hands — Willing</div>
             <div style={{ fontFamily: "'Cormorant Garamond',Georgia,serif", fontSize: '13px', color: '#4a4a40', lineHeight: '1.8' }}>Education of the will — through handwork, woodwork, gardening, cooking, building and making. A child who has worked with their hands knows their own capacity. They have courage, patience and the quiet confidence of one who has made something real.</div>
           </div>
         </div>
