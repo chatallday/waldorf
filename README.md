@@ -235,6 +235,15 @@ See `wiki/summaries/` for detailed session logs:
 - ⚠️ **Port 3000 in use** — use alternative (e.g., 5173) for local dev
 - ✅ **Antigravity only from** `F:\Antigravity` (if needed)
 
+## Skills Available
+
+**Red Team Sparring Partner** — Rigorous architectural critique mode. See `.agent/skills/red-team-sparring/SKILL.md`
+- Use when reviewing code patches, AI-generated solutions, or strategic plans
+- Critique practicality, find edge cases, uncover missing context via 5 sharp questions
+- Banish LLM echo chambers
+
+**Usage:** Invoke "red team review" on any proposed solution, code diff, or strategic plan.
+
 ---
 
 ## Quick Commands
