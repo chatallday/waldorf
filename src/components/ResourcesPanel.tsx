@@ -42,11 +42,12 @@ const DEFINITIVE_CATEGORIES = [
 // Map category ID to search tags for filtering
 const CATEGORY_SEARCH_TAGS: Record<string, string[]> = {
   'adult-education-training': ['Adult Education', 'Training', 'Teacher Training'],
-  'anthroposophic-medicine': ['Anthroposophic Medicine', 'Health', 'Therapy', 'Healing', 'Hospitals', 'Doctors', 'Pharmacies'],
+  'anthroposophic-medicine': ['Anthroposophic Medicine', 'Hospitals', 'Doctors', 'Pharmacies'],
   'art-supplies': ['Art Suppliers', 'Art Supplies', 'Craft Supplies', 'Art Materials'],
   'baby-care': ['Baby Care', 'Infant Care'],
   'books-reading-lists': ['Books & Reading Lists', 'For Parents', 'For Teachers', 'For Homeschoolers', 'Steiner Core Works', 'Free Resources', 'Early Childhood', 'School Life', 'Curriculum', 'Start Here', 'Storytelling & Puppetry'],
   'camps-retreats': ['Camps', 'Retreats', 'Summer Camps', 'Outdoor'],
+  'publishers': ['Publishers', 'publisher'],
   'children-reading-guides': ['Children Reading', 'Reading Guides', 'Reading Guide', 'Early Childhood Reading'],
   'clothing-dress-up': ['Clothing', 'Dress Up', 'Costumes', 'Dress-Up'],
   'community-makers': ['Community', 'Makers', 'Community Groups', 'Social'],
@@ -225,7 +226,8 @@ export function ResourcesPanel({ onNavigate }: { onNavigate?: (view: 'directory'
       const itemTags = [
         item.category.toLowerCase(),
         ...(item.topicTags || []).map(t => t.toLowerCase()),
-        ...(item.searchAliases || []).map(a => a.toLowerCase())
+        ...(item.searchAliases || []).map(a => a.toLowerCase()),
+        ...((item as any).tags || []).map((t: string) => t.toLowerCase())
       ];
       return searchTagsLower.some(tag => itemTags.includes(tag));
     });
@@ -259,6 +261,7 @@ export function ResourcesPanel({ onNavigate }: { onNavigate?: (view: 'directory'
     tagFilteredItems.forEach(item => {
       (item.topicTags || []).forEach(t => tags.add(t));
       (item.searchAliases || []).forEach(a => tags.add(a));
+      (((item as any).tags || []) as string[]).forEach(t => tags.add(t));
     });
     return Array.from(tags).sort();
   }, [tagFilteredItems]);
@@ -344,6 +347,78 @@ export function ResourcesPanel({ onNavigate }: { onNavigate?: (view: 'directory'
       );
     }
 
+    // Special rendering for Books & Reading Lists: group by sub-category
+    if (selectedCategoryId === 'books-reading-lists') {
+      const subCategoryOrder = ['Start Here', 'For Parents', 'For Teachers', 'For Homeschoolers', 'Steiner Core Works', 'Free Resources', 'Early Childhood', 'School Life', 'Curriculum', 'Storytelling & Puppetry'];
+      const grouped: Record<string, any[]> = {};
+      
+      tagFilteredItems.forEach(item => {
+        const itemTags = ((item as any).tags || []) as string[];
+        // Find the primary sub-category tag
+        let primaryTag = 'Other';
+        for (const tag of subCategoryOrder) {
+          if (itemTags.includes(tag)) {
+            primaryTag = tag;
+            break;
+          }
+        }
+        if (!grouped[primaryTag]) grouped[primaryTag] = [];
+        grouped[primaryTag].push(item);
+      });
+
+      const sections = subCategoryOrder
+        .filter(tag => grouped[tag] && grouped[tag].length > 0)
+        .map(tag => {
+          const items = grouped[tag];
+          return React.createElement('div', { key: tag, className: 'mb-8' },
+            React.createElement('h3', { className: 'text-lg font-serif text-ink font-semibold mb-3 border-b border-border/40 pb-2' }, tag),
+            React.createElement('div', { className: 'space-y-3' },
+              items.map((item: any, index: number) => {
+                const matchedTags = getMatchedTags(item);
+                return React.createElement('div', {
+                  key: item.id,
+                  className: 'group bg-white/60 border border-border rounded-xl p-4 hover:bg-white/80 hover:shadow-sm transition-all cursor-pointer',
+                  onClick: () => handleItemClick(item)
+                },
+                  React.createElement('div', { className: 'flex items-start gap-4' },
+                    React.createElement('div', { 
+                      className: 'flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center',
+                      style: { backgroundColor: '#f5f5f5' }
+                    },
+                      React.createElement(BookOpen, { 
+                        className: 'text-lg',
+                        style: { color: '#666' },
+                      })
+                    ),
+                    React.createElement('div', { className: 'flex-1 min-w-0' },
+                      React.createElement('div', { className: 'flex items-center justify-between gap-2 mb-1' },
+                        React.createElement('h4', { className: 'font-semibold text-ink font-serif text-base line-clamp-2' }, item.title),
+                        React.createElement('span', { className: 'hidden sm:inline-flex text-[10px] font-bold px-2 py-0.5 rounded-full bg-sage-pale text-sage shrink-0' }, item.category)
+                      ),
+                      item.description && React.createElement('p', { className: 'text-sm text-ink-soft/70 line-clamp-2 mb-2' }, item.description),
+                      matchedTags.length > 0 && React.createElement('div', { className: 'flex flex-wrap gap-1.5 mb-2' },
+                        matchedTags.map((tag: string, idx: number) => React.createElement('span', {
+                          key: idx,
+                          className: 'inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-medium rounded-full bg-sage-pale/80 text-sage border border-sage/20',
+                          title: item.topicTags?.includes(tag) ? 'Topic tag' : 'Search alias'
+                        }, tag))
+                      ),
+                      React.createElement('div', { className: 'flex items-center gap-3 text-[11px] text-ink-soft/60 flex-wrap' },
+                        item.grade && React.createElement('span', { className: 'flex items-center gap-1' }, React.createElement(BookOpen, { size: 10 }), item.grade),
+                        React.createElement('span', { className: 'flex items-center gap-1' }, React.createElement(FileIcon, { size: 10 }), item.contentType === 'pdf' ? 'PDF' : item.contentType === 'article' ? 'Article' : 'Resource')
+                      )
+                    ),
+                    React.createElement(ExternalLink, { className: 'text-ink-soft/40 group-hover:text-sage transition-colors shrink-0', size: 18 })
+                  )
+                );
+              })
+            )
+          );
+        });
+
+      return React.createElement('div', null, ...sections);
+    }
+
     return React.createElement('div', { className: 'space-y-3' },
       paginatedItems.map((item, index) => {
         const matchedTags = getMatchedTags(item);
@@ -398,7 +473,8 @@ export function ResourcesPanel({ onNavigate }: { onNavigate?: (view: 'directory'
       const itemTags = [
         item.category.toLowerCase(),
         ...(item.topicTags || []).map(t => t.toLowerCase()),
-        ...(item.searchAliases || []).map(a => a.toLowerCase())
+        ...(item.searchAliases || []).map(a => a.toLowerCase()),
+        ...((item as any).tags || []).map((t: string) => t.toLowerCase())
       ];
       // Check if item matches any definitive category
       const matchesAnyCategory = definitiveCategoryIds.some(catId => {
