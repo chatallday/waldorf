@@ -52,7 +52,7 @@
       "name": "OpenRouter",
       "options": {
         "baseURL": "https://openrouter.ai/api/v1",
-        "apiKey": "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"
+        "apiKey": "YOUR_OPENROUTER_API_KEY_HERE"
       },
       "models": {
         "google/gemma-4-26b-a4b-it:free": { "name": "Gemma 4 26B (Free)" },
