@@ -96,7 +96,7 @@ npm run dev -- --port 5173  # Port 3000 is in use by another project
 | Var | Where | Notes |
 |-----|-------|-------|
 | `TEABLE_API_KEY` | Vercel + GitHub Secrets | PAT: `teable_accv7ta35BisOwLmbLa_e8LHiY5TchgXjkgSs6ymsUZYvr4oTnFzpt17o6+NHsI=` |
-| `GEMINI_API_KEY` | Teable (AI Config) + Vercel fallback | New format: `AQ.Ab8RN6KP7yaaUHdzAXhj7LMkLUvU7tETZ7D2XnJXIjUvbw_BiQ` |
+| `GEMINI_API_KEY` | Teable (AI Config) + Vercel fallback | New format: `YOUR_GEMINI_API_KEY_HERE` |
 | `STRIPE_SECRET_KEY` | Vercel (when live) | |
 | `STRIPE_USER_PREMIUM_PRICE_ID` | Vercel (when live) | Seeker Pro $9.99/mo |
 | `STRIPE_MENTOR_PRO_PRICE_ID` | Vercel (when live) | Mentor Pro $19.99/mo |
